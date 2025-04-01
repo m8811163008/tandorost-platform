@@ -1,7 +1,16 @@
 import asyncio
-import motor.motor_asyncio
+from motor.motor_asyncio import AsyncIOMotorClient
 from datetime import datetime
+from motor.motor_asyncio import AsyncIOMotorClient
 
+
+mongo_url = "mongodb://localhost:27017"
+
+client = AsyncIOMotorClient(mongo_url)
+app = FastAPI()
+
+database = client.get_database("learning")
+collection = database.get_collection("items")
 
 
 async def manage_mongo():
@@ -78,3 +87,4 @@ async def manage_mongo():
 # Run the asynchronous function
 if __name__ == "__main__":
     asyncio.run(manage_mongo())
+
