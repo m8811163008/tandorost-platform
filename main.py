@@ -9,7 +9,7 @@ from pydantic import BaseModel
 import os
 
 
-app = FastAPI(root_path="/v1")
+app = FastAPI()
 
 @app.get("/")
 async def read_root():
