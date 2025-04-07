@@ -9,7 +9,6 @@ import jwt
 from fastapi import Depends, HTTPException, status
 from jwt.exceptions import InvalidTokenError
 from passlib.context import CryptContext
-import httpx
 import os
 
 from repositories.user.user import UserRepository
@@ -28,7 +27,7 @@ user_repo = UserRepository(MONGO_URI, DATABASE_NAME)
 
 
 router = APIRouter(
-    prefix="/auth",
+    # prefix="/auth",
     tags=["Authentication"],
 )
 
@@ -48,21 +47,8 @@ def get_password_hash(password:str):
 
 
 async def get_user(user_name:str) -> UserInDB | None:
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.get(f"{BASE_URL}/users/{user_name}")
-            user_data = response.json()
-            return UserInDB(**user_data)
-        except httpx.HTTPStatusError as e:
-            raise HTTPException(
-                status_code=e.response.status_code,
-                detail=f"Error fetching user data: {e.response.text}",
-            )
-        except httpx.RequestError as e:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Error connecting to user service: {str(e)}",
-            )
+    return await user_repo.get_user(user_name=user_name)
+    
         
 
 
@@ -87,7 +73,7 @@ def create_access_token(data: dict[str, Any], expires_delta: timedelta | None = 
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Envirement variables is not set"
             )
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM) # type: ignore
     return encoded_jwt
 
 
@@ -103,7 +89,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Envirement variables is not set"
             )
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM]) # type: ignore
         username = payload.get("sub")
         if username is None:
             raise credentials_exception
@@ -125,7 +111,7 @@ async def get_current_active_user(
 
 @router.post("/token")
 async def login_for_access_token(
-    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
+    form_data: Annotated[OAuth2PasswordRequestForm, Depends(get_current_user)],
 ) -> Token:
     user = await authenticate_user(form_data.username, form_data.password)
     if user is None:
@@ -151,4 +137,10 @@ async def register(
     user = UserInDB(username=user_name, hashed_password=hashed_password)
     await user_repo.save_user(user = user)
     return {'Message' : 'Success'}
-    
+
+
+
+
+@router.get("/items/")
+async def read_items(token: Annotated[str, Depends(oauth2_scheme)]):
+    return {"token": token}
