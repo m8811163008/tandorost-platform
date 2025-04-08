@@ -1,0 +1,11 @@
+msgid "username_in_use"
+msgstr "The username '{user_name}' is already taken"
+
+msgid "welcome_message"
+msgstr "Welcome, {user_name}! You have unread messages."
+
+msgid "invalid_credentials"
+msgstr "Could not validate credentials."
+
+msgid "incorrect_credentials"
+msgstr "Incorrect username or password"

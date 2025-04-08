@@ -1,6 +1,5 @@
 
 from fastapi import APIRouter, Form
-
 from domain_models.exceptions import UsernameAlreadyInUse
 from domain_models.response_model import ApiResponse
 from domain_models.token import Token
@@ -18,6 +17,9 @@ from passlib.context import CryptContext
 
 from repositories.user.user import UserRepository
 from utility.envirement_variables import EnvirenmentVariable
+from utility.translation_keys import TranslationKeys
+from utility.translation_utils import translation_manager
+
 
 
 # Initialize the repository
@@ -32,11 +34,6 @@ router = APIRouter(
     
 )
 tokenUrl = "api/v1/auth/token/"
-
-
-
-
-
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -82,9 +79,10 @@ def create_access_token(data: dict[str, Any], expires_delta: timedelta | None = 
 async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Could not validate credentials",
+        detail=ApiResponse.error(message=TranslationKeys.INVALID_CREDENTIALS, error_detail= TranslationKeys.INVALID_CREDENTIALS).to_dict(),
         headers={"WWW-Authenticate": "Bearer"},
     )
+    
     try:
         payload = jwt.decode(token, ey = EnvirenmentVariable.SECRET_KEY(), algorithms=[EnvirenmentVariable.ALGORITHM()]) # type: ignore
         username = payload.get("sub")
@@ -99,12 +97,6 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
     return user
 
 
-async def get_current_active_user(
-    current_user: Annotated[User, Depends(get_current_user)],
-):
-    if current_user.disabled:
-        raise HTTPException(status_code=400, detail="Inactive user")
-    return current_user
 
 @router.post("/token/")
 async def login_for_access_token(
@@ -114,7 +106,7 @@ async def login_for_access_token(
     if user is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect username or password",
+            detail=TranslationKeys.INCORRECT_CREDENTIALS,
             headers={"WWW-Authenticate": "Bearer"},
         )
     access_token_expires = timedelta(minutes=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
@@ -137,7 +129,7 @@ async def register(
     except UsernameAlreadyInUse as e:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail = ApiResponse.error(message=e.detail, error_code= 409, error_detail=f"The username '{user_name}' is already taken").to_dict()
+            detail = ApiResponse.error(message=e.detail, error_detail=translation_manager.gettext("username_in_use").format(user_name=user_name)).to_dict()
         )
     data = User(**user.model_dump()).model_dump()
     return ApiResponse.success(message='User registered successfully', data=data).to_dict()

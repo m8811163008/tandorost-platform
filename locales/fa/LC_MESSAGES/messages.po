@@ -1,0 +1,10 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "username_in_use"
+msgstr "نام کاربری '{user_name}' گرفته شده است"
+
+msgid "welcome_message"
+msgstr "خوش آمدید {user_name}"
