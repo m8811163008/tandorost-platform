@@ -5,6 +5,7 @@ from motor.motor_asyncio import (
 )
 from typing import Any
 
+from domain_models.exceptions import UsernameAlreadyInUse
 from domain_models.user import UserInDB
 
 class UserRepository:
@@ -16,11 +17,14 @@ class UserRepository:
 
     async def save_user(self, user: UserInDB) -> UserInDB:
         """Save a user token to the database."""
+        current_user = await self.collection.find_one(
+            {"username": user.username}
+        )
+        if current_user is not None:
+            raise UsernameAlreadyInUse() 
         result = await self.collection.insert_one(
             user.model_dump(by_alias=True, exclude={"id"})
         )
-        print(result.inserted_id)
-        print(f'{result.inserted_id}')
         
         saved_user = await self.collection.find_one(
             {"_id": result.inserted_id}

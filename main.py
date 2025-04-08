@@ -5,7 +5,7 @@ import routes.user.user as user
 import os
 
 
-
+# Validate environment variables at runtime
 app = FastAPI(root_path="/api/v1")
 
 app.include_router(auth.router)
