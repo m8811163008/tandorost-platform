@@ -1,5 +1,6 @@
 
 from fastapi import APIRouter, Form
+
 from domain_models.exceptions import UsernameAlreadyInUse
 from domain_models.response_model import ApiResponse
 from domain_models.token import Token
@@ -14,6 +15,7 @@ from jwt.exceptions import InvalidTokenError
 from passlib.context import CryptContext
 
 
+
 from repositories.user.user import UserRepository
 from utility.envirement_variables import EnvirenmentVariable
 
@@ -25,14 +27,22 @@ user_repo = UserRepository(EnvirenmentVariable.MONGO_URI(), EnvirenmentVariable.
 
 router = APIRouter(
     prefix="/auth",
+    
     tags=["Authentication"],
+    
 )
 tokenUrl = "api/v1/auth/token/"
+
+
+
+
+
 
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl=tokenUrl)
+
 
 
 def is_valid_password(plain_password:str, hashed_password:str) -> bool:
@@ -66,6 +76,7 @@ def create_access_token(data: dict[str, Any], expires_delta: timedelta | None = 
 
     encoded_jwt = jwt.encode(to_encode,key = EnvirenmentVariable.SECRET_KEY(), algorithm = EnvirenmentVariable.ALGORITHM()) # type: ignore
     return encoded_jwt
+
 
 
 async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
