@@ -23,7 +23,7 @@ class AuthRepository:
     
     async def send_verification_code(self, code: str, to : str, body_id : str):
         try:
-            detail = VerifyPhoneNumberDetail(text=[],to='', body_id='12' )
+            detail = VerifyPhoneNumberDetail(text=[code],to=to, body_id=body_id )
             await self.remote_api.verify_phone_number(detail=detail)
         except HTTPStatusError:
             raise NetworkConnectionError()

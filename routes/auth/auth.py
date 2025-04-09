@@ -83,7 +83,7 @@ async def register(
     user = UserInDB(username=user_name, hashed_password=hashed_password)
     try:
         await dm.user_repo.create_user(user = user)
-    except UsernameAlreadyInUse as e:
+    except UsernameAlreadyInUse:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail = ApiResponse.error(message='TranslationKeys.USERNAME_IN_USE', error_detail=translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=user_name)).to_dict()
