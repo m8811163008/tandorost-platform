@@ -1,40 +1,25 @@
-from motor.motor_asyncio import (
-    AsyncIOMotorClient,
-    AsyncIOMotorDatabase,
-    AsyncIOMotorCollection,
-)
-from typing import Any
 
+
+from data.local_database.local_database_interface import DatabaseInterface
 from domain_models.exceptions import UsernameAlreadyInUse
 from domain_models.user import UserInDB
 
 class UserRepository:
-    def __init__(self, uri: str, database_name: str):
-        self.client: AsyncIOMotorClient[dict[str,Any]] = AsyncIOMotorClient(uri)
-        self.db :AsyncIOMotorDatabase[dict[str,Any]] = self.client[database_name]
-        self.collection : AsyncIOMotorCollection[dict[str,Any]] = self.db["users"]
-        self.testVar : str
+    def __init__(self, database: DatabaseInterface):
+        self.database = database
 
-    async def save_user(self, user: UserInDB) -> UserInDB:
+    async def create_user(self, user: UserInDB) -> str:
         """Save a user token to the database."""
-        current_user = await self.collection.find_one(
-            {"username": user.username}
+        current_user = await self.database.read_user(
+            username= user.username 
         )
-        if current_user is not None:
-            raise UsernameAlreadyInUse() 
-        result = await self.collection.insert_one(
-            user.model_dump(by_alias=True, exclude={"id"})
-        )
-        
-        saved_user = await self.collection.find_one(
-            {"_id": result.inserted_id}
-        )
-        assert(saved_user is not None)
-        return UserInDB(**saved_user)
+        if current_user is not None and current_user.is_enabled:
+            raise UsernameAlreadyInUse()
+        return await self.database.create_user(user=user)
+    
 
     async def get_user(self, user_name: str) -> UserInDB | None:
-        """Retrieve a user token from the database."""
-        user_data = await self.collection.find_one({"username": user_name})
-        if user_data:
-            return UserInDB(**user_data)
-        return None
+        """Retrieve a user from the database."""
+        return await self.database.read_user(
+            username= user_name 
+        )
