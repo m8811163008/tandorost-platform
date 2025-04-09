@@ -24,5 +24,13 @@ class EnvirenmentVariable:
         return os.environ.get("ALGORITHM") or EnvirenmentVariable._raise_env_error("ALGORITHM")
     
     @staticmethod
+    def SMS_PANEL_USERNAME() -> str:
+        return os.environ.get("SMS_PANEL_USERNAME") or EnvirenmentVariable._raise_env_error("SMS_PANEL_USERNAME")
+    
+    @staticmethod
+    def SMS_PANEL_PASSWORD() -> str:
+        return os.environ.get("SMS_PANEL_PASSWORD") or EnvirenmentVariable._raise_env_error("SMS_PANEL_PASSWORD")
+    
+    @staticmethod
     def _raise_env_error( var_name: str):
         raise EnvironmentError(f"Missing required environment variable: {var_name}")
