@@ -9,3 +9,9 @@ msgstr "Could not validate credentials."
 
 msgid "incorrect_credentials"
 msgstr "Incorrect username or password"
+
+msgid "remote_service_unavailable"
+msgstr "remote service is unavailable. try again"
+
+msgid "user_registered"
+msgstr "wellcome, you registered successfully"

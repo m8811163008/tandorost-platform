@@ -1,7 +1,7 @@
 
 from random import Random
-from fastapi import APIRouter, Form
-from domain_models.exceptions import UsernameAlreadyInUse
+from fastapi import APIRouter, Form, Request
+from domain_models.exceptions import NetworkConnectionError, UsernameAlreadyInUse
 from domain_models.response_model import ApiResponse
 from data.local_database.model.token import Token
 from domain_models.user import User, UserInDB
@@ -17,16 +17,16 @@ from utility.translation_utils import translation_manager
 from dependeny_manager import dm  
 from routes.auth.utility import is_valid_password, create_access_token, get_password_hash
 import jwt
+from utility.constants import token_url, verification_sms_panel_body_id
+from utility.rate_limiter import limiter
 
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=token_url)
 
 router = APIRouter(
     prefix="/auth",
     tags=["Authentication"],
 )
-tokenUrl = "api/v1/auth/token/"
-
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=tokenUrl)
 
 
 @router.post("/token/")
@@ -48,23 +48,32 @@ async def login_for_access_token(
     token_instance = Token(access_token=access_token, token_type="bearer", user_id= user.id)
     return await dm.auth_repo.save_token(token_instance)
 
+
 @router.post("/verify_phone_number", status_code = status.HTTP_201_CREATED)
+@limiter.limit("2/minute") # type: ignore
 async def verify(
-        phone_number : Annotated[str, Form(pattern=r"^09\d{9}$")],
+    request: Request,
+    phone_number : Annotated[str, Form(pattern=r"^09\d{9}$")],
 ):  
     random_code = Random().randint(1000, 9999)
     verification_code = VerificationCode(created_at= datetime.now().isoformat(), verification_code=random_code)
     user = UserInDB(username=phone_number,verification_code=verification_code)
     try:
-       await dm.user_repo.create_user(user=user)
-    except UsernameAlreadyInUse as e:
+        await dm.user_repo.create_user(user=user)
+    except UsernameAlreadyInUse:
         raise HTTPException(
-            
             status_code=status.HTTP_409_CONFLICT,
             detail = ApiResponse.error(message='TranslationKeys.USERNAME_IN_USE', error_detail=translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=phone_number)).to_dict()
         )
-    
-    
+    try:
+       await dm.auth_repo.send_verification_code(code=str(random_code), to=phone_number,body_id=verification_sms_panel_body_id)
+    except NetworkConnectionError: 
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail = ApiResponse.error(message='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', error_detail=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).to_dict()
+        )
+
+
 @router.post("/register", status_code=status.HTTP_201_CREATED)
 async def register(
     user_name: Annotated[str, Form(pattern=r"^09\d{9}$")],
@@ -77,10 +86,10 @@ async def register(
     except UsernameAlreadyInUse as e:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail = ApiResponse.error(message=e.detail, error_detail=translation_manager.gettext("username_in_use").format(user_name=user_name)).to_dict()
+            detail = ApiResponse.error(message='TranslationKeys.USERNAME_IN_USE', error_detail=translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=user_name)).to_dict()
         )
     data = User(**user.model_dump()).model_dump()
-    return ApiResponse.success(message='User registered successfully', data=data).to_dict()
+    return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.USER_REGISTERED), data=data).to_dict()
     
 
 @router.get("/items/")
@@ -122,3 +131,5 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
     if user is None:
         raise credentials_exception
     return user
+
+

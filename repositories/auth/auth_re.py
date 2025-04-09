@@ -21,7 +21,7 @@ class AuthRepository:
     async def get_token(self, id: UUID) -> Token | None:
         return await self.database.get_token(id=id)
     
-    async def send_verification_code(self, code: str):
+    async def send_verification_code(self, code: str, to : str, body_id : str):
         try:
             detail = VerifyPhoneNumberDetail(text=[],to='', body_id='12' )
             await self.remote_api.verify_phone_number(detail=detail)

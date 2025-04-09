@@ -1,17 +1,14 @@
 
 from fastapi import  APIRouter
-from repositories.user.user import UserRepository
+from dependeny_manager import dm
 
 
 from domain_models.user import User
 
 # MongoDB configuration
-MONGO_URI = "mongodb://localhost:27017"
-DATABASE_NAME = "tandorost"
-BASE_URL = 'http://127.0.0.1:8001'
-
-# Initialize the repository
-user_repo = UserRepository(MONGO_URI, DATABASE_NAME)
+# MONGO_URI = "mongodb://localhost:27017"
+# DATABASE_NAME = "tandorost"
+# BASE_URL = 'http://127.0.0.1:8001'
 
 router = APIRouter()
 
@@ -19,7 +16,7 @@ router = APIRouter()
 async def read_user(
     user_name: str,
 ) -> User | None:
-    return await user_repo.get_user(user_name)
+    return await dm.user_repo.get_user(user_name)
 
 
 # @app.get("/users/me/items/")

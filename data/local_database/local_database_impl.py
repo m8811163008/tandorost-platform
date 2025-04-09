@@ -8,7 +8,7 @@ from typing import Any
 from uuid import UUID
 from pymongo import ReturnDocument
 from data.local_database.local_database_interface import DatabaseInterface
-from domain_models.exceptions import ObjectNotFound
+from domain_models.exceptions import DocumentNotFound
 from data.local_database.model.token import Token
 
 
@@ -41,12 +41,12 @@ class LocalDataBaseImpl(DatabaseInterface):
             if len(update_result) != 0:
                 return UserInDB(**update_result)
             else:
-                raise ObjectNotFound()
+                raise DocumentNotFound()
         # The update is empty, but we should still return the matching document:
         existing_user = await self.user_collection.find_one({"_id": id})
         if existing_user is not None:
             return UserInDB(**existing_user)
-        raise ObjectNotFound()
+        raise DocumentNotFound()
 
 
     async def read_user(self, username:str) -> UserInDB | None:

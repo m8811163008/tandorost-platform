@@ -6,3 +6,5 @@ class TranslationKeys:
     WELCOME_MESSAGE = "welcome_message"
     INVALID_CREDENTIALS = "invalid_credentials"
     INCORRECT_CREDENTIALS = "incorrect_credentials"
+    REMOTE_SERVICE_UNAVAILABLE = "remote_service_unavailable"
+    USER_REGISTERED = "user_registered"
