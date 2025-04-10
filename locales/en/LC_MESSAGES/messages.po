@@ -11,7 +11,25 @@ msgid "incorrect_credentials"
 msgstr "Incorrect username or password"
 
 msgid "remote_service_unavailable"
-msgstr "remote service is unavailable. try again"
+msgstr "Remote service is unavailable. try again"
 
 msgid "user_registered"
-msgstr "wellcome, you registered successfully"
+msgstr "Wellcome, you registered successfully"
+
+msgid "rate_limit_reach"
+msgstr "Request rate limit reached. Try {second} seconds later"
+
+msgid "username_not_registered_yet"
+msgstr "Please first register phone number for verification code"
+
+msgid "invalid_verification_code"
+msgstr "Verification code is invalid. Check verification code again."
+
+msgid "username_is_inactive"
+msgstr "User name is inactive. Call support."
+
+msgid "invalid_password"
+msgstr "Invalid password.Check password or restore password"
+
+msgid "password_restored"
+msgstr "Password successfully restored.You can login."

@@ -21,6 +21,11 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.user_collection : AsyncIOMotorCollection[dict[str,Any]] = self.db["users"]
         self.auth_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["tokens"]
 
+    async def clear(self):
+        await self.user_collection.delete_many({})
+        await self.auth_collection.delete_many({})
+        print('*****Database cleared!*****')
+
     async def create_user(self, user: UserInDB) -> str:
         """Save a user token to the database."""
         result = await self.user_collection.insert_one(
@@ -57,16 +62,15 @@ class LocalDataBaseImpl(DatabaseInterface):
         return UserInDB(**user_data)
 
     # Auth methods
-    async def save_token(self, token: Token) -> Token:
+    async def save_token(self, token: Token, user_id : ObjectId) -> Token:
         """Save a user token to the database."""
-        result = await self.auth_collection.insert_one(
-            token.model_dump(by_alias=True, exclude={"id"})
+        issued_token = await self.auth_collection.find_one_and_update(
+            filter={'user_id': user_id},
+            update={'$set': token.model_dump(by_alias=True,exclude={'id'})},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
         )
-        saved_token = await self.auth_collection.find_one(
-            {"_id": result.inserted_id}
-        )
-        assert(saved_token is not None)
-        return Token(**saved_token)
+        return Token(**issued_token)
 
 
     async def get_token(self, id: UUID) -> Token | None:

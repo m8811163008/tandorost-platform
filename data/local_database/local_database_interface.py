@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+
+from bson import ObjectId
 from domain_models.user import UserInDB
 from data.local_database.model.token import Token
 from uuid import UUID
@@ -21,9 +23,15 @@ class DatabaseInterface(ABC):
         """Retrieve a user from the database."""
         pass
 
+    @abstractmethod
+    async def clear(self):
+        """For debugging. Use with caution."""
+        pass
+
+
     #Auth methods
     @abstractmethod
-    async def save_token(self, token: Token) -> Token:
+    async def save_token(self, token: Token, user_id: ObjectId) -> Token:
         """Save a user token to the database."""
         pass
 

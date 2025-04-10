@@ -11,7 +11,7 @@ class ApiResponse:
     def __init__(
         self,
         status: ResponseStatus,
-        message: str,
+        message: str | None,
         data: str | None = None,
         error_detail: str | None = None,
     ):
@@ -25,7 +25,7 @@ class ApiResponse:
         self.error_detail = error_detail
 
     @classmethod
-    def success(cls, message: str, data: Any = None) -> "ApiResponse":
+    def success(cls, message: str | None = None, data: Any = None) -> "ApiResponse":
         """Named constructor for success responses."""
         return cls(status=ResponseStatus.SUCCESS, message=message, data=data)
 

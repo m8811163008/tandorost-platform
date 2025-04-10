@@ -5,6 +5,6 @@ from data.remote_api.model.verify_phone_number_config import VerifyPhoneNumberDe
 class RemoteApiInterface(ABC):
     # Users methods
     @abstractmethod
-    async def verify_phone_number(self, detail : VerifyPhoneNumberDetail):
+    async def send_verification_code(self, detail : VerifyPhoneNumberDetail):
         """Verify phone number."""
         pass
