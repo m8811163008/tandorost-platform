@@ -8,9 +8,8 @@ from utility.translation_utils import translation_manager
 from utility.accept_language import get_accept_language
 
 
-# app = FastAPI(root_path="/api/v1", dependencies=[Depends(get_accept_language)])
-# We set root path in proxy of the server so the request redirects to /api/v1
-app = FastAPI( dependencies=[Depends(get_accept_language)])
+app = FastAPI(root_path="/api/v1", dependencies=[Depends(get_accept_language)])
+
 
 
 # Initialize routers
