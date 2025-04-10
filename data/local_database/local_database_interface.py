@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 from bson import ObjectId
-from domain_models.user import UserInDB
-from data.local_database.model.token import Token
+from domain_models import UserInDB
+from data.local_database import Token
 from uuid import UUID
 
 

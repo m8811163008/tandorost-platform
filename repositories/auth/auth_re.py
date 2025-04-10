@@ -2,17 +2,9 @@
 from datetime import timedelta
 from uuid import UUID
 
-from data.local_database.local_database_interface import DatabaseInterface
-from data.remote_api.model.verify_phone_number_config import VerifyPhoneNumberDetail
-from data.local_database.model.token import Token
-from domain_models.exceptions import  InvalidPassword, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, InvalidVerificationCode
-from domain_models.data_models import  NetworkConnectionError
-from domain_models.data_models import HTTPStatusError
-
-from data.remote_api.remote_api_interface import RemoteApiInterface
-from domain_models.user import UserInDB
-from domain_models.verification_code import VerificationCode
-from domain_models.verification_type import VerificationType
+from data.local_database import DatabaseInterface, Token
+from data.remote_api import VerifyPhoneNumberDetail, RemoteApiInterface
+from domain_models import InvalidPassword, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, InvalidVerificationCode, NetworkConnectionError, HTTPStatusError,UserInDB,VerificationCode,VerificationType
 from repositories.auth.utility import create_access_token, get_password_hash,is_valid_password
 from utility.envirement_variables import EnvirenmentVariable
 

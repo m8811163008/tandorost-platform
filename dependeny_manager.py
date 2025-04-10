@@ -1,9 +1,9 @@
-from data.local_database.local_database_impl import LocalDataBaseImpl
-from utility.envirement_variables import EnvirenmentVariable
-from data.remote_api.remote_api_impl import RemoteApiImpl
-from domain_models.data_models import SMSPanelCongif
-from repositories.auth.auth_re import AuthRepository
-from repositories.user.user import UserRepository
+from data.local_database import LocalDataBaseImpl
+from utility import EnvirenmentVariable
+from data.remote_api import RemoteApiImpl
+from domain_models import SMSPanelCongif
+from repositories.auth import AuthRepository
+from repositories.user import UserRepository
 
 class DependencyManager():
     def __init__(self) -> None:

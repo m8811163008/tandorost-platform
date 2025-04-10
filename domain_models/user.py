@@ -1,7 +1,5 @@
-from domain_models.pydantic_object_id import ObjectId
+from domain_models import ObjectId, VerificationCode
 from pydantic import  BaseModel, Field
-
-from domain_models.verification_code import VerificationCode
 
 class User(BaseModel):
     username: str

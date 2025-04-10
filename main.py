@@ -1,16 +1,17 @@
 
 from fastapi import  FastAPI , Depends
-import routes.auth.auth as auth
-import routes.user.user as user
+import routes.auth as auth
+import routes.user as user
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
-from utility.translation_keys import TranslationKeys
-from utility.translation_utils import translation_manager
-from utility.accept_language import get_accept_language
+
+from utility import (
+    get_accept_language, 
+    translation_manager, 
+    TranslationKeys
+)
 
 
 app = FastAPI(root_path="/api/v1", dependencies=[Depends(get_accept_language)])
-
-
 
 # Initialize routers
 app.include_router(auth.router)

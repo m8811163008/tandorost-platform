@@ -1,9 +1,7 @@
 
 from fastapi import  APIRouter
 from dependeny_manager import dm
-
-
-from domain_models.user import User
+from domain_models import User
 
 # MongoDB configuration
 # MONGO_URI = "mongodb://localhost:27017"

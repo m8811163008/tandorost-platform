@@ -1,9 +1,6 @@
-from domain_models.exceptions import VerifiationCodeRequestReachedLimit
+from domain_models import VerifiationCodeRequestReachedLimit
 from datetime import datetime
 from dependeny_manager import dm  
-
-
-
 
 async def check_verify_rate_limit(phonenumber: str, rate_limit_second: int):
     user = await dm.user_repo.get_user(user_name= phonenumber)

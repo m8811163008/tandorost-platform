@@ -2,15 +2,11 @@
 
 from random import Random
 from fastapi import APIRouter, Form
-from domain_models.exceptions import  InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit
-from domain_models.data_models import NetworkConnectionError
-from domain_models.response_model import ApiResponse
-from domain_models.verification_code import VerificationCode
+from domain_models import InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError,ApiResponse,VerificationCode,VerificationType
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from typing import Annotated, Any
 from datetime import datetime
 from fastapi import Depends, HTTPException, status
-from domain_models.verification_type import VerificationType
 from utility.envirement_variables import EnvirenmentVariable
 from utility.rate_limiter import check_verify_rate_limit
 from utility.translation_keys import TranslationKeys
@@ -128,32 +124,6 @@ async def login_for_access_token(
     return ApiResponse.success(data=token.model_dump_json()).to_dict()
     
 
-
-
 @router.get("/items/")
 async def read_items(token: Annotated[str, Depends(oauth2_scheme)]):
     return {"token": token}
-
-
-
-# async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
-#     credentials_exception = HTTPException(
-#         status_code=status.HTTP_401_UNAUTHORIZED,
-#         detail=ApiResponse.error(message=TranslationKeys.INVALID_CREDENTIALS, error_detail= TranslationKeys.INVALID_CREDENTIALS).to_dict(),
-#         headers={"WWW-Authenticate": "Bearer"},
-#     )
-    
-#     try:
-#         payload = jwt.decode(token, ey = EnvirenmentVariable.SECRET_KEY(), algorithms=[EnvirenmentVariable.ALGORITHM()]) # type: ignore
-#         username = payload.get("sub")
-#         if username is None:
-#             raise credentials_exception
-#         # token_data = TokenData(username=username)
-#     except InvalidTokenError:
-#         raise credentials_exception
-#     user = await get_user(user_name=username)
-#     if user is None:
-#         raise credentials_exception
-#     return user
-
-

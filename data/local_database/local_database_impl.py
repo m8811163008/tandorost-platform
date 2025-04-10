@@ -7,13 +7,13 @@ from motor.motor_asyncio import (
 from typing import Any
 from uuid import UUID
 from pymongo import ReturnDocument
-from data.local_database.local_database_interface import DatabaseInterface
-from domain_models.exceptions import DocumentNotFound
-from data.local_database.model.token import Token
+from data.local_database import (
+    DatabaseInterface, 
+    Token
+)
+from domain_models import (DocumentNotFound, UserInDB)
 
 
-from domain_models.user import UserInDB
-# TODO export and import data models to domain model
 class LocalDataBaseImpl(DatabaseInterface):
     def __init__(self, uri: str, database_name: str):
         self.client: AsyncIOMotorClient[dict[str,Any]] = AsyncIOMotorClient(uri)

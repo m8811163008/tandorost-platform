@@ -1,8 +1,7 @@
 
 
-from data.local_database.local_database_interface import DatabaseInterface
-from domain_models.exceptions import UsernameAlreadyInUse
-from domain_models.user import UserInDB
+from data.local_database import DatabaseInterface
+from domain_models import UsernameAlreadyInUse, UserInDB
 
 class UserRepository:
     def __init__(self, database: DatabaseInterface):
