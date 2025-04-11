@@ -20,6 +20,11 @@ class DatabaseInterface(ABC):
         """For debugging. Use with caution."""
         pass
 
+    @abstractmethod
+    async def read_user(self, username: str) -> UserInDB | None:
+        """Retrieve a user from the database."""
+        pass
+
     # Users methods
     @abstractmethod
     async def create_user(self, user: UserInDB) -> str:
@@ -31,10 +36,6 @@ class DatabaseInterface(ABC):
         """Update a user in the database."""
         pass
 
-    @abstractmethod
-    async def read_user(self, username: str) -> UserInDB | None:
-        """Retrieve a user from the database."""
-        pass
 
     # User demographic data
     @abstractmethod

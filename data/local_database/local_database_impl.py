@@ -13,18 +13,30 @@ from data.local_database import (
 )
 from domain_models import (DocumentNotFound, UserInDB)
 
+from domain_models.user_bio_data import UserBioData
+from domain_models.user_files import UserStaticFiles
+
 
 class LocalDataBaseImpl(DatabaseInterface):
     def __init__(self, uri: str, database_name: str):
         self.client: AsyncIOMotorClient[dict[str,Any]] = AsyncIOMotorClient(uri)
         self.db :AsyncIOMotorDatabase[dict[str,Any]] = self.client[database_name]
-        self.user_collection : AsyncIOMotorCollection[dict[str,Any]] = self.db["users"]
-        self.auth_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["tokens"]
+        self.user_collection : AsyncIOMotorCollection[dict[str,Any]] = self.db["UserCollection"]
+        self.auth_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TokenCollection"]
+        self.user_bio_data_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserBioDataCollection"]
+        self.user_static_file_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserStaticsFileCollection"]
 
     async def clear(self):
         await self.user_collection.delete_many({})
         await self.auth_collection.delete_many({})
         print('*****Database cleared!*****')
+
+    async def read_user(self, username:str) -> UserInDB | None:
+        """Retrieve a user token from the database."""
+        user_data = await self.user_collection.find_one({"username": username})
+        if user_data is None:
+            return None
+        return UserInDB(**user_data)
 
     async def create_user(self, user: UserInDB) -> str:
         """Save a user token to the database."""
@@ -54,12 +66,86 @@ class LocalDataBaseImpl(DatabaseInterface):
         raise DocumentNotFound()
 
 
-    async def read_user(self, username:str) -> UserInDB | None:
+    async def create_user_bio_data(self, user_bio_data: UserBioData)-> str:
         """Retrieve a user token from the database."""
-        user_data = await self.user_collection.find_one({"username": username})
+        result = await self.user_bio_data_collection.insert_one(
+            user_bio_data.model_dump(by_alias=True, exclude={"id"})
+        )
+        return result.inserted_id
+        
+
+    async def update_user_bio_data(self, user_id : ObjectId, user_bio_data: UserBioData)-> UserBioData:
+        """Update user data"""
+        user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
+            raise DocumentNotFound()
+        user_dict = {
+            k: v for k, v in user_bio_data.model_dump(by_alias=True).items() if v is not None
+        }
+        if len(user_dict) >= 1:
+            update_result = await self.user_bio_data_collection.find_one_and_update(
+                {"user_id": ObjectId(user_id)},
+                {"$set": user_dict},
+                return_document=ReturnDocument.AFTER,
+            )
+            if len(update_result) != 0:
+                return UserBioData(**update_result)
+            else:
+                raise DocumentNotFound()
+        # The update is empty, but we should still return the matching document:
+        existing_user_bio_data = await self.user_bio_data_collection.find_one({"user_id": id})
+        if existing_user_bio_data is not None:
+            return UserBioData(**existing_user_bio_data)
+        raise DocumentNotFound()
+
+
+    async def read_user_bio_data(self, user_id:ObjectId) -> UserBioData | None:
+        """Read user data"""
+        user_bio_data = await self.user_bio_data_collection.find_one({"user_id": user_id})
+        if user_bio_data is None:
             return None
-        return UserInDB(**user_data)
+        return UserBioData(**user_bio_data)
+
+    # User files data
+
+    async def create_user_files(self, user_file :UserStaticFiles) -> str :
+        result = await self.user_static_file_collection.insert_one(
+            user_file.model_dump(by_alias=True, exclude={"id"})
+        )
+        return result.inserted_id
+
+    async def update_user_files(self, user_id:ObjectId,user_file :UserStaticFiles) -> UserStaticFiles | None:
+        """Update user static files data"""
+        user_data = await self.user_static_file_collection.find_one({"_id": user_id})
+        if user_data is None:
+            raise DocumentNotFound()
+        user_file_dict = {
+            k: v for k, v in user_file.model_dump(by_alias=True).items() if v is not None
+        }
+        if len(user_file_dict) >= 1:
+            update_result = await self.user_static_file_collection.find_one_and_update(
+                {"user_id": ObjectId(user_id)},
+                {"$set": user_file_dict},
+                return_document=ReturnDocument.AFTER,
+            )
+            if len(update_result) != 0:
+                return UserStaticFiles(**update_result)
+            else:
+                raise DocumentNotFound()
+        # The update is empty, but we should still return the matching document:
+        existing_user_files_data = await self.user_static_file_collection.find_one({"user_id": id})
+        if existing_user_files_data is not None:
+            return UserStaticFiles(**existing_user_files_data)
+        raise DocumentNotFound()
+
+
+
+    async def read_user_files(self, user_id:ObjectId,) -> UserStaticFiles | None:
+        user_files_data = await self.user_static_file_collection.find_one({"user_id": user_id})
+        if user_files_data is None:
+            return None
+        return UserStaticFiles(**user_files_data)
+
 
     # Auth methods
     async def save_token(self, token: Token, user_id : ObjectId) -> Token:
