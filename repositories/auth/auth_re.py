@@ -75,7 +75,7 @@ class AuthRepository:
     async def _upsert_user(self, code: VerificationCode, username : str, verification_type: VerificationType):
         user = await self.database.read_user(username=username)
         if user is None:
-            user = UserInDB(username=username, verification_code=code)
+            user = UserInDB(phone_number=username, verification_code=code)
             await self.database.create_user(user=user)
         else :
             if user.is_enabled and verification_type.is_register() :

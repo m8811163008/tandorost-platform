@@ -7,6 +7,12 @@ from uuid import UUID
 
 
 class DatabaseInterface(ABC):
+    # Clear the database , use with caution
+    @abstractmethod
+    async def clear(self):
+        """For debugging. Use with caution."""
+        pass
+
     # Users methods
     @abstractmethod
     async def create_user(self, user: UserInDB) -> str:
@@ -23,13 +29,13 @@ class DatabaseInterface(ABC):
         """Retrieve a user from the database."""
         pass
 
+    # User demographic data
     @abstractmethod
     async def clear(self):
         """For debugging. Use with caution."""
         pass
 
-
-    #Auth methods
+    # Auth methods
     @abstractmethod
     async def save_token(self, token: Token, user_id: ObjectId) -> Token:
         """Save a user token to the database."""

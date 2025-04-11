@@ -2,8 +2,8 @@ from enum import Enum
 
 
 class VerificationType(Enum):
-    REGISTER = 'REGISTER'
-    FORGOT_PASSWORD = 'FORGOT_PASSWORD'
+    REGISTER = 'register'
+    FORGOT_PASSWORD = 'forgot_password'
 
     def is_register(self) -> bool:
         return self == VerificationType.REGISTER

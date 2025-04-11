@@ -10,7 +10,7 @@ class UserRepository:
     async def create_user(self, user: UserInDB) -> str:
         """Save a user token to the database."""
         current_user = await self.database.read_user(
-            username= user.username 
+            username= user.phone_number 
         )
         if current_user is not None and current_user.is_enabled:
             raise UsernameAlreadyInUse()
