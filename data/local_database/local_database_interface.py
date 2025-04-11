@@ -31,7 +31,13 @@ class DatabaseInterface(ABC):
 
     # User demographic data
     @abstractmethod
-    async def clear(self):
+    async def read_user_bio_data(self, user_id:ObjectId):
+        """For debugging. Use with caution."""
+        pass
+
+    # User demographic data
+    @abstractmethod
+    async def read_user_files(self, user_id:ObjectId, ):
         """For debugging. Use with caution."""
         pass
 

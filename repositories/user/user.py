@@ -12,7 +12,7 @@ class UserRepository:
         current_user = await self.database.read_user(
             username= user.phone_number 
         )
-        if current_user is not None and current_user.is_enabled:
+        if current_user is not None and current_user.is_active:
             raise UsernameAlreadyInUse()
         return await self.database.create_user(user=user)
     
