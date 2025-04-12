@@ -25,6 +25,11 @@ class DatabaseInterface(ABC):
         """Retrieve a user from the database."""
         pass
 
+    @abstractmethod
+    async def read_user_by_id(self, user_id : ObjectId) -> UserInDB | None:
+        """Retrieve a user from the database."""
+        pass
+
     # Users methods
     @abstractmethod
     async def create_user(self, user: UserInDB) -> ObjectId:
@@ -32,7 +37,7 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def update_user(self, id: str, user: UserInDB) -> UserInDB:
+    async def update_user(self, id: ObjectId, user: UserInDB) -> UserInDB:
         """Update a user in the database."""
         pass
 

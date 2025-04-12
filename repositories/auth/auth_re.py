@@ -46,7 +46,8 @@ class AuthRepository:
         user.hashed_password = hashed_password
         if is_enabled is not None:
             user.is_active = is_enabled
-        return await self.database.update_user(id = user.id.__str__(), user=user)
+        assert(user.id is not None)
+        return await self.database.update_user(id = user.id, user=user)
     
 
     async def authenticate(self,username: str, password: str) :
@@ -82,4 +83,5 @@ class AuthRepository:
             if user.is_active and verification_type.is_register() :
                 raise UsernameAlreadyInUse() 
             user.verification_code = code
-            await self.database.update_user(id = user.id.__str__(), user=user)
+            assert(user.id is not None)
+            await self.database.update_user(id = user.id, user=user)

@@ -37,6 +37,13 @@ class LocalDataBaseImpl(DatabaseInterface):
         if user_data is None:
             return None
         return UserInDB(**user_data)
+    
+    async def read_user_by_id(self, user_id : ObjectId) -> UserInDB | None:
+        """Retrieve a user token from the database."""
+        user_data = await self.user_collection.find_one({"_id": user_id})
+        if user_data is None:
+            return None
+        return UserInDB(**user_data)
 
     async def create_user(self, user: UserInDB) -> ObjectId:
         """Save a user token to the database."""
@@ -45,13 +52,13 @@ class LocalDataBaseImpl(DatabaseInterface):
         )
         return result.inserted_id
     
-    async def update_user(self, id:str , user: UserInDB)-> UserInDB:
+    async def update_user(self, id:ObjectId , user: UserInDB)-> UserInDB:
         user_dict = {
             k: v for k, v in user.model_dump(by_alias=True).items() if v is not None
         }
         if len(user_dict) >= 1:
             update_result = await self.user_collection.find_one_and_update(
-                {"_id": oi(id)},
+                {"_id": id.__str__()},
                 {"$set": user_dict},
                 return_document=ReturnDocument.AFTER,
             )
