@@ -14,3 +14,4 @@ class TranslationKeys:
     USERNAME_IS_INACTIVE = "username_is_inactive"
     INVALID_PASSWORD = "invalid_password"
     PASSWORD_RESTORED = "password_restored"
+    INVALID_TOKEN = "invalid_token"

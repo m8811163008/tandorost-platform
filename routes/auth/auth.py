@@ -2,15 +2,20 @@
 
 from random import Random
 from fastapi import APIRouter, Form
+from jwt import InvalidTokenError
 from domain_models import InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError,ApiResponse,VerificationCode,VerificationType
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from typing import Annotated, Any
 from datetime import datetime
 from fastapi import Depends, HTTPException, status
-from utility.envirement_variables import EnvirenmentVariable
-from utility.rate_limiter import check_verify_rate_limit
-from utility.translation_keys import TranslationKeys
-from utility.translation_utils import translation_manager
+from utility import (
+    EnvirenmentVariable,
+    check_verify_rate_limit,
+    TranslationKeys,
+    decode_jwt_user_id,
+    # decode_jtw_user_id,
+    translation_manager
+)
 from dependeny_manager import dm  
 from utility.constants import token_url, verification_sms_panel_body_id
 
@@ -122,8 +127,16 @@ async def login_for_access_token(
         )
     token = await dm.auth_repo.issue_access_token(username= form_data.username,access_token_expire_minute=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
     return ApiResponse.success(data=token.model_dump_json()).to_dict()
-    
+
+
 
 @router.get("/items/")
 async def read_items(token: Annotated[str, Depends(oauth2_scheme)]):
-    return {"token": token}
+    try:
+        user_id = decode_jwt_user_id(token=token, secret_key=EnvirenmentVariable.SECRET_KEY(), algorithm=EnvirenmentVariable.ALGORITHM())
+        return {'user_id' : user_id}
+    except InvalidTokenError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail = ApiResponse.error(message='TranslationKeys.INVALID_TOKEN', error_detail=translation_manager.gettext(TranslationKeys.INVALID_TOKEN)).to_dict()
+        )

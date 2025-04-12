@@ -33,3 +33,6 @@ msgstr "Invalid password.Check password or restore password"
 
 msgid "password_restored"
 msgstr "Password successfully restored.You can login."
+
+msgid "invalid_token"
+msgstr "Invalid json web token. Please login again."

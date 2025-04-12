@@ -21,3 +21,4 @@ def create_access_token(data: dict[str, Any],key : str, algorithm: str, expires_
 
     encoded_jwt = jwt.encode(to_encode,key = key, algorithm = algorithm) # type: ignore
     return encoded_jwt
+

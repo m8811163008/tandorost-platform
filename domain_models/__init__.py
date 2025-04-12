@@ -5,3 +5,5 @@ from response_model import *
 from user import *
 from verification_code import *
 from verification_type import *
+from user_bio_data import *
+from user_files import *

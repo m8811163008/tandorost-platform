@@ -1,4 +1,4 @@
-from bson import ObjectId
+
 from motor.motor_asyncio import (
     AsyncIOMotorClient,
     AsyncIOMotorDatabase,
@@ -13,8 +13,10 @@ from data.local_database import (
 )
 from domain_models import (DocumentNotFound, UserInDB)
 
+from domain_models.pydantic_object_id import ObjectId
 from domain_models.user_bio_data import UserBioData
 from domain_models.user_files import UserStaticFiles
+from bson import ObjectId as oi
 
 
 class LocalDataBaseImpl(DatabaseInterface):
@@ -38,7 +40,7 @@ class LocalDataBaseImpl(DatabaseInterface):
             return None
         return UserInDB(**user_data)
 
-    async def create_user(self, user: UserInDB) -> str:
+    async def create_user(self, user: UserInDB) -> ObjectId:
         """Save a user token to the database."""
         result = await self.user_collection.insert_one(
             user.model_dump(by_alias=True, exclude={"id"})
@@ -51,7 +53,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         }
         if len(user_dict) >= 1:
             update_result = await self.user_collection.find_one_and_update(
-                {"_id": ObjectId(id)},
+                {"_id": oi(id)},
                 {"$set": user_dict},
                 return_document=ReturnDocument.AFTER,
             )
@@ -66,7 +68,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         raise DocumentNotFound()
 
 
-    async def create_user_bio_data(self, user_bio_data: UserBioData)-> str:
+    async def create_user_bio_data(self, user_bio_data: UserBioData)-> ObjectId:
         """Retrieve a user token from the database."""
         result = await self.user_bio_data_collection.insert_one(
             user_bio_data.model_dump(by_alias=True, exclude={"id"})
@@ -84,7 +86,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         }
         if len(user_dict) >= 1:
             update_result = await self.user_bio_data_collection.find_one_and_update(
-                {"user_id": ObjectId(user_id)},
+                {"user_id": oi(user_id)},
                 {"$set": user_dict},
                 return_document=ReturnDocument.AFTER,
             )
@@ -108,7 +110,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
     # User files data
 
-    async def create_user_files(self, user_file :UserStaticFiles) -> str :
+    async def create_user_files(self, user_file :UserStaticFiles) -> ObjectId :
         result = await self.user_static_file_collection.insert_one(
             user_file.model_dump(by_alias=True, exclude={"id"})
         )
@@ -124,7 +126,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         }
         if len(user_file_dict) >= 1:
             update_result = await self.user_static_file_collection.find_one_and_update(
-                {"user_id": ObjectId(user_id)},
+                {"user_id": oi(user_id)},
                 {"$set": user_file_dict},
                 return_document=ReturnDocument.AFTER,
             )

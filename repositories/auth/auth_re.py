@@ -63,7 +63,8 @@ class AuthRepository:
         assert(user is not None and user.id is not None)
         access_token_expires = timedelta(minutes=access_token_expire_minute)
         access_token = create_access_token(
-            data={"sub": username}, 
+            data={"sub": username,
+                  "user_id" : user.id}, 
             key = EnvirenmentVariable.SECRET_KEY(),
             algorithm= EnvirenmentVariable.ALGORITHM(),
             expires_delta=access_token_expires

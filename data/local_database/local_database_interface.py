@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 
-from bson import ObjectId
 from domain_models import UserInDB
 from data.local_database import Token
 from uuid import UUID
 
+from domain_models.pydantic_object_id import ObjectId
 from domain_models.user_bio_data import UserBioData
 from domain_models.user_files import UserStaticFiles
 
@@ -27,7 +27,7 @@ class DatabaseInterface(ABC):
 
     # Users methods
     @abstractmethod
-    async def create_user(self, user: UserInDB) -> str:
+    async def create_user(self, user: UserInDB) -> ObjectId:
         """Save a user to the database."""
         pass
 
@@ -39,7 +39,7 @@ class DatabaseInterface(ABC):
 
     # User demographic data
     @abstractmethod
-    async def create_user_bio_data(self, user_bio_data: UserBioData)-> str:
+    async def create_user_bio_data(self, user_bio_data: UserBioData)-> ObjectId:
         """Create user data and return its assigned ID"""
         pass
 
@@ -68,7 +68,7 @@ class DatabaseInterface(ABC):
         NotImplementedError: This method must be implemented in a subclass.
     """
     @abstractmethod
-    async def create_user_files(self, user_file :UserStaticFiles) -> str :
+    async def create_user_files(self, user_file :UserStaticFiles) -> ObjectId :
         pass
 
     @abstractmethod
