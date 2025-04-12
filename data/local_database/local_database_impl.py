@@ -7,15 +7,13 @@ from motor.motor_asyncio import (
 from typing import Any
 from uuid import UUID
 from pymongo import ReturnDocument
-from data.local_database import (
-    DatabaseInterface, 
-    Token
-)
-from domain_models import (DocumentNotFound, UserInDB)
-
-from domain_models.pydantic_object_id import ObjectId
-from domain_models.user_bio_data import UserBioData
-from domain_models.user_files import UserStaticFiles
+from data.local_database import Token
+from data.local_database.local_database_interface import DatabaseInterface
+from data.local_database.model.exceptions import DocumentNotFound
+from data.local_database.model.user import UserInDB
+from data.local_database.model.pydantic_object_id import ObjectId
+from data.local_database.model.user_bio_data import UserBioData
+from data.local_database.model.user_files import UserStaticFiles
 from bson import ObjectId as oi
 
 
@@ -35,7 +33,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
     async def read_user(self, username:str) -> UserInDB | None:
         """Retrieve a user token from the database."""
-        user_data = await self.user_collection.find_one({"username": username})
+        user_data = await self.user_collection.find_one({"phone_number": username})
         if user_data is None:
             return None
         return UserInDB(**user_data)

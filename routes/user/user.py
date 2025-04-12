@@ -1,7 +1,7 @@
 
 from fastapi import  APIRouter
-from dependeny_manager import dm
-from domain_models import User
+# from dependeny_manager import dm
+# from domain_models import User
 
 # MongoDB configuration
 # MONGO_URI = "mongodb://localhost:27017"
@@ -10,11 +10,11 @@ from domain_models import User
 
 router = APIRouter()
 
-@router.get("/users/{user_name}/")
-async def read_user(
-    user_name: str,
-) -> User | None:
-    return await dm.user_repo.get_user(user_name)
+# @router.get("/users/{user_name}/")
+# async def read_user(
+#     user_name: str,
+# ) -> User | None:
+#     return await dm.user_repo.get_user(user_name)
 
 
 # @app.get("/users/me/items/")

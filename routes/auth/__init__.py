@@ -1,2 +1,1 @@
-from auth import *
-from utility import *
+from .auth import *

@@ -4,7 +4,7 @@ from uuid import UUID
 
 from data.local_database import DatabaseInterface, Token
 from data.remote_api import VerifyPhoneNumberDetail, RemoteApiInterface
-from domain_models import InvalidPassword, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, InvalidVerificationCode, NetworkConnectionError, HTTPStatusError,UserInDB,VerificationCode,VerificationType
+from domain_models import InvalidPassword, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, InvalidVerificationCode, NetworkConnectionError, HTTPStatusError,VerificationCode,VerificationType, UserInDB
 from repositories.auth.utility import create_access_token, get_password_hash,is_valid_password
 from utility.envirement_variables import EnvirenmentVariable
 
@@ -64,7 +64,7 @@ class AuthRepository:
         access_token_expires = timedelta(minutes=access_token_expire_minute)
         access_token = create_access_token(
             data={"sub": username,
-                  "user_id" : user.id}, 
+                  "user_id" : user.id.__str__()}, 
             key = EnvirenmentVariable.SECRET_KEY(),
             algorithm= EnvirenmentVariable.ALGORITHM(),
             expires_delta=access_token_expires

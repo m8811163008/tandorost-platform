@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
 
-from domain_models import UserInDB
 from data.local_database import Token
 from uuid import UUID
-
-from domain_models.pydantic_object_id import ObjectId
-from domain_models.user_bio_data import UserBioData
-from domain_models.user_files import UserStaticFiles
+from data.local_database.model.pydantic_object_id import ObjectId
+from data.local_database.model.user import UserInDB
+from data.local_database.model.pydantic_object_id import ObjectId
+from data.local_database.model.user_bio_data import UserBioData
+from data.local_database.model.user_files import UserStaticFiles
 
 
 class DatabaseInterface(ABC):

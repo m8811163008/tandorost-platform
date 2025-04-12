@@ -2,7 +2,7 @@ from enum import Enum
 
 from pydantic import BaseModel, Field
 
-from domain_models.pydantic_object_id import ObjectId
+from data.local_database.model.pydantic_object_id import ObjectId
 
 
 class Gender(Enum):

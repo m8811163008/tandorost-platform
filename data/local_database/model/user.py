@@ -1,4 +1,5 @@
-from domain_models import ObjectId, VerificationCode
+from data.local_database.model.pydantic_object_id import ObjectId
+from domain_models.verification_code import VerificationCode
 from pydantic import  BaseModel, Field
 
 class Address(BaseModel):

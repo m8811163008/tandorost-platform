@@ -2,8 +2,6 @@
 class UsernameAlreadyInUse(Exception):
     pass
 
-class DocumentNotFound(Exception):
-    pass
 
 class UsernameNotRegisteredYet(Exception):
     pass

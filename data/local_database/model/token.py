@@ -1,7 +1,7 @@
 
 from pydantic import  BaseModel, Field
 
-from domain_models import ObjectId
+from data.local_database.model.pydantic_object_id import ObjectId
 
 class Token(BaseModel):
     id : ObjectId | None = Field(alias="_id", default= None)

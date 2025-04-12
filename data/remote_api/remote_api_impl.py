@@ -1,6 +1,7 @@
 from typing import Any
 import httpx
-from data.remote_api import RemoteApiInterface, SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
+from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
+from data.remote_api.remote_api_interface import RemoteApiInterface
 
 verify_end_point_uri = 'https://api.payamak-panel.com/post/Send.asmx/SendByBaseNumber'
 
