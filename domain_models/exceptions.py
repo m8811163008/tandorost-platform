@@ -2,7 +2,6 @@
 class UsernameAlreadyInUse(Exception):
     pass
 
-
 class UsernameNotRegisteredYet(Exception):
     pass
 

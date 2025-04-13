@@ -48,13 +48,13 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def create_user(self, user: UserInDB) -> ObjectId:
         """Save a user token to the database."""
         result = await self.user_collection.insert_one(
-            user.model_dump(by_alias=True, exclude={"id"})
+            user.model_dump(by_alias=True, exclude={"_id"})
         )
         return result.inserted_id
     
     async def update_user(self, id:ObjectId , user: UserInDB, exclude: IncEx | None = None)-> UserInDB:
         user_dict = {
-            k: v for k, v in user.model_dump(by_alias=True,exclude = exclude ).items() if v is not None
+            k: v for k, v in user.model_dump(by_alias=True,exclude = (exclude or set()).union({"id"})).items() if v is not None # type: ignore
         }
         if len(user_dict) >= 1:
             update_result = await self.user_collection.find_one_and_update(

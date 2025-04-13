@@ -60,10 +60,16 @@ async def register(
 ) -> dict[str, Any]:
     try:
         await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code)
+
     except UsernameNotRegisteredYet :
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail = ApiResponse.error(message='TranslationKeys.USERNAME_NOT_REGISTERED_YET', error_detail=translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=user_name)).to_dict()
+        )
+    except UsernameAlreadyInUse : 
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=ApiResponse.error(message='TranslationKeys.USERNAME_IN_USE', error_detail=translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=user_name)).to_dict()
         )
     except InvalidVerificationCode:
         raise HTTPException(

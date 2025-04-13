@@ -14,7 +14,6 @@ class AuthRepository:
         self.database = database
         self.remote_api = remote_api
 
-
     async def get_token(self, id: UUID) -> Token | None:
         return await self.database.get_token(id=id)
     
@@ -32,12 +31,12 @@ class AuthRepository:
         user = await self.database.read_user(username=username)
         if user is None :
             raise UsernameNotRegisteredYet()
+        if user.is_verified : 
+            raise UsernameAlreadyInUse()
         if user.verification_code is None:
             raise UsernameNotRegisteredYet()
         if user.verification_code.verification_code != verification_code:
             raise InvalidVerificationCode()
-
-    
 
     async def update_user_account(self, password: str, username:str, is_enabled : bool | None = None) -> UserInDB:
         user = await self.database.read_user(username=username)
@@ -72,6 +71,9 @@ class AuthRepository:
         )
         token_instance = Token(access_token=access_token, token_type="bearer", user_id= user.id)
         return await self.database.save_token(token=token_instance, user_id=user.id)
+    
+    async def read_user_by_usernme(self, username: str):
+        return await self.database.read_user(username=username)
         
         
     async def _upsert_user(self, code: VerificationCode, username : str, verification_type: VerificationType):

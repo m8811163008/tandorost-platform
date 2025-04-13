@@ -15,8 +15,6 @@ router = APIRouter(
     tags=["User"],
 )
 
-
-
 @router.get("/user_profile/")
 async def read_user(
     user_id: Annotated[ObjectId , Depends(jwt_user_id)],
@@ -40,7 +38,7 @@ async def update_user(
     user_id: Annotated[ObjectId , Depends(jwt_user_id)],
     user_profile : Annotated[UserInDB, Body()]
 ) :
-     user = await dm.user_repo.update_user(user_id=user_id, user=user_profile, exclude={"_id", "hashed_password", "verification_code", "is_verified"})
+     user = await dm.user_repo.update_user(user_id=user_id, user=user_profile, exclude={ "hashed_password", "verification_code", "is_verified"})
      if user is None:
          raise HTTPException(
              status_code= status.HTTP_404_NOT_FOUND,
