@@ -16,3 +16,4 @@ class TranslationKeys:
     PASSWORD_RESTORED = "password_restored"
     INVALID_TOKEN = "invalid_token"
     USER_NOT_FOUND = "user_not_found"
+    OBJECT_NOT_FOUND = "object_not_found"

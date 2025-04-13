@@ -29,7 +29,7 @@ async def read_user(
          )
      else:
          return ApiResponse.success(
-             data = user.model_dump()
+             data = user.model_dump(exclude={"verification_code", "hashed_password"})
          ).to_dict()
 
 @router.put("/update_profile/")
@@ -45,8 +45,9 @@ async def update_user(
          )
      else:
          return ApiResponse.success(
-             data = user.model_dump()
+             data = user.model_dump(exclude={"verification_code", "hashed_password"})
          ).to_dict()
+
 
 @router.put("/update_user_bio_data/")
 async def update_user_bio_data(
@@ -66,7 +67,24 @@ async def update_user_bio_data(
     return ApiResponse.success(
                 data = bio_data.model_dump()
             ).to_dict()
-         
+
+
+@router.get("/read_user_bio_data/")
+async def read_user_bio_data(
+    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
+) :
+    bio_data = await dm.user_repo.read_user_bio_data(
+        user_id=user_id,
+    )
+    if bio_data is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND)
+        )
+    return ApiResponse.success(
+                data = bio_data.model_dump()
+            ).to_dict()
+
 # @app.get("/users/me/items/")
 # async def read_own_items(
 #     current_user: Annotated[User, Depends(get_current_active_user)],

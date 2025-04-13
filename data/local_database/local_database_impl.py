@@ -55,11 +55,9 @@ class LocalDataBaseImpl(DatabaseInterface):
         )
         return result.inserted_id
     
-
-    
-    async def update_user(self, id:ObjectId , user: UserInDB, exclude: IncEx | None = None)-> UserInDB:
+    async def update_user(self, id:ObjectId , user: UserInDB)-> UserInDB:
         user_dict = {
-            k: v for k, v in user.model_dump(by_alias=True,exclude = _exclude_id(exclude)).items() if v is not None # type: ignore
+            k: v for k, v in user.model_dump(by_alias=True).items() if v is not None # type: ignore
         }
         if len(user_dict) >= 1:
             update_result = await self.user_collection.find_one_and_update(

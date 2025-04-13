@@ -3,11 +3,12 @@ from domain_models.verification_code import VerificationCode
 from pydantic import  BaseModel, Field
 
 class Address(BaseModel):
-    address_lines : str
-    city :str
-    state : str
-    postcode : str
-    country : str
+    address_lines : str | None = None
+    address_lines2 : str | None = None
+    city :str | None = None
+    state : str | None = None
+    postcode : str | None = None
+    country : str | None = None
 
 class UserInDB(BaseModel):
     id : ObjectId | None = Field(alias="_id", default= None, exclude= True)

@@ -39,3 +39,6 @@ msgstr "Invalid json web token."
 
 msgid "user_not_found"
 msgstr "Invalid user id."
+
+msgid "object_not_found"
+msgstr "Object not found."
