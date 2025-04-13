@@ -10,7 +10,7 @@ class Address(BaseModel):
     country : str
 
 class UserInDB(BaseModel):
-    id : ObjectId | None = Field(alias="_id", default= None)
+    id : ObjectId | None = Field(alias="_id", default= None, exclude= True)
     phone_number: str
     address : Address | None = None
     full_name: str | None = None

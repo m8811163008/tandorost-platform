@@ -4,8 +4,10 @@ from typing import Annotated
 from fastapi import  APIRouter, Body, Depends, HTTPException, status
 from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user import UserInDB
+from data.local_database.model.user_bio_data import UserBioData
 from dependeny_manager import dm
 from domain_models.response_model import ApiResponse
+from domain_models.user_bio_data_request import UserBioDataRequest
 from utility.decode_jwt_user_id import jwt_user_id
 from utility.translation_keys import TranslationKeys
 
@@ -27,10 +29,7 @@ async def read_user(
          )
      else:
          return ApiResponse.success(
-             data = user.model_dump(exclude={
-                 "hashed_password",
-                 "verification_code",
-             })
+             data = user.model_dump()
          ).to_dict()
 
 @router.put("/update_profile/")
@@ -38,7 +37,7 @@ async def update_user(
     user_id: Annotated[ObjectId , Depends(jwt_user_id)],
     user_profile : Annotated[UserInDB, Body()]
 ) :
-     user = await dm.user_repo.update_user(user_id=user_id, user=user_profile, exclude={ "hashed_password", "verification_code", "is_verified"})
+     user = await dm.user_repo.update_user(user_id=user_id, user=user_profile)
      if user is None:
          raise HTTPException(
              status_code= status.HTTP_404_NOT_FOUND,
@@ -46,13 +45,28 @@ async def update_user(
          )
      else:
          return ApiResponse.success(
-             data = user.model_dump(exclude={
-                 "hashed_password",
-                 "verification_code",
-             })
+             data = user.model_dump()
          ).to_dict()
 
-
+@router.put("/update_user_bio_data/")
+async def update_user_bio_data(
+    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
+    user_bio_data : Annotated[UserBioDataRequest, Body()]
+) :
+    
+    bio_data = await dm.user_repo.upsert_user_bio_data(
+        user_id=user_id,
+        user_bio_data=UserBioData(
+            user_id=user_id,
+            gender=user_bio_data.gender,
+            age=user_bio_data.age,
+            body_composition=user_bio_data.body_composition
+        )
+    )
+    return ApiResponse.success(
+                data = bio_data.model_dump()
+            ).to_dict()
+         
 # @app.get("/users/me/items/")
 # async def read_own_items(
 #     current_user: Annotated[User, Depends(get_current_active_user)],

@@ -8,7 +8,7 @@ class GallaryTag(Enum):
     CERTIFICATE = 'certificate'
 
 class UserStaticFiles(BaseModel):
-    id : ObjectId | None = Field(alias="_id", default= None)
+    id : ObjectId | None = Field(alias="_id", default= None, exclude= True)
     user_id : ObjectId
     profile_image : list[str]
     image_gallery : dict[str | GallaryTag, list[str]]

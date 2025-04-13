@@ -26,6 +26,9 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.user_bio_data_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserBioDataCollection"]
         self.user_static_file_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserStaticsFileCollection"]
 
+    def _exclude_id(exclude: IncEx | None) : # type: ignore
+        return (exclude or set()).union({"id"}) # type: ignore
+    
     async def clear(self):
         await self.user_collection.delete_many({})
         await self.auth_collection.delete_many({})
@@ -48,13 +51,15 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def create_user(self, user: UserInDB) -> ObjectId:
         """Save a user token to the database."""
         result = await self.user_collection.insert_one(
-            user.model_dump(by_alias=True, exclude={"_id"})
+            user.model_dump(by_alias=True)
         )
         return result.inserted_id
     
+
+    
     async def update_user(self, id:ObjectId , user: UserInDB, exclude: IncEx | None = None)-> UserInDB:
         user_dict = {
-            k: v for k, v in user.model_dump(by_alias=True,exclude = (exclude or set()).union({"id"})).items() if v is not None # type: ignore
+            k: v for k, v in user.model_dump(by_alias=True,exclude = _exclude_id(exclude)).items() if v is not None # type: ignore
         }
         if len(user_dict) >= 1:
             update_result = await self.user_collection.find_one_and_update(
@@ -76,18 +81,18 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def create_user_bio_data(self, user_bio_data: UserBioData)-> ObjectId:
         """Retrieve a user token from the database."""
         result = await self.user_bio_data_collection.insert_one(
-            user_bio_data.model_dump(by_alias=True, exclude={"id"})
+            user_bio_data.model_dump(by_alias=True)
         )
         return result.inserted_id
         
 
-    async def update_user_bio_data(self, user_id : ObjectId, user_bio_data: UserBioData)-> UserBioData:
+    async def update_user_bio_data(self, user_id : ObjectId, user_bio_data: UserBioData, exclude: IncEx | None = None)-> UserBioData:
         """Update user data"""
         user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
             raise DocumentNotFound()
         user_dict = {
-            k: v for k, v in user_bio_data.model_dump(by_alias=True).items() if v is not None
+            k: v for k, v in user_bio_data.model_dump(by_alias=True, exclude= _exclude_id(exclude)).items() if v is not None # type: ignore
         }
         if len(user_dict) >= 1:
             update_result = await self.user_bio_data_collection.find_one_and_update(
@@ -117,7 +122,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
     async def create_user_files(self, user_file :UserStaticFiles) -> ObjectId :
         result = await self.user_static_file_collection.insert_one(
-            user_file.model_dump(by_alias=True, exclude={"id"})
+            user_file.model_dump(by_alias=True)
         )
         return result.inserted_id
 
@@ -159,7 +164,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         """Save a user token to the database."""
         issued_token = await self.auth_collection.find_one_and_update(
             filter={'user_id': user_id},
-            update={'$set': token.model_dump(by_alias=True,exclude={'id'})},
+            update={'$set': token.model_dump(by_alias=True)},
             upsert=True,
             return_document=ReturnDocument.AFTER
         )

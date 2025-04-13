@@ -29,7 +29,7 @@ class BodyComposition(BaseModel):
     activity_level: list[ActivityLevel]
 
 class UserBioData (BaseModel):
-    id : ObjectId | None = Field(alias="_id", default= None)
+    id : ObjectId | None = Field(alias="_id", default= None, exclude= True)
     user_id : ObjectId
     gender : Gender
     age : int
