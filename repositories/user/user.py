@@ -1,5 +1,6 @@
 
 
+from fastapi.types import IncEx
 from data.local_database import DatabaseInterface
 from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user_bio_data import UserBioData
@@ -16,11 +17,12 @@ class UserRepository:
             user_id = user_id 
         )
     
-    async def update_user(self, user_id : ObjectId, user : UserInDB)-> UserInDB | None:
+    async def update_user(self, user_id : ObjectId, user : UserInDB, exclude: IncEx | None = None)-> UserInDB | None:
         """Retrieve a user from the database."""
         return await self.database.update_user(
             id = user_id ,
-            user=user
+            user=user,
+            exclude= exclude
         )
     
     

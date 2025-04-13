@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 
+from fastapi.types import IncEx
+
 from data.local_database import Token
 from uuid import UUID
 from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user import UserInDB
-from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user_bio_data import UserBioData
 from data.local_database.model.user_files import UserStaticFiles
 
@@ -37,7 +38,7 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def update_user(self, id: ObjectId, user: UserInDB) -> UserInDB:
+    async def update_user(self, id: ObjectId, user: UserInDB, exclude: IncEx | None = None) -> UserInDB:
         """Update a user in the database."""
         pass
 

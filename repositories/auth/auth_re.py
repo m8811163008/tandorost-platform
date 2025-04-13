@@ -45,7 +45,7 @@ class AuthRepository:
         hashed_password = get_password_hash(password=password)
         user.hashed_password = hashed_password
         if is_enabled is not None:
-            user.is_active = is_enabled
+            user.is_verified = is_enabled
         assert(user.id is not None)
         return await self.database.update_user(id = user.id, user=user)
     
@@ -54,7 +54,7 @@ class AuthRepository:
         user = await self.database.read_user(username)
         if user is None or user.hashed_password is None:
             raise UsernameNotRegisteredYet()
-        if user.is_active is False:
+        if user.is_verified is False:
             raise UsernameIsInactive()
         if is_valid_password(password, user.hashed_password) is False:
             raise InvalidPassword()
@@ -80,7 +80,7 @@ class AuthRepository:
             user = UserInDB(phone_number=username, verification_code=code)
             await self.database.create_user(user=user)
         else :
-            if user.is_active and verification_type.is_register() :
+            if user.is_verified and verification_type.is_register() :
                 raise UsernameAlreadyInUse() 
             user.verification_code = code
             assert(user.id is not None)

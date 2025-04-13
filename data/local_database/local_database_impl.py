@@ -1,4 +1,5 @@
 
+from fastapi.types import IncEx
 from motor.motor_asyncio import (
     AsyncIOMotorClient,
     AsyncIOMotorDatabase,
@@ -51,13 +52,13 @@ class LocalDataBaseImpl(DatabaseInterface):
         )
         return result.inserted_id
     
-    async def update_user(self, id:ObjectId , user: UserInDB)-> UserInDB:
+    async def update_user(self, id:ObjectId , user: UserInDB, exclude: IncEx | None = None)-> UserInDB:
         user_dict = {
-            k: v for k, v in user.model_dump(by_alias=True).items() if v is not None
+            k: v for k, v in user.model_dump(by_alias=True,exclude = exclude ).items() if v is not None
         }
         if len(user_dict) >= 1:
             update_result = await self.user_collection.find_one_and_update(
-                {"_id": id.__str__()},
+                {"_id": id},
                 {"$set": user_dict},
                 return_document=ReturnDocument.AFTER,
             )

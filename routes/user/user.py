@@ -1,8 +1,9 @@
 
 from typing import Annotated
 
-from fastapi import  APIRouter, Depends, HTTPException, status
+from fastapi import  APIRouter, Body, Depends, HTTPException, status
 from data.local_database.model.pydantic_object_id import ObjectId
+from data.local_database.model.user import UserInDB
 from dependeny_manager import dm
 from domain_models.response_model import ApiResponse
 from utility.decode_jwt_user_id import jwt_user_id
@@ -16,7 +17,7 @@ router = APIRouter(
 
 
 
-@router.get("/user_profile")
+@router.get("/user_profile/")
 async def read_user(
     user_id: Annotated[ObjectId , Depends(jwt_user_id)],
 ) :
@@ -27,14 +28,31 @@ async def read_user(
              detail=TranslationKeys.USER_NOT_FOUND
          )
      else:
-         data= user.model_dump(exclude={
+         return ApiResponse.success(
+             data = user.model_dump(exclude={
                  "hashed_password",
                  "verification_code",
              })
-         return ApiResponse.success(
-             data = data
          ).to_dict()
 
+@router.put("/update_profile/")
+async def update_user(
+    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
+    user_profile : Annotated[UserInDB, Body()]
+) :
+     user = await dm.user_repo.update_user(user_id=user_id, user=user_profile, exclude={"_id", "hashed_password", "verification_code", "is_verified"})
+     if user is None:
+         raise HTTPException(
+             status_code= status.HTTP_404_NOT_FOUND,
+             detail=TranslationKeys.USER_NOT_FOUND
+         )
+     else:
+         return ApiResponse.success(
+             data = user.model_dump(exclude={
+                 "hashed_password",
+                 "verification_code",
+             })
+         ).to_dict()
 
 
 # @app.get("/users/me/items/")

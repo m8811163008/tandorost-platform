@@ -17,7 +17,7 @@ class UserInDB(BaseModel):
     language: str = 'en'
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
-    is_active : bool = False
+    is_verified : bool = False
 
 
 
