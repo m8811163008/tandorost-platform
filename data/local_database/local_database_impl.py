@@ -11,10 +11,9 @@ from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.exceptions import DocumentNotFound
 from data.local_database.model.user import UserInDB
-from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user_bio_data import UserBioData
 from data.local_database.model.user_files import UserStaticFiles
-from bson import ObjectId as oi
+from bson import ObjectId
 
 
 class LocalDataBaseImpl(DatabaseInterface):
@@ -91,7 +90,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         }
         if len(user_dict) >= 1:
             update_result = await self.user_bio_data_collection.find_one_and_update(
-                {"user_id": oi(user_id)},
+                {"user_id": user_id},
                 {"$set": user_dict},
                 return_document=ReturnDocument.AFTER,
             )
@@ -131,7 +130,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         }
         if len(user_file_dict) >= 1:
             update_result = await self.user_static_file_collection.find_one_and_update(
-                {"user_id": oi(user_id)},
+                {"user_id": user_id},
                 {"$set": user_file_dict},
                 return_document=ReturnDocument.AFTER,
             )

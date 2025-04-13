@@ -15,3 +15,4 @@ class TranslationKeys:
     INVALID_PASSWORD = "invalid_password"
     PASSWORD_RESTORED = "password_restored"
     INVALID_TOKEN = "invalid_token"
+    USER_NOT_FOUND = "user_not_found"
