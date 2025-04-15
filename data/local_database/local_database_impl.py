@@ -57,7 +57,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         filter = {"phone_number": user.phone_number} if id is None else {"_id": id}
         update_result = await self.user_collection.find_one_and_update(
             filter=filter,
-            update={"$set": user.model_dump(exclude_none=True)},
+            update={"$set": user.model_dump(exclude_none=True, exclude={'id'})},
             upsert=True,
             return_document=ReturnDocument.AFTER,
         )
@@ -76,7 +76,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         await self._raise_for_invalid_user(user_id = user_id)
         update_result = await self.user_bio_data_collection.find_one_and_update(
                 filter={"user_id": user_id},
-                update={"$set": user_bio_data.model_dump(exclude_none=True)},
+                update={"$set": user_bio_data.model_dump(exclude_none=True, exclude={'id'})},
                 return_document=ReturnDocument.AFTER,
             )
         return UserBioData(**update_result)

@@ -6,8 +6,7 @@ from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
 from dependeny_manager import dm
-from domain_models.response_model import ApiResponse
-from domain_models.user_bio_data_request import UserBioDataRequest
+from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest
 from utility.decode_jwt_user_id import jwt_user_id
 from utility.translation_keys import TranslationKeys
 
@@ -18,14 +17,14 @@ router = APIRouter(
     #TOdo add dependency
 )
 
-async def read_user_or_raise(user_id: Annotated[ObjectId , Depends(jwt_user_id)])-> UserInDB:
+async def read_user_or_raise(user_id: Annotated[ObjectId , Depends(jwt_user_id)])-> ObjectId:
      user = await dm.user_repo.read_user(user_id=user_id)
-     if user is None:
-         raise HTTPException(
-             status_code= status.HTTP_404_NOT_FOUND,
-             detail=TranslationKeys.USER_NOT_FOUND
-         )
-     return user
+     if user is None or user.id is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=TranslationKeys.USER_NOT_FOUND,
+        )
+     return user.id
 
 @router.get("/user_profile/")
 async def read_user(
@@ -40,9 +39,10 @@ async def read_user(
 @router.put("/update_profile/")
 async def update_user(
     user_id: Annotated[ObjectId , Depends(read_user_or_raise)],
-    user_profile : Annotated[UserInDB, Body()]
+    user_profile : Annotated[UserUpdateRequest, Body()]
 ) :
-     user = await dm.user_repo.update_user(user_id=user_id, user=user_profile)
+     user_in_db = UserInDB(**user_profile.model_dump())
+     user = await dm.user_repo.update_user(user_id=user_id, user=user_in_db)
      if user is None:
          raise HTTPException(
              status_code= status.HTTP_404_NOT_FOUND,
