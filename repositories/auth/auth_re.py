@@ -1,6 +1,5 @@
 
 from datetime import timedelta
-from uuid import UUID
 
 from data.local_database import DatabaseInterface, Token
 from data.remote_api import VerifyPhoneNumberDetail, RemoteApiInterface
@@ -14,16 +13,19 @@ class AuthRepository:
         self.database = database
         self.remote_api = remote_api
 
-    async def get_token(self, id: UUID) -> Token | None:
-        return await self.database.get_token(id=id)
-    
+    # user name is phone number , in future change to use both email and phone number
     async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType):
+        user_in_db = await self.database.read_user(username=username)
+        if user_in_db is not None and user_in_db.is_verified:
+            raise UsernameAlreadyInUse()
+        user = UserInDB(phone_number=username, verification_code=code)
+        if user_in_db is None:
+            await self.database.upsert_user(user = user)
+        else:
+            await self.database.upsert_user(id = user_in_db.id, user=user)
         try:
-            await self._upsert_user(code= code, username = username, verification_type = verification_type)
             detail = VerifyPhoneNumberDetail(text=[code.verification_code],to=username, body_id=body_id )
             await self.remote_api.send_verification_code(detail=detail)
-        except UsernameAlreadyInUse as e:
-            raise e
         except (HTTPStatusError, NetworkConnectionError, Exception):
             raise NetworkConnectionError()
     
@@ -46,7 +48,7 @@ class AuthRepository:
         if is_enabled is not None:
             user.is_verified = is_enabled
         assert(user.id is not None)
-        return await self.database.update_user(id = user.id, user=user)
+        return await self.database.upsert_user(id = user.id, user=user)
     
 
     async def authenticate(self,username: str, password: str) :
@@ -72,18 +74,6 @@ class AuthRepository:
         token_instance = Token(access_token=access_token, token_type="bearer", user_id= user.id)
         return await self.database.upsert_token(token=token_instance, user_id=user.id)
     
-    async def read_user_by_usernme(self, username: str):
+    async def read_user_by_phone_number(self, username: str):
         return await self.database.read_user(username=username)
         
-        
-    async def _upsert_user(self, code: VerificationCode, username : str, verification_type: VerificationType):
-        user = await self.database.read_user(username=username)
-        if user is None:
-            user = UserInDB(phone_number=username, verification_code=code)
-            await self.database.create_user(user=user)
-        else :
-            if user.is_verified and verification_type.is_register() :
-                raise UsernameAlreadyInUse() 
-            user.verification_code = code
-            assert(user.id is not None)
-            await self.database.update_user(id = user.id, user=user)

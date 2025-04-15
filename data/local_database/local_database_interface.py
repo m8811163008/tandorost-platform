@@ -29,25 +29,17 @@ class DatabaseInterface(ABC):
         pass
 
     # Users methods
-    @abstractmethod
-    async def create_user(self, user: UserInDB) -> ObjectId:
-        """Save a user to the database."""
-        pass
 
     @abstractmethod
-    async def update_user(self, id: ObjectId, user: UserInDB) -> UserInDB:
+    async def upsert_user(self,user: UserInDB, id: ObjectId | None = None ) -> UserInDB:
         """Update a user in the database."""
         pass
 
 
     # User demographic data
-    @abstractmethod
-    async def create_user_bio_data(self, user_bio_data: UserBioData)-> ObjectId:
-        """Create user data and return its assigned ID"""
-        pass
 
     @abstractmethod
-    async def update_user_bio_data(self, user_id : ObjectId, user_bio_data: UserBioData)-> UserBioData:
+    async def upsert_user_bio_data(self, user_id : ObjectId, user_bio_data: UserBioData)-> UserBioData:
         """Update user data"""
         pass
 
@@ -56,26 +48,9 @@ class DatabaseInterface(ABC):
         """Read user data"""
         pass
 
-    # User files data
-    """
-    Abstract method to create user files in the local database.
-
-    Args:
-        user_file (UserStaticFiles): An instance of UserStaticFiles containing
-                                     the details of the user file to be created.
-
-    Returns:
-        str: A string representing the identifier or path of the created user file.
-
-    Raises:
-        NotImplementedError: This method must be implemented in a subclass.
-    """
-    @abstractmethod
-    async def create_user_files(self, user_file :UserStaticFiles) -> ObjectId :
-        pass
 
     @abstractmethod
-    async def update_user_files(self, user_id:ObjectId,user_file :UserStaticFiles) -> UserStaticFiles | None:
+    async def upsert_user_files(self, user_id:ObjectId,user_file :UserStaticFiles) -> UserStaticFiles | None:
         pass
 
 
@@ -86,7 +61,7 @@ class DatabaseInterface(ABC):
 
     # Auth methods
     @abstractmethod
-    async def upsert_token(self, token: Token, user_id: ObjectId) -> Token:
+    async def upsert_token(self, user_id: ObjectId, token: Token) -> Token:
         """Save a user token to the database."""
         pass
 
