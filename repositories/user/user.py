@@ -13,21 +13,20 @@ class UserRepository:
     async def read_user(self, user_id : UUID4) -> UserInDB | None:
         """Retrieve a user from the database."""
         return await self.database.read_user_by_id(
-            user_id = user_id 
+            user_id = str(user_id) 
         )
     
-    async def update_user(self, user_id : UUID4, user : UserInDB)-> UserInDB | None:
+    async def update_user(self, user : UserInDB)-> UserInDB | None:
         """Retrieve a user from the database."""
         return await self.database.upsert_user(
-            id = user_id ,
-            user=user,
+            user=user
         )
     
     async def read_user_bio_data(self, user_id:UUID4) -> UserBioData | None:
-        return await self.database.read_user_bio_data(user_id = user_id)
+        return await self.database.read_user_bio_data(user_id = str(user_id))
     
     async def upsert_user_bio_data(self,user_bio_data: UserBioData, user_id : UUID4 )-> UserBioData:
-        return await self.database.upsert_user_bio_data(user_id=user_id, user_bio_data=user_bio_data)
+        return await self.database.upsert_user_bio_data(user_id=str(user_id), user_bio_data=user_bio_data)
             
 
     

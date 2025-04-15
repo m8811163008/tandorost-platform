@@ -1,6 +1,6 @@
 from uuid import uuid4
 from domain_models.verification_code import VerificationCode
-from pydantic import  UUID4, BaseModel, Field,ConfigDict
+from pydantic import  UUID4, BaseModel, Field,ConfigDict, field_serializer
 
 class Address(BaseModel):
     address_lines : str | None = None
@@ -11,7 +11,7 @@ class Address(BaseModel):
     country : str | None = None
 
 class UserInDB(BaseModel):
-    id : UUID4 = Field(alias="_id", default= uuid4(), exclude= True)
+    id : UUID4 = Field(alias="_id", default= uuid4())
     phone_number: str
     address : Address | None = None
     full_name: str | None = None
@@ -22,6 +22,9 @@ class UserInDB(BaseModel):
     model_config = ConfigDict(use_enum_values=True,
                             arbitrary_types_allowed = True
                             )
+    @field_serializer('id')
+    def serialize_id(self, id: UUID4) -> str:
+        return str(id)
 
 
 

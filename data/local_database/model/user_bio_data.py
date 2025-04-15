@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import UUID4, BaseModel, ConfigDict, Field
+from pydantic import UUID4, BaseModel, ConfigDict, Field,field_serializer
 from uuid import uuid4
 
 class Gender(Enum):
@@ -29,7 +29,7 @@ class BodyComposition(BaseModel):
                               )
 
 class UserBioData (BaseModel):
-    id : UUID4 = Field(alias="_id", default= uuid4() , exclude= True)
+    id : UUID4 = Field(alias="_id", default= uuid4())
     user_id : UUID4
     gender : Gender
     age : int
@@ -38,3 +38,6 @@ class UserBioData (BaseModel):
                               arbitrary_types_allowed = True
                               )
 
+    @field_serializer('id')
+    def serialize_id(self, id: UUID4) -> str:
+        return str(id)

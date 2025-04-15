@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 
-from pydantic import UUID4
 from data.local_database import Token
 
 from data.local_database.model.user import UserInDB
@@ -25,14 +24,14 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def read_user_by_id(self, user_id : UUID4) -> UserInDB | None:
+    async def read_user_by_id(self, user_id : str) -> UserInDB | None:
         """Retrieve a user from the database."""
         pass
 
     # Users methods
 
     @abstractmethod
-    async def upsert_user(self,user: UserInDB, id: UUID4 | None = None ) -> UserInDB:
+    async def upsert_user(self,user: UserInDB ) -> UserInDB:
         """Update a user in the database."""
         pass
 
@@ -40,29 +39,29 @@ class DatabaseInterface(ABC):
     # User demographic data
 
     @abstractmethod
-    async def upsert_user_bio_data(self, user_id : UUID4, user_bio_data: UserBioData)-> UserBioData:
+    async def upsert_user_bio_data(self, user_id : str, user_bio_data: UserBioData)-> UserBioData:
         """Update user data"""
         pass
 
     @abstractmethod
-    async def read_user_bio_data(self, user_id:UUID4) -> UserBioData | None:
+    async def read_user_bio_data(self, user_id:str) -> UserBioData | None:
         """Read user data"""
         pass
 
 
     @abstractmethod
-    async def upsert_user_files(self, user_id:UUID4,user_file :UserStaticFiles) -> UserStaticFiles | None:
+    async def upsert_user_files(self, user_id:str,user_file :UserStaticFiles) -> UserStaticFiles | None:
         pass
 
 
     @abstractmethod
-    async def read_user_files(self, user_id:UUID4,) -> UserStaticFiles | None:
+    async def read_user_files(self, user_id:str,) -> UserStaticFiles | None:
         pass
 
 
     # Auth methods
     @abstractmethod
-    async def upsert_token(self, user_id: UUID4, token: Token) -> Token:
+    async def upsert_token(self, user_id: str, token: Token) -> Token:
         """Save a user token to the database."""
         pass
 

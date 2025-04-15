@@ -41,8 +41,10 @@ async def update_user(
     user_id: Annotated[UUID4 , Depends(read_user_or_raise)],
     user_profile : Annotated[UserUpdateRequest, Body()]
 ) :
-     user_in_db = UserInDB(**user_profile.model_dump())
-     user = await dm.user_repo.update_user(user_id=user_id, user=user_in_db)
+     user_dict = user_profile.model_dump()
+     user_dict['id'] = user_id
+     user_in_db = UserInDB( **user_dict )
+     user = await dm.user_repo.update_user( user=user_in_db)
      if user is None:
          raise HTTPException(
              status_code= status.HTTP_404_NOT_FOUND,

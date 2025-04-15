@@ -23,11 +23,8 @@ class AuthRepository:
             raise UsernameAlreadyInUse()
         
         user = UserInDB(phone_number=username, verification_code=code)
-        if user_in_db is None:
-            await self.database.upsert_user(user = user)
-        else:
-            await self.database.upsert_user(id = user_in_db.id, user=user)
-
+        await self.database.upsert_user(user=user)
+            
         try:
             detail = VerifyPhoneNumberDetail(text=[code.verification_code],to=username, body_id=body_id )
             await self.remote_api.send_verification_code(detail=detail)
@@ -38,8 +35,6 @@ class AuthRepository:
         user = await self.database.read_user(username=username)
         if user is None :
             raise UsernameNotRegisteredYet()
-        if user.is_verified : 
-            raise UsernameAlreadyInUse()
         if user.verification_code is None:
             raise UsernameNotRegisteredYet()
         if user.verification_code.verification_code != verification_code:
@@ -52,7 +47,7 @@ class AuthRepository:
         user.hashed_password = hashed_password
         user.is_verified = is_verified
         assert(user.id is not None)
-        return await self.database.upsert_user(id = user.id, user=user)
+        return await self.database.upsert_user(user=user)
     
 
     async def authenticate(self,username: str, password: str) :
@@ -76,7 +71,7 @@ class AuthRepository:
             expires_delta=access_token_expires
         )
         token_instance = Token(access_token=access_token, token_type="bearer", user_id= user.id)
-        return await self.database.upsert_token(token=token_instance, user_id=user.id)
+        return await self.database.upsert_token(token=token_instance, user_id=str(user.id))
     
     async def read_user_by_phone_number(self, username: str):
         return await self.database.read_user(username=username)
