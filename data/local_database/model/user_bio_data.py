@@ -1,9 +1,7 @@
 from enum import Enum
 
-from pydantic import BaseModel, ConfigDict, Field
-
-from data.local_database.model.pydantic_object_id import ObjectId
-
+from pydantic import UUID4, BaseModel, ConfigDict, Field
+from uuid import uuid4
 
 class Gender(Enum):
     MALE = 'male'
@@ -27,12 +25,16 @@ class BodyComposition(BaseModel):
     calf_muscle_circumference: list[float]
     hip_circumference: list[float]
     activity_level: list[ActivityLevel]
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True,
+                              )
 
 class UserBioData (BaseModel):
-    id : ObjectId | None = Field(alias="_id", default= None, exclude= True)
-    user_id : ObjectId
+    id : UUID4 = Field(alias="_id", default= uuid4() , exclude= True)
+    user_id : UUID4
     gender : Gender
     age : int
     body_composition : BodyComposition
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True,
+                              arbitrary_types_allowed = True
+                              )
+

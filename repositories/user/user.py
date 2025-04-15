@@ -1,7 +1,7 @@
 
 
+from pydantic import UUID4
 from data.local_database import DatabaseInterface
-from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user_bio_data import UserBioData
 from domain_models import  UserInDB
 
@@ -10,23 +10,23 @@ class UserRepository:
         self.database = database
 
     
-    async def read_user(self, user_id : ObjectId) -> UserInDB | None:
+    async def read_user(self, user_id : UUID4) -> UserInDB | None:
         """Retrieve a user from the database."""
         return await self.database.read_user_by_id(
             user_id = user_id 
         )
     
-    async def update_user(self, user_id : ObjectId, user : UserInDB)-> UserInDB | None:
+    async def update_user(self, user_id : UUID4, user : UserInDB)-> UserInDB | None:
         """Retrieve a user from the database."""
         return await self.database.upsert_user(
             id = user_id ,
             user=user,
         )
     
-    async def read_user_bio_data(self, user_id:ObjectId) -> UserBioData | None:
+    async def read_user_bio_data(self, user_id:UUID4) -> UserBioData | None:
         return await self.database.read_user_bio_data(user_id = user_id)
     
-    async def upsert_user_bio_data(self,user_bio_data: UserBioData, user_id : ObjectId )-> UserBioData:
+    async def upsert_user_bio_data(self,user_bio_data: UserBioData, user_id : UUID4 )-> UserBioData:
         return await self.database.upsert_user_bio_data(user_id=user_id, user_bio_data=user_bio_data)
             
 

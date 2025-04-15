@@ -1,6 +1,6 @@
-from data.local_database.model.pydantic_object_id import ObjectId
+from uuid import uuid4
 from domain_models.verification_code import VerificationCode
-from pydantic import  BaseModel, Field
+from pydantic import  UUID4, BaseModel, Field,ConfigDict
 
 class Address(BaseModel):
     address_lines : str | None = None
@@ -11,7 +11,7 @@ class Address(BaseModel):
     country : str | None = None
 
 class UserInDB(BaseModel):
-    id : ObjectId | None = Field(alias="_id", default= None, exclude= True)
+    id : UUID4 = Field(alias="_id", default= uuid4(), exclude= True)
     phone_number: str
     address : Address | None = None
     full_name: str | None = None
@@ -19,6 +19,9 @@ class UserInDB(BaseModel):
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
     is_verified : bool = False
+    model_config = ConfigDict(use_enum_values=True,
+                            arbitrary_types_allowed = True
+                            )
 
 
 

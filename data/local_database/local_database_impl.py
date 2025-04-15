@@ -7,6 +7,7 @@ from motor.motor_asyncio import (
 )
 from typing import Any
 
+from pydantic import UUID4
 from pymongo import ReturnDocument
 from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
@@ -14,7 +15,7 @@ from data.local_database.model.exceptions import DocumentNotFound
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
 from data.local_database.model.user_files import UserStaticFiles
-from bson import ObjectId
+
 
 
 class LocalDataBaseImpl(DatabaseInterface):
@@ -34,7 +35,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         await self.user_static_file_collection.delete_many({})
         print('*****Database cleared!*****')
 
-    async def _raise_for_invalid_user(self, user_id: ObjectId):
+    async def _raise_for_invalid_user(self, user_id: UUID4):
         user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
             raise DocumentNotFound()
@@ -46,31 +47,31 @@ class LocalDataBaseImpl(DatabaseInterface):
             return None
         return UserInDB(**user_data)
     
-    async def read_user_by_id(self, user_id : ObjectId) -> UserInDB | None:
+    async def read_user_by_id(self, user_id : UUID4) -> UserInDB | None:
         """Retrieve a user token from the database."""
         user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
             return None
         return UserInDB(**user_data)
     
-    async def upsert_user(self, user: UserInDB ,id:ObjectId | None = None)-> UserInDB:
+    async def upsert_user(self, user: UserInDB ,id:UUID4 | None = None)-> UserInDB:
         filter = {"phone_number": user.phone_number} if id is None else {"_id": id}
         update_result = await self.user_collection.find_one_and_update(
             filter=filter,
-            update={"$set": user.model_dump(exclude_none=True, exclude={'id'})},
+            update={"$set": user.model_dump(exclude_none=True)},
             upsert=True,
             return_document=ReturnDocument.AFTER,
         )
         return UserInDB(**update_result)
         
-    async def read_user_bio_data(self, user_id:ObjectId) -> UserBioData | None:
+    async def read_user_bio_data(self, user_id:UUID4) -> UserBioData | None:
         """Read user data"""
         user_bio_data = await self.user_bio_data_collection.find_one({"user_id": user_id})
         if user_bio_data is None:
             return None
         return UserBioData(**user_bio_data)
 
-    async def upsert_user_bio_data(self, user_id : ObjectId, user_bio_data: UserBioData, exclude: IncEx | None = None)-> UserBioData:
+    async def upsert_user_bio_data(self, user_id : UUID4, user_bio_data: UserBioData, exclude: IncEx | None = None)-> UserBioData:
         """Update user data"""
         #TODO TEST lists
         await self._raise_for_invalid_user(user_id = user_id)
@@ -78,12 +79,13 @@ class LocalDataBaseImpl(DatabaseInterface):
                 filter={"user_id": user_id},
                 update={"$set": user_bio_data.model_dump(exclude_none=True, exclude={'id'})},
                 return_document=ReturnDocument.AFTER,
+                upsert=True
             )
         return UserBioData(**update_result)
 
     # User files data
 
-    async def upsert_user_files(self, user_id:ObjectId,user_file :UserStaticFiles) -> UserStaticFiles | None:
+    async def upsert_user_files(self, user_id:UUID4,user_file :UserStaticFiles) -> UserStaticFiles | None:
         """Update user static files data"""
         await self._raise_for_invalid_user(user_id = user_id)
         # user_data = await self.user_static_file_collection.find_one({"_id": user_id})
@@ -110,7 +112,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
 
-    async def read_user_files(self, user_id:ObjectId,) -> UserStaticFiles | None:
+    async def read_user_files(self, user_id:UUID4,) -> UserStaticFiles | None:
         user_files_data = await self.user_static_file_collection.find_one({"user_id": user_id})
         if user_files_data is None:
             return None
@@ -118,7 +120,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     # Auth methods
-    async def upsert_token(self, user_id : ObjectId, token: Token) -> Token:
+    async def upsert_token(self, user_id : UUID4, token: Token) -> Token:
         """Save a user token to the database."""
         result =  await self.auth_collection.find_one_and_update(
             filter={'user_id': user_id},
