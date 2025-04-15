@@ -15,26 +15,31 @@ from utility.translation_keys import TranslationKeys
 router = APIRouter(
     prefix="/user",
     tags=["User"],
+    #TOdo add dependency
 )
 
-@router.get("/user_profile/")
-async def read_user(
-    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
-) :
+async def read_user_or_raise(user_id: Annotated[ObjectId , Depends(jwt_user_id)])-> UserInDB:
      user = await dm.user_repo.read_user(user_id=user_id)
      if user is None:
          raise HTTPException(
              status_code= status.HTTP_404_NOT_FOUND,
              detail=TranslationKeys.USER_NOT_FOUND
          )
-     else:
-         return ApiResponse.success(
-             data = user.model_dump(exclude={"verification_code", "hashed_password"})
-         ).to_dict()
+     return user
+
+@router.get("/user_profile/")
+async def read_user(
+    user_id: Annotated[ObjectId , Depends(read_user_or_raise)],
+) :
+    user = await dm.user_repo.read_user(user_id=user_id)
+    assert(user is not None)
+    return ApiResponse.success(
+        data = user.model_dump(exclude={"verification_code", "hashed_password"})
+    ).to_dict()
 
 @router.put("/update_profile/")
 async def update_user(
-    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
+    user_id: Annotated[ObjectId , Depends(read_user_or_raise)],
     user_profile : Annotated[UserInDB, Body()]
 ) :
      user = await dm.user_repo.update_user(user_id=user_id, user=user_profile)
@@ -51,10 +56,9 @@ async def update_user(
 
 @router.put("/update_user_bio_data/")
 async def update_user_bio_data(
-    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
+    user_id: Annotated[ObjectId , Depends(read_user_or_raise)],
     user_bio_data : Annotated[UserBioDataRequest, Body()]
 ) :
-    
     bio_data = await dm.user_repo.upsert_user_bio_data(
         user_id=user_id,
         user_bio_data=UserBioData(
@@ -71,7 +75,7 @@ async def update_user_bio_data(
 
 @router.get("/read_user_bio_data/")
 async def read_user_bio_data(
-    user_id: Annotated[ObjectId , Depends(jwt_user_id)],
+    user_id: Annotated[ObjectId , Depends(read_user_or_raise)],
 ) :
     bio_data = await dm.user_repo.read_user_bio_data(
         user_id=user_id,

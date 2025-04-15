@@ -8,21 +8,24 @@ from repositories.auth.utility import create_access_token, get_password_hash,is_
 from utility.envirement_variables import EnvirenmentVariable
 
 
+
 class AuthRepository:
     def __init__(self, database: DatabaseInterface, remote_api:RemoteApiInterface):
         self.database = database
         self.remote_api = remote_api
 
-    # user name is phone number , in future change to use both email and phone number
+    #TODO user name is phone number , in future change to use both email and phone number
     async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType):
         user_in_db = await self.database.read_user(username=username)
-        if user_in_db is not None and user_in_db.is_verified:
+        if user_in_db is not None and user_in_db.is_verified and verification_type.is_register():
             raise UsernameAlreadyInUse()
+        
         user = UserInDB(phone_number=username, verification_code=code)
         if user_in_db is None:
             await self.database.upsert_user(user = user)
         else:
             await self.database.upsert_user(id = user_in_db.id, user=user)
+
         try:
             detail = VerifyPhoneNumberDetail(text=[code.verification_code],to=username, body_id=body_id )
             await self.remote_api.send_verification_code(detail=detail)

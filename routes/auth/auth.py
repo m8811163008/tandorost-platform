@@ -12,8 +12,7 @@ from utility import (
     translation_manager
 )
 from dependeny_manager import dm  
-from utility.constants import  verification_sms_panel_body_id
-
+from utility.constants import  verification_sms_panel_body_id, rate_limit_second
 
 
 router = APIRouter(
@@ -27,9 +26,9 @@ async def verify(
     verification_type : VerificationType
 ):  
     try:
-        await check_verify_rate_limit(phonenumber=phone_number, rate_limit_second=120)
+        await check_verify_rate_limit(phonenumber=phone_number, rate_limit_second=rate_limit_second)
     except VerifiationCodeRequestReachedLimit as e:
-        message =translation_manager.gettext(TranslationKeys.RATE_LIMIT_REACH).format(second= e.seconds_left)
+        message = translation_manager.gettext(TranslationKeys.RATE_LIMIT_REACH).format(second= e.seconds_left)
         raise HTTPException(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
             detail= ApiResponse.error(message='TranslationKeys.RATE_LIMIT_REACH', error_detail=message).to_dict()
