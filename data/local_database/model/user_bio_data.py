@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 from data.local_database.model.pydantic_object_id import ObjectId
 
@@ -27,6 +27,7 @@ class BodyComposition(BaseModel):
     calf_muscle_circumference: list[float]
     hip_circumference: list[float]
     activity_level: list[ActivityLevel]
+    model_config = ConfigDict(use_enum_values=True)
 
 class UserBioData (BaseModel):
     id : ObjectId | None = Field(alias="_id", default= None, exclude= True)
@@ -34,3 +35,4 @@ class UserBioData (BaseModel):
     gender : Gender
     age : int
     body_composition : BodyComposition
+    model_config = ConfigDict(use_enum_values=True)

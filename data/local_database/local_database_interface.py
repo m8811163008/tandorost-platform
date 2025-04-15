@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from data.local_database import Token
-from uuid import UUID
+
 from data.local_database.model.pydantic_object_id import ObjectId
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
@@ -86,11 +86,7 @@ class DatabaseInterface(ABC):
 
     # Auth methods
     @abstractmethod
-    async def save_token(self, token: Token, user_id: ObjectId) -> Token:
+    async def upsert_token(self, token: Token, user_id: ObjectId) -> Token:
         """Save a user token to the database."""
         pass
 
-    @abstractmethod
-    async def get_token(self, id: UUID) -> Token | None:
-        """Retrieve a user token from the database."""
-        pass

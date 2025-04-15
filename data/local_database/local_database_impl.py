@@ -6,7 +6,7 @@ from motor.motor_asyncio import (
     AsyncIOMotorCollection,
 )
 from typing import Any
-from uuid import UUID
+
 from pymongo import ReturnDocument
 from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
@@ -158,20 +158,14 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     # Auth methods
-    async def save_token(self, token: Token, user_id : ObjectId) -> Token:
+    async def upsert_token(self, token: Token, user_id : ObjectId) -> Token:
         """Save a user token to the database."""
-        issued_token = await self.auth_collection.find_one_and_update(
-            filter={'user_id': user_id},
-            update={'$set': token.model_dump(by_alias=True)},
+        result =  await self.auth_collection.find_one_and_update(
+            filter={'user_id': user_id.__str__()},
+            update={'$set' : token.model_dump(exclude={'id'}),},
             upsert=True,
             return_document=ReturnDocument.AFTER
         )
-        return Token(**issued_token)
+        return Token(**result)
 
-
-    async def get_token(self, id: UUID) -> Token | None:
-        """Retrieve a user token from the database."""
-        token_data = await self.auth_collection.find_one({"_id": id})
-        if token_data:
-            return Token(**token_data)
-        return None
+        

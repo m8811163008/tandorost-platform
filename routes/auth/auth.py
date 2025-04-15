@@ -127,6 +127,3 @@ async def login_for_access_token(
         )
     token = await dm.auth_repo.issue_access_token(username= form_data.username,access_token_expire_minute=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
     return ApiResponse.success(data=token.model_dump_json()).to_dict()
-
-
-

@@ -17,7 +17,7 @@ class AuthRepository:
     async def get_token(self, id: UUID) -> Token | None:
         return await self.database.get_token(id=id)
     
-    async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType   ):
+    async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType):
         try:
             await self._upsert_user(code= code, username = username, verification_type = verification_type)
             detail = VerifyPhoneNumberDetail(text=[code.verification_code],to=username, body_id=body_id )
@@ -70,7 +70,7 @@ class AuthRepository:
             expires_delta=access_token_expires
         )
         token_instance = Token(access_token=access_token, token_type="bearer", user_id= user.id)
-        return await self.database.save_token(token=token_instance, user_id=user.id)
+        return await self.database.upsert_token(token=token_instance, user_id=user.id)
     
     async def read_user_by_usernme(self, username: str):
         return await self.database.read_user(username=username)
