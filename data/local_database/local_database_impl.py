@@ -1,4 +1,5 @@
 
+from uuid import uuid4
 from motor.motor_asyncio import (
     AsyncIOMotorClient,
     AsyncIOMotorDatabase,
@@ -40,9 +41,9 @@ class LocalDataBaseImpl(DatabaseInterface):
         if user_data is None:
             raise DocumentNotFound()
 
-    async def read_user(self, username:str) -> UserInDB | None:
+    async def read_user_by_phone_number(self, phone_number:str) -> UserInDB | None:
         """Retrieve a user token from the database."""
-        user_data = await self.user_collection.find_one({"phone_number": username})
+        user_data = await self.user_collection.find_one({"phone_number": phone_number})
         if user_data is None:
             return None
         return UserInDB(**user_data)
@@ -51,16 +52,16 @@ class LocalDataBaseImpl(DatabaseInterface):
     
     async def read_user_by_id(self, user_id : str) -> UserInDB | None:
         """Retrieve a user token from the database."""
-        for x in await self.user_collection.find({}).to_list():
-            print(x)
         user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
             return None
         return UserInDB(**user_data)
     
     async def upsert_user(self, user: UserInDB)-> UserInDB:
+        if user.id is None:
+            user.id = str(uuid4())
         update_result = await self.user_collection.find_one_and_update(
-            filter={"phone_number": user.phone_number},
+            filter={"_id": user.id},
             update={"$set": user.model_dump(by_alias=True,exclude_none=True)},
             upsert=True,
             return_document=ReturnDocument.AFTER,
@@ -74,12 +75,14 @@ class LocalDataBaseImpl(DatabaseInterface):
             return None
         return UserBioData(**user_bio_data)
 
-    async def upsert_user_bio_data(self, user_id : str, user_bio_data: UserBioData)-> UserBioData:
+    async def upsert_user_bio_data(self, user_bio_data: UserBioData)-> UserBioData:
         """Update user data"""
+        if user_bio_data.id is None:
+            user_bio_data.id = str(uuid4())
         # TODO TEST lists
-        await self._raise_for_invalid_user(user_id = user_id)
+        await self._raise_for_invalid_user(user_id = user_bio_data.user_id)
         update_result = await self.user_bio_data_collection.find_one_and_update(
-                filter={"user_id": user_id},
+                filter={"user_id": user_bio_data.user_id},
                 update={"$set": user_bio_data.model_dump(exclude_none=True, by_alias=True)},
                 return_document=ReturnDocument.AFTER,
                 upsert=True
@@ -87,9 +90,9 @@ class LocalDataBaseImpl(DatabaseInterface):
         return UserBioData(**update_result)
 
     # User files data
-    async def upsert_user_files(self, user_id:str,user_file :UserStaticFiles) -> UserStaticFiles | None:
+    async def upsert_user_files(self, user_file :UserStaticFiles) -> UserStaticFiles | None:
         """Update user static files data"""
-        await self._raise_for_invalid_user(user_id = user_id)
+        # await self._raise_for_invalid_user(user_id = user_id)
         # user_data = await self.user_static_file_collection.find_one({"_id": user_id})
         # if user_data is None:
         #     raise DocumentNotFound()
@@ -122,14 +125,25 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     # Auth methods
-    async def upsert_token(self, user_id : str, token: Token) -> Token:
+    async def upsert_token(self, token: Token) -> Token:
         """Save a user token to the database."""
+        if token.id is None:
+            token.id = str(uuid4())
         result =  await self.auth_collection.find_one_and_update(
-            filter={'user_id': user_id},
+            filter={'user_id': token.user_id},
             update={'$set' : token.model_dump(by_alias=True, exclude_none=True),},
             upsert=True,
             return_document=ReturnDocument.AFTER
         )
         return Token(**result)
+    
+
+    async def read_token(self,  user_id:str) -> Token | None:
+        """Save a user token to the database."""
+        token = await self.auth_collection.find_one({'user_id' : user_id})
+        if token is None:
+            return None
+        return Token(**token)
+        
 
         

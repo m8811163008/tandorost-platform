@@ -19,7 +19,7 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def read_user(self, username: str) -> UserInDB | None:
+    async def read_user_by_phone_number(self, phone_number: str) -> UserInDB | None:
         """Retrieve a user from the database."""
         pass
 
@@ -39,7 +39,7 @@ class DatabaseInterface(ABC):
     # User demographic data
 
     @abstractmethod
-    async def upsert_user_bio_data(self, user_id : str, user_bio_data: UserBioData)-> UserBioData:
+    async def upsert_user_bio_data(self, user_bio_data: UserBioData)-> UserBioData:
         """Update user data"""
         pass
 
@@ -50,7 +50,7 @@ class DatabaseInterface(ABC):
 
 
     @abstractmethod
-    async def upsert_user_files(self, user_id:str,user_file :UserStaticFiles) -> UserStaticFiles | None:
+    async def upsert_user_files(self,user_file :UserStaticFiles) -> UserStaticFiles | None:
         pass
 
 
@@ -61,7 +61,12 @@ class DatabaseInterface(ABC):
 
     # Auth methods
     @abstractmethod
-    async def upsert_token(self, user_id: str, token: Token) -> Token:
+    async def upsert_token(self,  token: Token) -> Token:
+        """Save a user token to the database."""
+        pass
+
+    @abstractmethod
+    async def read_token(self,  user_id:str) -> Token | None:
         """Save a user token to the database."""
         pass
 

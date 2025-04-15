@@ -16,13 +16,17 @@ class AuthRepository:
 
     #TODO user name is phone number , in future change to use both email and phone number
     async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType):
-        user_in_db = await self.database.read_user(username=username)
+        user_in_db = await self.database.read_user_by_phone_number(phone_number=username)
         if user_in_db is None and verification_type.is_forgot_password():
             raise UsernameNotRegisteredYet()
         if user_in_db is not None and user_in_db.is_verified and verification_type.is_register():
             raise UsernameAlreadyInUse()
         
-        user = UserInDB(phone_number=username, verification_code=code)
+        user_id =  None
+        if user_in_db is not None and user_in_db.id is not None:
+            user_id = user_in_db.id
+    
+        user = UserInDB(_id = user_id , phone_number=username, verification_code=code)
         await self.database.upsert_user(user=user)
             
         try:
@@ -32,7 +36,7 @@ class AuthRepository:
             raise NetworkConnectionError()
     
     async def verify_code(self, username:str, verification_code : str):
-        user = await self.database.read_user(username=username)
+        user = await self.database.read_user_by_phone_number(phone_number=username)
         if user is None :
             raise UsernameNotRegisteredYet()
         if user.verification_code is None:
@@ -41,7 +45,7 @@ class AuthRepository:
             raise InvalidVerificationCode()
 
     async def update_user_account(self, password: str, username:str, is_verified : bool = True) -> UserInDB:
-        user = await self.database.read_user(username=username)
+        user = await self.database.read_user_by_phone_number(phone_number=username)
         assert(user is not None)
         hashed_password = get_password_hash(password=password)
         user.hashed_password = hashed_password
@@ -51,7 +55,7 @@ class AuthRepository:
     
 
     async def authenticate(self,username: str, password: str) :
-        user = await self.database.read_user(username)
+        user = await self.database.read_user_by_phone_number(username)
         if user is None or user.hashed_password is None:
             raise UsernameNotRegisteredYet()
         if user.is_verified is False:
@@ -60,7 +64,7 @@ class AuthRepository:
             raise InvalidPassword()
     
     async def issue_access_token(self,username: str, access_token_expire_minute: float) -> Token:
-        user = await self.database.read_user(username)
+        user = await self.database.read_user_by_phone_number(username)
         assert(user is not None and user.id is not None)
         access_token_expires = timedelta(minutes=access_token_expire_minute)
         access_token = create_access_token(
@@ -70,9 +74,12 @@ class AuthRepository:
             algorithm= EnvirenmentVariable.ALGORITHM(),
             expires_delta=access_token_expires
         )
-        token_instance = Token(access_token=access_token, token_type="bearer", user_id= user.id)
-        return await self.database.upsert_token(token=token_instance, user_id=str(user.id))
+        token_instance = Token(user_id= user.id,access_token=access_token, token_type="bearer")
+        tokne_in_db = await self.database.read_token(user_id = user.id)
+        if tokne_in_db is not None:
+            token_instance.id = tokne_in_db.id
+        return await self.database.upsert_token(token = token_instance)
     
     async def read_user_by_phone_number(self, username: str):
-        return await self.database.read_user(username=username)
+        return await self.database.read_user_by_phone_number(phone_number=username)
         
