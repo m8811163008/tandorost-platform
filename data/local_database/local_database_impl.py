@@ -35,7 +35,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         print('*****Database cleared!*****')
 
     async def _raise_for_invalid_user(self, user_id: ObjectId):
-        user_data = await self.user_collection.find_one({"_id": user_id.__str__()})
+        user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
             raise DocumentNotFound()
 
@@ -48,16 +48,15 @@ class LocalDataBaseImpl(DatabaseInterface):
     
     async def read_user_by_id(self, user_id : ObjectId) -> UserInDB | None:
         """Retrieve a user token from the database."""
-        user_data = await self.user_collection.find_one({"_id": user_id.__str__()})
+        user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
             return None
         return UserInDB(**user_data)
     
     async def upsert_user(self, user: UserInDB ,id:ObjectId | None = None)-> UserInDB:
-        if id is not None:
-            await self._raise_for_invalid_user(user_id = id)
+        filter = {"phone_number": user.phone_number} if id is None else {"_id": id}
         update_result = await self.user_collection.find_one_and_update(
-            filter={"_id": id.__str__()},
+            filter=filter,
             update={"$set": user.model_dump(exclude_none=True)},
             upsert=True,
             return_document=ReturnDocument.AFTER,
@@ -122,7 +121,7 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def upsert_token(self, user_id : ObjectId, token: Token) -> Token:
         """Save a user token to the database."""
         result =  await self.auth_collection.find_one_and_update(
-            filter={'user_id': user_id.__str__()},
+            filter={'user_id': user_id},
             update={'$set' : token.model_dump(exclude_none=True),},
             upsert=True,
             return_document=ReturnDocument.AFTER

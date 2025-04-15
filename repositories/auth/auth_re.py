@@ -17,6 +17,8 @@ class AuthRepository:
     #TODO user name is phone number , in future change to use both email and phone number
     async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType):
         user_in_db = await self.database.read_user(username=username)
+        if user_in_db is None and verification_type.is_forgot_password():
+            raise UsernameNotRegisteredYet()
         if user_in_db is not None and user_in_db.is_verified and verification_type.is_register():
             raise UsernameAlreadyInUse()
         
@@ -43,13 +45,12 @@ class AuthRepository:
         if user.verification_code.verification_code != verification_code:
             raise InvalidVerificationCode()
 
-    async def update_user_account(self, password: str, username:str, is_enabled : bool | None = None) -> UserInDB:
+    async def update_user_account(self, password: str, username:str, is_verified : bool = True) -> UserInDB:
         user = await self.database.read_user(username=username)
         assert(user is not None)
         hashed_password = get_password_hash(password=password)
         user.hashed_password = hashed_password
-        if is_enabled is not None:
-            user.is_verified = is_enabled
+        user.is_verified = is_verified
         assert(user.id is not None)
         return await self.database.upsert_user(id = user.id, user=user)
     

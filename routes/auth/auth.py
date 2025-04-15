@@ -39,7 +39,12 @@ async def verify(
 
     try:
        await dm.auth_repo.send_verification_code(code=verification_code, username=phone_number,body_id=verification_sms_panel_body_id, verification_type = verification_type)
-       return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.USER_REGISTERED), data=None).to_dict()
+       return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.VERIFICATION_CODE_SEND), data=None).to_dict()
+    except UsernameNotRegisteredYet:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail = ApiResponse.error(message='TranslationKeys.USERNAME_NOT_REGISTERED_YET', error_detail=translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=phone_number)).to_dict()
+        )
     except UsernameAlreadyInUse:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
@@ -76,7 +81,7 @@ async def register(
             detail = ApiResponse.error(message='TranslationKeys.INVALID_VERIFICATION_CODE', error_detail=translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE).format(user_name=user_name)).to_dict()
         )    
 
-    await dm.auth_repo.update_user_account(password=password,username=user_name, is_enabled=True)
+    await dm.auth_repo.update_user_account(password=password,username=user_name)
     return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.USER_REGISTERED), data=None).to_dict()
     
 

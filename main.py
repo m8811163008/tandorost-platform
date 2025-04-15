@@ -26,8 +26,8 @@ app.add_middleware(TrustedHostMiddleware)
 @app.get("/")
 async def read_root():
     # DEBUG CLEAR DATABASE
-    # from dependeny_manager import dm
-    # await dm.local_database.clear()
+    from dependeny_manager import dm
+    await dm.local_database.clear()
     welcome_message = translation_manager.gettext(TranslationKeys.WELCOME_MESSAGE).format(user_name="Milad")
     return {"Hello": f"{welcome_message}"}
 

@@ -17,3 +17,4 @@ class TranslationKeys:
     INVALID_TOKEN = "invalid_token"
     USER_NOT_FOUND = "user_not_found"
     OBJECT_NOT_FOUND = "object_not_found"
+    VERIFICATION_CODE_SEND = "verification_code_send"

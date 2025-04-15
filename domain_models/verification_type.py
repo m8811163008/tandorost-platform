@@ -7,3 +7,5 @@ class VerificationType(Enum):
 
     def is_register(self) -> bool:
         return self == VerificationType.REGISTER
+    def is_forgot_password(self) -> bool:
+        return self == VerificationType.FORGOT_PASSWORD

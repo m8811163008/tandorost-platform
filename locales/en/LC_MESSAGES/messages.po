@@ -42,3 +42,6 @@ msgstr "Invalid user id."
 
 msgid "object_not_found"
 msgstr "Object not found."
+
+msgid "verification_code_send"
+msgstr "Verification code sent successfully."
