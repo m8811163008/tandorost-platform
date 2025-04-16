@@ -4,7 +4,7 @@ from data.local_database import Token
 
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
-from data.local_database.model.user_files import UserStaticFiles
+from data.local_database.model.user_files import GallaryTag, UserStaticFiles
 
 
 class DatabaseInterface(ABC):
@@ -49,16 +49,6 @@ class DatabaseInterface(ABC):
         pass
 
 
-    @abstractmethod
-    async def upsert_user_files(self,user_file :UserStaticFiles) -> UserStaticFiles | None:
-        pass
-
-
-    @abstractmethod
-    async def read_user_files(self, user_id:str,) -> UserStaticFiles | None:
-        pass
-
-
     # Auth methods
     @abstractmethod
     async def upsert_token(self,  token: Token) -> Token:
@@ -69,4 +59,23 @@ class DatabaseInterface(ABC):
     async def read_token(self,  user_id:str) -> Token | None:
         """Save a user token to the database."""
         pass
+
+    # User statics files
+    @abstractmethod
+    async def read_user_profile_image(self,  user_id:str) -> str | None:
+        """Save a user token to the database."""
+        pass
+
+    @abstractmethod
+    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[str]] | None:
+        """Save a user token to the database."""
+        pass
+
+    @abstractmethod
+    async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
+        """Save a user token to the database."""
+        pass
+
+
+    
 

@@ -13,7 +13,7 @@ from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.exceptions import DocumentNotFound
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
-from data.local_database.model.user_files import UserStaticFiles
+from data.local_database.model.user_files import UserStaticFiles, GallaryTag
 
 
 
@@ -90,38 +90,44 @@ class LocalDataBaseImpl(DatabaseInterface):
         return UserBioData(**update_result)
 
     # User files data
-    async def upsert_user_files(self, user_file :UserStaticFiles) -> UserStaticFiles | None:
-        """Update user static files data"""
-        # await self._raise_for_invalid_user(user_id = user_id)
-        # user_data = await self.user_static_file_collection.find_one({"_id": user_id})
-        # if user_data is None:
-        #     raise DocumentNotFound()
-        # user_file_dict = {
-        #     k: v for k, v in user_file.model_dump(by_alias=True).items() if v is not None
-        # }
-        # if len(user_file_dict) >= 1:
-        #     update_result = await self.user_static_file_collection.find_one_and_update(
-        #         {"user_id": user_id},
-        #         {"$set": user_file_dict},
-        #         return_document=ReturnDocument.AFTER,
-        #     )
-        #     if len(update_result) != 0:
-        #         return UserStaticFiles(**update_result)
-        #     else:
-        #         raise DocumentNotFound()
-        # # The update is empty, but we should still return the matching document:
-        # existing_user_files_data = await self.user_static_file_collection.find_one({"user_id": id})
-        # if existing_user_files_data is not None:
-        #     return UserStaticFiles(**existing_user_files_data)
-        # raise DocumentNotFound()
-
-
-
-    async def read_user_files(self, user_id:str,) -> UserStaticFiles | None:
-        user_files_data = await self.user_static_file_collection.find_one({"user_id": user_id})
-        if user_files_data is None:
+    
+    async def read_user_profile_image(self,  user_id:str) -> str | None:
+        """Save a user token to the database."""
+        files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
+        if files_dict is None:
             return None
-        return UserStaticFiles(**user_files_data)
+        files = UserStaticFiles(**files_dict)
+        return files.profile_image[-1]
+
+    
+    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[str]] | None:
+        """Save a user token to the database."""
+        files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
+        if files_dict is None:
+            return None
+        files = UserStaticFiles(**files_dict)
+        result : dict[str | GallaryTag, list[str]] = {}
+        for tag in tags:
+            tag_key = tag.value if isinstance(tag, GallaryTag) else tag  # Convert GallaryTag to its key representation
+            if tag_key in files.image_gallery:
+                result[tag_key] = files.image_gallery[tag_key]
+        return result
+
+
+    
+    async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
+        """Save a user token to the database."""
+        if user_files.id is None:
+            user_files.id = str(uuid4())
+        # TODO TEST lists
+        await self._raise_for_invalid_user(user_id = user_files.user_id)
+        update_result = await self.user_bio_data_collection.find_one_and_update(
+                filter={"user_id": user_files.user_id},
+                update={"$set": user_files.model_dump(exclude_none=True, by_alias=True)},
+                return_document=ReturnDocument.AFTER,
+                upsert=True
+            )
+        return UserStaticFiles(**update_result)
 
 
     # Auth methods
