@@ -32,3 +32,4 @@ class UserRepository:
         if bio_data_in_db is not None:
             user_bio_data.id = bio_data_in_db.id
         return await self.database.upsert_user_bio_data(user_bio_data=user_bio_data)
+    

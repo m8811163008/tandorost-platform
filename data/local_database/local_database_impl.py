@@ -47,9 +47,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         if user_data is None:
             return None
         return UserInDB(**user_data)
-    
-
-    
+     
     async def read_user_by_id(self, user_id : str) -> UserInDB | None:
         """Retrieve a user token from the database."""
         user_data = await self.user_collection.find_one({"_id": user_id})
@@ -150,6 +148,3 @@ class LocalDataBaseImpl(DatabaseInterface):
         if token is None:
             return None
         return Token(**token)
-        
-
-        
