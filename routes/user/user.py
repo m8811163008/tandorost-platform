@@ -5,8 +5,9 @@ from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, Uploa
 from dependeny_manager import dm
 from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles
 
-from utility.decode_jwt_user_id import jwt_user_id
+from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
+from utility.constants import upload_directory_path
 
 
 
@@ -16,14 +17,7 @@ router = APIRouter(
     #TOdo add dependency
 )
 
-async def read_user_or_raise(user_id: Annotated[str , Depends(jwt_user_id)])-> str:
-     user = await dm.user_repo.read_user(user_id=user_id)
-     if user is None or user.id is None:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=TranslationKeys.USER_NOT_FOUND,
-        )
-     return user.id
+
 
 @router.get("/user_profile/")
 async def read_user(
@@ -152,7 +146,7 @@ async def add_user_images(
     # user_static_files = await dm.user_files_repo.read_user_static_files(user_id=user_id)
     # if user_static_files is None:
     
-    upload_directory = f"user_{user_id}/uploads/"
+    upload_directory = f"{upload_directory_path}/user_{user_id}/"
     try:
         images_meta_data = await dm.user_files_repo.save_files_on_disk(image_gallary_files=image_gallary_files, upload_directory=upload_directory)
     except Exception as e:
@@ -176,4 +170,4 @@ async def add_user_images(
 
 
 
-    
+
