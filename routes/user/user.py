@@ -4,7 +4,7 @@ from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
 from dependeny_manager import dm
-from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles, UserStaticFilesResponse, FileMetaData
+from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles, FileMetaData
 
 from utility.decode_jwt_user_id import jwt_user_id
 from utility.translation_keys import TranslationKeys
@@ -43,6 +43,7 @@ async def update_user(
      user_dict = user_profile.model_dump()
      user_dict['_id'] = user_id
      user_in_db = UserInDB( **user_dict )
+     user_in_db.is_verified = True
      user = await dm.user_repo.update_user( user=user_in_db)
      if user is None:
          raise HTTPException(
@@ -102,15 +103,14 @@ async def read_user_profile_image(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
         )
-    user_static_file_response = UserStaticFilesResponse(profile_image = profile_image_meta_data)
     return ApiResponse.success(
-                data = user_static_file_response.model_dump(exclude_none= True)
+                data = profile_image_meta_data
             ).to_dict()
 
 @router.get("/read_user_image_gallary/")
 async def read_user_image_gallary(
     user_id: Annotated[str , Depends(read_user_or_raise)],
-    tags: Annotated[list[str | GallaryTag] , Query()],
+    tags: Annotated[list[GallaryTag] , Query()],
 ) :
     image_gallary = await dm.user_files_repo.read_user_image_gallary(
         user_id=user_id,
@@ -121,15 +121,14 @@ async def read_user_image_gallary(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
         )
-    user_static_file_response = UserStaticFilesResponse(image_gallery= image_gallary)
     return ApiResponse.success(
-                data = user_static_file_response.model_dump(exclude_none= True)
+                data = image_gallary
             ).to_dict()
 
 @router.put("/add_user_images/", description='profile image or image gallary files should not be None at same time')
 async def add_user_images(
     user_id: Annotated[str, Depends(read_user_or_raise)],
-    tag: Annotated[str | GallaryTag, Form()],
+    tag: Annotated[GallaryTag, Form()],
     image_gallary_files: list[UploadFile]
 ):
     if len(image_gallary_files) == 0:

@@ -49,7 +49,7 @@ class FileMetaData(BaseModel):
 class UserStaticFiles(BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
-    image_gallery : dict[str | GallaryTag, list[FileMetaData]]
+    image_gallery : dict[GallaryTag, list[FileMetaData]]
     model_config = ConfigDict(use_enum_values=True,)
 
 

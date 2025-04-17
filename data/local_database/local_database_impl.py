@@ -89,17 +89,15 @@ class LocalDataBaseImpl(DatabaseInterface):
 
     # User files data
     
-    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[FileMetaData]] | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
         """Save a user token to the database."""
         files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
         if files_dict is None:
             return None
         files = UserStaticFiles(**files_dict)
-        result : dict[str | GallaryTag, list[FileMetaData]] = {}
+        result : dict[GallaryTag, list[FileMetaData]] = {}
         for tag in tags:
-            tag_key = tag.value if isinstance(tag, GallaryTag) else tag  # Convert GallaryTag to its key representation
-            if tag_key in files.image_gallery:
-                result[tag_key] = files.image_gallery[tag_key]
+            result[tag] = files.image_gallery[tag]
         return result
 
     

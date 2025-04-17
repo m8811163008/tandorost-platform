@@ -63,7 +63,7 @@ class DatabaseInterface(ABC):
     # User statics files
 
     @abstractmethod
-    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[FileMetaData]] | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
         """Save a user token to the database."""
         pass
 

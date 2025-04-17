@@ -16,7 +16,7 @@ class UserFiles:
             return None
         return profile_images[GallaryTag.PROFILE_IMAGE][-1]
 
-    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[FileMetaData]] | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
         return await self.database.read_user_image_gallary(user_id=user_id, tags=tags)
     
     async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
