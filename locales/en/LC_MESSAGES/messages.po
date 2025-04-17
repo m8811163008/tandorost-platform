@@ -48,3 +48,42 @@ msgstr "Verification code sent successfully."
 
 msgid "invalid_upload_file_request"
 msgstr "Invalid upload file request."
+
+msgid "poor_quality"
+msgstr "Image is blurry, pixelated, or low resolution."
+
+msgid "inappropriate_content"
+msgstr "Image contains nudity, offensive material, or is otherwise inappropriate."
+
+msgid "irrelevant_content"
+msgstr "Image is not relevant to fitness or the intended purpose."
+
+msgid "cropped_or_obstructed"
+msgstr "Key parts of the image are cropped, cut off, or obstructed."
+
+msgid "poor_lighting"
+msgstr "Image is too dark, too bright, or has excessive shadows."
+
+msgid "unsafe_activity"
+msgstr "Image depicts unsafe or potentially harmful activities."
+
+msgid "lack_of_consent"
+msgstr "Image potentially includes individuals who have not consented to be shown."
+
+msgid "violates_guidelines"
+msgstr "Image violates specific community guidelines or terms of service."
+
+msgid "file_format_unsupported"
+msgstr "The uploaded file format is not supported."
+
+msgid "file_size_too_large"
+msgstr "The uploaded file exceeds the maximum allowed file size."
+
+msgid "watermark_or_logo"
+msgstr "Image contains visible watermarks or logos (if prohibited)."
+
+msgid "misleading_or_false"
+msgstr "Image is misleading or falsely represents a fitness outcome or product."
+
+msgid "other_rejection_reason"
+msgstr "Other reason not listed above."

@@ -14,4 +14,5 @@ from data.local_database.model.user_bio_data import (
 from data.local_database.model.user_files import (
     GallaryTag, # type: ignore
     UserStaticFiles, # type: ignore
+    FileMetaData, # type: ignore
 )

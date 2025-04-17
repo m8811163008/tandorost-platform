@@ -1,10 +1,11 @@
 
+from datetime import datetime
 from typing import Annotated
 
-from fastapi import  APIRouter, Body, Depends, File, Form, HTTPException, Query, UploadFile, status
+from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
 from dependeny_manager import dm
-from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,User
-from domain_models.exceptions import InvalidUploadFileRequest
+from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles, UserStaticFilesResponse, FileMetaData
+
 from utility.decode_jwt_user_id import jwt_user_id
 from utility.translation_keys import TranslationKeys
 
@@ -93,18 +94,17 @@ async def read_user_bio_data(
 async def read_user_profile_image(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
-    profile_image_path = await dm.user_files_repo.read_user_profile_image(
+    profile_image_meta_data = await dm.user_files_repo.read_user_profile_image(
         user_id=user_id,
     )
-    if profile_image_path is None:
+    if profile_image_meta_data is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
         )
+    user_static_file_response = UserStaticFilesResponse(profile_image = profile_image_meta_data)
     return ApiResponse.success(
-                data = {
-                    'profile_path' : profile_image_path
-                }
+                data = user_static_file_response.model_dump(exclude_none= True)
             ).to_dict()
 
 @router.get("/read_user_image_gallary/")
@@ -121,35 +121,83 @@ async def read_user_image_gallary(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
         )
+    user_static_file_response = UserStaticFilesResponse(image_gallery= image_gallary)
     return ApiResponse.success(
-                data = image_gallary
+                data = user_static_file_response.model_dump(exclude_none= True)
             ).to_dict()
 
-@router.put("/upsert_user_files/", description='profile image or image gallary files should not be None at same time')
-async def upsert_user_files(
-    user_id: Annotated[str , Depends(read_user_or_raise)],
-    tag: Annotated[str | GallaryTag , Form()],
-    image_gallary_files: Annotated[
-        list[UploadFile] | None, File()
-    ],
-    profile_image: Annotated[
-        UploadFile | None, File()
-    ],
-) :
-    if image_gallary_files is None and profile_image is None:
+@router.put("/add_user_images/", description='profile image or image gallary files should not be None at same time')
+async def add_user_images(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    tag: Annotated[str | GallaryTag, Form()],
+    image_gallary_files: list[UploadFile]
+):
+    if len(image_gallary_files) == 0:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail= ApiResponse.error(message= 'TranslationKeys.INVALID_UPLOAD_FILE_REQUEST', error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST).to_dict()
-        )
-    profile_image_dict = await dm.user_files_repo.read_user_image_gallary(
-        user_id=user_id,
-        tags=[tag]
-    )
-    if profile_image_dict is None:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
-        )
-    return ApiResponse.success(
-                data = profile_image_dict
+            detail=ApiResponse.error(
+                message='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
             ).to_dict()
+        )
+
+    user_static_files = await dm.user_files_repo.read_user_static_files(user_id=user_id)
+    if user_static_files is None:
+        user_static_files = UserStaticFiles(user_id=user_id, image_gallery={})
+
+    # Use this naming format for storing on the system: {user_id}_{upload_date_iso_format}_{original_filename}
+    # Save file on the system for each user in /user_{user_id}/uploads/
+    upload_date_time = datetime.now()
+    images_meta_data: list[FileMetaData] = []
+
+    for image_gallary_file in image_gallary_files:
+        if image_gallary_file.filename is None or image_gallary_file.size is None or image_gallary_file.content_type is None:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=ApiResponse.error(
+                    message='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                    error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
+                ).to_dict()
+            )
+
+        # Define the file upload path
+        upload_directory = f"user_{user_id}/uploads/"
+        file_upload_path = f"{upload_directory}{user_id}_{upload_date_time.isoformat()}_{image_gallary_file.filename}"
+
+        # Save the file to the system
+        try:
+            with open(file_upload_path, "wb") as file:
+                content = await image_gallary_file.read()
+                file.write(content)
+        except Exception as e:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=ApiResponse.error(
+                    message='TranslationKeys.FILE_UPLOAD_FAILED',
+                    error_detail=str(e)
+                ).to_dict()
+            )
+
+        # Create metadata for the uploaded file
+        meta_data = FileMetaData(
+            file_name=image_gallary_file.filename,
+            file_size=image_gallary_file.size,
+            upload_date=upload_date_time,
+            content_type=image_gallary_file.content_type,
+            file_upload_path=file_upload_path,
+        )
+        images_meta_data.append(meta_data)
+
+    if user_static_files.image_gallery.get(tag) is None:
+        user_static_files.image_gallery[tag] = []
+    user_static_files.image_gallery[tag].extend(images_meta_data)
+
+    result = await dm.user_files_repo.upsert_user_files(user_files=user_static_files)
+
+    return ApiResponse.success(
+        data=result.model_dump()
+    ).to_dict()
+
+
+
+    

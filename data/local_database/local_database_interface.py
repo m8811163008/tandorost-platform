@@ -4,7 +4,7 @@ from data.local_database import Token
 
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
-from data.local_database.model.user_files import GallaryTag, UserStaticFiles
+from data.local_database.model.user_files import FileMetaData, GallaryTag, UserStaticFiles
 
 
 class DatabaseInterface(ABC):
@@ -61,13 +61,14 @@ class DatabaseInterface(ABC):
         pass
 
     # User statics files
+
     @abstractmethod
-    async def read_user_profile_image(self,  user_id:str) -> str | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[FileMetaData]] | None:
         """Save a user token to the database."""
         pass
 
     @abstractmethod
-    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[str]] | None:
+    async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
         """Save a user token to the database."""
         pass
 

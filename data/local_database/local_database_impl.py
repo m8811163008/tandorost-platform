@@ -13,7 +13,7 @@ from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.exceptions import DocumentNotFound
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
-from data.local_database.model.user_files import UserStaticFiles, GallaryTag
+from data.local_database.model.user_files import UserStaticFiles, GallaryTag, FileMetaData
 
 
 
@@ -89,29 +89,27 @@ class LocalDataBaseImpl(DatabaseInterface):
 
     # User files data
     
-    async def read_user_profile_image(self,  user_id:str) -> str | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[FileMetaData]] | None:
         """Save a user token to the database."""
         files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
         if files_dict is None:
             return None
         files = UserStaticFiles(**files_dict)
-        return files.profile_image[-1]
-
-    
-    async def read_user_image_gallary(self,  user_id:str, tags:list[str | GallaryTag]) -> dict[str | GallaryTag, list[str]] | None:
-        """Save a user token to the database."""
-        files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
-        if files_dict is None:
-            return None
-        files = UserStaticFiles(**files_dict)
-        result : dict[str | GallaryTag, list[str]] = {}
+        result : dict[str | GallaryTag, list[FileMetaData]] = {}
         for tag in tags:
             tag_key = tag.value if isinstance(tag, GallaryTag) else tag  # Convert GallaryTag to its key representation
             if tag_key in files.image_gallery:
                 result[tag_key] = files.image_gallery[tag_key]
         return result
 
-
+    
+    async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
+        """Save a user token to the database."""
+        files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
+        if files_dict is None :
+            return None
+        return UserStaticFiles(**files_dict)
+    
     
     async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
         """Save a user token to the database."""
