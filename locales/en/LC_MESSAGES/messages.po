@@ -45,3 +45,6 @@ msgstr "Object not found."
 
 msgid "verification_code_send"
 msgstr "Verification code sent successfully."
+
+msgid "invalid_upload_file_request"
+msgstr "Invalid upload file request."

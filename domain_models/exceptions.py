@@ -17,6 +17,7 @@ class InvalidPassword(Exception):
 
 
 
+
 class VerifiationCodeRequestReachedLimit(Exception):
     def __init__(self, seconds_left: int) -> None:
         self.seconds_left = seconds_left

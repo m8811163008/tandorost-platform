@@ -18,3 +18,4 @@ class TranslationKeys:
     USER_NOT_FOUND = "user_not_found"
     OBJECT_NOT_FOUND = "object_not_found"
     VERIFICATION_CODE_SEND = "verification_code_send"
+    INVALID_UPLOAD_FILE_REQUEST = "invalid_upload_file_request"

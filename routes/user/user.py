@@ -1,11 +1,10 @@
 
 from typing import Annotated
 
-from fastapi import  APIRouter, Body, Depends, HTTPException, status
-from data.local_database.model.user import UserInDB
-from data.local_database.model.user_bio_data import UserBioData
+from fastapi import  APIRouter, Body, Depends, File, Form, HTTPException, Query, UploadFile, status
 from dependeny_manager import dm
-from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest
+from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,User
+from domain_models.exceptions import InvalidUploadFileRequest
 from utility.decode_jwt_user_id import jwt_user_id
 from utility.translation_keys import TranslationKeys
 
@@ -90,8 +89,67 @@ async def read_user_bio_data(
                 data = bio_data.model_dump()
             ).to_dict()
 
-# @app.get("/users/me/items/")
-# async def read_own_items(
-#     current_user: Annotated[User, Depends(get_current_active_user)],
-# ):
-#     return [{"item_id": "Foo", "owner": current_user.username}]
+@router.get("/read_user_image_profile/")
+async def read_user_profile_image(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+) :
+    profile_image_path = await dm.user_files_repo.read_user_profile_image(
+        user_id=user_id,
+    )
+    if profile_image_path is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
+        )
+    return ApiResponse.success(
+                data = {
+                    'profile_path' : profile_image_path
+                }
+            ).to_dict()
+
+@router.get("/read_user_image_gallary/")
+async def read_user_image_gallary(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+    tags: Annotated[list[str | GallaryTag] , Query()],
+) :
+    image_gallary = await dm.user_files_repo.read_user_image_gallary(
+        user_id=user_id,
+        tags=tags
+    )
+    if image_gallary is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
+        )
+    return ApiResponse.success(
+                data = image_gallary
+            ).to_dict()
+
+@router.put("/upsert_user_files/", description='profile image or image gallary files should not be None at same time')
+async def upsert_user_files(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+    tag: Annotated[str | GallaryTag , Form()],
+    image_gallary_files: Annotated[
+        list[UploadFile] | None, File()
+    ],
+    profile_image: Annotated[
+        UploadFile | None, File()
+    ],
+) :
+    if image_gallary_files is None and profile_image is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail= ApiResponse.error(message= 'TranslationKeys.INVALID_UPLOAD_FILE_REQUEST', error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST).to_dict()
+        )
+    profile_image_dict = await dm.user_files_repo.read_user_image_gallary(
+        user_id=user_id,
+        tags=[tag]
+    )
+    if profile_image_dict is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
+        )
+    return ApiResponse.success(
+                data = profile_image_dict
+            ).to_dict()
