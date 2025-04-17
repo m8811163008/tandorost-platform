@@ -1,20 +1,20 @@
 
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from pydantic import BaseModel, Field,ConfigDict
 
 
-class GallaryTag(Enum):
+class GallaryTag(StrEnum):
     DEFAULT = 'default'
     PROFILE_IMAGE = 'profile_image'
     CERTIFICATE = 'certificate'
 
-class ProcessingStatus(Enum):
-    PENDING = 'pending',
-    APPROVED = 'approved',
+class ProcessingStatus(StrEnum):
+    PENDING = 'pending'
+    APPROVED = 'approved'
     REJECTED = 'rejected'
 
-class ImageRejectionReason(Enum):
+class ImageRejectionReason(StrEnum):
     """
     Common reasons why an image might be rejected in a fitness application
     or according to software industry best practices.
@@ -44,6 +44,7 @@ class FileMetaData(BaseModel):
     # TODO implement admin panel for files processing status
     processing_status: ProcessingStatus = ProcessingStatus.APPROVED
     reject_processing_status_desc : ImageRejectionReason | None = None
+    model_config = ConfigDict(use_enum_values=True,)
 
 
 class UserStaticFiles(BaseModel):

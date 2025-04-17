@@ -1,13 +1,13 @@
 
-from datetime import datetime
 from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
 from dependeny_manager import dm
-from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles, FileMetaData
+from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles
 
 from utility.decode_jwt_user_id import jwt_user_id
 from utility.translation_keys import TranslationKeys
+
 
 
 router = APIRouter(
@@ -139,16 +139,6 @@ async def add_user_images(
                 error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
             ).to_dict()
         )
-
-    user_static_files = await dm.user_files_repo.read_user_static_files(user_id=user_id)
-    if user_static_files is None:
-        user_static_files = UserStaticFiles(user_id=user_id, image_gallery={})
-
-    # Use this naming format for storing on the system: {user_id}_{upload_date_iso_format}_{original_filename}
-    # Save file on the system for each user in /user_{user_id}/uploads/
-    upload_date_time = datetime.now()
-    images_meta_data: list[FileMetaData] = []
-
     for image_gallary_file in image_gallary_files:
         if image_gallary_file.filename is None or image_gallary_file.size is None or image_gallary_file.content_type is None:
             raise HTTPException(
@@ -159,36 +149,23 @@ async def add_user_images(
                 ).to_dict()
             )
 
-        # Define the file upload path
-        upload_directory = f"user_{user_id}/uploads/"
-        file_upload_path = f"{upload_directory}{user_id}_{upload_date_time.isoformat()}_{image_gallary_file.filename}"
+    # user_static_files = await dm.user_files_repo.read_user_static_files(user_id=user_id)
+    # if user_static_files is None:
+    
+    upload_directory = f"user_{user_id}/uploads/"
+    try:
+        images_meta_data = await dm.user_files_repo.save_files_on_disk(image_gallary_files=image_gallary_files, upload_directory=upload_directory)
+    except Exception as e:
+        raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=ApiResponse.error(
+                        message='TranslationKeys.FILE_UPLOAD_FAILED',
+                        error_detail=str(e)
+                    ).to_dict()
+                )
 
-        # Save the file to the system
-        try:
-            with open(file_upload_path, "wb") as file:
-                content = await image_gallary_file.read()
-                file.write(content)
-        except Exception as e:
-            raise HTTPException(
-                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=ApiResponse.error(
-                    message='TranslationKeys.FILE_UPLOAD_FAILED',
-                    error_detail=str(e)
-                ).to_dict()
-            )
-
-        # Create metadata for the uploaded file
-        meta_data = FileMetaData(
-            file_name=image_gallary_file.filename,
-            file_size=image_gallary_file.size,
-            upload_date=upload_date_time,
-            content_type=image_gallary_file.content_type,
-            file_upload_path=file_upload_path,
-        )
-        images_meta_data.append(meta_data)
-
-    if user_static_files.image_gallery.get(tag) is None:
-        user_static_files.image_gallery[tag] = []
+    user_static_files = UserStaticFiles(user_id=user_id, image_gallery={})
+    user_static_files.image_gallery[tag] = []   
     user_static_files.image_gallery[tag].extend(images_meta_data)
 
     result = await dm.user_files_repo.upsert_user_files(user_files=user_static_files)

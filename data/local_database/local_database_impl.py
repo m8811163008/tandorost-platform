@@ -90,19 +90,26 @@ class LocalDataBaseImpl(DatabaseInterface):
     # User files data
     
     async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
-        """Save a user token to the database."""
+        """Retrieve user image gallery based on tags."""
+        # await self.user_static_file_collection.delete_many({})
         files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
         if files_dict is None:
             return None
+        
         files = UserStaticFiles(**files_dict)
         result : dict[GallaryTag, list[FileMetaData]] = {}
+
         for tag in tags:
-            result[tag] = files.image_gallery[tag]
+            # Check if the tag exists in the image_gallery dictionary
+            if tag in files.image_gallery:
+                result[tag] = files.image_gallery[tag]
+
         return result
 
     
     async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
         """Save a user token to the database."""
+        
         files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
         if files_dict is None :
             return None
@@ -111,17 +118,34 @@ class LocalDataBaseImpl(DatabaseInterface):
     
     async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
         """Save a user token to the database."""
-        if user_files.id is None:
-            user_files.id = str(uuid4())
-        # TODO TEST lists
+        user_files_db = await self.read_user_static_files(user_id = user_files.user_id)
+        if user_files_db is not None:
+            user_files.id = user_files_db.id
+        else:
+            user_files_db = UserStaticFiles(user_id=user_files.user_id, image_gallery={})
+            user_files.id = user_files_db.id = str(uuid4())
+
+        # Ensure the user exists
         await self._raise_for_invalid_user(user_id = user_files.user_id)
-        update_result = await self.user_bio_data_collection.find_one_and_update(
+
+        # merge user_files_db and user_files
+        update_tag = user_files.image_gallery.keys()
+        assert(len(update_tag) == 1)
+        tag = next(iter(update_tag))  # Retrieve the single tag from the keys
+        if tag not in user_files_db.image_gallery:
+            user_files_db.image_gallery[tag] = []
+        user_files_db.image_gallery[tag].extend(user_files.image_gallery[tag])
+
+        # Convert enum keys in `image_gallery` to strings
+        user_files_dict = user_files_db.model_dump(exclude_none=True, by_alias=True)
+
+        await self.user_static_file_collection.find_one_and_update(
                 filter={"user_id": user_files.user_id},
-                update={"$set": user_files.model_dump(exclude_none=True, by_alias=True)},
+                update={"$set": user_files_dict},
                 return_document=ReturnDocument.AFTER,
                 upsert=True
             )
-        return UserStaticFiles(**update_result)
+        return user_files
 
 
     # Auth methods

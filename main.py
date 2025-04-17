@@ -11,10 +11,13 @@ from utility import (
 )
 
 
-
+from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI(root_path="/api/v1", dependencies=[Depends(get_accept_language)])
+
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Initialize routers
 app.include_router(auth_router)
