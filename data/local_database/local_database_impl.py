@@ -156,10 +156,12 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def archive_images(self,user_id:str, images_id : list[str] ) -> list[str] | None:
         """archive user images."""
         user_files_db = await self.read_user_static_files(user_id = user_id)
+
         if user_files_db is None:
             return None
         # Ensure the user exists
         await self._raise_for_invalid_user(user_id = user_id)
+
         updated_image_ids:list[str] = []
         for db_images in user_files_db.image_gallery.values():
             for db_image in db_images:
@@ -167,6 +169,13 @@ class LocalDataBaseImpl(DatabaseInterface):
                     if db_image.image_id == image_id:
                         updated_image_ids.append(image_id)
                         db_image.processing_status = ProcessingStatus.ARCHIVED
+
+        await self.user_static_file_collection.find_one_and_update(
+                filter={"user_id": user_id},
+                update={"$set": user_files_db.model_dump(by_alias=True, exclude_none= True)},
+                return_document=ReturnDocument.AFTER,
+                upsert=True
+            )
         
         return updated_image_ids
 

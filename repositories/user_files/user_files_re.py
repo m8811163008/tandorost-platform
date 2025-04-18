@@ -64,4 +64,4 @@ class UserFiles:
         return images_meta_data
     
     async def archive_images(self,user_id:str, images_id : list[str]):
-        await self.database.archive_images(user_id=user_id, images_id=images_id)
+        return await self.database.archive_images(user_id=user_id, images_id=images_id)
