@@ -3,7 +3,7 @@ from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
 from dependeny_manager import dm
-from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles
+from domain_models import ApiResponse, UserUpdateRequest, UserBioDataRequest,UserBioData,UserInDB,GallaryTag,UserStaticFiles, ArchiveUserImagesResponse
 
 from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
@@ -119,8 +119,8 @@ async def read_user_image_gallary(
                 data = image_gallary
             ).to_dict()
 
-@router.put("/add_user_images/", description='profile image or image gallary files should not be None at same time')
-async def add_user_images(
+@router.post("/add_user_images/")
+async def add_user_image(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     tag: Annotated[GallaryTag, Form()],
     image_gallary_files: list[UploadFile]
@@ -168,6 +168,21 @@ async def add_user_images(
         data=result.model_dump()
     ).to_dict()
 
+@router.post("/archive_user_images/")
+async def archive_user_images(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    images_id: Annotated[list[str], Body()],
+):
+    updated_images_ids = await dm.user_files_repo.archive_images(user_id=user_id, images_id=images_id)
+    if updated_images_ids is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
+        )
 
-
-
+    return ApiResponse.success(
+        data=ArchiveUserImagesResponse(
+            updated_images_ids = updated_images_ids,
+            images_id = images_id
+        )
+    ).to_dict()

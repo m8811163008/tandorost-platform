@@ -13,7 +13,12 @@ from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.exceptions import DocumentNotFound
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
-from data.local_database.model.user_files import UserStaticFiles, GallaryTag, FileMetaData
+from data.local_database.model.user_files import (
+    UserStaticFiles, 
+    GallaryTag, 
+    FileMetaData, 
+    ProcessingStatus
+    )
 
 
 
@@ -146,6 +151,24 @@ class LocalDataBaseImpl(DatabaseInterface):
                 upsert=True
             )
         return user_files
+    
+    
+    async def archive_images(self,user_id:str, images_id : list[str] ) -> list[str] | None:
+        """archive user images."""
+        user_files_db = await self.read_user_static_files(user_id = user_id)
+        if user_files_db is None:
+            return None
+        # Ensure the user exists
+        await self._raise_for_invalid_user(user_id = user_id)
+        updated_image_ids:list[str] = []
+        for db_images in user_files_db.image_gallery.values():
+            for db_image in db_images:
+                for image_id in images_id:
+                    if db_image.image_id == image_id:
+                        updated_image_ids.append(image_id)
+                        db_image.processing_status = ProcessingStatus.ARCHIVED
+        
+        return updated_image_ids
 
 
     # Auth methods
@@ -168,3 +191,4 @@ class LocalDataBaseImpl(DatabaseInterface):
         if token is None:
             return None
         return Token(**token)
+    

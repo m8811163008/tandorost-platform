@@ -2,6 +2,7 @@
 
 
 from datetime import datetime
+from uuid import uuid4
 from fastapi import UploadFile
 from data.local_database import DatabaseInterface
 
@@ -36,7 +37,7 @@ class UserFiles:
             assert(image_gallary_file.size is not None)
             assert(image_gallary_file.content_type is not None)
             # Define the file upload path
-            file_upload_path = f"{upload_directory}_{upload_date_time.isoformat().replace(':', '_')}_{image_gallary_file.filename}"
+            file_upload_path = f"{upload_directory}/{upload_date_time.isoformat(timespec="seconds").replace(':', '_')}F{image_gallary_file.filename}"
 
             # Ensure the upload directory exists
             import os
@@ -52,6 +53,7 @@ class UserFiles:
 
             # Create metadata for the uploaded file
             meta_data = FileMetaData(
+                image_id= str(uuid4()),
                 file_name=image_gallary_file.filename,
                 file_size=image_gallary_file.size,
                 upload_date=upload_date_time,
@@ -60,3 +62,6 @@ class UserFiles:
             )
             images_meta_data.append(meta_data)
         return images_meta_data
+    
+    async def archive_images(self,user_id:str, images_id : list[str]):
+        await self.database.archive_images(user_id=user_id, images_id=images_id)

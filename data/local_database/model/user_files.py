@@ -13,6 +13,7 @@ class ProcessingStatus(StrEnum):
     PENDING = 'pending'
     APPROVED = 'approved'
     REJECTED = 'rejected'
+    ARCHIVED = 'archived'
 
 class ImageRejectionReason(StrEnum):
     """
@@ -36,6 +37,7 @@ class ImageRejectionReason(StrEnum):
 
 
 class FileMetaData(BaseModel):
+    image_id : str
     file_name:str
     file_size: int
     upload_date: datetime

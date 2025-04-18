@@ -27,7 +27,7 @@ def jwt_user_id(token: Annotated[str, Depends(oauth2_scheme)]) -> UUID4:
         if user_id is None:
             raise InvalidTokenError
         return user_id
-    except (InvalidTokenError, InvalidTokenError) as e:
+    except (InvalidTokenError, InvalidTokenError):
         raise HTTPException(
              status_code= status.HTTP_401_UNAUTHORIZED,
              detail=TranslationKeys.INVALID_TOKEN

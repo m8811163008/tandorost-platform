@@ -77,6 +77,11 @@ class DatabaseInterface(ABC):
         """Save a user token to the database."""
         pass
 
+    @abstractmethod
+    async def archive_images(self,user_id:str, images_id : list[str]) -> list[str] | None:
+        """Save a user token to the database."""
+        pass
+
 
     
 
