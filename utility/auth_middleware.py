@@ -4,7 +4,7 @@ from typing import Optional
 from utility.decode_jwt_user_id import jwt_user_id, read_user_or_raise
 from typing import Callable, Awaitable
 from fastapi.responses import HTMLResponse
-from utility.constants import protected_directory
+from utility.constants import protected_directory, root_path
 
 def handle_unauthorized_access() -> HTMLResponse:
     try:
@@ -17,7 +17,7 @@ def handle_unauthorized_access() -> HTMLResponse:
 
 
 async def auth_middleware(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
-    if request.url.path.startswith("/api/v1/protected_static"):
+    if request.url.path.startswith(f"{root_path}/{protected_directory}"):
         authorization: Optional[str] = request.headers.get("Authorization")
         if not authorization or not authorization.startswith("Bearer "):
             return handle_unauthorized_access()

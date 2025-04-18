@@ -80,9 +80,9 @@ class LocalDataBaseImpl(DatabaseInterface):
 
     async def upsert_user_bio_data(self, user_bio_data: UserBioData)-> UserBioData:
         """Update user data"""
+        #TODO update only requested parameters
         if user_bio_data.id is None:
             user_bio_data.id = str(uuid4())
-        # TODO TEST lists
         await self._raise_for_invalid_user(user_id = user_bio_data.user_id)
         update_result = await self.user_bio_data_collection.find_one_and_update(
                 filter={"user_id": user_bio_data.user_id},
