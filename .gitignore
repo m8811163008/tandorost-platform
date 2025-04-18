@@ -1,2 +1,12 @@
-venv/*
-.venv/*
+# Ignore the specific file
+leep 2 - Wait a moment
+
+# Ignore virtual environments
+venv/
+.venv/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore VS Code settings
+.vscode/
