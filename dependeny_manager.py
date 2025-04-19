@@ -10,7 +10,7 @@ class DependencyManager():
     def __init__(self) -> None:
         # Initialize data layers
         self.local_database = LocalDataBaseImpl(uri=EnvirenmentVariable.MONGO_URI(), database_name=EnvirenmentVariable.DATABASE_NAME())
-        self.remote_database = RemoteApiImpl(config= SMSPanelCongif(username=EnvirenmentVariable.SMS_PANEL_USERNAME(), password=EnvirenmentVariable.SMS_PANEL_PASSWORD()))
+        self.remote_database = RemoteApiImpl(sms_config= SMSPanelCongif(username=EnvirenmentVariable.SMS_PANEL_USERNAME(), password=EnvirenmentVariable.SMS_PANEL_PASSWORD()))
 
         # Initialize repository layers
         self.auth_repo = AuthRepository(database=self.local_database,remote_api= self.remote_database)

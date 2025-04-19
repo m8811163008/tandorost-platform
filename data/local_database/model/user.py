@@ -1,5 +1,10 @@
+from enum import StrEnum
 from domain_models.verification_code import VerificationCode
 from pydantic import  BaseModel, Field,ConfigDict
+
+class Language(StrEnum):
+    EN = 'en'
+    FA = 'fa'
 
 class Address(BaseModel):
     address_lines : str | None = None
@@ -14,7 +19,7 @@ class UserInDB(BaseModel):
     phone_number: str
     address : Address | None = None
     full_name: str | None = None
-    language: str = 'en'
+    language: Language = Language.EN
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
     is_verified : bool = False

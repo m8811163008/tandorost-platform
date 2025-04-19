@@ -8,3 +8,8 @@ class RemoteApiInterface(ABC):
     async def send_verification_code(self, detail : VerifyPhoneNumberDetail):
         """Verify phone number."""
         pass
+    
+    # Ai methods    
+    @abstractmethod
+    async def read_foods_nutritions_by_text(self, foods : str):
+        pass
