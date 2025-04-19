@@ -12,8 +12,8 @@ from domain_models.food_ai_model import (
 class CacheModel():
 
 
-    @property
-    def system_instruction(self):
+    @classmethod
+    def system_instruction(cls):
         return f"""
         Analyze the provided food input and identify its basic ingredients along with their approximate quantities.
         Return each ingredient as a separate Food object within the 'foods' list of the UserRequestedFood JSON object.
@@ -21,19 +21,19 @@ class CacheModel():
         If the input is audio, generate the transcription first.
 
         Example Input: '100 گرم املت'
-        The answer is: {self._food_example_1.model_dump_json(indent=2)}
+        The answer is: {CacheModel._food_example_1().model_dump_json(indent=2)}
         Example Input: 'a simple salad with lettuce, cucumber, and olive oil'
-        The answer is: {self._food_example_2.model_dump_json(indent=2)}
+        The answer is: {CacheModel._food_example_2().model_dump_json(indent=2)}
         Example Input: '200 grams of chicken breast and a cup of brown rice'
-        The answer is: {self._food_example_3.model_dump_json(indent=2)}
+        The answer is: {CacheModel._food_example_3().model_dump_json(indent=2)}
         Example Input: 'یک عدد سیب و یک تکه نان بربری'
-        The answer is: {self._food_example_4.model_dump_json(indent=2)}
+        The answer is: {CacheModel._food_example_4().model_dump_json(indent=2)}
         Example Input: 'یک بشقاب برنج و یک کاسه متوسط قرمه سبزی'
-        The answer is: {self._food_example_5_corrected.model_dump_json(indent=2)}
+        The answer is: {CacheModel._food_example_5().model_dump_json(indent=2)}
         """
 
-    @property
-    def _food_example_1(self):
+    @classmethod
+    def _food_example_1(cls):
         return UserRequestedFood(
             foods=[
                 Food(
@@ -73,8 +73,8 @@ class CacheModel():
         )
 
 
-    @property
-    def _food_example_2(self):
+    @classmethod
+    def _food_example_2(cls):
         return UserRequestedFood(
             foods=[
                 Food(
@@ -113,8 +113,8 @@ class CacheModel():
             ]
         )
 
-    @property
-    def _food_example_3(self):
+    @classmethod
+    def _food_example_3(cls):
         return UserRequestedFood(
             foods=[
                 Food(
@@ -142,8 +142,8 @@ class CacheModel():
             ]
         )
 
-    @property
-    def _food_example_4(self):
+    @classmethod
+    def _food_example_4(cls):
         return UserRequestedFood(
             foods=[
                 Food(
@@ -171,8 +171,8 @@ class CacheModel():
             ]
         )
 
-    @property
-    def _food_example_5_corrected(self):
+    @classmethod
+    def _food_example_5(cls):
         return UserRequestedFood(
             foods=[
                 Food(

@@ -32,5 +32,9 @@ class EnvirenmentVariable:
         return os.environ.get("SMS_PANEL_PASSWORD") or EnvirenmentVariable._raise_env_error("SMS_PANEL_PASSWORD")
     
     @staticmethod
+    def GEMENI_API_KEY() -> str:
+        return os.environ.get("GEMENI_API_KEY") or EnvirenmentVariable._raise_env_error("GEMENI_API_KEY")
+    
+    @staticmethod
     def _raise_env_error( var_name: str):
         raise EnvironmentError(f"Missing required environment variable: {var_name}")

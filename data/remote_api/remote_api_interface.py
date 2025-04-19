@@ -11,5 +11,5 @@ class RemoteApiInterface(ABC):
     
     # Ai methods    
     @abstractmethod
-    async def read_foods_nutritions_by_text(self, foods : str):
+    async def read_foods_nutritions_by_text(self, foods : str, current_model_index:int):
         pass

@@ -47,7 +47,7 @@ class RemoteApiImpl(RemoteApiInterface):
                 model=self.ai_config.models[current_model_index],
                 contents=[foods],
                 config = types.GenerateContentConfig(
-                    cached_content=self.context_caching.name,
+                    cached_content=self._context_caching.name,
                     temperature=0.0,
                     top_k = 1,
                     response_mime_type = 'application/json',
@@ -59,7 +59,7 @@ class RemoteApiImpl(RemoteApiInterface):
             raise e
         
     @property
-    def context_caching(self):
+    def _context_caching(self):
         # Create a cache with a 3 days TTL
         return self.ai_client.caches.create(
             model=self.ai_config.models[0],

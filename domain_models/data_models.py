@@ -16,3 +16,4 @@ from data.local_database.model.user_files import (
     UserStaticFiles, # type: ignore
     FileMetaData, # type: ignore
 )
+from data.remote_api.model.gemini_config import GeminiConfig # type: ignore

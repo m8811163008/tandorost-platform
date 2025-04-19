@@ -1,0 +1,1 @@
+from .foo_nutritions_re import FoodNutritionsRepository # type: ignore
