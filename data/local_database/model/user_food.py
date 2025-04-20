@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from data.local_database.model.user import Language
 
-class MacroNutritionPerUnitOfMeasurement(BaseModel):
+class TotalMacroNutritionPerFood(BaseModel):
     fat: float
     carbohydrate: float
     protein: float
@@ -27,26 +27,12 @@ class Food(BaseModel):
 
     unit_of_measurement_native_language: str
     translated_to_english_unit_of_measurement: str
+    calculated_calorie: int
 
-    # based on calorie not Kilo calorie per unit of measurement(e.g., an apple might be 70000 cal not 70 kcal)
-    calorie_per_unit_of_measurement: int
-
-    # Grams
-    weight_per_unit_of_measurement: int
     quantity_of_unit_of_measurement: int
 
     carbohydrate_source : CarbohydrateSource
 
-
-    # Grams including water and fibers and macro nutritions and micro nutritions
-    @property
-    def total_weight(self) -> float:
-        """Calculates total weight in grams for the specified quantity."""
-        return self.weight_per_unit_of_measurement * self.quantity_of_unit_of_measurement
-
-    @property
-    def total_calorie(self) -> float:
-        return self.total_weight * self.calorie_per_unit_of_measurement / 1000
 
 
 class UserFood(BaseModel):

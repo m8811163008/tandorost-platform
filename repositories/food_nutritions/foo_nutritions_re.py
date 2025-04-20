@@ -3,6 +3,7 @@
 
 from data.local_database import DatabaseInterface
 from data.remote_api import  RemoteApiInterface
+from data.remote_api.model.food_ai_model import AudioMemeType
 
 
 
@@ -15,6 +16,13 @@ class FoodNutritionsRepository:
     async def read_foods_nutritions_by_text(self, foods : str):
         # Todo recursively use models
         try:
-            await self.remote_api.read_foods_nutritions_by_text(foods= foods,current_model_index =  0)
+            return await self.remote_api.read_foods_nutritions_by_text(foods= foods,current_model_index =  0)
+        except Exception as e:
+            raise e
+        
+    async def read_foods_nutritions_by_voice(self, meme_type: AudioMemeType, foods : bytes ):
+        # Todo recursively use models
+        try:
+            return await self.remote_api.read_foods_nutritions_by_voice(foods= foods, meme_type = meme_type,current_model_index =  0)
         except Exception as e:
             raise e

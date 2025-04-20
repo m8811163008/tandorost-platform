@@ -17,3 +17,11 @@ from data.local_database.model.user_files import (
     FileMetaData, # type: ignore
 )
 from data.remote_api.model.gemini_config import GeminiConfig # type: ignore
+from data.remote_api.model.food_ai_model import (
+    UserLanguage,  # type: ignore
+    AudioMemeType,  # type: ignore
+    MacroNutritionPerUnitOfMeasurement,  # type: ignore
+    CarbohydrateSource,  # type: ignore
+    Ingredient , # type: ignore
+    UserRequestedFood # type: ignore
+    )

@@ -1,15 +1,16 @@
+
 from typing import Any
 import httpx
 from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
 from data.remote_api.model.ai_model_cache import CacheModel
+from data.remote_api.model.exceptions import *
+from data.remote_api.model.food_ai_model import AudioMemeType, UserRequestedFood
 from data.remote_api.model.gemini_config import  GeminiConfig
 from data.remote_api.remote_api_interface import RemoteApiInterface
-from google import genai, ModelSelectionConfig # type: ignore
+from google import genai # type: ignore
 from google.genai import types # type: ignore
+import json
 
-from domain_models.food_ai_model import (
-    UserRequestedFood, 
-    )
 
 verify_end_point_uri = 'https://api.payamak-panel.com/post/Send.asmx/SendByBaseNumber'
 
@@ -18,7 +19,7 @@ class RemoteApiImpl(RemoteApiInterface):
         self.sms_config = sms_config
         self.ai_config = ai_config
         self.ai_client = genai.Client(api_key= self.ai_config.api_key)
-        
+                
         
     async def send_verification_code(self, detail : VerifyPhoneNumberDetail):
         payload: dict[str, Any] = {}
@@ -40,23 +41,74 @@ class RemoteApiImpl(RemoteApiInterface):
                 await client.aclose()
             
     
-    async def read_foods_nutritions_by_text(self, foods : str, current_model_index:int =0):
+    async def read_foods_nutritions_by_text(self, foods : str, current_model_index:int =0) -> UserRequestedFood:
         # Todo recursively use models
         try:
             response = self.ai_client.models.generate_content(  # type: ignore
                 model=self.ai_config.models[current_model_index],
                 contents=[foods],
                 config = types.GenerateContentConfig(
-                    cached_content=self._context_caching.name,
+                    # cached_content=self._context_caching.name,
+                    system_instruction= CacheModel.system_instruction(),
                     temperature=0.0,
                     top_k = 1,
                     response_mime_type = 'application/json',
                     response_schema =  UserRequestedFood,
                 )
             )
-            print(response.text)
-        except Exception as e :
+            if response.text is None:
+                raise ValueError("Response text is None")
+            food_dict = json.loads(response.text)
+            return UserRequestedFood(**food_dict)
+            
+        except (InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError) as e :
             raise e
+        except ResourceExhaustedError as e:
+            if current_model_index < len(self.ai_config.models):
+                current_model_index = current_model_index + 1
+                return await self.read_foods_nutritions_by_text(foods = foods, current_model_index =current_model_index)
+            else: 
+                raise e
+        except Exception as e:
+            raise e
+        
+    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType , current_model_index:int =0) -> UserRequestedFood:
+        # Todo recursively use models
+        try: 
+            response = self.ai_client.models.generate_content(  # type: ignore
+                model=self.ai_config.models[current_model_index],
+                contents=[
+                    'Input is audio : ',
+                    types.Part.from_bytes(
+                    data=foods,
+                    mime_type=meme_type,
+                    )
+                ],
+                config = types.GenerateContentConfig(
+                    # cached_content=self._context_caching.name,
+                    system_instruction= CacheModel.system_instruction(),
+                    temperature=0.0,
+                    top_k = 1,
+                    response_mime_type = 'application/json',
+                    response_schema =  UserRequestedFood,
+                )
+            )
+            if response.text is None:
+                raise ValueError("Response text is None")
+            food_dict = json.loads(response.text)
+            return UserRequestedFood(**food_dict)
+            
+        except (InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError) as e :
+            raise e
+        except ResourceExhaustedError as e:
+            if current_model_index < len(self.ai_config.models):
+                current_model_index = current_model_index + 1
+                return await self.read_foods_nutritions_by_voice(foods = foods,meme_type=meme_type, current_model_index =current_model_index)
+            else: 
+                raise e
+        except Exception as e:
+            raise e
+            
         
     @property
     def _context_caching(self):
@@ -65,7 +117,7 @@ class RemoteApiImpl(RemoteApiInterface):
             model=self.ai_config.models[0],
             config=types.CreateCachedContentConfig(
                 display_name='food_cache', # used to identify the cache
-                system_instruction= CacheModel().system_instruction,
+                system_instruction= CacheModel.system_instruction(),
                 ttl=f"{60 * 60 * 72}s",
             )
         )
