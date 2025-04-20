@@ -87,3 +87,6 @@ msgstr "Image is misleading or falsely represents a fitness outcome or product."
 
 msgid "other_rejection_reason"
 msgstr "Other reason not listed above."
+
+msgid "file_limit_exceeded"
+msgstr "File size limit exceeded {file_size_limit}Mb."

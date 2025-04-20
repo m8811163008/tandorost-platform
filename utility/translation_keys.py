@@ -32,3 +32,4 @@ class TranslationKeys:
     WATERMARK_OR_LOGO = "watermark_or_logo"
     MISLEADING_OR_FALSE = "misleading_or_false"
     OTHER_REJECTION_REASON = "other_rejection_reason"
+    FILE_LIMIT_EXCEEDED = "file_limit_exceeded"

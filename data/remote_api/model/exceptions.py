@@ -49,3 +49,8 @@ class DeadlineExceededError(Exception):
     """Raised when the service is unable to finish processing within the deadline."""
     def __init__(self, message: str="The service is unable to finish processing within the deadline. Set a larger 'timeout' in your client request."):
         super().__init__(message)
+
+class ParameterError(Exception):
+    """Raised when the response contains a null parameter and AI models could not complete the request."""
+    def __init__(self, message: str="The response contains a null parameter, and the AI models could not complete the request. Verify your input and try again."):
+        super().__init__(message)

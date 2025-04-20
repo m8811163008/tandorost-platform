@@ -39,51 +39,28 @@ class RemoteApiImpl(RemoteApiInterface):
                 raise NetworkConnectionError()   # Handle the response
             finally:
                 await client.aclose()
-            
+
     
-    async def read_foods_nutritions_by_text(self, foods : str, current_model_index:int =0) -> UserRequestedFood:
-        # Todo recursively use models
-        try:
-            response = self.ai_client.models.generate_content(  # type: ignore
-                model=self.ai_config.models[current_model_index],
-                contents=[foods],
-                config = types.GenerateContentConfig(
-                    # cached_content=self._context_caching.name,
-                    system_instruction= CacheModel.system_instruction(),
-                    temperature=0.0,
-                    top_k = 1,
-                    response_mime_type = 'application/json',
-                    response_schema =  UserRequestedFood,
-                )
-            )
-            if response.text is None:
-                raise ValueError("Response text is None")
-            food_dict = json.loads(response.text)
-            return UserRequestedFood(**food_dict)
-            
-        except (InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError) as e :
-            raise e
-        except ResourceExhaustedError as e:
-            if current_model_index < len(self.ai_config.models):
-                current_model_index = current_model_index + 1
-                return await self.read_foods_nutritions_by_text(foods = foods, current_model_index =current_model_index)
-            else: 
-                raise e
-        except Exception as e:
-            raise e
+    async def read_foods_nutritions_by_text(self, foods : str) -> UserRequestedFood:
+        return await self._read_foods_nutritions(contents = [foods])
+    
         
-    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType , current_model_index:int =0) -> UserRequestedFood:
-        # Todo recursively use models
-        try: 
-            response = self.ai_client.models.generate_content(  # type: ignore
-                model=self.ai_config.models[current_model_index],
-                contents=[
+    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType ) -> UserRequestedFood:
+        return await self._read_foods_nutritions(contents=[
                     'Input is audio : ',
                     types.Part.from_bytes(
                     data=foods,
                     mime_type=meme_type,
                     )
-                ],
+                ],)
+        
+
+    async def _read_foods_nutritions(self, contents: list[Any], current_model_index:int =0) -> UserRequestedFood:
+        # Todo recursively use models
+        try: 
+            response = self.ai_client.models.generate_content(  # type: ignore
+                model=self.ai_config.models[current_model_index],
+                contents=contents,
                 config = types.GenerateContentConfig(
                     # cached_content=self._context_caching.name,
                     system_instruction= CacheModel.system_instruction(),
@@ -93,22 +70,28 @@ class RemoteApiImpl(RemoteApiInterface):
                     response_schema =  UserRequestedFood,
                 )
             )
-            if response.text is None:
-                raise ValueError("Response text is None")
-            food_dict = json.loads(response.text)
-            return UserRequestedFood(**food_dict)
-            
         except (InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError) as e :
             raise e
         except ResourceExhaustedError as e:
+            # recursively use models
             if current_model_index < len(self.ai_config.models):
+                # TODO save model index to use
                 current_model_index = current_model_index + 1
-                return await self.read_foods_nutritions_by_voice(foods = foods,meme_type=meme_type, current_model_index =current_model_index)
+                return await self._read_foods_nutritions(contents = contents, current_model_index =current_model_index)
             else: 
                 raise e
         except Exception as e:
             raise e
+        
+        try:
+            if response.text is None:
+                raise ParameterError()
             
+            food_dict = json.loads(response.text)
+            return UserRequestedFood(**food_dict)
+        
+        except json.JSONDecodeError:
+            raise ParameterError()
         
     @property
     def _context_caching(self):
