@@ -1,10 +1,11 @@
 from enum import StrEnum
 from typing import List
 
-from bcp47 import BCP47 # type: ignore
 from pydantic import BaseModel, ConfigDict
 
-
+class UserLanguage(StrEnum):
+    EN = 'en'
+    FA = 'fa'
 
 class AudioMemeType(StrEnum):
     WAV = 'audio/wav'
@@ -23,11 +24,8 @@ class CarbohydrateSource(StrEnum):
     FRUITS_OR_NON_STARCHY_VEGETABLES = 'fruits_or_non_starchy_vegetables'
     OTHERS = 'others'
 
-    def is_fruit_or_non_starchy_vegetable(self) -> bool:
-        return self == CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
-
 class Ingredient(BaseModel):
-    user_language: BCP47
+    user_language: UserLanguage
     user_native_language_ingredient_name: str
     translated_to_english_ingredient_name: str
     unit_of_measurement_native_language: str

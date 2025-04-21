@@ -1,10 +1,13 @@
 from abc import ABC, abstractmethod
+import datetime
 
 from data.local_database import Token
+
 
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import UserBioData
 from data.local_database.model.user_files import FileMetaData, GallaryTag, UserStaticFiles
+from data.local_database.model.user_food import UserFood
 
 
 class DatabaseInterface(ABC):
@@ -83,5 +86,16 @@ class DatabaseInterface(ABC):
         pass
 
 
-    
+    # User food nutritions
+    @abstractmethod
+    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> UserFood | None:
+        pass
+
+    @abstractmethod
+    async def upsert_user_foods(self, user_food:UserFood) -> UserFood:
+        pass
+
+    @abstractmethod
+    async def delete_user_foods(self,  user_id:str, foods_ids: list[str]) -> list[str] | None:
+        pass
 

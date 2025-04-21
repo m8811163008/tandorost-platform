@@ -1,4 +1,5 @@
 
+import datetime
 from uuid import uuid4
 from motor.motor_asyncio import (
     AsyncIOMotorClient,
@@ -19,6 +20,7 @@ from data.local_database.model.user_files import (
     FileMetaData, 
     ProcessingStatus
     )
+from data.local_database.model.user_food import UserFood
 
 
 
@@ -30,6 +32,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.auth_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TokenCollection"]
         self.user_bio_data_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserBioDataCollection"]
         self.user_static_file_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserStaticsFileCollection"]
+        self.user_food_nutritions_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserFoodNutritionCollectionCollection"]
 
 
     async def clear(self):
@@ -37,9 +40,8 @@ class LocalDataBaseImpl(DatabaseInterface):
         await self.auth_collection.delete_many({})
         await self.user_bio_data_collection.delete_many({})
         await self.user_static_file_collection.delete_many({})
+        await self.user_food_nutritions_collection.delete_many({})
         print('*****Database cleared!*****')
-    
-
 
     async def _raise_for_invalid_user(self, user_id: str):
         user_data = await self.user_collection.find_one({"_id": user_id})
@@ -52,7 +54,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         if user_data is None:
             return None
         return UserInDB(**user_data)
-     
+    
     async def read_user_by_id(self, user_id : str) -> UserInDB | None:
         """Retrieve a user token from the database."""
         user_data = await self.user_collection.find_one({"_id": user_id})
@@ -201,3 +203,82 @@ class LocalDataBaseImpl(DatabaseInterface):
             return None
         return Token(**token)
     
+
+    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> UserFood | None:
+        user_foods = await self.user_food_nutritions_collection.find_one({
+            'user_id':user_id,
+            'foods.upsert_date': {
+                '$gte': start_date,
+                '$lte': end_date
+            }
+        })
+        if user_foods is None :
+            return None
+        return UserFood(**user_foods)
+
+    async def upsert_user_foods(self, user_food: UserFood) -> UserFood:
+        # Ensure the user exists
+        await self._raise_for_invalid_user(user_id=user_food.user_id)
+
+        # Check if the user food document exists
+        existing_user_food = await self.user_food_nutritions_collection.find_one(
+            {'user_id': user_food.user_id}, {'_id': 1, 'foods': 1}
+        )
+
+        if existing_user_food is None:
+            # Create a new document if it doesn't exist
+            user_food.id = str(uuid4())
+            result = await self.user_food_nutritions_collection.find_one_and_update(
+                filter={'user_id': user_food.user_id},
+                update={'$set': user_food.model_dump(by_alias=True, exclude_none=True)},
+                upsert=True,
+                return_document=ReturnDocument.AFTER
+            )
+            return UserFood(**result)
+        else:
+            # Update the existing document by appending new foods
+            existing_foods = existing_user_food.get('foods', [])
+            new_foods = user_food.foods
+            updated_foods = existing_foods + new_foods
+
+            await self.user_food_nutritions_collection.find_one_and_update(
+                filter={'user_id': user_food.user_id},
+                update={'$set': {'foods': updated_foods}},
+                upsert=True,
+                return_document=ReturnDocument.AFTER
+            )
+
+            user_food.id = existing_user_food['_id']
+            return user_food
+
+
+    async def delete_user_foods(self,  user_id:str, foods_ids: list[str]) -> list[str] | None:
+        """Delete specific foods for a user based on food IDs."""
+        # Ensure the user exists
+        await self._raise_for_invalid_user(user_id=user_id)
+
+        # Retrieve the user's food document
+        user_foods = await self.user_food_nutritions_collection.find_one({'user_id': user_id})
+        if user_foods is None:
+            return None
+
+        # Filter out the foods to be deleted
+        remaining_foods = [
+            food for food in user_foods.get('foods', [])
+            if food['food_id'] not in foods_ids
+        ]
+
+        # Update the database with the remaining foods
+        await self.user_food_nutritions_collection.find_one_and_update(
+            filter={'user_id': user_id},
+            update={'$set': {'foods': remaining_foods}},
+            return_document=ReturnDocument.AFTER,
+            upsert=True
+        )
+
+        # Return the list of deleted food IDs
+        deleted_food_ids = [
+            food_id for food_id in foods_ids
+            if any(food['food_id'] == food_id for food in user_foods.get('foods', []))
+        ]
+        return deleted_food_ids

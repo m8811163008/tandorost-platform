@@ -52,7 +52,6 @@ class AuthRepository:
         user.is_verified = is_verified
         assert(user.id is not None)
         return await self.database.upsert_user(user=user)
-    
 
     async def authenticate(self,username: str, password: str) :
         user = await self.database.read_user_by_phone_number(username)

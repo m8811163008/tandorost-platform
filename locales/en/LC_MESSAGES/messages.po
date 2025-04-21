@@ -90,3 +90,27 @@ msgstr "Other reason not listed above."
 
 msgid "file_limit_exceeded"
 msgstr "File size limit exceeded {file_size_limit}Mb."
+
+msgid "invalid_argument"
+msgstr "The request body is malformed. There is a typo, or a missing required field in your request. Check the API reference for request format, examples, and supported versions."
+
+msgid "failed_precondition"
+msgstr "Gemini API free tier is not available in your country. Please enable billing on your project in Google AI Studio. To use the Gemini API, you will need to set up a paid plan using Google AI Studio."
+
+msgid "permission_denied"
+msgstr "Your API key doesn't have the required permissions. You are using the wrong API key; you are trying to use a tuned model without going through proper authentication. Check that your API key is set and has the right access."
+
+msgid "not_found"
+msgstr "The requested resource wasn't found. An image, audio, or video file referenced in your request was not found. Check if all parameters in your request are valid for your API version."
+
+msgid "resource_exhausted"
+msgstr "You've exceeded the rate limit. You are sending too many requests per minute with the free tier Gemini API. Ensure you're within the model's rate limit. Request a quota increase if needed."
+
+msgid "internal_error"
+msgstr "An unexpected error occurred on Google's side. Your input context is too long. Reduce your input context or temporarily switch to another model (e.g., from Gemini 1.5 Pro to Gemini 1.5 Flash) and see if it works. Or wait a bit and retry your request."
+
+msgid "service_unavailable"
+msgstr "The service may be temporarily overloaded or down. The service is temporarily running out of capacity. Temporarily switch to another model (e.g., from Gemini 1.5 Pro to Gemini 1.5 Flash) and see if it works. Or wait a bit and retry your request."
+
+msgid "deadline_exceeded"
+msgstr "The service is unable to finish processing within the deadline. Your prompt (or context) is too large to be processed in time. Set a larger 'timeout' in your client request to avoid this error."
