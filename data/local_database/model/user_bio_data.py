@@ -1,6 +1,8 @@
+import datetime
 from enum import Enum
 
 from pydantic import  BaseModel, ConfigDict, Field
+
 
 class Gender(Enum):
     MALE = 'male'
@@ -14,23 +16,39 @@ class ActivityLevel(Enum):
     VERY_ACTIVE = 'veryActive'
     OTHER = 'other'
 
-class BodyComposition(BaseModel):
-    height: list[float]
-    weight: list[float]
-    waist_circumference: list[float]
-    arm_circumference: list[float]
-    chest_circumference: list[float]
-    thigh_circumference: list[float]
-    calf_muscle_circumference: list[float]
-    hip_circumference: list[float]
-    activity_level: list[ActivityLevel]
-    model_config = ConfigDict(use_enum_values=True,
-                              )
+class DataPoint(BaseModel):
+    value : ActivityLevel | float
+    create_date : datetime.datetime
+    model_config = ConfigDict(use_enum_values=True,)
 
 class UserBioData (BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
     gender : Gender
     age : int
-    body_composition : BodyComposition
+    height: list[DataPoint]
+    weight: list[DataPoint]
+    waist_circumference: list[DataPoint]
+    arm_circumference: list[DataPoint]
+    chest_circumference: list[DataPoint]
+    thigh_circumference: list[DataPoint]
+    calf_muscle_circumference: list[DataPoint]
+    hip_circumference: list[DataPoint]
+    activity_level: list[DataPoint]
+    model_config = ConfigDict(use_enum_values=True,)
+
+
+
+class UserBioDataUpsert (BaseModel):
+    gender : Gender | None = None
+    age : int | None = None
+    height: float | None = None
+    weight: float | None = None
+    waist_circumference: float | None = None
+    arm_circumference: float | None = None
+    chest_circumference: float | None = None
+    thigh_circumference: float | None = None
+    calf_muscle_circumference: float | None = None
+    hip_circumference: float | None = None
+    activity_level: ActivityLevel | None = None
     model_config = ConfigDict(use_enum_values=True,)

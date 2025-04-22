@@ -1,8 +1,7 @@
 
+from data.common_data_model.language import Language
 from domain_models.verification_code import VerificationCode
 from pydantic import  BaseModel, Field,ConfigDict
-from bcp47 import bcp47, BCP47
-
 
 
 class Address(BaseModel):
@@ -18,7 +17,7 @@ class UserInDB(BaseModel):
     phone_number: str
     address : Address | None = None
     full_name: str | None = None
-    language: BCP47 = bcp47(language="en", region="GB")
+    language: Language = Language.ENGLISH
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
     is_verified : bool = False

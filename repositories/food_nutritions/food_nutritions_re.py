@@ -7,7 +7,7 @@ from data.local_database import DatabaseInterface
 from data.local_database.model.user_food import CarbohydrateSourceLD, TotalMacroNutritionPerFood
 from data.remote_api import  RemoteApiInterface
 from data.remote_api.model.food_ai_model import AudioMemeType
-from domain_models import UserFood, UserRequestedFood, Food, CarbohydrateSource
+from domain_models import  UserRequestedFood, Food, CarbohydrateSource
 
 
 class FoodNutritionsRepository:
@@ -15,7 +15,7 @@ class FoodNutritionsRepository:
         self.database = database
         self.remote_api = remote_api
 
-    async def read_foods_nutritions_by_text(self,user_id: str, foods : str) -> UserFood:
+    async def read_foods_nutritions_by_text(self,user_id: str, foods : str) -> list[Food]:
         # Todo recursively use models
         try:
             user_requested_food = await self.remote_api.read_foods_nutritions_by_text(foods= foods)
@@ -31,12 +31,23 @@ class FoodNutritionsRepository:
         except Exception as e:
             raise e
         
-    async def _upsert_foods_on_database(self,user_id :str,   user_requested_food:UserRequestedFood)-> UserFood:
+    async def read_foods_nutritions(self,user_id: str,start_date: datetime,end_date: datetime) -> list[Food]:
+        return await self.database.read_user_foods(user_id=user_id, start_date=start_date, end_date=end_date)
+    
+    async def delete_user_foods(self,foods_ids: list[str]) -> list[str]:
+        return await self.database.delete_user_foods(foods_ids=foods_ids)
+    
+    async def update_user_food(self,food: Food) -> Food:
+        result = await self.database.upsert_user_foods(user_foods=[food])
+        return result[0]
+        
+    async def _upsert_foods_on_database(self,user_id :str,   user_requested_food:UserRequestedFood)-> list[Food]:
         foods_list : list[Food]= []
         upsert_date = datetime.now()
         for ingredient in user_requested_food.ingredients:
             food = Food(
-                food_id= str(uuid4()),
+                user_id=user_id,
+                id = str(uuid4()),
                 upsert_date=upsert_date,
                 user_language = ingredient.user_language,
                 user_native_language_food_name = ingredient.user_native_language_ingredient_name,
@@ -53,11 +64,8 @@ class FoodNutritionsRepository:
                 )
             ) 
             foods_list.append(food)
-        user_food = UserFood( # type: ignore
-            user_id = user_id,
-            foods = foods_list
-        )
-        return await self.database.upsert_user_foods(user_food=user_food)    
+
+        return await self.database.upsert_user_foods(user_foods=foods_list)    
         
     def _map_carbohydrate_source(self, source: CarbohydrateSource) -> CarbohydrateSourceLD:
         if source == CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES:

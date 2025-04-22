@@ -11,16 +11,15 @@ from typing import Any
 from pymongo import ReturnDocument
 from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
-from data.local_database.model.exceptions import DocumentNotFound
+from data.local_database.model.exceptions import DocumentNotFound, InvalidUserBioDataUpsert
 from data.local_database.model.user import UserInDB
-from data.local_database.model.user_bio_data import UserBioData
+from data.local_database.model.user_bio_data import DataPoint, UserBioData, UserBioDataUpsert
 from data.local_database.model.user_files import (
-    UserStaticFiles, 
     GallaryTag, 
-    FileMetaData, 
+    FileData, 
     ProcessingStatus
     )
-from data.local_database.model.user_food import UserFood
+from data.local_database.model.user_food import Food
 
 
 
@@ -80,106 +79,120 @@ class LocalDataBaseImpl(DatabaseInterface):
             return None
         return UserBioData(**user_bio_data)
 
-    async def upsert_user_bio_data(self, user_bio_data: UserBioData)-> UserBioData:
+    async def upsert_user_bio_data(self,user_id : str, user_bio_data: UserBioDataUpsert)-> UserBioData:
         """Update user data"""
-        #TODO update only requested parameters
-        if user_bio_data.id is None:
-            user_bio_data.id = str(uuid4())
-        await self._raise_for_invalid_user(user_id = user_bio_data.user_id)
-        update_result = await self.user_bio_data_collection.find_one_and_update(
-                filter={"user_id": user_bio_data.user_id},
-                update={"$set": user_bio_data.model_dump(exclude_none=True, by_alias=True)},
+        # await self.user_bio_data_collection.delete_many({})
+        user_data = await self.user_bio_data_collection.find_one({"user_id":user_id})
+        user_data_instance: UserBioData
+        current_datetime = datetime.datetime.now()
+        if user_data is None:
+            if user_bio_data.age is None or user_bio_data.gender is None or user_bio_data.activity_level is None or user_bio_data.height is None or user_bio_data.weight is None:
+                raise InvalidUserBioDataUpsert(detail = 'age or gender or activity_level or height or weight is null')
+            
+            user_data_instance = UserBioData(
+                _id = str(uuid4()),
+                user_id = user_id,
+                age = user_bio_data.age,
+                gender = user_bio_data.gender,
+                height= [DataPoint(value=user_bio_data.height, create_date=current_datetime)],
+                weight= [DataPoint(value=user_bio_data.weight, create_date=current_datetime)],
+                activity_level = [ DataPoint(value=user_bio_data.activity_level, create_date=current_datetime)],
+                waist_circumference= [DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.waist_circumference] if value is not None],
+                arm_circumference = [DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.arm_circumference] if value is not None],
+                chest_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.chest_circumference] if value is not None],
+                thigh_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.thigh_circumference] if value is not None],
+                calf_muscle_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.calf_muscle_circumference] if value is not None],
+                hip_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.hip_circumference] if value is not None],
+            )
+        else:
+            user_data_instance = UserBioData(**user_data)
+            if user_bio_data.age is not None:
+                user_data_instance.age = user_bio_data.age
+            if user_bio_data.gender is not None:
+                user_data_instance.gender = user_bio_data.gender
+            if user_bio_data.height is not None:
+                user_data_instance.height.append(DataPoint(value=user_bio_data.height,create_date=current_datetime))
+            if user_bio_data.weight is not None:
+                user_data_instance.weight.append(DataPoint(value=user_bio_data.weight,create_date=current_datetime))
+            if user_bio_data.activity_level is not None:
+                user_data_instance.activity_level.append(DataPoint(value=user_bio_data.activity_level,create_date=current_datetime))
+            if user_bio_data.waist_circumference is not None:
+                user_data_instance.waist_circumference.append(DataPoint(value=user_bio_data.waist_circumference,create_date=current_datetime))
+            if user_bio_data.arm_circumference is not None:
+                user_data_instance.arm_circumference.append(DataPoint(value=user_bio_data.arm_circumference,create_date=current_datetime))
+            if user_bio_data.chest_circumference is not None:
+                user_data_instance.chest_circumference.append(DataPoint(value=user_bio_data.chest_circumference,create_date=current_datetime))
+            if user_bio_data.thigh_circumference is not None:
+                user_data_instance.thigh_circumference.append(DataPoint(value=user_bio_data.thigh_circumference,create_date=current_datetime))
+            if user_bio_data.calf_muscle_circumference is not None:
+                user_data_instance.calf_muscle_circumference.append(DataPoint(value=user_bio_data.calf_muscle_circumference,create_date=current_datetime))
+            if user_bio_data.hip_circumference is not None:
+                user_data_instance.hip_circumference.append(DataPoint(value=user_bio_data.hip_circumference,create_date=current_datetime))
+
+        await self.user_bio_data_collection.find_one_and_update(
+                filter={"user_id": user_id},
+                update={"$set": user_data_instance.model_dump(exclude_none=True, by_alias=True)},
                 return_document=ReturnDocument.AFTER,
                 upsert=True
             )
-        return UserBioData(**update_result)
+        return user_data_instance
 
     # User files data
     
-    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> list[FileData]:
         """Retrieve user image gallery based on tags."""
-        # await self.user_static_file_collection.delete_many({})
-        files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
-        if files_dict is None:
-            return None
-        
-        files = UserStaticFiles(**files_dict)
-        result : dict[GallaryTag, list[FileMetaData]] = {}
-
+        result : list[FileData] = []
         for tag in tags:
-            # Check if the tag exists in the image_gallery dictionary
-            if tag in files.image_gallery:
-                result[tag] = files.image_gallery[tag]
-
+            files = await self.user_static_file_collection.find({
+                'user_id':user_id,
+                'tag' : tag
+            }).to_list()
+            for file in files:
+                result.append(FileData(**file))
         return result
+            
 
     
-    async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
+    async def read_user_static_files(self,  user_id:str) -> list[FileData]:
         """Save a user token to the database."""
-        
-        files_dict = await self.user_static_file_collection.find_one({'user_id':user_id})
-        if files_dict is None :
-            return None
-        return UserStaticFiles(**files_dict)
+        result : list[FileData] = []
+        files_dict = await self.user_static_file_collection.find({'user_id':user_id}).to_list()
+
+        for file_dict in files_dict:
+            result.append(FileData(**file_dict))
+        return result
     
     
-    async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
+    async def upsert_user_files(self,  user_files:list[FileData]) -> list[FileData]:
         """Save a user token to the database."""
-        user_files_db = await self.read_user_static_files(user_id = user_files.user_id)
-        if user_files_db is not None:
-            user_files.id = user_files_db.id
-        else:
-            user_files_db = UserStaticFiles(user_id=user_files.user_id, image_gallery={})
-            user_files.id = user_files_db.id = str(uuid4())
-
-        # Ensure the user exists
-        await self._raise_for_invalid_user(user_id = user_files.user_id)
-
-        # merge user_files_db and user_files
-        update_tag = user_files.image_gallery.keys()
-        assert(len(update_tag) == 1)
-        tag = next(iter(update_tag))  # Retrieve the single tag from the keys
-        if tag not in user_files_db.image_gallery:
-            user_files_db.image_gallery[tag] = []
-        user_files_db.image_gallery[tag].extend(user_files.image_gallery[tag])
-
-        # Convert enum keys in `image_gallery` to strings
-        user_files_dict = user_files_db.model_dump(exclude_none=True, by_alias=True)
-
-        await self.user_static_file_collection.find_one_and_update(
-                filter={"user_id": user_files.user_id},
-                update={"$set": user_files_dict},
-                return_document=ReturnDocument.AFTER,
-                upsert=True
+        if len(user_files) == 0:
+            return user_files
+        for user_file in user_files:
+            if user_file.id is None:
+                user_file.id = str(uuid4())
+            await self.user_static_file_collection.find_one_and_update(
+                filter={'_id': user_file.id},
+                update={'$set': user_file.model_dump(by_alias=True, exclude_none=True)},
+                upsert=True,
+                return_document=ReturnDocument.AFTER
             )
         return user_files
+
     
     
-    async def archive_images(self,user_id:str, images_id : list[str] ) -> list[str] | None:
+    async def archive_images(self, images_id : list[str]) -> list[str] :
         """archive user images."""
-        user_files_db = await self.read_user_static_files(user_id = user_id)
-
-        if user_files_db is None:
-            return None
-        # Ensure the user exists
-        await self._raise_for_invalid_user(user_id = user_id)
-
-        updated_image_ids:list[str] = []
-        for db_images in user_files_db.image_gallery.values():
-            for db_image in db_images:
-                for image_id in images_id:
-                    if db_image.image_id == image_id:
-                        updated_image_ids.append(image_id)
-                        db_image.processing_status = ProcessingStatus.ARCHIVED
-
-        await self.user_static_file_collection.find_one_and_update(
-                filter={"user_id": user_id},
-                update={"$set": user_files_db.model_dump(by_alias=True, exclude_none= True)},
+        for image_id in images_id:
+            await self.user_static_file_collection.find_one_and_update(
+                filter={"_id": image_id},
+                update={"$set": {
+                    "processing_status" : ProcessingStatus.ARCHIVED 
+                }},
                 return_document=ReturnDocument.AFTER,
                 upsert=True
             )
-        
-        return updated_image_ids
+        return images_id
+
 
 
     # Auth methods
@@ -204,81 +217,48 @@ class LocalDataBaseImpl(DatabaseInterface):
         return Token(**token)
     
 
-    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> UserFood | None:
-        user_foods = await self.user_food_nutritions_collection.find_one({
+    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> list[Food]:
+        user_foods = await self.user_food_nutritions_collection.find({
             'user_id':user_id,
-            'foods.upsert_date': {
+            'upsert_date': {
                 '$gte': start_date,
                 '$lte': end_date
             }
-        })
-        if user_foods is None :
-            return None
-        return UserFood(**user_foods)
+        }).to_list()
+        result: list[Food] = []
+        for user_food in user_foods:
+            result.append(Food(**user_food))
+        return result
 
-    async def upsert_user_foods(self, user_food: UserFood) -> UserFood:
+    async def upsert_user_foods(self, user_foods: list[Food]) -> list[Food]:
+        if len(user_foods) == 0:
+            return user_foods
+        assert(user_foods[0].user_id is not None)
+        user_id = user_foods[0].user_id
+
         # Ensure the user exists
-        await self._raise_for_invalid_user(user_id=user_food.user_id)
+        await self._raise_for_invalid_user(user_id = user_id)
 
-        # Check if the user food document exists
-        existing_user_food = await self.user_food_nutritions_collection.find_one(
-            {'user_id': user_food.user_id}, {'_id': 1, 'foods': 1}
-        )
-
-        if existing_user_food is None:
-            # Create a new document if it doesn't exist
-            user_food.id = str(uuid4())
-            result = await self.user_food_nutritions_collection.find_one_and_update(
-                filter={'user_id': user_food.user_id},
-                update={'$set': user_food.model_dump(by_alias=True, exclude_none=True)},
-                upsert=True,
-                return_document=ReturnDocument.AFTER
-            )
-            return UserFood(**result)
-        else:
-            # Update the existing document by appending new foods
-            existing_foods = existing_user_food.get('foods', [])
-            new_foods = user_food.foods
-            updated_foods = existing_foods + new_foods
-
+        for food in user_foods:
+            if food.id == None:
+                food.id = str(uuid4())
             await self.user_food_nutritions_collection.find_one_and_update(
-                filter={'user_id': user_food.user_id},
-                update={'$set': {'foods': updated_foods}},
+                filter={'_id': food.id},
+                update={'$set': food.model_dump(by_alias=True, exclude_none=True)},
                 upsert=True,
                 return_document=ReturnDocument.AFTER
             )
-
-            user_food.id = existing_user_food['_id']
-            return user_food
+        return user_foods
 
 
-    async def delete_user_foods(self,  user_id:str, foods_ids: list[str]) -> list[str] | None:
-        """Delete specific foods for a user based on food IDs."""
-        # Ensure the user exists
-        await self._raise_for_invalid_user(user_id=user_id)
-
-        # Retrieve the user's food document
-        user_foods = await self.user_food_nutritions_collection.find_one({'user_id': user_id})
-        if user_foods is None:
-            return None
-
-        # Filter out the foods to be deleted
-        remaining_foods = [
-            food for food in user_foods.get('foods', [])
-            if food['food_id'] not in foods_ids
-        ]
-
-        # Update the database with the remaining foods
-        await self.user_food_nutritions_collection.find_one_and_update(
-            filter={'user_id': user_id},
-            update={'$set': {'foods': remaining_foods}},
-            return_document=ReturnDocument.AFTER,
-            upsert=True
-        )
-
-        # Return the list of deleted food IDs
-        deleted_food_ids = [
-            food_id for food_id in foods_ids
-            if any(food['food_id'] == food_id for food in user_foods.get('foods', []))
-        ]
-        return deleted_food_ids
+    async def delete_user_foods(self, foods_ids: list[str]) -> list[str]:
+        for food_id in foods_ids:
+            success_ids:list[str] = []
+            try:
+                await self.user_food_nutritions_collection.delete_one({
+                    '_id' : food_id
+                })
+                success_ids.append(food_id)
+            except Exception:
+                pass
+        return foods_ids

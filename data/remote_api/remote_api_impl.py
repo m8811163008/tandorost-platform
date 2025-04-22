@@ -43,7 +43,6 @@ class RemoteApiImpl(RemoteApiInterface):
     
     async def read_foods_nutritions_by_text(self, foods : str) -> UserRequestedFood:
         return await self._read_foods_nutritions(contents = [foods])
-    
         
     async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType ) -> UserRequestedFood:
         return await self._read_foods_nutritions(contents=[

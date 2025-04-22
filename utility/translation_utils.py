@@ -1,12 +1,13 @@
 import gettext
+from domain_models import Language
 # from typing import List, Tuple
 
 class TranslationManager:
-    def __init__(self, default_language: str = "en", locales_dir: str = "locales"):
+    def __init__(self, default_language: Language = Language.ENGLISH, locales_dir: str = "locales"):
         self.default_language = default_language
         self.locales_dir = locales_dir
         self.translation: gettext.NullTranslations | None = None
-        self.supported_languages = ["en", "fa"]  # List of supported languages
+        self.supported_languages = [Language.ENGLISH, Language.PERSIAN]  # List of supported languages
         self.set_language(default_language)
 
     def set_language_from_header(self, accept_language: str):
@@ -33,7 +34,7 @@ class TranslationManager:
 
 
 # Utility function to parse Accept-Language header
-def parse_accept_language(header: str, supported_languages: list[str]) -> str:
+def parse_accept_language(header: str, supported_languages: list[Language]) -> Language:
     languages : list[tuple[str,float]]= []
     for lang in header.split(","):
         parts = lang.split(";q=")
@@ -47,13 +48,12 @@ def parse_accept_language(header: str, supported_languages: list[str]) -> str:
     # Find the first supported language
     for language, _ in languages:
         if language in supported_languages:
-            return language
+            return Language(language)
 
     # Fallback to the default language
-    return "en"  # Default language
+    return Language.ENGLISH  # Default language
 
 
 # Create a global instance of the TranslationManager
 translation_manager = TranslationManager()
-
 

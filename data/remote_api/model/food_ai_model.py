@@ -1,8 +1,10 @@
 from enum import StrEnum
 from typing import List
 
-from bcp47 import BCP47 # type: ignore
 from pydantic import BaseModel, ConfigDict
+
+from data.common_data_model.language import Language
+
 
 
 
@@ -27,7 +29,7 @@ class CarbohydrateSource(StrEnum):
         return self == CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
 
 class Ingredient(BaseModel):
-    user_language: BCP47
+    user_language: Language
     user_native_language_ingredient_name: str
     translated_to_english_ingredient_name: str
     unit_of_measurement_native_language: str

@@ -6,31 +6,28 @@ from uuid import uuid4
 from fastapi import UploadFile
 from data.local_database import DatabaseInterface
 
-from domain_models.data_models import FileMetaData, GallaryTag, UserStaticFiles
+from domain_models.data_models import FileData, GallaryTag
 
 class UserFiles:
     def __init__(self, database: DatabaseInterface):
         self.database = database
 
     
-    async def read_user_profile_image(self,  user_id:str) -> FileMetaData | None:
-        profile_images = await self.database.read_user_image_gallary(user_id=user_id, tags=[GallaryTag.PROFILE_IMAGE])
-        if profile_images is None:
-            return None
-        return profile_images[GallaryTag.PROFILE_IMAGE][-1]
+    async def read_user_profile_image(self,  user_id:str) -> list[FileData]:
+        return await self.database.read_user_image_gallary(user_id=user_id, tags=[GallaryTag.PROFILE_IMAGE])
 
-    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> list[FileData]:
         return await self.database.read_user_image_gallary(user_id=user_id, tags=tags)
     
-    async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
+    async def read_user_static_files(self,  user_id:str) -> list[FileData]:
         return await self.database.read_user_static_files(user_id=user_id)
 
-    async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
+    async def upsert_user_files(self,  user_files : list[FileData]) -> list[FileData]:
         return await self.database.upsert_user_files(user_files = user_files)
     
-    async def save_files_on_disk(self, image_gallary_files: list[UploadFile],upload_directory:str) -> list[FileMetaData]:
+    async def save_files_on_disk(self,user_id:str, tag:GallaryTag ,image_gallary_files: list[UploadFile],upload_directory:str) -> list[FileData]:
         upload_date_time = datetime.now()
-        images_meta_data: list[FileMetaData] = []
+        images_meta_data: list[FileData] = []
 
         for image_gallary_file in image_gallary_files:
             assert(image_gallary_file.filename is not None)
@@ -52,8 +49,10 @@ class UserFiles:
                 raise e
 
             # Create metadata for the uploaded file
-            meta_data = FileMetaData(
-                image_id= str(uuid4()),
+            meta_data = FileData(
+                _id= str(uuid4()),
+                user_id=user_id,
+                tag=tag,
                 file_name=image_gallary_file.filename,
                 file_size=image_gallary_file.size,
                 upload_date=upload_date_time,
@@ -63,5 +62,5 @@ class UserFiles:
             images_meta_data.append(meta_data)
         return images_meta_data
     
-    async def archive_images(self,user_id:str, images_id : list[str]):
-        return await self.database.archive_images(user_id=user_id, images_id=images_id)
+    async def archive_images(self, images_id : list[str]) -> list[str]:
+        return await self.database.archive_images( images_id=images_id)

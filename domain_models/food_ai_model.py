@@ -3,9 +3,8 @@ from typing import List
 
 from pydantic import BaseModel, ConfigDict
 
-class UserLanguage(StrEnum):
-    EN = 'en'
-    FA = 'fa'
+from data.common_data_model.language import Language
+
 
 class AudioMemeType(StrEnum):
     WAV = 'audio/wav'
@@ -25,7 +24,7 @@ class CarbohydrateSource(StrEnum):
     OTHERS = 'others'
 
 class Ingredient(BaseModel):
-    user_language: UserLanguage
+    user_language: Language
     user_native_language_ingredient_name: str
     translated_to_english_ingredient_name: str
     unit_of_measurement_native_language: str
@@ -38,7 +37,7 @@ class Ingredient(BaseModel):
     total_protein_in_grams : float
     carbohydrate_source: CarbohydrateSource
 
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True,)
 
 class UserRequestedFood(BaseModel):
     ingredients: List[Ingredient]

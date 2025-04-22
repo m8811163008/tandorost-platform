@@ -1,9 +1,10 @@
 import datetime
 from enum import StrEnum
-from typing import List, Optional
+from typing import Annotated
 
-from bcp47 import BCP47 # type: ignore
 from pydantic import BaseModel, ConfigDict, Field
+
+from data.common_data_model.language import Language
 
 
 class TotalMacroNutritionPerFood(BaseModel):
@@ -17,9 +18,10 @@ class CarbohydrateSourceLD(StrEnum):
 
 
 class Food(BaseModel):
-    food_id : str
+    id : Annotated[ str | None , Field(alias="_id")] = None
+    user_id : str
     upsert_date: datetime.datetime
-    user_language: BCP47
+    user_language: Language
 
     user_native_language_food_name: str
     translated_to_english_food_name : str
@@ -32,25 +34,6 @@ class Food(BaseModel):
 
     carbohydrate_source : CarbohydrateSourceLD
     macro_nutrition : TotalMacroNutritionPerFood
-
-
-
-class UserFood(BaseModel):
-    """
-    Represents a food log for a specific user, organized by date.
-
-    This model links a user ID to a collection of food entries (`Food` objects),
-    where each entry is associated with the date it was logged or consumed.
-
-    Attributes:
-        id (Optional[str]): The database identifier (e.g., MongoDB `_id`).
-            Defaults to None. Aliased as `_id` for database compatibility.
-        user_id (str): The unique identifier of the user this food log belongs to.
-        foods List[Food]: A dictionary where keys are
-            datetime objects representing specific dates, and values are lists
-            of `Food` objects logged for that date.
-    """
-    id : Optional[str] = Field(alias="_id", default=None)
-    user_id : str
-    foods : List[Food]
     model_config = ConfigDict(use_enum_values=True,)
+
+

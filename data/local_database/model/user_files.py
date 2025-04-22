@@ -36,8 +36,10 @@ class ImageRejectionReason(StrEnum):
 
 
 
-class FileMetaData(BaseModel):
-    image_id : str
+class FileData(BaseModel):
+    id : str | None = Field(alias="_id", default=None)
+    user_id : str
+    tag : GallaryTag
     file_name:str
     file_size: int
     upload_date: datetime
@@ -49,11 +51,7 @@ class FileMetaData(BaseModel):
     model_config = ConfigDict(use_enum_values=True,)
 
 
-class UserStaticFiles(BaseModel):
-    id : str | None = Field(alias="_id", default=None)
-    user_id : str
-    image_gallery : dict[GallaryTag, list[FileMetaData]]
-    model_config = ConfigDict(use_enum_values=True,)
+
 
 
 

@@ -1,8 +1,9 @@
 
+
+from data.common_data_model.language import Language # type: ignore
 from .food_ai_model import (
     UserRequestedFood, 
     Ingredient, 
-    UserLanguage, 
     CarbohydrateSource
     )
 
@@ -39,7 +40,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=Language.PERSIAN,
                     user_native_language_ingredient_name='تخم مرغ',
                     translated_to_english_ingredient_name='egg',
                     unit_of_measurement_native_language='گرم',
@@ -53,7 +54,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='گوجه فرنگی',
                     translated_to_english_ingredient_name='tomato',
                     unit_of_measurement_native_language='گرم',
@@ -67,7 +68,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='روغن',
                     translated_to_english_ingredient_name='oil',
                     unit_of_measurement_native_language='گرم',
@@ -89,7 +90,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='lettuce',
                     translated_to_english_ingredient_name='lettuce',
                     unit_of_measurement_native_language='gram',
@@ -103,7 +104,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 ),
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='cucumber',
                     translated_to_english_ingredient_name='cucumber',
                     unit_of_measurement_native_language='gram',
@@ -117,7 +118,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 ),
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='olive oil',
                     translated_to_english_ingredient_name='olive oil',
                     unit_of_measurement_native_language='ml',
@@ -138,7 +139,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='chicken breast',
                     translated_to_english_ingredient_name='chicken breast',
                     unit_of_measurement_native_language='gram',
@@ -152,7 +153,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='brown rice',
                     translated_to_english_ingredient_name='brown rice',
                     unit_of_measurement_native_language='cup',
@@ -173,7 +174,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='سیب',
                     translated_to_english_ingredient_name='apple',
                     unit_of_measurement_native_language='عدد',
@@ -187,7 +188,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='نان بربری',
                     translated_to_english_ingredient_name='barbari bread',
                     unit_of_measurement_native_language='تکه',
@@ -208,7 +209,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='برنج',
                     translated_to_english_ingredient_name='rice',
                     unit_of_measurement_native_language='بشقاب',
@@ -222,7 +223,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='سبزی قورمه',
                     translated_to_english_ingredient_name='ghorme sabzi herbs',
                     unit_of_measurement_native_language='کاسه',
@@ -236,7 +237,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='گوشت',
                     translated_to_english_ingredient_name='meat',
                     unit_of_measurement_native_language='گرم',
@@ -250,7 +251,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='لوبیا قرمز',
                     translated_to_english_ingredient_name='red kidney beans',
                     unit_of_measurement_native_language='گرم',
@@ -264,7 +265,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='لیمو عمانی',
                     translated_to_english_ingredient_name='dried lime',
                     unit_of_measurement_native_language='عدد',
@@ -285,7 +286,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='spaghetti',
                     translated_to_english_ingredient_name='spaghetti',
                     unit_of_measurement_native_language='bowl',
@@ -299,7 +300,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='tomato sauce',
                     translated_to_english_ingredient_name='tomato sauce',
                     unit_of_measurement_native_language='serving',
@@ -313,7 +314,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 ),
                 Ingredient(
-                    user_language=UserLanguage.EN,
+                    user_language=  Language.ENGLISH,
                     user_native_language_ingredient_name='meatballs',
                     translated_to_english_ingredient_name='meatballs',
                     unit_of_measurement_native_language='piece',
@@ -334,7 +335,7 @@ class CacheModel():
         return UserRequestedFood(
             ingredients=[
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='شیر',
                     translated_to_english_ingredient_name='milk',
                     unit_of_measurement_native_language='لیوان',
@@ -348,7 +349,7 @@ class CacheModel():
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 ),
                 Ingredient(
-                    user_language=UserLanguage.FA,
+                    user_language=  Language.PERSIAN,
                     user_native_language_ingredient_name='خرما',
                     translated_to_english_ingredient_name='date',
                     unit_of_measurement_native_language='عدد',

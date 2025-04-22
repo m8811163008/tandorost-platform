@@ -5,9 +5,9 @@ from data.local_database import Token
 
 
 from data.local_database.model.user import UserInDB
-from data.local_database.model.user_bio_data import UserBioData
-from data.local_database.model.user_files import FileMetaData, GallaryTag, UserStaticFiles
-from data.local_database.model.user_food import UserFood
+from data.local_database.model.user_bio_data import UserBioData, UserBioDataUpsert
+from data.local_database.model.user_files import FileData, GallaryTag
+from data.local_database.model.user_food import Food
 
 
 class DatabaseInterface(ABC):
@@ -42,7 +42,7 @@ class DatabaseInterface(ABC):
     # User demographic data
 
     @abstractmethod
-    async def upsert_user_bio_data(self, user_bio_data: UserBioData)-> UserBioData:
+    async def upsert_user_bio_data(self,user_id : str, user_bio_data: UserBioDataUpsert)-> UserBioData:
         """Update user data"""
         pass
 
@@ -66,36 +66,36 @@ class DatabaseInterface(ABC):
     # User statics files
 
     @abstractmethod
-    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> dict[GallaryTag, list[FileMetaData]] | None:
+    async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> list[FileData]:
         """Save a user token to the database."""
         pass
 
     @abstractmethod
-    async def read_user_static_files(self,  user_id:str) -> UserStaticFiles | None:
+    async def read_user_static_files(self,  user_id:str) -> list[FileData]:
         """Save a user token to the database."""
         pass
 
     @abstractmethod
-    async def upsert_user_files(self,  user_files:UserStaticFiles) -> UserStaticFiles:
+    async def upsert_user_files(self,  user_files:list[FileData]) -> list[FileData]:
         """Save a user token to the database."""
         pass
 
     @abstractmethod
-    async def archive_images(self,user_id:str, images_id : list[str]) -> list[str] | None:
+    async def archive_images(self, images_id : list[str]) -> list[str] :
         """Save a user token to the database."""
         pass
 
 
     # User food nutritions
     @abstractmethod
-    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> UserFood | None:
+    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> list[Food]:
         pass
 
     @abstractmethod
-    async def upsert_user_foods(self, user_food:UserFood) -> UserFood:
+    async def upsert_user_foods(self, user_foods: list[Food]) -> list[Food]:
         pass
 
     @abstractmethod
-    async def delete_user_foods(self,  user_id:str, foods_ids: list[str]) -> list[str] | None:
+    async def delete_user_foods(self,  foods_ids: list[str]) -> list[str]:
         pass
 
