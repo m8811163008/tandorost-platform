@@ -19,6 +19,7 @@ class TranslationKeys:
     OBJECT_NOT_FOUND = "object_not_found"
     VERIFICATION_CODE_SEND = "verification_code_send"
     INVALID_UPLOAD_FILE_REQUEST = "invalid_upload_file_request"
+    FILE_UPLOAD_FAILED = "file_upload_failed"
     POOR_QUALITY = "poor_quality"
     INAPPROPRIATE_CONTENT = "inappropriate_content"
     IRRELEVANT_CONTENT = "irrelevant_content"

@@ -49,6 +49,9 @@ msgstr "Verification code sent successfully."
 msgid "invalid_upload_file_request"
 msgstr "Invalid upload file request."
 
+msgid "file_upload_failed"
+msgstr "File upload failed. Please try again."
+
 msgid "poor_quality"
 msgstr "Image is blurry, pixelated, or low resolution."
 

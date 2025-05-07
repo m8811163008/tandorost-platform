@@ -3,12 +3,12 @@ from datetime import datetime
 from typing import Annotated, Any, Callable
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
+from fastapi.responses import JSONResponse
 from dependeny_manager import dm
-from domain_models import ApiResponse, AudioMemeType, InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError, Food
+from domain_models import  AudioMemeType, InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError, Food
+from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
-
-
 
 
 router = APIRouter(
@@ -57,20 +57,23 @@ async def read_foods_nutritions_by_voice(
     prompt: UploadFile
 ) :
     if prompt.filename is None or prompt.size is None or prompt.content_type is None:
+        message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=ApiResponse.error(
-                message='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
-                error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                message=message
+            ).model_dump()
+
         )
     if prompt.size > 7 * 1024 * 1024:  # Restrict file size to 5 MB
+        message = TranslationKeys.FILE_LIMIT_EXCEEDED.format(file_size_limit = 7 )
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=ApiResponse.error(
-                message='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
-                error_detail=TranslationKeys.FILE_LIMIT_EXCEEDED.format(file_size_limit = 7 )
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.FILE_LIMIT_EXCEEDED',
+                message=message
+            ).model_dump()
         )
 
     prompt_bytes = await prompt.read()
@@ -90,9 +93,9 @@ async def read_foods_nutritions(
     end_date: Annotated[datetime , Query()],
 ) :
     foods = await dm.food_nutrition_repo.read_foods_nutritions(user_id=user_id, start_date=start_date, end_date=end_date)
-    return ApiResponse.success(
-        data = [food.model_dump() for food in foods]
-    ).to_dict()
+    return JSONResponse(
+        content=[food.model_dump() for food in foods]
+    )
 
 @router.get("/update_foods_nutritions/",responses={
     200 : {"model" : list[Food], "description": "HTTP_200_OK",},
@@ -108,9 +111,9 @@ async def update_foods_nutritions(
             detail=TranslationKeys.PERMISSION_DENIED
         )
     food = await dm.food_nutrition_repo.update_user_food(food=food)
-    return ApiResponse.success(
-        data = food.model_dump()
-    ).to_dict()
+    return JSONResponse(
+        content=food.model_dump()
+    )
 
 @router.delete("/delete_foods_nutritions/",responses={
     200 : {"model" : list[str], "description": "HTTP_200_OK",}
@@ -120,86 +123,96 @@ async def delete_foods_nutritions(
     food_ids: Annotated[list[str] , Query()],
 ) :
     deleted_foods = await dm.food_nutrition_repo.delete_user_foods(foods_ids=food_ids)
-    return ApiResponse.success(
-        data = deleted_foods
-    ).to_dict()
+    return JSONResponse(
+        content=deleted_foods
+    )
 
 
-async def _handle_food_request(request: Callable[..., Any], **kwargs: Any):
+async def _handle_food_request(request: Callable[..., Any], **kwargs: Any) -> JSONResponse:
     try:
-        foods = await request(**kwargs)       
-        return ApiResponse.success(
-            data = foods.model_dump()
-        ).to_dict()
+        foods = await request(**kwargs)    
+        return JSONResponse(
+            content=[food.model_dump() for food in foods]
+        )   
+        
     except InvalidArgumentError :
+        message = TranslationKeys.INVALID_ARGUMENT
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=ApiResponse.error(
-                message='TranslationKeys.INVALID_ARGUMENT',
-                error_detail=TranslationKeys.INVALID_ARGUMENT
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.INVALID_ARGUMENT',
+                message=message
+            ).model_dump()
         )
     except FailedPreconditionError :
+        message = TranslationKeys.FAILED_PRECONDITION
         raise HTTPException(
             status_code=status.HTTP_412_PRECONDITION_FAILED,
-            detail=ApiResponse.error(
-                message='TranslationKeys.FAILED_PRECONDITION',
-                error_detail=TranslationKeys.FAILED_PRECONDITION
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.FAILED_PRECONDITION',
+                message=message
+            ).model_dump()
         )
     except  PermissionDeniedError :
+        message = TranslationKeys.PERMISSION_DENIED
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail=ApiResponse.error(
-                message='TranslationKeys.PERMISSION_DENIED',
-                error_detail=TranslationKeys.PERMISSION_DENIED
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.PERMISSION_DENIED',
+                message=message
+            ).model_dump()
         )
     except  NotFoundError :
+        message = TranslationKeys.NOT_FOUND
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=ApiResponse.error(
-                message='TranslationKeys.NOT_FOUND',
-                error_detail=TranslationKeys.NOT_FOUND
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.NOT_FOUND',
+                message=message
+            ).model_dump()
         )
     except  InternalError :
+        message = TranslationKeys.INTERNAL_ERROR
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=ApiResponse.error(
-                message='TranslationKeys.INTERNAL_ERROR',
-                error_detail=TranslationKeys.INTERNAL_ERROR
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.INTERNAL_ERROR',
+                message=message
+            ).model_dump()
         )
     except  ServiceUnavailableError :
+        message = TranslationKeys.SERVICE_UNAVAILABLE
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail=ApiResponse.error(
-                message='TranslationKeys.SERVICE_UNAVAILABLE',
-                error_detail=TranslationKeys.SERVICE_UNAVAILABLE
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.SERVICE_UNAVAILABLE',
+                message=message
+            ).model_dump()
         )
     except  DeadlineExceededError :
+        message = TranslationKeys.DEADLINE_EXCEEDED
         raise HTTPException(
             status_code=status.HTTP_504_GATEWAY_TIMEOUT,
-            detail=ApiResponse.error(
-                message='TranslationKeys.DEADLINE_EXCEEDED',
-                error_detail=TranslationKeys.DEADLINE_EXCEEDED
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.DEADLINE_EXCEEDED',
+                message=message
+            ).model_dump()
         )
     except  ResourceExhaustedError :
+        message = TranslationKeys.RESOURCE_EXHAUSTED
         raise HTTPException(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
-            detail=ApiResponse.error(
-                message='TranslationKeys.RESOURCE_EXHAUSTED',
-                error_detail=TranslationKeys.RESOURCE_EXHAUSTED
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.RESOURCE_EXHAUSTED',
+                message=message
+            ).model_dump()
         )
     except Exception :
+        message = TranslationKeys.SERVICE_UNAVAILABLE
         raise HTTPException(
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail=ApiResponse.error(
-                message='TranslationKeys.SERVICE_UNAVAILABLE',
-                error_detail=TranslationKeys.SERVICE_UNAVAILABLE
-            ).to_dict()
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.SERVICE_UNAVAILABLE',
+                message=message
+            ).model_dump()
         )

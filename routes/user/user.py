@@ -1,12 +1,15 @@
 
+
 from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
+from fastapi.responses import JSONResponse
 from data.local_database.model.user_bio_data import UserBioData
 from data.local_database.model.user_files import FileData
 from dependeny_manager import dm
-from domain_models import ApiResponse, UserUpdateRequest, UserBioDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,InvalidUserBioDataUpsert
+from domain_models import  UserUpdateRequest, UserBioDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,InvalidUserBioDataUpsert
 
+from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
 from utility.constants import upload_directory_path
@@ -29,9 +32,9 @@ async def read_user(
 ) :
     user = await dm.user_repo.read_user(user_id=user_id)
     assert(user is not None)
-    return ApiResponse.success(
-        data = user.model_dump(exclude={"verification_code", "hashed_password"})
-    ).to_dict()
+    return JSONResponse(
+        content=user.model_dump(exclude={"verification_code", "hashed_password"})
+    )
 
 @router.put("/update_profile/",  responses={
     200 : {"model" : UserInDB , "description": "HTTP_200_OK",},
@@ -61,9 +64,9 @@ async def update_user(
              detail=TranslationKeys.USER_NOT_FOUND
          )
      else:
-         return ApiResponse.success(
-             data = user.model_dump(exclude={"verification_code", "hashed_password"})
-         ).to_dict()
+        return JSONResponse(
+            content=user.model_dump(exclude={"verification_code", "hashed_password"})
+        )
 
 
 @router.put("/update_user_bio_data/",  responses={
@@ -79,13 +82,15 @@ async def update_user_bio_data(
             user_id = user_id,
             user_bio_data=user_bio_data
         )
-        return ApiResponse.success(
-                    data = bio_data.model_dump()
-                ).to_dict()
+        return JSONResponse(
+            content=bio_data.model_dump()
+        )
+
     except InvalidUserBioDataUpsert as e:
+        message = TranslationKeys.INVALID_ARGUMENT
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail= ApiResponse.error(message= 'InvalidUserBioDataUpsert', error_detail=e.detail).to_dict()
+            detail= ErrorResponse(error_detail= 'TranslationKeys.INVALID_ARGUMENT', message=message).model_dump()
         )
 
 
@@ -102,11 +107,10 @@ async def read_user_bio_data(
     if bio_data is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail= ApiResponse.error(message= 'TranslationKeys.OBJECT_NOT_FOUND', error_detail=TranslationKeys.OBJECT_NOT_FOUND).to_dict()
+            detail= ErrorResponse(error_detail= 'TranslationKeys.OBJECT_NOT_FOUND', message=TranslationKeys.OBJECT_NOT_FOUND).model_dump()
         )
-    return ApiResponse.success(
-                data = bio_data.model_dump()
-            ).to_dict()
+    return JSONResponse(
+        content=bio_data.model_dump())
 
 @router.get("/read_user_image_profile/",  responses={
     200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
@@ -117,10 +121,10 @@ async def read_user_profile_image(
     profile_image_meta_data = await dm.user_files_repo.read_user_profile_image(
         user_id=user_id,
     )
-    
-    return ApiResponse.success(
-        data=[file.model_dump() for file in profile_image_meta_data]
-    ).to_dict()
+    return JSONResponse(
+        content=[file.model_dump() for file in profile_image_meta_data]
+    )
+
 
 @router.get("/read_user_image_gallary/", responses={
     200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
@@ -133,9 +137,9 @@ async def read_user_image_gallary(
         user_id=user_id,
         tags=tags
     )
-    return ApiResponse.success(
-                data = [image_gallary.model_dump() for image_gallary in images_gallary]
-            ).to_dict()
+    return JSONResponse(
+        content=[file.model_dump() for file in images_gallary]
+    )
 
 @router.post("/add_user_images/",  responses={
     200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
@@ -148,21 +152,24 @@ async def add_user_image(
     image_gallary_files: list[UploadFile]
 ):
     if len(image_gallary_files) == 0:
+        message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
+
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=ApiResponse.error(
-                message='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
-                error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
-            ).to_dict()
+            detail = ErrorResponse(
+                error_detail='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                message=message
+            ).model_dump()
         )
     for image_gallary_file in image_gallary_files:
         if image_gallary_file.filename is None or image_gallary_file.size is None or image_gallary_file.content_type is None:
+            message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail=ApiResponse.error(
-                    message='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
-                    error_detail=TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
-                ).to_dict()
+                detail=ErrorResponse(
+                    error_detail='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                    message=message
+                ).model_dump()
             )
 
     # user_static_files = await dm.user_files_repo.read_user_static_files(user_id=user_id)
@@ -174,17 +181,17 @@ async def add_user_image(
     except Exception as e:
         raise HTTPException(
                     status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                    detail=ApiResponse.error(
-                        message='TranslationKeys.FILE_UPLOAD_FAILED',
-                        error_detail=str(e)
-                    ).to_dict()
+                    detail=ErrorResponse(
+                        error_detail='TranslationKeys.FILE_UPLOAD_FAILED',
+                        message=TranslationKeys.FILE_UPLOAD_FAILED
+                    ).model_dump()
                 )
 
     results = await dm.user_files_repo.upsert_user_files(user_files=images_meta_data)
 
-    return ApiResponse.success(
-        data = [result.model_dump() for result in results ]
-    ).to_dict()
+    return JSONResponse(
+        content=[file.model_dump() for file in results]
+    )
 
 @router.post("/archive_user_images/", responses={
     200 : {"model" : ArchiveUserImagesResponse, "description": "HTTP_200_OK",},
@@ -194,10 +201,10 @@ async def archive_user_images(
     images_id: Annotated[list[str], Body()],
 ):
     updated_images_ids = await dm.user_files_repo.archive_images(images_id=images_id)
-
-    return ApiResponse.success(
-        data=ArchiveUserImagesResponse(
+    return JSONResponse(
+        content=ArchiveUserImagesResponse(
             updated_images_ids = updated_images_ids,
             images_id = images_id
         ).model_dump()
-    ).to_dict()
+    )
+
