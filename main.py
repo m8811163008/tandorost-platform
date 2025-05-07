@@ -5,6 +5,7 @@ from routes.auth import router as auth_router
 from routes.user import router as user_router
 from routes.foods_nutrition import router as food_nutrition_router
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
+from fastapi.middleware.cors import CORSMiddleware
 
 from utility import (
     auth_middleware,
@@ -26,10 +27,20 @@ app = FastAPI(root_path=root_path, dependencies=[Depends(get_accept_language)])
 app.include_router(auth_router)
 app.include_router(user_router)
 app.include_router(food_nutrition_router)
+# Initialize middlewares
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow any origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # Initialize middlewares
 app.add_middleware(TrustedHostMiddleware)
 app.add_middleware(BaseHTTPMiddleware, dispatch=auth_middleware)
+
 
 app.mount(protected_directory_path, StaticFiles(directory=protected_directory, check_dir=True))
 

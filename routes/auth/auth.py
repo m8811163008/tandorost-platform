@@ -1,3 +1,4 @@
+
 from random import Random
 from fastapi import APIRouter, Form
 from domain_models import InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError,ApiResponse,VerificationCode,VerificationType, Token
@@ -39,6 +40,7 @@ async def verify(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
             detail= ApiResponse.error(message='TranslationKeys.RATE_LIMIT_REACH', error_detail=message).to_dict()
         )
+    
     
     random_code = str(Random().randint(1000, 9999))
     verification_code = VerificationCode(created_at= datetime.now().isoformat(), verification_code= random_code)
@@ -89,8 +91,9 @@ async def register(
     except InvalidVerificationCode:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail = ApiResponse.error(message='TranslationKeys.INVALID_VERIFICATION_CODE', error_detail=translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE).format(user_name=user_name)).to_dict()
-        )    
+            detail=ApiResponse.error(message='TranslationKeys.INVALID_VERIFICATION_CODE', error_detail=translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE).format(user_name=user_name)).to_dict()
+        )
+
 
     await dm.auth_repo.update_user_account(password=password,username=user_name)
     return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.USER_REGISTERED), data=None).to_dict()

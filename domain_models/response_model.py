@@ -47,7 +47,5 @@ class ApiResponse:
         if self.data is not None:
             response["data"] = self.data
         if self.error_detail is not None:
-            response["error"] = {
-                "details": self.error_detail,
-            }
+            response["error_detail"] = self.error_detail,
         return response
