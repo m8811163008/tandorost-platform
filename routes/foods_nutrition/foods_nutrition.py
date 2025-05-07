@@ -17,7 +17,17 @@ router = APIRouter(
     #TOdo add dependency
 )
 
-@router.post("/read_foods_nutritions_by_text/")
+@router.post("/read_foods_nutritions_by_text/",responses={
+    200 : {"model" : list[Food], "description": "HTTP_200_OK",},
+    400 : {"description": "HTTP_400_BAD_REQUEST",},
+    412 : {"description": "HTTP_412_PRECONDITION_FAILED",},
+    403 : {"description": "HTTP_403_FORBIDDEN",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    500 : {"description": "HTTP_500_INTERNAL_SERVER_ERROR",},
+    503 : {"description": "HTTP_503_SERVICE_UNAVAILABLE",},
+    504 : {"description": "HTTP_504_GATEWAY_TIMEOUT",},
+    429 : {"description": "HTTP_429_TOO_MANY_REQUESTS",},
+    })
 async def read_foods_nutritions_by_text(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     prompt : Annotated[str , Body(max_length = 700)],
@@ -30,7 +40,17 @@ async def read_foods_nutritions_by_text(
         
 
 
-@router.post("/read_foods_nutritions_by_voice/")
+@router.post("/read_foods_nutritions_by_voice/", responses={
+    200 : {"model" : list[Food], "description": "HTTP_200_OK",},
+    400 : {"description": "HTTP_400_BAD_REQUEST",},
+    412 : {"description": "HTTP_412_PRECONDITION_FAILED",},
+    403 : {"description": "HTTP_403_FORBIDDEN",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    500 : {"description": "HTTP_500_INTERNAL_SERVER_ERROR",},
+    503 : {"description": "HTTP_503_SERVICE_UNAVAILABLE",},
+    504 : {"description": "HTTP_504_GATEWAY_TIMEOUT",},
+    429 : {"description": "HTTP_429_TOO_MANY_REQUESTS",},
+    })
 async def read_foods_nutritions_by_voice(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     meme_type : Annotated[AudioMemeType, Form()],
@@ -61,7 +81,9 @@ async def read_foods_nutritions_by_voice(
         meme_type=meme_type
     )
 
-@router.get("/read_foods_nutritions/")
+@router.get("/read_foods_nutritions/",responses={
+    200 : {"model" : list[Food], "description": "HTTP_200_OK",},
+    })
 async def read_foods_nutritions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     start_date: Annotated[datetime , Query()],
@@ -72,7 +94,10 @@ async def read_foods_nutritions(
         data = [food.model_dump() for food in foods]
     ).to_dict()
 
-@router.get("/update_foods_nutritions/")
+@router.get("/update_foods_nutritions/",responses={
+    200 : {"model" : list[Food], "description": "HTTP_200_OK",},
+    403 : {"description": "HTTP_403_FORBIDDEN"}
+    })
 async def update_foods_nutritions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     food: Annotated[Food , Query()],
@@ -87,7 +112,9 @@ async def update_foods_nutritions(
         data = food.model_dump()
     ).to_dict()
 
-@router.delete("/delete_foods_nutritions/")
+@router.delete("/delete_foods_nutritions/",responses={
+    200 : {"model" : list[str], "description": "HTTP_200_OK",}
+    })
 async def delete_foods_nutritions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     food_ids: Annotated[list[str] , Query()],

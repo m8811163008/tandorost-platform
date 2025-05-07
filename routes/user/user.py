@@ -2,6 +2,8 @@
 from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
+from data.local_database.model.user_bio_data import UserBioData
+from data.local_database.model.user_files import FileData
 from dependeny_manager import dm
 from domain_models import ApiResponse, UserUpdateRequest, UserBioDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,InvalidUserBioDataUpsert
 
@@ -19,7 +21,9 @@ router = APIRouter(
 
 
 
-@router.get("/user_profile/")
+@router.get("/user_profile/",  responses={
+    200 : {"model" : UserInDB , "description": "HTTP_200_OK",},
+    })
 async def read_user(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
@@ -29,7 +33,11 @@ async def read_user(
         data = user.model_dump(exclude={"verification_code", "hashed_password"})
     ).to_dict()
 
-@router.put("/update_profile/")
+@router.put("/update_profile/",  responses={
+    200 : {"model" : UserInDB , "description": "HTTP_200_OK",},
+    403 : {"description": "HTTP_403_FORBIDDEN",},
+    404 : {"description": "HTTP_404_NOT_FOUND",}
+    })
 async def update_user(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     user_profile : Annotated[UserUpdateRequest, Body()]
@@ -58,7 +66,10 @@ async def update_user(
          ).to_dict()
 
 
-@router.put("/update_user_bio_data/")
+@router.put("/update_user_bio_data/",  responses={
+    200 : {"model" : UserBioData, "description": "HTTP_200_OK",},
+    400 : {"description": "HTTP_400_BAD_REQUEST",},
+    })
 async def update_user_bio_data(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     user_bio_data : Annotated[UserBioDataUpsert, Body()]
@@ -78,7 +89,10 @@ async def update_user_bio_data(
         )
 
 
-@router.get("/read_user_bio_data/")
+@router.get("/read_user_bio_data/",  responses={
+    200 : {"model" : UserBioData, "description": "HTTP_200_OK",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    })
 async def read_user_bio_data(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
@@ -94,7 +108,9 @@ async def read_user_bio_data(
                 data = bio_data.model_dump()
             ).to_dict()
 
-@router.get("/read_user_image_profile/")
+@router.get("/read_user_image_profile/",  responses={
+    200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
+    })
 async def read_user_profile_image(
     user_id: Annotated[str, Depends(read_user_or_raise)],
 ):
@@ -106,7 +122,9 @@ async def read_user_profile_image(
         data=[file.model_dump() for file in profile_image_meta_data]
     ).to_dict()
 
-@router.get("/read_user_image_gallary/")
+@router.get("/read_user_image_gallary/", responses={
+    200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
+    })
 async def read_user_image_gallary(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     tags: Annotated[list[GallaryTag] , Query()],
@@ -119,7 +137,11 @@ async def read_user_image_gallary(
                 data = [image_gallary.model_dump() for image_gallary in images_gallary]
             ).to_dict()
 
-@router.post("/add_user_images/")
+@router.post("/add_user_images/",  responses={
+    200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
+    400 : {"description": "HTTP_400_BAD_REQUEST",},
+    500 : {"description": "HTTP_500_INTERNAL_SERVER_ERROR",},
+    })
 async def add_user_image(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     tag: Annotated[GallaryTag, Form()],
@@ -164,7 +186,9 @@ async def add_user_image(
         data = [result.model_dump() for result in results ]
     ).to_dict()
 
-@router.post("/archive_user_images/")
+@router.post("/archive_user_images/", responses={
+    200 : {"model" : ArchiveUserImagesResponse, "description": "HTTP_200_OK",},
+    })
 async def archive_user_images(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     images_id: Annotated[list[str], Body()],

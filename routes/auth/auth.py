@@ -1,6 +1,6 @@
 from random import Random
 from fastapi import APIRouter, Form
-from domain_models import InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError,ApiResponse,VerificationCode,VerificationType
+from domain_models import InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError,ApiResponse,VerificationCode,VerificationType, Token
 from fastapi.security import  OAuth2PasswordRequestForm
 from typing import Annotated, Any
 from datetime import datetime
@@ -20,7 +20,13 @@ router = APIRouter(
     tags=["Authentication"],
 )
 
-@router.post("/send_verification_code/", status_code = status.HTTP_200_OK)
+@router.post("/send_verification_code/", responses={
+    200 : {"model" : None, "description": "HTTP_200_OK",},
+    429 : {"description": "HTTP_429_TOO_MANY_REQUESTS",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    409 : {"description": "HTTP_409_CONFLICT",},
+    503 : {"description": "HTTP_503_SERVICE_UNAVAILABLE",},
+    })
 async def verify(
     phone_number : Annotated[str, Form(pattern=r"^09\d{9}$")],
     verification_type : VerificationType
@@ -56,7 +62,12 @@ async def verify(
             detail = ApiResponse.error(message='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', error_detail=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).to_dict()
         )
     
-@router.post("/register/", status_code=status.HTTP_201_CREATED)
+@router.post("/register/", responses={
+    200 : {"model" : None, "description": "HTTP_200_OK",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    409 : {"description": "HTTP_409_CONFLICT",},
+    401 : {"description": "HTTP_401_UNAUTHORIZED",},
+    })
 async def register(
     user_name: Annotated[str, Form(pattern=r"^09\d{9}$")],
     password : Annotated[str, Form(min_length=4)],
@@ -85,7 +96,11 @@ async def register(
     return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.USER_REGISTERED), data=None).to_dict()
     
 
-@router.post("/forgot_password/", status_code=status.HTTP_201_CREATED)
+@router.post("/forgot_password/", responses={
+    200 : {"model" : None, "description": "HTTP_200_OK",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    409 : {"description": "HTTP_409_CONFLICT",},
+    })
 async def forgot_password(
     user_name: Annotated[str, Form(pattern=r"^09\d{9}$")],
     new_password : Annotated[str, Form(min_length=4)],
@@ -108,7 +123,12 @@ async def forgot_password(
     return ApiResponse.success(message=translation_manager.gettext(TranslationKeys.PASSWORD_RESTORED), data=None).to_dict()
 
 
-@router.post("/token/")
+@router.post("/token/", responses={
+    200 : {"model" : Token, "description": "HTTP_200_OK",},
+    403 : {"description": "HTTP_403_FORBIDDEN",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    401 : {"description": "HTTP_401_UNAUTHORIZED",},
+    })
 async def login_for_access_token(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
 ):
