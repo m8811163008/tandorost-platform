@@ -17,6 +17,7 @@ class ActivityLevel(Enum):
     OTHER = 'other'
 
 class DataPoint(BaseModel):
+    data_point_id : str
     value : ActivityLevel | float
     create_date : datetime.datetime
     model_config = ConfigDict(use_enum_values=True,)

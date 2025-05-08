@@ -6,13 +6,15 @@ from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, Uploa
 from fastapi.responses import JSONResponse
 from data.local_database.model.user_bio_data import UserBioData
 from data.local_database.model.user_files import FileData
+from data.remote_api.model.exceptions import NotFoundError
 from dependeny_manager import dm
-from domain_models import  UserUpdateRequest, UserBioDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,InvalidUserBioDataUpsert
+from domain_models import  UserUpdateRequest, UserBioDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,UserBioDataValidationError
 
 from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
 from utility.constants import upload_directory_path
+from fastapi.encoders import jsonable_encoder
 
 
 
@@ -33,7 +35,7 @@ async def read_user(
     user = await dm.user_repo.read_user(user_id=user_id)
     assert(user is not None)
     return JSONResponse(
-        content=user.model_dump(exclude={"verification_code", "hashed_password"})
+        content=user.model_dump(exclude={"verification_code", "hashed_password", "is_verified"})
     )
 
 @router.put("/update_profile/",  responses={
@@ -65,7 +67,7 @@ async def update_user(
          )
      else:
         return JSONResponse(
-            content=user.model_dump(exclude={"verification_code", "hashed_password"})
+            content=user.model_dump(exclude={"verification_code", "hashed_password", "is_verified"})
         )
 
 
@@ -82,15 +84,38 @@ async def update_user_bio_data(
             user_id = user_id,
             user_bio_data=user_bio_data
         )
+        model_dump = bio_data.model_dump()
         return JSONResponse(
-            content=bio_data.model_dump()
+            content=jsonable_encoder(model_dump)
         )
 
-    except InvalidUserBioDataUpsert as e:
+    except UserBioDataValidationError as e:
         message = TranslationKeys.INVALID_ARGUMENT
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail= ErrorResponse(error_detail= 'TranslationKeys.INVALID_ARGUMENT', message=message).model_dump()
+            detail= ErrorResponse(error_detail= 'TranslationKeys.INVALID_ARGUMENT', message=f'{message} : {e.detail}').model_dump()
+        )
+
+@router.delete("/delete_user_bio_data/",status_code=status.HTTP_204_NO_CONTENT, responses={
+    204 : {"description": "HTTP_204_NO_CONTENT",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    })
+async def delete_user_bio_data(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    data_point_id: Annotated[str, Query()],
+):
+    try:   
+        await dm.user_repo.delete_user_bio_data(user_id=user_id, data_point_id=data_point_id)
+    except UserBioDataValidationError as e:
+        message = TranslationKeys.INVALID_ARGUMENT
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail= ErrorResponse(error_detail= 'TranslationKeys.INVALID_ARGUMENT', message=f'{message} : {e.detail}').model_dump()
+        )
+    except NotFoundError:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(error_detail='TranslationKeys.OBJECT_NOT_FOUND', message=TranslationKeys.OBJECT_NOT_FOUND).model_dump()
         )
 
 
@@ -109,8 +134,9 @@ async def read_user_bio_data(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ErrorResponse(error_detail= 'TranslationKeys.OBJECT_NOT_FOUND', message=TranslationKeys.OBJECT_NOT_FOUND).model_dump()
         )
+    model_dump = bio_data.model_dump()
     return JSONResponse(
-        content=bio_data.model_dump())
+        content=jsonable_encoder(model_dump))
 
 @router.get("/read_user_image_profile/",  responses={
     200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
@@ -183,7 +209,7 @@ async def add_user_image(
                     status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                     detail=ErrorResponse(
                         error_detail='TranslationKeys.FILE_UPLOAD_FAILED',
-                        message=TranslationKeys.FILE_UPLOAD_FAILED
+                        message=f'{TranslationKeys.FILE_UPLOAD_FAILED} : {str(e)}'
                     ).model_dump()
                 )
 

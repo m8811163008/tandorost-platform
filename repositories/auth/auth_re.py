@@ -35,7 +35,7 @@ class AuthRepository:
         except (HTTPStatusError, NetworkConnectionError, Exception):
             raise NetworkConnectionError()
     
-    async def verify_code(self, username:str, verification_code : str):
+    async def verify_code(self, username:str, verification_code : str, is_register_request : bool = True):
         user = await self.database.read_user_by_phone_number(phone_number=username)
         if user is None :
             raise UsernameNotRegisteredYet()
@@ -43,6 +43,8 @@ class AuthRepository:
             raise UsernameNotRegisteredYet()
         if user.verification_code.verification_code != verification_code:
             raise InvalidVerificationCode()
+        if user.is_verified and is_register_request:
+            raise UsernameAlreadyInUse()
 
     async def update_user_account(self, password: str, username:str, is_verified : bool = True) -> UserInDB:
         user = await self.database.read_user_by_phone_number(phone_number=username)

@@ -15,7 +15,7 @@ from data.local_database.model.user_bio_data import (
     UserBioDataUpsert # type: ignore
 )
 from data.local_database.model.exceptions import (
-    InvalidUserBioDataUpsert # type: ignore
+    UserBioDataValidationError # type: ignore
 )
 from data.local_database.model.user_files import (
     GallaryTag, # type: ignore

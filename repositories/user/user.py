@@ -28,3 +28,6 @@ class UserRepository:
     async def upsert_user_bio_data(self,user_id :str ,user_bio_data: UserBioDataUpsert )-> UserBioData:
         return await self.database.upsert_user_bio_data(user_bio_data=user_bio_data, user_id = user_id)
     
+
+    async def delete_user_bio_data(self,user_id : str, data_point_id : str):
+        await self.database.delete_user_bio_data(user_id = user_id, data_point_id=data_point_id)

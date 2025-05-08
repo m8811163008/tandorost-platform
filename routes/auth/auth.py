@@ -117,7 +117,7 @@ async def forgot_password(
     verification_code : Annotated[str, Form(min_length=4, max_length=4, pattern=r"^\d{4}$")],
 ):
     try:
-        await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code)
+        await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code, is_register_request=False)
     except UsernameNotRegisteredYet :
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=user_name)
         raise HTTPException(
@@ -166,4 +166,4 @@ async def login_for_access_token(
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_PASSWORD', message=message).model_dump()
         )
     token = await dm.auth_repo.issue_access_token(username= form_data.username,access_token_expire_minute=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
-    return JSONResponse(content=token.model_dump_json())
+    return JSONResponse(content=token.model_dump())

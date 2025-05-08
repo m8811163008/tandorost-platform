@@ -11,7 +11,7 @@ from typing import Any
 from pymongo import ReturnDocument
 from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
-from data.local_database.model.exceptions import DocumentNotFound, InvalidUserBioDataUpsert
+from data.local_database.model.exceptions import DocumentNotFound, UserBioDataValidationError
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_bio_data import DataPoint, UserBioData, UserBioDataUpsert
 from data.local_database.model.user_files import (
@@ -20,6 +20,7 @@ from data.local_database.model.user_files import (
     ProcessingStatus
     )
 from data.local_database.model.user_food import Food
+from data.remote_api.model.exceptions import NotFoundError
 
 
 
@@ -35,11 +36,11 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     async def clear(self):
-        await self.user_collection.delete_many({})
-        await self.auth_collection.delete_many({})
+        # await self.user_collection.delete_many({})
+        # await self.auth_collection.delete_many({})
         await self.user_bio_data_collection.delete_many({})
-        await self.user_static_file_collection.delete_many({})
-        await self.user_food_nutritions_collection.delete_many({})
+        # await self.user_static_file_collection.delete_many({})
+        # await self.user_food_nutritions_collection.delete_many({})
         print('*****Database cleared!*****')
 
     async def _raise_for_invalid_user(self, user_id: str):
@@ -87,22 +88,22 @@ class LocalDataBaseImpl(DatabaseInterface):
         current_datetime = datetime.datetime.now()
         if user_data is None:
             if user_bio_data.age is None or user_bio_data.gender is None or user_bio_data.activity_level is None or user_bio_data.height is None or user_bio_data.weight is None:
-                raise InvalidUserBioDataUpsert(detail = 'age or gender or activity_level or height or weight is null')
+                raise UserBioDataValidationError(detail = 'age or gender or activity_level or height or weight is null')
             
             user_data_instance = UserBioData(
                 _id = str(uuid4()),
                 user_id = user_id,
                 age = user_bio_data.age,
                 gender = user_bio_data.gender,
-                height= [DataPoint(value=user_bio_data.height, create_date=current_datetime)],
-                weight= [DataPoint(value=user_bio_data.weight, create_date=current_datetime)],
-                activity_level = [ DataPoint(value=user_bio_data.activity_level, create_date=current_datetime)],
-                waist_circumference= [DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.waist_circumference] if value is not None],
-                arm_circumference = [DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.arm_circumference] if value is not None],
-                chest_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.chest_circumference] if value is not None],
-                thigh_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.thigh_circumference] if value is not None],
-                calf_muscle_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.calf_muscle_circumference] if value is not None],
-                hip_circumference=[DataPoint(value=value, create_date=current_datetime) for value in [user_bio_data.hip_circumference] if value is not None],
+                height= [DataPoint(data_point_id=str(uuid4()),value=user_bio_data.height, create_date=current_datetime)],
+                weight= [DataPoint(data_point_id=str(uuid4()),value=user_bio_data.weight, create_date=current_datetime)],
+                activity_level = [ DataPoint(data_point_id=str(uuid4()),value=user_bio_data.activity_level, create_date=current_datetime)],
+                waist_circumference= [DataPoint(data_point_id=str(uuid4()),value=value, create_date=current_datetime) for value in [user_bio_data.waist_circumference] if value is not None],
+                arm_circumference = [DataPoint(data_point_id=str(uuid4()),value=value, create_date=current_datetime) for value in [user_bio_data.arm_circumference] if value is not None],
+                chest_circumference=[DataPoint(data_point_id=str(uuid4()),value=value, create_date=current_datetime) for value in [user_bio_data.chest_circumference] if value is not None],
+                thigh_circumference=[DataPoint(data_point_id=str(uuid4()),value=value, create_date=current_datetime) for value in [user_bio_data.thigh_circumference] if value is not None],
+                calf_muscle_circumference=[DataPoint(data_point_id=str(uuid4()),value=value, create_date=current_datetime) for value in [user_bio_data.calf_muscle_circumference] if value is not None],
+                hip_circumference=[DataPoint(data_point_id=str(uuid4()),value=value, create_date=current_datetime) for value in [user_bio_data.hip_circumference] if value is not None],
             )
         else:
             user_data_instance = UserBioData(**user_data)
@@ -111,23 +112,23 @@ class LocalDataBaseImpl(DatabaseInterface):
             if user_bio_data.gender is not None:
                 user_data_instance.gender = user_bio_data.gender
             if user_bio_data.height is not None:
-                user_data_instance.height.append(DataPoint(value=user_bio_data.height,create_date=current_datetime))
+                user_data_instance.height.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.height,create_date=current_datetime))
             if user_bio_data.weight is not None:
-                user_data_instance.weight.append(DataPoint(value=user_bio_data.weight,create_date=current_datetime))
+                user_data_instance.weight.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.weight,create_date=current_datetime))
             if user_bio_data.activity_level is not None:
-                user_data_instance.activity_level.append(DataPoint(value=user_bio_data.activity_level,create_date=current_datetime))
+                user_data_instance.activity_level.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.activity_level,create_date=current_datetime))
             if user_bio_data.waist_circumference is not None:
-                user_data_instance.waist_circumference.append(DataPoint(value=user_bio_data.waist_circumference,create_date=current_datetime))
+                user_data_instance.waist_circumference.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.waist_circumference,create_date=current_datetime))
             if user_bio_data.arm_circumference is not None:
-                user_data_instance.arm_circumference.append(DataPoint(value=user_bio_data.arm_circumference,create_date=current_datetime))
+                user_data_instance.arm_circumference.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.arm_circumference,create_date=current_datetime))
             if user_bio_data.chest_circumference is not None:
-                user_data_instance.chest_circumference.append(DataPoint(value=user_bio_data.chest_circumference,create_date=current_datetime))
+                user_data_instance.chest_circumference.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.chest_circumference,create_date=current_datetime))
             if user_bio_data.thigh_circumference is not None:
-                user_data_instance.thigh_circumference.append(DataPoint(value=user_bio_data.thigh_circumference,create_date=current_datetime))
+                user_data_instance.thigh_circumference.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.thigh_circumference,create_date=current_datetime))
             if user_bio_data.calf_muscle_circumference is not None:
-                user_data_instance.calf_muscle_circumference.append(DataPoint(value=user_bio_data.calf_muscle_circumference,create_date=current_datetime))
+                user_data_instance.calf_muscle_circumference.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.calf_muscle_circumference,create_date=current_datetime))
             if user_bio_data.hip_circumference is not None:
-                user_data_instance.hip_circumference.append(DataPoint(value=user_bio_data.hip_circumference,create_date=current_datetime))
+                user_data_instance.hip_circumference.append(DataPoint(data_point_id=str(uuid4()),value=user_bio_data.hip_circumference,create_date=current_datetime))
 
         await self.user_bio_data_collection.find_one_and_update(
                 filter={"user_id": user_id},
@@ -136,8 +137,48 @@ class LocalDataBaseImpl(DatabaseInterface):
                 upsert=True
             )
         return user_data_instance
+    
+    async def delete_user_bio_data(self, user_id: str, data_point_id: str):
+        user_data = await self.user_bio_data_collection.find_one({"user_id": user_id})
+        if user_data is None:
+            raise NotFoundError()
+        user_bio_data = UserBioData(**user_data)
+        data_point_found = False
+        for attribute in [
+            "height",
+            "weight",
+            "activity_level",
+            "waist_circumference",
+            "arm_circumference",
+            "chest_circumference",
+            "thigh_circumference",
+            "calf_muscle_circumference",
+            "hip_circumference",
+        ]:
+            data_points = getattr(user_bio_data, attribute, [])
+            if(attribute == "height" or attribute == "weight" or attribute == "activity_level"):
+                if(len(data_points) == 1):
+                    raise UserBioDataValidationError(detail = 'activity_level or height or weight can not be empty')
 
-    # User files data
+                
+            
+            updated_data_points = [
+                dp for dp in data_points if dp.data_point_id != data_point_id
+            ]
+            if len(updated_data_points) < len(data_points):
+                data_point_found = True
+            setattr(user_bio_data, attribute, updated_data_points)
+        
+        if not data_point_found:
+            raise NotFoundError()
+        
+        await self.user_bio_data_collection.find_one_and_update(
+            filter={"user_id": user_id},
+            update={"$set": user_bio_data.model_dump(exclude_none=True, by_alias=True)},
+            return_document=ReturnDocument.AFTER,
+            upsert=True,
+        )
+        
     
     async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> list[FileData]:
         """Retrieve user image gallery based on tags."""

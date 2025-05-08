@@ -51,6 +51,11 @@ class DatabaseInterface(ABC):
         """Read user data"""
         pass
 
+    @abstractmethod
+    async def delete_user_bio_data(self,user_id : str, data_point_id : str):
+        """Read user data"""
+        pass
+
 
     # Auth methods
     @abstractmethod
