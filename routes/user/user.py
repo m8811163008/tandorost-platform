@@ -176,10 +176,10 @@ async def add_user_image(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     tag: Annotated[GallaryTag, Form()],
     image_gallary_files: list[UploadFile]
-):
+):    
     for image_gallary_file in image_gallary_files:
         if(image_gallary_file.content_type is not None):
-            if not image_gallary_file.content_type.startswith("image/"):
+            if not image_gallary_file.content_type not in ['image/png', 'image/jpeg','image/jpg']:
                 message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
                 raise HTTPException(
                     status_code=status.HTTP_400_BAD_REQUEST,

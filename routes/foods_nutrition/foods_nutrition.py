@@ -66,6 +66,15 @@ async def read_foods_nutritions_by_voice(
             ).model_dump()
 
         )
+    if not prompt.content_type not in ['audio/aac', 'audio/mp3','audio/wav','audio/flac', 'audio/ogg', 'audio/aiff']:
+        message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                message=f"{message}: Unsupported file type {prompt.content_type}"
+            ).model_dump()
+        )
     if prompt.size > 7 * 1024 * 1024:  # Restrict file size to 5 MB
         message = TranslationKeys.FILE_LIMIT_EXCEEDED.format(file_size_limit = 7 )
         raise HTTPException(
