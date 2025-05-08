@@ -1,4 +1,5 @@
 
+import logging
 from fastapi import  FastAPI , Depends
 
 from routes.auth import router as auth_router
@@ -40,6 +41,14 @@ app.add_middleware(
 # Initialize middlewares
 app.add_middleware(TrustedHostMiddleware)
 app.add_middleware(BaseHTTPMiddleware, dispatch=auth_middleware)
+from fastapi import Response, Request
+from typing import Callable, Awaitable
+@app.middleware("http")
+async def log_requests(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
+    logging.info(f"Request: {request.method} {request.url}")
+    response = await call_next(request)
+    logging.info(f"Response status: {response.status_code}")
+    return response
 
 
 app.mount(protected_directory_path, StaticFiles(directory=protected_directory, check_dir=True))

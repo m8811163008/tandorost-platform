@@ -177,6 +177,17 @@ async def add_user_image(
     tag: Annotated[GallaryTag, Form()],
     image_gallary_files: list[UploadFile]
 ):
+    for image_gallary_file in image_gallary_files:
+        if(image_gallary_file.content_type is not None):
+            if not image_gallary_file.content_type.startswith("image/"):
+                message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=ErrorResponse(
+                        error_detail='TranslationKeys.INVALID_UPLOAD_FILE_REQUEST',
+                        message=f"{message}: Unsupported file type {image_gallary_file.content_type}"
+                    ).model_dump()
+                )
     if len(image_gallary_files) == 0:
         message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
 
@@ -216,7 +227,7 @@ async def add_user_image(
     results = await dm.user_files_repo.upsert_user_files(user_files=images_meta_data)
 
     return JSONResponse(
-        content=[file.model_dump() for file in results]
+        content=[jsonable_encoder(file.model_dump()) for file in results]
     )
 
 @router.post("/archive_user_images/", responses={

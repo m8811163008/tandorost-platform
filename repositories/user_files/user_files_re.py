@@ -34,7 +34,7 @@ class UserFiles:
             assert(image_gallary_file.size is not None)
             assert(image_gallary_file.content_type is not None)
             # Define the file upload path
-            file_upload_path = f"{upload_directory}/{upload_date_time.isoformat(timespec="seconds").replace(':', '_')}F{image_gallary_file.filename}"
+            file_upload_path = f"{upload_directory}{upload_date_time.isoformat(timespec="seconds").replace(':', '_')}F{image_gallary_file.filename}"
 
             # Ensure the upload directory exists
             import os
