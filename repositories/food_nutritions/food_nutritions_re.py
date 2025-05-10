@@ -3,6 +3,7 @@
 
 from datetime import datetime
 from uuid import uuid4
+from data.common_data_model.language import Language
 from data.local_database import DatabaseInterface
 from data.local_database.model.user_food import CarbohydrateSourceLD, TotalMacroNutritionPerFood
 from data.remote_api import  RemoteApiInterface
@@ -23,10 +24,10 @@ class FoodNutritionsRepository:
         except Exception as e:
             raise e
         
-    async def read_foods_nutritions_by_voice(self,user_id: str, meme_type: AudioMemeType, foods : bytes ):
+    async def read_foods_nutritions_by_voice(self,user_id: str, meme_type: AudioMemeType, foods : bytes, language : Language ):
         # Todo recursively use models
         try:
-            user_requested_food = await self.remote_api.read_foods_nutritions_by_voice(foods= foods, meme_type = meme_type)
+            user_requested_food = await self.remote_api.read_foods_nutritions_by_voice(foods= foods, meme_type = meme_type, language=language)
             return await self._upsert_foods_on_database(user_id = user_id, user_requested_food=user_requested_food, )
         except Exception as e:
             raise e

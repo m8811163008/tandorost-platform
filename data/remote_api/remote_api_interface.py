@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from data.common_data_model.language import Language
 from data.remote_api import VerifyPhoneNumberDetail
 from data.remote_api.model.food_ai_model import AudioMemeType, UserRequestedFood
 
@@ -16,5 +17,5 @@ class RemoteApiInterface(ABC):
         pass
 
     @abstractmethod
-    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType) -> UserRequestedFood:
+    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType, language : Language) -> UserRequestedFood:
         pass

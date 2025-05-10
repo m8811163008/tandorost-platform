@@ -1,6 +1,7 @@
 
 from typing import Any
 import httpx
+from data.common_data_model.language import Language
 from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
 from data.remote_api.model.ai_model_cache import CacheModel
 from data.remote_api.model.exceptions import *
@@ -44,9 +45,9 @@ class RemoteApiImpl(RemoteApiInterface):
     async def read_foods_nutritions_by_text(self, foods : str) -> UserRequestedFood:
         return await self._read_foods_nutritions(contents = [foods])
         
-    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType ) -> UserRequestedFood:
+    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType , language : Language) -> UserRequestedFood:
         return await self._read_foods_nutritions(contents=[
-                    'Input is audio : ',
+                    f'Input is audio and the user spoken language is : {language}',
                     types.Part.from_bytes(
                     data=foods,
                     mime_type=meme_type,

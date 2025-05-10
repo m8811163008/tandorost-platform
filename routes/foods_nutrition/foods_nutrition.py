@@ -4,12 +4,13 @@ from typing import Annotated, Any, Callable
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
 from fastapi.responses import JSONResponse
+from data.common_data_model.language import Language
 from dependeny_manager import dm
 from domain_models import  AudioMemeType, InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError, Food
 from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
-
+from fastapi.encoders import jsonable_encoder
 
 router = APIRouter(
     prefix="/foods_nutrition",
@@ -54,7 +55,8 @@ async def read_foods_nutritions_by_text(
 async def read_foods_nutritions_by_voice(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     meme_type : Annotated[AudioMemeType, Form()],
-    prompt: UploadFile
+    language : Annotated[Language, Form()],
+    prompt: UploadFile,
 ) :
     if prompt.filename is None or prompt.size is None or prompt.content_type is None:
         message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
@@ -66,7 +68,7 @@ async def read_foods_nutritions_by_voice(
             ).model_dump()
 
         )
-    if not prompt.content_type not in ['audio/aac', 'audio/mp3','audio/wav','audio/flac', 'audio/ogg', 'audio/aiff']:
+    if prompt.content_type not in ['audio/aac', 'audio/mp3','audio/wav','audio/flac', 'audio/ogg', 'audio/aiff']:
         message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -90,7 +92,8 @@ async def read_foods_nutritions_by_voice(
         request =dm.food_nutrition_repo.read_foods_nutritions_by_voice,
         user_id=user_id,
         foods=prompt_bytes,
-        meme_type=meme_type
+        meme_type=meme_type,
+        language = language,
     )
 
 @router.get("/read_foods_nutritions/",responses={
@@ -103,7 +106,7 @@ async def read_foods_nutritions(
 ) :
     foods = await dm.food_nutrition_repo.read_foods_nutritions(user_id=user_id, start_date=start_date, end_date=end_date)
     return JSONResponse(
-        content=[food.model_dump() for food in foods]
+        content=[jsonable_encoder(food.model_dump()) for food in foods]
     )
 
 @router.get("/update_foods_nutritions/",responses={
@@ -121,7 +124,7 @@ async def update_foods_nutritions(
         )
     food = await dm.food_nutrition_repo.update_user_food(food=food)
     return JSONResponse(
-        content=food.model_dump()
+        content=jsonable_encoder(food.model_dump())
     )
 
 @router.delete("/delete_foods_nutritions/",responses={
@@ -141,7 +144,7 @@ async def _handle_food_request(request: Callable[..., Any], **kwargs: Any) -> JS
     try:
         foods = await request(**kwargs)    
         return JSONResponse(
-            content=[food.model_dump() for food in foods]
+            content=[jsonable_encoder(food.model_dump()) for food in foods]
         )   
         
     except InvalidArgumentError :

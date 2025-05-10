@@ -138,6 +138,7 @@ async def read_user_bio_data(
     return JSONResponse(
         content=jsonable_encoder(model_dump))
 
+
 @router.get("/read_user_image_profile/",  responses={
     200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
     })
@@ -148,7 +149,7 @@ async def read_user_profile_image(
         user_id=user_id,
     )
     return JSONResponse(
-        content=[file.model_dump() for file in profile_image_meta_data]
+        content=[jsonable_encoder(file.model_dump()) for file in profile_image_meta_data]
     )
 
 
@@ -164,7 +165,7 @@ async def read_user_image_gallary(
         tags=tags
     )
     return JSONResponse(
-        content=[file.model_dump() for file in images_gallary]
+        content=[jsonable_encoder(file.model_dump()) for file in images_gallary]
     )
 
 @router.post("/add_user_images/",  responses={
@@ -179,7 +180,7 @@ async def add_user_image(
 ):    
     for image_gallary_file in image_gallary_files:
         if(image_gallary_file.content_type is not None):
-            if not image_gallary_file.content_type not in ['image/png', 'image/jpeg','image/jpg']:
+            if image_gallary_file.content_type not in ['image/png', 'image/jpeg','image/jpg']:
                 message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
                 raise HTTPException(
                     status_code=status.HTTP_400_BAD_REQUEST,

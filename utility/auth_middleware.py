@@ -17,7 +17,11 @@ def handle_unauthorized_access() -> HTMLResponse:
 
 
 async def auth_middleware(request: Request, call_next: Callable[[Request], Awaitable[Response]]) -> Response:
+    if request.method == "OPTIONS":
+        response = await call_next(request) # type: ignore
+        return response
     if request.url.path.startswith(f"{root_path}/{protected_directory}"):
+
         authorization: Optional[str] = request.headers.get("Authorization")
         if not authorization or not authorization.startswith("Bearer "):
             return handle_unauthorized_access()
