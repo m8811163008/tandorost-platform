@@ -23,7 +23,7 @@ def jwt_user_id(token: Annotated[str, Depends(oauth2_scheme)]) -> UUID4:
             payload = decode(token, secret_key, algorithms=[algorithm])
         except ExpiredSignatureError:
             raise InvalidTokenError
-        user_id = payload.get("user_id")
+        user_id:UUID4 | None = payload.get("user_id")
         if user_id is None:
             raise InvalidTokenError
         return user_id

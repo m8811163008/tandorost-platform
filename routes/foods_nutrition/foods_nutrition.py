@@ -106,45 +106,49 @@ async def read_foods_nutritions(
 ) :
     foods = await dm.food_nutrition_repo.read_foods_nutritions(user_id=user_id, start_date=start_date, end_date=end_date)
     return JSONResponse(
-        content=[jsonable_encoder(food.model_dump()) for food in foods]
+        content=[jsonable_encoder(food.model_dump(by_alias=True)) for food in foods]
     )
 
-@router.get("/update_foods_nutritions/",responses={
-    200 : {"model" : list[Food], "description": "HTTP_200_OK",},
+@router.post("/update_foods_nutritions/",responses={
+    200 : {"model" : Food, "description": "HTTP_200_OK",},
     403 : {"description": "HTTP_403_FORBIDDEN"}
     })
 async def update_foods_nutritions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
-    food: Annotated[Food , Query()],
+    food: Annotated[Food , Body()],
 ) :
     if user_id != food.user_id:
         raise HTTPException(
             status_code= status.HTTP_403_FORBIDDEN,
             detail=TranslationKeys.PERMISSION_DENIED
         )
-    food = await dm.food_nutrition_repo.update_user_food(food=food)
+    update_food = await dm.food_nutrition_repo.update_user_food(food=food)
     return JSONResponse(
-        content=jsonable_encoder(food.model_dump())
+        content=jsonable_encoder(update_food.model_dump(by_alias=True))
     )
 
-@router.delete("/delete_foods_nutritions/",responses={
-    200 : {"model" : list[str], "description": "HTTP_200_OK",}
+@router.delete("/delete_user_bio_data/",status_code=status.HTTP_204_NO_CONTENT, responses={
+    204 : {"description": "HTTP_204_NO_CONTENT",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
     })
 async def delete_foods_nutritions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
     food_ids: Annotated[list[str] , Query()],
 ) :
-    deleted_foods = await dm.food_nutrition_repo.delete_user_foods(foods_ids=food_ids)
-    return JSONResponse(
-        content=deleted_foods
-    )
+    try:
+        await dm.food_nutrition_repo.delete_user_foods(foods_ids=food_ids)
+    except NotFoundError as e:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(error_detail='TranslationKeys.OBJECT_NOT_FOUND', message=f'{TranslationKeys.OBJECT_NOT_FOUND} missing_id: {e.args[0]}').model_dump()
+        )
 
 
 async def _handle_food_request(request: Callable[..., Any], **kwargs: Any) -> JSONResponse:
     try:
         foods = await request(**kwargs)    
         return JSONResponse(
-            content=[jsonable_encoder(food.model_dump()) for food in foods]
+            content=[jsonable_encoder(food.model_dump(by_alias=True)) for food in foods]
         )   
         
     except InvalidArgumentError :

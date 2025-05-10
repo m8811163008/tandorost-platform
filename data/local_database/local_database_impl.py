@@ -291,15 +291,21 @@ class LocalDataBaseImpl(DatabaseInterface):
             )
         return user_foods
 
-
     async def delete_user_foods(self, foods_ids: list[str]) -> list[str]:
-        for food_id in foods_ids:
-            success_ids:list[str] = []
-            try:
-                await self.user_food_nutritions_collection.delete_one({
-                    '_id' : food_id
-                })
-                success_ids.append(food_id)
-            except Exception:
-                pass
+        async with await self.client.start_session() as session:
+            async with session.start_transaction():
+                # Check if all food IDs exist
+                existing_foods = await self.user_food_nutritions_collection.find(
+                    {"_id": {"$in": foods_ids}}
+                ).to_list()
+                
+                if len(existing_foods) != len(foods_ids):
+                    missing_ids = set(foods_ids) - {food["_id"] for food in existing_foods}
+                    raise NotFoundError(message=str(missing_ids))
+                
+                # Delete all foods
+                await self.user_food_nutritions_collection.delete_many(
+                    {"_id": {"$in": foods_ids}}, session=session
+                )
+                
         return foods_ids

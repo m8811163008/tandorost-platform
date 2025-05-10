@@ -166,4 +166,4 @@ async def login_for_access_token(
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_PASSWORD', message=message).model_dump()
         )
     token = await dm.auth_repo.issue_access_token(username= form_data.username,access_token_expire_minute=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
-    return JSONResponse(content=token.model_dump())
+    return JSONResponse(content=token.model_dump(by_alias=True))
