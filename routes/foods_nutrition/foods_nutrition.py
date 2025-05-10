@@ -127,7 +127,7 @@ async def update_foods_nutritions(
         content=jsonable_encoder(update_food.model_dump(by_alias=True))
     )
 
-@router.delete("/delete_user_bio_data/",status_code=status.HTTP_204_NO_CONTENT, responses={
+@router.delete("/delete_foods_nutritions/",status_code=status.HTTP_204_NO_CONTENT, responses={
     204 : {"description": "HTTP_204_NO_CONTENT",},
     404 : {"description": "HTTP_404_NOT_FOUND",},
     })
@@ -136,7 +136,8 @@ async def delete_foods_nutritions(
     food_ids: Annotated[list[str] , Query()],
 ) :
     try:
-        await dm.food_nutrition_repo.delete_user_foods(foods_ids=food_ids)
+        res = await dm.food_nutrition_repo.delete_user_foods(foods_ids=food_ids)
+        print(res)
     except NotFoundError as e:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
