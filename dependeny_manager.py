@@ -1,4 +1,5 @@
 from data.local_database import LocalDataBaseImpl
+from repositories.fitness.fitness_re import FitnessRepository
 from repositories.user_files.user_files_re import UserFiles
 from utility import EnvirenmentVariable
 from data.remote_api import RemoteApiImpl
@@ -20,5 +21,7 @@ class DependencyManager():
         self.food_nutrition_repo = FoodNutritionsRepository(database=self.local_database,remote_api= self.remote_database)
         self.user_repo = UserRepository(database=self.local_database)
         self.user_files_repo = UserFiles(database=self.local_database)
+        self.fitness_repo = FitnessRepository(database = self.local_database)
+
 
 dm = DependencyManager()

@@ -60,9 +60,10 @@ class FitnessRepository:
         )
     
     
-    async def nutrition_requerment_data(self,user_id:str) -> NutritionRequerments:
+    async def nutrition_requerment_data(self,user_id:str) -> NutritionRequerments | None:
         user = await self.database.read_user_by_id(user_id=user_id)
-        assert(user is not None)
+        if user is None:
+            return None
         user_bio_data = await self.database.read_user_bio_data(user_id=user_id)
         assert(user_bio_data is not None)
         fitness_data = await self.fitness_data(user_id=user_id)
