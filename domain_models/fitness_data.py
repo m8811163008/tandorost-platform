@@ -1,5 +1,5 @@
 
-from pydantic import BaseModel
+from pydantic import BaseModel, computed_field
 
 from domain_models.bmi_level import BmiLevel
 
@@ -7,14 +7,16 @@ class FitnessData(BaseModel):
     resting_metabolic_rate :float
     total_daily_energy_expenditure : float
     bmi : float
-    waistCircumferenceToHeightRatio : float | None
-    isWaistCircumferenceToHeightRatioSafe : bool | None
-    isWaistCircumferenceSafeRange : bool | None
+    waist_circumference_to_height_ratio : float | None
+    is_waist_circumference_to_height_ratio_safe : bool | None
+    is_waist_circumference_safe_range : bool | None
 
+    @computed_field
     @property
     def bmi_prime(self) -> float:
         return self.bmi / 25
     
+    @computed_field
     @property
     def bmi_level(self) -> BmiLevel:
         if self.bmi < 18.5:

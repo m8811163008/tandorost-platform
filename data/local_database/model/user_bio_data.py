@@ -16,6 +16,19 @@ class ActivityLevel(Enum):
     VERY_ACTIVE = 'veryActive'
     OTHER = 'other'
 
+    @property
+    def multiplier(self) -> float:
+        multipliers = {
+            ActivityLevel.SEDENTARY: 1.2,
+            ActivityLevel.FAIRLY_ACTIVE: 1.3,
+            ActivityLevel.MODERATELY_ACTIVE: 1.4,
+            ActivityLevel.ACTIVE: 1.5,
+            ActivityLevel.VERY_ACTIVE: 1.7,
+            ActivityLevel.OTHER: 1.0,  # Default multiplier for 'other'
+        }
+        return multipliers[self]
+
+
 class DataPoint(BaseModel):
     data_point_id : str
     value : ActivityLevel | float

@@ -1,0 +1,1 @@
+from .fitness_re import FitnessRepository # type: ignore
