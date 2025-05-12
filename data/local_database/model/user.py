@@ -23,7 +23,7 @@ class UserInDB(BaseModel):
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
     is_verified : bool = False
-    changeWeightSpeed : ChangeWeightSpeed = ChangeWeightSpeed.CONSTANT
+    change_weight_speed : ChangeWeightSpeed = ChangeWeightSpeed.CONSTANT
     model_config = ConfigDict(use_enum_values=True)
 
     @field_serializer("changeWeightSpeed")

@@ -1,7 +1,7 @@
 import datetime
 from enum import Enum
 
-from pydantic import  BaseModel, ConfigDict, Field
+from pydantic import  BaseModel, ConfigDict, Field, computed_field
 
 
 class Gender(Enum):
@@ -39,7 +39,7 @@ class UserBioData (BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
     gender : Gender
-    age : int
+    birth_day: datetime.date
     height: list[DataPoint]
     weight: list[DataPoint]
     waist_circumference: list[DataPoint]
@@ -51,6 +51,11 @@ class UserBioData (BaseModel):
     activity_level: list[DataPoint]
     model_config = ConfigDict(use_enum_values=True,)
 
+    @computed_field
+    @property
+    def age(self) -> int:
+        today = datetime.date.today()
+        return today.year - self.birth_day.year - ((today.month, today.day) < (self.birth_day.month, self.birth_day.day))
 
 
 class UserBioDataUpsert (BaseModel):
