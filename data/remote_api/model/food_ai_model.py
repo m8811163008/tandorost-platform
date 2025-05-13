@@ -8,13 +8,6 @@ from data.common_data_model.language import Language
 
 
 
-class AudioMemeType(StrEnum):
-    WAV = 'audio/wav'
-    MP3 = 'audio/mp3'
-    AIFF = 'audio/aiff'
-    AAC = 'audio/aac'
-    OGG_VORBIS = 'audio/ogg'
-    FLAC = 'audio/flac'
 
 class MacroNutritionPerUnitOfMeasurement(BaseModel):
     fat: float

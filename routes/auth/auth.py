@@ -122,7 +122,7 @@ async def forgot_password(
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=user_name)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail = ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message)
+            detail = ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
         )
     except InvalidVerificationCode:
         message = translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE).format(user_name=user_name)

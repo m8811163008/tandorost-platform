@@ -1,5 +1,5 @@
 
-import datetime
+from datetime import datetime
 from uuid import uuid4
 from motor.motor_asyncio import (
     AsyncIOMotorClient,
@@ -71,6 +71,7 @@ class LocalDataBaseImpl(DatabaseInterface):
             upsert=True,
             return_document=ReturnDocument.AFTER,
         )
+
         return UserInDB(**update_result)
         
     async def read_user_bio_data(self, user_id:str) -> UserBioData | None:
@@ -85,15 +86,18 @@ class LocalDataBaseImpl(DatabaseInterface):
         # await self.user_bio_data_collection.delete_many({})
         user_data = await self.user_bio_data_collection.find_one({"user_id":user_id})
         user_data_instance: UserBioData
-        current_datetime = datetime.datetime.now()
+        current_datetime = datetime.now()
+        
         if user_data is None:
-            if user_bio_data.age is None or user_bio_data.gender is None or user_bio_data.activity_level is None or user_bio_data.height is None or user_bio_data.weight is None:
+            if user_bio_data.birth_day is None or user_bio_data.gender is None or user_bio_data.activity_level is None or user_bio_data.height is None or user_bio_data.weight is None:
                 raise UserBioDataValidationError(detail = 'age or gender or activity_level or height or weight is null')
             
+            birth_datetime = datetime.combine(user_bio_data.birth_day, datetime.min.time())
+
             user_data_instance = UserBioData(
                 _id = str(uuid4()),
                 user_id = user_id,
-                age = user_bio_data.age,
+                birth_day = birth_datetime,
                 gender = user_bio_data.gender,
                 height= [DataPoint(data_point_id=str(uuid4()),value=user_bio_data.height, create_date=current_datetime)],
                 weight= [DataPoint(data_point_id=str(uuid4()),value=user_bio_data.weight, create_date=current_datetime)],
@@ -107,8 +111,10 @@ class LocalDataBaseImpl(DatabaseInterface):
             )
         else:
             user_data_instance = UserBioData(**user_data)
-            if user_bio_data.age is not None:
-                user_data_instance.age = user_bio_data.age
+    
+            if user_bio_data.birth_day is not None:
+                birth_datetime = datetime.combine(user_bio_data.birth_day, datetime.min.time())
+                user_data_instance.birth_day = birth_datetime
             if user_bio_data.gender is not None:
                 user_data_instance.gender = user_bio_data.gender
             if user_bio_data.height is not None:
@@ -258,7 +264,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         return Token(**token)
     
 
-    async def read_user_foods(self,  user_id:str, start_date: datetime.datetime, end_date: datetime.datetime) -> list[Food]:
+    async def read_user_foods(self,  user_id:str, start_date: datetime, end_date: datetime) -> list[Food]:
         user_foods = await self.user_food_nutritions_collection.find({
             'user_id':user_id,
             'upsert_date': {

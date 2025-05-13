@@ -181,7 +181,9 @@ async def add_user_image(
 ):    
     for image_gallary_file in image_gallary_files:
         if(image_gallary_file.content_type is not None):
-            if image_gallary_file.content_type not in ['image/png', 'image/jpeg','image/jpg']:
+            if image_gallary_file.content_type not in ['image/png', 'image/jpeg','image/jpg','image/webp', 'image/heic', 'image/heif' ]:
+                #image/heic or image/heif: For HEIC/HEIF images, commonly used on iOS devices.
+                #image/webp: For WebP images, supported on modern browsers and Android.
                 message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
                 raise HTTPException(
                     status_code=status.HTTP_400_BAD_REQUEST,

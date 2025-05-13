@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime, date
 from enum import Enum
 
 from pydantic import  BaseModel, ConfigDict, Field, computed_field
@@ -16,30 +16,30 @@ class ActivityLevel(Enum):
     VERY_ACTIVE = 'veryActive'
     OTHER = 'other'
 
-    @property
-    def multiplier(self) -> float:
+    @classmethod
+    def multiplier(cls, value: str) -> float:
         multipliers = {
-            ActivityLevel.SEDENTARY: 1.2,
-            ActivityLevel.FAIRLY_ACTIVE: 1.3,
-            ActivityLevel.MODERATELY_ACTIVE: 1.4,
-            ActivityLevel.ACTIVE: 1.5,
-            ActivityLevel.VERY_ACTIVE: 1.7,
-            ActivityLevel.OTHER: 1.0,  # Default multiplier for 'other'
+            cls.SEDENTARY.value: 1.2,
+            cls.FAIRLY_ACTIVE.value: 1.3,
+            cls.MODERATELY_ACTIVE.value: 1.4,
+            cls.ACTIVE.value: 1.5,
+            cls.VERY_ACTIVE.value: 1.7,
+            cls.OTHER.value: 1.0,  # Default multiplier for 'other'
         }
-        return multipliers[self]
+        return multipliers.get(value, 1.0)  # Default to 1.0 if value is not found
 
 
 class DataPoint(BaseModel):
     data_point_id : str
     value : ActivityLevel | float
-    create_date : datetime.datetime
+    create_date : datetime
     model_config = ConfigDict(use_enum_values=True,)
 
 class UserBioData (BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
     gender : Gender
-    birth_day: datetime.date
+    birth_day: datetime
     height: list[DataPoint]
     weight: list[DataPoint]
     waist_circumference: list[DataPoint]
@@ -54,13 +54,13 @@ class UserBioData (BaseModel):
     @computed_field
     @property
     def age(self) -> int:
-        today = datetime.date.today()
+        today = datetime.today()
         return today.year - self.birth_day.year - ((today.month, today.day) < (self.birth_day.month, self.birth_day.day))
 
 
 class UserBioDataUpsert (BaseModel):
     gender : Gender | None = None
-    age : int | None = None
+    birth_day : date | None = None
     height: float | None = None
     weight: float | None = None
     waist_circumference: float | None = None

@@ -28,10 +28,10 @@ from data.local_database.model.user_food import (
 )
 from data.remote_api.model.gemini_config import GeminiConfig # type: ignore
 from data.remote_api.model.food_ai_model import (
-    AudioMemeType,  # type: ignore
     MacroNutritionPerUnitOfMeasurement,  # type: ignore
     CarbohydrateSource,  # type: ignore
     Ingredient , # type: ignore
     UserRequestedFood # type: ignore
     )
 from data.common_data_model.language import Language # type: ignore
+from data.local_database.model.change_weight_speed import ChangeWeightSpeed # type: ignore

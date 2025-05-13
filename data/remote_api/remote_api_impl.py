@@ -5,7 +5,7 @@ from data.common_data_model.language import Language
 from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
 from data.remote_api.model.ai_model_cache import CacheModel
 from data.remote_api.model.exceptions import *
-from data.remote_api.model.food_ai_model import AudioMemeType, UserRequestedFood
+from data.remote_api.model.food_ai_model import UserRequestedFood
 from data.remote_api.model.gemini_config import  GeminiConfig
 from data.remote_api.remote_api_interface import RemoteApiInterface
 from google import genai # type: ignore
@@ -45,7 +45,7 @@ class RemoteApiImpl(RemoteApiInterface):
     async def read_foods_nutritions_by_text(self, foods : str) -> UserRequestedFood:
         return await self._read_foods_nutritions(contents = [foods])
         
-    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: AudioMemeType , language : Language) -> UserRequestedFood:
+    async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: str , language : Language) -> UserRequestedFood:
         return await self._read_foods_nutritions(contents=[
                     f'Input is audio and the user spoken language is : {language}',
                     types.Part.from_bytes(

@@ -6,7 +6,7 @@ from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, Uploa
 from fastapi.responses import JSONResponse
 from data.common_data_model.language import Language
 from dependeny_manager import dm
-from domain_models import  AudioMemeType, InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError, Food
+from domain_models import  InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError, Food
 from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
@@ -54,7 +54,6 @@ async def read_foods_nutritions_by_text(
     })
 async def read_foods_nutritions_by_voice(
     user_id: Annotated[str , Depends(read_user_or_raise)],
-    meme_type : Annotated[AudioMemeType, Form()],
     language : Annotated[Language, Form()],
     prompt: UploadFile,
 ) :
@@ -68,7 +67,7 @@ async def read_foods_nutritions_by_voice(
             ).model_dump()
 
         )
-    if prompt.content_type not in ['audio/aac', 'audio/mp3','audio/wav','audio/flac', 'audio/ogg', 'audio/aiff']:
+    if prompt.content_type not in ['audio/aac','audio/mpeg', 'audio/mp3','audio/wav','audio/flac', 'audio/ogg', 'audio/aiff']:
         message = TranslationKeys.INVALID_UPLOAD_FILE_REQUEST
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -92,7 +91,7 @@ async def read_foods_nutritions_by_voice(
         request =dm.food_nutrition_repo.read_foods_nutritions_by_voice,
         user_id=user_id,
         foods=prompt_bytes,
-        meme_type=meme_type,
+        meme_type=prompt.content_type,
         language = language,
     )
 
@@ -119,8 +118,11 @@ async def update_foods_nutritions(
 ) :
     if user_id != food.user_id:
         raise HTTPException(
-            status_code= status.HTTP_403_FORBIDDEN,
-            detail=TranslationKeys.PERMISSION_DENIED
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.PERMISSION_DENIED',
+                message=TranslationKeys.PERMISSION_DENIED
+            ).model_dump()
         )
     update_food = await dm.food_nutrition_repo.update_user_food(food=food)
     return JSONResponse(

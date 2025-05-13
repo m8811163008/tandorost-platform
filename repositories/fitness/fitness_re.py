@@ -1,5 +1,5 @@
 from data.local_database.local_database_interface import DatabaseInterface
-from data.local_database.model.change_weight_speed import ChangeWeightSpeed
+from data.local_database.model.change_weight_speed import ChangeWeightSpeed, EnergyChangeValue
 from data.local_database.model.user_bio_data import ActivityLevel, Gender
 from domain_models.fitness_data import FitnessData
 from domain_models.nutrition_requrement import NutritionRequerment, NutritionRequerments
@@ -27,10 +27,10 @@ class FitnessRepository:
         # It cacultaed base on age and weight and height and gender base on Mufflin st geor formulla.
         resting_metabolic_rate = 10 * weight + 6.25 * height - 5 * age + (5 if is_male else -161)
 
-        activity_level = user.activity_level[-1]
-        assert(isinstance(activity_level, ActivityLevel))
+        activity_level = user.activity_level[-1].value
+        assert(isinstance(activity_level, str))
 
-        total_daily_energy_expenditure = resting_metabolic_rate * activity_level.multiplier
+        total_daily_energy_expenditure = resting_metabolic_rate * ActivityLevel.multiplier(activity_level)
 
         is_waist_circumference_exist = len(user.waist_circumference) != 0
 
@@ -39,7 +39,7 @@ class FitnessRepository:
         is_waist_circumference_safe_range = None 
 
         if is_waist_circumference_exist:
-            waistCircumference = user.waist_circumference[-1]
+            waistCircumference = user.waist_circumference[-1].value
             assert(isinstance(waistCircumference, float))
 
             waist_circumference_to_height_ratio = waistCircumference / height
@@ -70,17 +70,19 @@ class FitnessRepository:
         assert(fitness_data is not None)
 
         assert(len(user_bio_data.activity_level) != 0)
-        activity_level = user_bio_data.activity_level[-1]
-        assert(activity_level is ActivityLevel)
-        weight = user_bio_data.weight[-1]
-        assert(weight is float)
+        activity_level = user_bio_data.activity_level[-1].value
+        assert(isinstance(activity_level, str))
+        weight = user_bio_data.weight[-1].value
+        print(type(weight), weight)
+        assert(isinstance(weight , float))
         age = user_bio_data.age
         # Daily requirement of total energy expenditure based on [dayActivityLevel] and [changeWeightSpeed].
         change_weight_speed = user.change_weight_speed
         # rest day
-        effective_total_daily_energy_expenditure_on_rest_day = fitness_data.total_daily_energy_expenditure * (1 - change_weight_speed.value.rest_day_change_value)
+        change_weight_value = EnergyChangeValue.change_weight_speed(change_weight_speed)
+        effective_total_daily_energy_expenditure_on_rest_day = fitness_data.total_daily_energy_expenditure * (1 - change_weight_value.rest_day_change_value)
         # traning day
-        effective_total_daily_energy_expenditure_on_training_day = fitness_data.total_daily_energy_expenditure * (1 - change_weight_speed.value.training_day_change_value)
+        effective_total_daily_energy_expenditure_on_training_day = fitness_data.total_daily_energy_expenditure * (1 - change_weight_value.training_day_change_value)
 
         # 9 kcal in each grams of fat
         # 35% of totalDailyEnergyExpenditure should be helthy fats.
@@ -105,24 +107,24 @@ class FitnessRepository:
         carbohydrate_fruits_or_non_starchy_vegetables_on_training_day = (carbohydrate_calorie_on_training_day * 0.33) / 4
         carbohydrate_none_fruits_or_non_starchy_vegetables_on_training_day = (carbohydrate_calorie_on_training_day * 0.67) / 4
 
-        rest_day = NutritionRequerment(fat = fat_on_rest_day, protein=protein_on_rest_day, carbohydrate_fruits_or_non_starchy_vegetables=carbohydrate_fruits_or_non_starchy_vegetables_on_rest_day, carbohydrate_other=carbohydrate_none_fruits_or_non_starchy_vegetables_on_rest_day)
-        training_day = NutritionRequerment(fat=fat_on_training_day , protein=protein_on_training_day, carbohydrate_fruits_or_non_starchy_vegetables=carbohydrate_fruits_or_non_starchy_vegetables_on_training_day, carbohydrate_other=carbohydrate_none_fruits_or_non_starchy_vegetables_on_training_day)
+        rest_day = NutritionRequerment(fat = fat_on_rest_day, protein=int(protein_on_rest_day), carbohydrate_fruits_or_non_starchy_vegetables=int(carbohydrate_fruits_or_non_starchy_vegetables_on_rest_day), carbohydrate_other=int(carbohydrate_none_fruits_or_non_starchy_vegetables_on_rest_day), effective_total_daily_energy_expenditure=int(effective_total_daily_energy_expenditure_on_rest_day))
+        training_day = NutritionRequerment(fat=fat_on_training_day , protein=int(protein_on_training_day), carbohydrate_fruits_or_non_starchy_vegetables=int(carbohydrate_fruits_or_non_starchy_vegetables_on_training_day), carbohydrate_other=int(carbohydrate_none_fruits_or_non_starchy_vegetables_on_training_day), effective_total_daily_energy_expenditure=int(effective_total_daily_energy_expenditure_on_training_day))
         return NutritionRequerments(rest_day=rest_day, training_day=training_day)
 
 
-    def _calculate_protein(self,change_weight_speed: ChangeWeightSpeed, activity_level: ActivityLevel, is_trainig_day : bool, age:int) -> float:
+    def _calculate_protein(self,change_weight_speed: ChangeWeightSpeed, activity_level: str, is_trainig_day : bool, age:int) -> float:
         if(change_weight_speed != ChangeWeightSpeed.CONSTANT):
             # Losing weight 1.8–2.7 g/kg BW/day
             match activity_level:
-                case ActivityLevel.SEDENTARY:
+                case ActivityLevel.SEDENTARY.value:
                     return 2
-                case ActivityLevel.FAIRLY_ACTIVE:
+                case ActivityLevel.FAIRLY_ACTIVE.value:
                     return 2.2 if is_trainig_day else 2.1
-                case ActivityLevel.MODERATELY_ACTIVE:
+                case ActivityLevel.MODERATELY_ACTIVE.value:
                     return 2.3 if is_trainig_day else 2.2
-                case ActivityLevel.ACTIVE:
+                case ActivityLevel.ACTIVE.value:
                     return 2.4 if is_trainig_day else 2.3
-                case ActivityLevel.VERY_ACTIVE:
+                case ActivityLevel.VERY_ACTIVE.value:
                     return 2.7 if is_trainig_day else 2.5
                 case _:
                     raise Exception('ActivityLevel is not valid value')
@@ -131,15 +133,15 @@ class FitnessRepository:
             # Not losing weight without training program 0.75 g/kg BW/day
             # Not losing weight 1.2–1.5 g/kg BW/day over 50 years old
             match activity_level:
-                case ActivityLevel.SEDENTARY:
+                case ActivityLevel.SEDENTARY.value:
                     return 1.4 if age >= 50 else 0.75
-                case ActivityLevel.FAIRLY_ACTIVE:
+                case ActivityLevel.FAIRLY_ACTIVE.value:
                     return 1.5 if is_trainig_day else 1.3
-                case ActivityLevel.MODERATELY_ACTIVE:
+                case ActivityLevel.MODERATELY_ACTIVE.value:
                     return 1.6 if is_trainig_day else 1.5
-                case ActivityLevel.ACTIVE:
+                case ActivityLevel.ACTIVE.value:
                     return 1.7 if is_trainig_day else 1.5
-                case ActivityLevel.VERY_ACTIVE:
+                case ActivityLevel.VERY_ACTIVE.value:
                     return 1.7 if is_trainig_day else 1.6
                 case _:
                     raise Exception('ActivityLevel is not valid value')

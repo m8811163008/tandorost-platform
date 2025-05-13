@@ -7,7 +7,6 @@ from data.common_data_model.language import Language
 from data.local_database import DatabaseInterface
 from data.local_database.model.user_food import CarbohydrateSourceLD, TotalMacroNutritionPerFood
 from data.remote_api import  RemoteApiInterface
-from data.remote_api.model.food_ai_model import AudioMemeType
 from domain_models import  UserRequestedFood, Food, CarbohydrateSource
 
 
@@ -24,7 +23,7 @@ class FoodNutritionsRepository:
         except Exception as e:
             raise e
         
-    async def read_foods_nutritions_by_voice(self,user_id: str, meme_type: AudioMemeType, foods : bytes, language : Language ):
+    async def read_foods_nutritions_by_voice(self,user_id: str, meme_type: str, foods : bytes, language : Language ):
         # Todo recursively use models
         try:
             user_requested_food = await self.remote_api.read_foods_nutritions_by_voice(foods= foods, meme_type = meme_type, language=language)

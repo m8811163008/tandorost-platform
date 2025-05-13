@@ -5,6 +5,7 @@ from fastapi import  FastAPI , Depends
 from routes.auth import router as auth_router
 from routes.user import router as user_router
 from routes.foods_nutrition import router as food_nutrition_router
+from routes.fitness import router as fitness_router
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -28,6 +29,7 @@ app = FastAPI(root_path=root_path, dependencies=[Depends(get_accept_language)])
 app.include_router(auth_router)
 app.include_router(user_router)
 app.include_router(food_nutrition_router)
+app.include_router(fitness_router)
 # Initialize middlewares
 
 # Add CORS middleware
