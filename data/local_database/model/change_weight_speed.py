@@ -6,6 +6,7 @@ class ChangeWeightSpeed(StrEnum):
     CONSTANT = 'constant'
     SLOWANDEASY = 'slow_and_easy'
     MEDIUM = 'medium'
+    FAST = 'fast'
     FASTANDHARD = 'fast_and_hard'
 
 
@@ -22,8 +23,10 @@ class EnergyChangeValue(BaseModel):
                 return EnergyChangeValue(rest_day_change_value= 0.1, training_day_change_value= 0)
             case ChangeWeightSpeed.MEDIUM:
                 return EnergyChangeValue(rest_day_change_value= 0.1, training_day_change_value= 0.05)
+            case ChangeWeightSpeed.FAST:
+                return EnergyChangeValue(rest_day_change_value= 0.1, training_day_change_value= 0.05)
             case ChangeWeightSpeed.FASTANDHARD:
-                return EnergyChangeValue(rest_day_change_value= 0.15, training_day_change_value= 0.05)
+                return EnergyChangeValue(rest_day_change_value= 0.15, training_day_change_value= 0.15)
             case _:
                 raise Exception('not defined ChangeWeightSpeed')
 
