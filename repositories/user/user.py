@@ -1,8 +1,8 @@
 
 
 from data.local_database import DatabaseInterface
-from data.local_database.model.user_bio_data import UserBioData
-from domain_models import  UserInDB, UserBioDataUpsert
+from data.local_database.model.user_physical_data import UserPhysicalData
+from domain_models import  UserInDB, UserPhysicalDataUpsert
 
 class UserRepository:
     def __init__(self, database: DatabaseInterface):
@@ -22,12 +22,12 @@ class UserRepository:
             user=user
         )
     
-    async def read_user_bio_data(self, user_id:str) -> UserBioData | None:
-        return await self.database.read_user_bio_data(user_id = user_id)
+    async def read_user_physical_data(self, user_id:str) -> UserPhysicalData | None:
+        return await self.database.read_user_physical_data(user_id = user_id)
     
-    async def upsert_user_bio_data(self,user_id :str ,user_bio_data: UserBioDataUpsert )-> UserBioData:
-        return await self.database.upsert_user_bio_data(user_bio_data=user_bio_data, user_id = user_id)
+    async def upsert_user_physical_data(self,user_id :str ,user_physical_data: UserPhysicalDataUpsert )-> UserPhysicalData:
+        return await self.database.upsert_user_physical_data(user_physical_data=user_physical_data, user_id = user_id)
     
 
-    async def delete_user_bio_data(self,user_id : str, data_point_id : str):
-        await self.database.delete_user_bio_data(user_id = user_id, data_point_id=data_point_id)
+    async def delete_user_physical_data(self,user_id : str, data_point_id : str):
+        await self.database.delete_user_physical_data(user_id = user_id, data_point_id=data_point_id)

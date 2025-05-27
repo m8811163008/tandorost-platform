@@ -1,6 +1,6 @@
 from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.change_weight_speed import ChangeWeightSpeed, EnergyChangeValue
-from data.local_database.model.user_bio_data import ActivityLevel, Gender
+from data.local_database.model.user_physical_data import ActivityLevel, Gender
 from domain_models.fitness_data import FitnessData
 from domain_models.nutrition_requrement import NutritionRequerment, NutritionRequerments
 
@@ -10,7 +10,7 @@ class FitnessRepository:
         self.database = database
 
     async def fitness_data(self,user_id:str) -> FitnessData | None:
-        user = await self.database.read_user_bio_data(user_id=user_id)
+        user = await self.database.read_user_physical_data(user_id=user_id)
         if user is None:
             return None
         
@@ -64,18 +64,18 @@ class FitnessRepository:
         user = await self.database.read_user_by_id(user_id=user_id)
         if user is None:
             return None
-        user_bio_data = await self.database.read_user_bio_data(user_id=user_id)
-        assert(user_bio_data is not None)
+        user_physical_data = await self.database.read_user_physical_data(user_id=user_id)
+        assert(user_physical_data is not None)
         fitness_data = await self.fitness_data(user_id=user_id)
         assert(fitness_data is not None)
 
-        assert(len(user_bio_data.activity_level) != 0)
-        activity_level = user_bio_data.activity_level[-1].value
+        assert(len(user_physical_data.activity_level) != 0)
+        activity_level = user_physical_data.activity_level[-1].value
         assert(isinstance(activity_level, str))
-        weight = user_bio_data.weight[-1].value
+        weight = user_physical_data.weight[-1].value
         print(type(weight), weight)
         assert(isinstance(weight , float))
-        age = user_bio_data.age
+        age = user_physical_data.age
         # Daily requirement of total energy expenditure based on [dayActivityLevel] and [changeWeightSpeed].
         change_weight_speed = user.change_weight_speed
         # rest day

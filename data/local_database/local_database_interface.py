@@ -6,7 +6,7 @@ from data.local_database import Token
 
  
 from data.local_database.model.user import UserInDB
-from data.local_database.model.user_bio_data import UserBioData, UserBioDataUpsert
+from data.local_database.model.user_physical_data import UserPhysicalData, UserPhysicalDataUpsert
 from data.local_database.model.user_files import FileData, GallaryTag
 from data.local_database.model.user_food import Food
 
@@ -43,17 +43,17 @@ class DatabaseInterface(ABC):
     # User demographic data
 
     @abstractmethod
-    async def upsert_user_bio_data(self,user_id : str, user_bio_data: UserBioDataUpsert)-> UserBioData:
+    async def upsert_user_physical_data(self,user_id : str, user_physical_data: UserPhysicalDataUpsert)-> UserPhysicalData:
         """Update user data"""
         pass
 
     @abstractmethod
-    async def read_user_bio_data(self, user_id:str) -> UserBioData | None:
+    async def read_user_physical_data(self, user_id:str) -> UserPhysicalData | None:
         """Read user data"""
         pass
 
     @abstractmethod
-    async def delete_user_bio_data(self,user_id : str, data_point_id : str):
+    async def delete_user_physical_data(self,user_id : str, data_point_id : str):
         """Read user data"""
         pass
 

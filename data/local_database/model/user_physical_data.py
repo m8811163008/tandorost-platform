@@ -35,7 +35,7 @@ class DataPoint(BaseModel):
     create_date : datetime
     model_config = ConfigDict(use_enum_values=True,)
 
-class UserBioData (BaseModel):
+class UserPhysicalData (BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
     gender : Gender
@@ -58,7 +58,7 @@ class UserBioData (BaseModel):
         return today.year - self.birth_day.year - ((today.month, today.day) < (self.birth_day.month, self.birth_day.day))
 
 
-class UserBioDataUpsert (BaseModel):
+class UserPhysicalDataUpsert (BaseModel):
     gender : Gender | None = None
     birth_day : date | None = None
     height: float | None = None

@@ -8,14 +8,14 @@ from data.remote_api.model.exceptions import (
     ) 
 from data.local_database.model.token import (Token, TokenData) # type: ignore
 from data.local_database.model.user import (Address,UserInDB) # type: ignore
-from data.local_database.model.user_bio_data import (
+from data.local_database.model.user_physical_data import (
     Gender, # type: ignore
     ActivityLevel, # type: ignore
-    UserBioData, # type: ignore
-    UserBioDataUpsert # type: ignore
+    UserPhysicalData, # type: ignore
+    UserPhysicalDataUpsert # type: ignore
 )
 from data.local_database.model.exceptions import (
-    UserBioDataValidationError # type: ignore
+    UserPhysicalDataValidationError # type: ignore
 )
 from data.local_database.model.user_files import (
     GallaryTag, # type: ignore

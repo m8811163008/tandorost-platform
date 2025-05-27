@@ -4,11 +4,11 @@ from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
 from fastapi.responses import JSONResponse
-from data.local_database.model.user_bio_data import UserBioData
+from data.local_database.model.user_physical_data import UserPhysicalData
 from data.local_database.model.user_files import FileData
 from data.remote_api.model.exceptions import NotFoundError
 from dependeny_manager import dm
-from domain_models import  UserUpdateRequest, UserBioDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,UserBioDataValidationError
+from domain_models import  UserUpdateRequest, UserPhysicalDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,UserPhysicalDataValidationError
 
 from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
@@ -71,43 +71,43 @@ async def update_user(
         )
 
 
-@router.put("/update_user_bio_data/",  responses={
-    200 : {"model" : UserBioData, "description": "HTTP_200_OK",},
+@router.put("/update_user_physical_data/",  responses={
+    200 : {"model" : UserPhysicalData, "description": "HTTP_200_OK",},
     400 : {"description": "HTTP_400_BAD_REQUEST",},
     })
-async def update_user_bio_data(
+async def update_user_physical_data(
     user_id: Annotated[str , Depends(read_user_or_raise)],
-    user_bio_data : Annotated[UserBioDataUpsert, Body()]
+    user_physical_data : Annotated[UserPhysicalDataUpsert, Body()]
 ) :
     try:
-        bio_data = await dm.user_repo.upsert_user_bio_data(
+        physical_data = await dm.user_repo.upsert_user_physical_data(
             user_id = user_id,
-            user_bio_data=user_bio_data
+            user_physical_data=user_physical_data
         )
-        model_dump = bio_data.model_dump(by_alias=True)
+        model_dump = physical_data.model_dump(by_alias=True)
         return JSONResponse(
             content=jsonable_encoder(model_dump)
         )
 
-    except UserBioDataValidationError as e:
+    except UserPhysicalDataValidationError as e:
         message = TranslationKeys.INVALID_ARGUMENT
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail= ErrorResponse(error_detail= 'TranslationKeys.INVALID_ARGUMENT', message=f'{message} : {e.detail}').model_dump()
         )
 
-@router.delete("/delete_user_bio_data/",status_code=status.HTTP_204_NO_CONTENT, responses={
+@router.delete("/delete_user_physical_data/",status_code=status.HTTP_204_NO_CONTENT, responses={
     204 : {"description": "HTTP_204_NO_CONTENT",},
     400 : {"description": "HTTP_400_BAD_REQUEST",},
     404 : {"description": "HTTP_404_NOT_FOUND",},
     })
-async def delete_user_bio_data(
+async def delete_user_physical_data(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     data_point_id: Annotated[str, Query()],
 ):
     try:   
-        await dm.user_repo.delete_user_bio_data(user_id=user_id, data_point_id=data_point_id)
-    except UserBioDataValidationError as e:
+        await dm.user_repo.delete_user_physical_data(user_id=user_id, data_point_id=data_point_id)
+    except UserPhysicalDataValidationError as e:
         message = TranslationKeys.INVALID_ARGUMENT
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -120,22 +120,22 @@ async def delete_user_bio_data(
         )
 
 
-@router.get("/read_user_bio_data/",  responses={
-    200 : {"model" : UserBioData, "description": "HTTP_200_OK",},
+@router.get("/read_user_physical_data/",  responses={
+    200 : {"model" : UserPhysicalData, "description": "HTTP_200_OK",},
     404 : {"description": "HTTP_404_NOT_FOUND",},
     })
-async def read_user_bio_data(
+async def read_user_physical_data(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
-    bio_data = await dm.user_repo.read_user_bio_data(
+    physical_data = await dm.user_repo.read_user_physical_data(
         user_id=user_id,
     )
-    if bio_data is None:
+    if physical_data is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ErrorResponse(error_detail= 'TranslationKeys.OBJECT_NOT_FOUND', message=TranslationKeys.OBJECT_NOT_FOUND).model_dump()
         )
-    model_dump = bio_data.model_dump(by_alias=True)
+    model_dump = physical_data.model_dump(by_alias=True)
     return JSONResponse(
         content=jsonable_encoder(model_dump))
 

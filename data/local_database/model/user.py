@@ -23,7 +23,7 @@ class UserInDB(BaseModel):
     verification_code: VerificationCode | None = None
     is_verified : bool = False
     change_weight_speed : ChangeWeightSpeed = ChangeWeightSpeed.CONSTANT
-    is_fasting : bool = False
+    is_time_restricted_eating : bool = False
     model_config = ConfigDict(use_enum_values=True)
 
 
