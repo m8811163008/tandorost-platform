@@ -52,6 +52,11 @@ class UserPhysicalData (BaseModel):
     model_config = ConfigDict(use_enum_values=True,)
 
 
+    @property
+    def age(self) -> int:
+        today = datetime.today()
+        return today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+
 
 class UserPhysicalDataUpsert (BaseModel):
     gender : Gender | None = None
