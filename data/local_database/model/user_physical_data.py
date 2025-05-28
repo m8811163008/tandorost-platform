@@ -1,19 +1,19 @@
 from datetime import datetime, date
-from enum import Enum
+from enum import  StrEnum
 
 from pydantic import  BaseModel, ConfigDict, Field, computed_field
 
 
-class Gender(Enum):
+class Gender(StrEnum):
     MALE = 'male'
     FEMALE = 'female'
 
-class ActivityLevel(Enum):
+class ActivityLevel(StrEnum):
     SEDENTARY = 'sedentary'
-    FAIRLY_ACTIVE = 'fairyActive'
-    MODERATELY_ACTIVE = 'moderatelyActive'
+    FAIRLY_ACTIVE = 'fairy_active'
+    MODERATELY_ACTIVE = 'moderately_active'
     ACTIVE = 'active'
-    VERY_ACTIVE = 'veryActive'
+    VERY_ACTIVE = 'very_active'
     OTHER = 'other'
 
     @classmethod
@@ -39,7 +39,7 @@ class UserPhysicalData (BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
     gender : Gender
-    birth_day: datetime
+    birthday: datetime
     height: list[DataPoint]
     weight: list[DataPoint]
     waist_circumference: list[DataPoint]
@@ -55,12 +55,12 @@ class UserPhysicalData (BaseModel):
     @property
     def age(self) -> int:
         today = datetime.today()
-        return today.year - self.birth_day.year - ((today.month, today.day) < (self.birth_day.month, self.birth_day.day))
+        return today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
 
 
 class UserPhysicalDataUpsert (BaseModel):
     gender : Gender | None = None
-    birth_day : date | None = None
+    birthday : date | None = None
     height: float | None = None
     weight: float | None = None
     waist_circumference: float | None = None

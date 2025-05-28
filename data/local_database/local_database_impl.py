@@ -36,8 +36,8 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     async def clear(self) -> None:
-        await self.user_collection.delete_many({})
-        await self.auth_collection.delete_many({})
+        # await self.user_collection.delete_many({})
+        # await self.auth_collection.delete_many({})
         await self.user_physical_data_collection.delete_many({})
         await self.user_static_file_collection.delete_many({})
         await self.user_food_nutritions_collection.delete_many({})
@@ -89,15 +89,15 @@ class LocalDataBaseImpl(DatabaseInterface):
         current_datetime = datetime.now()
         
         if user_data is None:
-            if user_physical_data.birth_day is None or user_physical_data.gender is None or user_physical_data.activity_level is None or user_physical_data.height is None or user_physical_data.weight is None:
+            if user_physical_data.birthday is None or user_physical_data.gender is None or user_physical_data.activity_level is None or user_physical_data.height is None or user_physical_data.weight is None:
                 raise UserPhysicalDataValidationError(detail = 'age or gender or activity_level or height or weight is null')
             
-            birth_datetime = datetime.combine(user_physical_data.birth_day, datetime.min.time())
+            birth_datetime = datetime.combine(user_physical_data.birthday, datetime.min.time())
 
             user_data_instance = UserPhysicalData(
                 _id = str(uuid4()),
                 user_id = user_id,
-                birth_day = birth_datetime,
+                birthday = birth_datetime,
                 gender = user_physical_data.gender,
                 height= [DataPoint(data_point_id=str(uuid4()),value=user_physical_data.height, create_date=current_datetime)],
                 weight= [DataPoint(data_point_id=str(uuid4()),value=user_physical_data.weight, create_date=current_datetime)],
@@ -112,9 +112,9 @@ class LocalDataBaseImpl(DatabaseInterface):
         else:
             user_data_instance = UserPhysicalData(**user_data)
     
-            if user_physical_data.birth_day is not None:
-                birth_datetime = datetime.combine(user_physical_data.birth_day, datetime.min.time())
-                user_data_instance.birth_day = birth_datetime
+            if user_physical_data.birthday is not None:
+                birth_datetime = datetime.combine(user_physical_data.birthday, datetime.min.time())
+                user_data_instance.birthday = birth_datetime
             if user_physical_data.gender is not None:
                 user_data_instance.gender = user_physical_data.gender
             if user_physical_data.height is not None:
