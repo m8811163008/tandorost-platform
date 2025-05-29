@@ -162,9 +162,6 @@ class LocalDataBaseImpl(DatabaseInterface):
             "hip_circumference",
         ]:
             data_points = getattr(user_physical_data, attribute, [])
-            if(attribute == "height" or attribute == "weight" or attribute == "activity_level"):
-                if(len(data_points) == 1):
-                    raise UserPhysicalDataValidationError(detail = 'activity_level or height or weight can not be empty')
 
                 
             
@@ -172,6 +169,9 @@ class LocalDataBaseImpl(DatabaseInterface):
                 dp for dp in data_points if dp.data_point_id != data_point_id
             ]
             if len(updated_data_points) < len(data_points):
+                if(attribute == "height" or attribute == "weight" or attribute == "activity_level"):
+                    if(len(data_points) == 1):
+                        raise UserPhysicalDataValidationError(detail = 'activity_level or height or weight can not be empty')
                 data_point_found = True
             setattr(user_physical_data, attribute, updated_data_points)
         
