@@ -35,7 +35,7 @@ async def read_subscriptions(
 async def read_user_food_count(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
-    food_count = await dm.payment_repo.read_user_food_counts(user_id=user_id)
+    food_count = await dm.payment_repo.read_user_food_count(user_id=user_id)
     return JSONResponse(
         content=jsonable_encoder(food_count.model_dump())
         )
