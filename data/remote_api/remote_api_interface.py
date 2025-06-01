@@ -19,3 +19,4 @@ class RemoteApiInterface(ABC):
     @abstractmethod
     async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: str, language : Language) -> UserRequestedFood:
         pass
+

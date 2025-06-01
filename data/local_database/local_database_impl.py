@@ -21,6 +21,7 @@ from data.local_database.model.user_files import (
     )
 from data.local_database.model.user_food import Food
 from data.remote_api.model.exceptions import NotFoundError
+from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment
 
 
 
@@ -33,6 +34,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.user_physical_data_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserphysicalDataCollection"]
         self.user_static_file_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserStaticsFileCollection"]
         self.user_food_nutritions_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserFoodNutritionCollectionCollection"]
+        self.user_subscription_payment_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserSubscriptionPaymentCollection"]
 
 
     async def clear(self) -> None:
@@ -313,3 +315,22 @@ class LocalDataBaseImpl(DatabaseInterface):
         )
 
         return foods_ids
+
+    async def create_payment_subscription(self, subscription_data: UserInDbSubscriptionPayment):
+        if subscription_data.id is None:
+            subscription_data.id = str(uuid4())
+        await self.user_subscription_payment_collection.find_one_and_update(
+            filter={'_id': subscription_data.id},
+            update={'$set': subscription_data.model_dump(by_alias=True, exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+        )
+        return subscription_data
+    
+    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]| None:
+        subscriptions = await self.user_subscription_payment_collection.find(
+            {"user_id": user_id}
+        ).to_list()
+        if not subscriptions:
+            return None
+        return [UserInDbSubscriptionPayment(**sub) for sub in subscriptions]

@@ -35,3 +35,5 @@ from data.remote_api.model.food_ai_model import (
     )
 from data.common_data_model.language import Language # type: ignore
 from data.local_database.model.change_weight_speed import ChangeWeightSpeed # type: ignore
+
+from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment # type: ignore

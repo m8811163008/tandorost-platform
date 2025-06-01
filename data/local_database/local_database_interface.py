@@ -9,6 +9,7 @@ from data.local_database.model.user import UserInDB
 from data.local_database.model.user_physical_data import UserPhysicalData, UserPhysicalDataUpsert
 from data.local_database.model.user_files import FileData, GallaryTag
 from data.local_database.model.user_food import Food
+from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment
 
 
 class DatabaseInterface(ABC):
@@ -105,3 +106,10 @@ class DatabaseInterface(ABC):
     async def delete_user_foods(self,  foods_ids: list[str]) -> list[str]:
         pass
 
+    @abstractmethod
+    async def create_payment_subscription(self, subscription_data: UserInDbSubscriptionPayment) ->UserInDbSubscriptionPayment:
+        pass
+
+    @abstractmethod
+    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]| None:
+        pass

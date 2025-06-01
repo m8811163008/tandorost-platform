@@ -100,10 +100,14 @@ async def read_foods_nutritions_by_voice(
     })
 async def read_foods_nutritions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
-    start_date: Annotated[datetime , Query()],
-    end_date: Annotated[datetime , Query()],
+    date_1: Annotated[datetime , Query()],
+    date_2: Annotated[datetime , Query()],
 ) :
-    foods = await dm.food_nutrition_repo.read_foods_nutritions(user_id=user_id, start_date=start_date, end_date=end_date)
+    start_date, end_date = sorted([date_1, date_2])
+    foods = await dm.food_nutrition_repo.read_foods_nutritions(
+        user_id=user_id, start_date=start_date, end_date=end_date
+    )
+    
     return JSONResponse(
         content=[jsonable_encoder(food.model_dump(by_alias=True)) for food in foods]
     )

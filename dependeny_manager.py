@@ -1,5 +1,6 @@
 from data.local_database import LocalDataBaseImpl
 from repositories.fitness.fitness_re import FitnessRepository
+from repositories.payment.payment import PaymentRepository
 from repositories.user_files.user_files_re import UserFiles
 from utility import EnvirenmentVariable
 from data.remote_api import RemoteApiImpl
@@ -22,6 +23,7 @@ class DependencyManager():
         self.user_repo = UserRepository(database=self.local_database)
         self.user_files_repo = UserFiles(database=self.local_database)
         self.fitness_repo = FitnessRepository(database = self.local_database)
+        self.payment_repo = PaymentRepository(database = self.local_database)
 
 
 dm = DependencyManager()
