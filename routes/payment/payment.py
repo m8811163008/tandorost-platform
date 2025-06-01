@@ -2,15 +2,13 @@
 
 from typing import Annotated
 
-from fastapi import  APIRouter, Depends, HTTPException, status
+from fastapi import  APIRouter, Depends
 from fastapi.responses import JSONResponse
-
 from dependeny_manager import dm
+from domain_models.data_models import UserInDbSubscriptionPayment, UserFoodCount
 
-from domain_models.data_models import UserInDbSubscriptionPayment
-from domain_models.response_model import ErrorResponse
 from utility.decode_jwt_user_id import read_user_or_raise
-from utility.translation_keys import TranslationKeys
+
 from fastapi.encoders import jsonable_encoder
 
 router = APIRouter(
@@ -27,17 +25,19 @@ async def read_subscriptions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
     subscription_payment = await dm.payment_repo.read_payment_subscription(user_id=user_id)
-    if subscription_payment is None:
-        message = TranslationKeys.NOT_FOUND
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=ErrorResponse(
-                error_detail='TranslationKeys.NOT_FOUND',
-                message=message
-            ).model_dump()
-        )
     return JSONResponse(
         content=jsonable_encoder([item.model_dump() for item in subscription_payment])
+        )
+@router.get("/read_user_food_count/",responses={
+    200 : {"model" : UserFoodCount, "description": "HTTP_200_OK",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    })
+async def read_user_food_count(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+) :
+    food_count = await dm.payment_repo.read_user_food_counts(user_id=user_id)
+    return JSONResponse(
+        content=jsonable_encoder(food_count.model_dump())
         )
 
 

@@ -13,6 +13,7 @@ from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.exceptions import DocumentNotFound, UserPhysicalDataValidationError
 from data.local_database.model.user import UserInDB
+from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_physical_data import DataPoint, UserPhysicalData, UserPhysicalDataUpsert
 from data.local_database.model.user_files import (
     GallaryTag, 
@@ -283,10 +284,6 @@ class LocalDataBaseImpl(DatabaseInterface):
         if len(user_foods) == 0:
             return user_foods
         assert(user_foods[0].user_id is not None)
-        user_id = user_foods[0].user_id
-
-        # Ensure the user exists
-        await self._raise_for_invalid_user(user_id = user_id)
 
         for food in user_foods:
             if food.id == None:
@@ -327,10 +324,17 @@ class LocalDataBaseImpl(DatabaseInterface):
         )
         return subscription_data
     
-    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]| None:
+    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]:
         subscriptions = await self.user_subscription_payment_collection.find(
             {"user_id": user_id}
         ).to_list()
-        if not subscriptions:
-            return None
+        
         return [UserInDbSubscriptionPayment(**sub) for sub in subscriptions]
+
+
+    async def read_user_food_counts(self, user_id :str )-> UserFoodCount:
+        user_food_counts = await self.user_food_nutritions_collection.find(
+            {"user_id": user_id},
+            {"_id": 1}
+        ).to_list()
+        return UserFoodCount(count=len(user_food_counts))

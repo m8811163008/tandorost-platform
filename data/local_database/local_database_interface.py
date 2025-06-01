@@ -6,6 +6,7 @@ from data.local_database import Token
 
  
 from data.local_database.model.user import UserInDB
+from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_physical_data import UserPhysicalData, UserPhysicalDataUpsert
 from data.local_database.model.user_files import FileData, GallaryTag
 from data.local_database.model.user_food import Food
@@ -111,5 +112,9 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]| None:
+    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]:
+        pass
+
+    @abstractmethod
+    async def read_user_food_counts(self, user_id :str )-> UserFoodCount:
         pass
