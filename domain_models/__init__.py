@@ -8,3 +8,4 @@ from .archive_user_images_response import ArchiveUserImagesResponse # type: igno
 from .fitness_data import FitnessData # type: ignore
 from .bmi_level import BmiLevel # type: ignore
 from .nutrition_requrement import NutritionRequerment, NutritionRequerments # type: ignore
+from .cafe_bazzar_payment import CafeBazzarPayment # type: ignore

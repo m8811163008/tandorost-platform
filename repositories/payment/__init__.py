@@ -1,1 +1,1 @@
-from payment import *
+from .payment import *

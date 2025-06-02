@@ -20,6 +20,7 @@ class SubscriptionType(StrEnum):
 class UserInDbSubscriptionPayment(BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
+    cafe_bazzar_order_id : str | None
     paid_amount: float
     discount_amount : float
     currency: Currency
