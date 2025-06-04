@@ -2,7 +2,7 @@
 from random import Random
 from fastapi import APIRouter, Form
 from fastapi.responses import JSONResponse
-from domain_models import InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationCode,VerificationType, Token
+from domain_models import (InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationCode,VerificationType, Token, Currency, PaymentMethod, SubscriptionType, UserInDbSubscriptionPayment)
 from fastapi.security import  OAuth2PasswordRequestForm
 from typing import Annotated
 from datetime import datetime
@@ -101,9 +101,22 @@ async def register(
         )    
 
 
-    await dm.auth_repo.update_user_account(password=password,username=user_name)
+    upserted_user = await dm.auth_repo.update_user_account(password=password,username=user_name)
+    assert(upserted_user.id != None)
+    await createFreeSubscription(user_id=upserted_user.id)
     return JSONResponse(content=translation_manager.gettext(TranslationKeys.USER_REGISTERED))
-    
+
+async def createFreeSubscription(user_id : str, ):
+    subscription_data = UserInDbSubscriptionPayment(
+        user_id = user_id,
+        paid_amount = 0,
+        discount_amount= 0,
+        currency = Currency.IRRIAL,
+        payment_method=PaymentMethod.INPAYMENTCAFEBAZZAR,
+        purchase_date = datetime.now(),
+        subscription_type= SubscriptionType.FREETIER
+    )
+    await dm.payment_repo.create_payment_subscription(subscription_data=subscription_data)
     
 
 @router.post("/forgot_password/", responses={
@@ -150,8 +163,8 @@ async def login_for_access_token(
     except UsernameNotRegisteredYet:
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=form_data.username)
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail = ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail=ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
         )
     except UsernameIsInactive:
         message = translation_manager.gettext(TranslationKeys.USERNAME_IS_INACTIVE).format(user_name=form_data.username)

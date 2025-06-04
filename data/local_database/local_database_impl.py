@@ -39,11 +39,12 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     async def clear(self) -> None:
-        # await self.user_collection.delete_many({})
-        # await self.auth_collection.delete_many({})
+        await self.user_collection.delete_many({})
+        await self.auth_collection.delete_many({})
         await self.user_physical_data_collection.delete_many({})
         await self.user_static_file_collection.delete_many({})
         await self.user_food_nutritions_collection.delete_many({})
+        await self.user_subscription_payment_collection.delete_many({})
         print('*****Database cleared!*****')
 
     async def _raise_for_invalid_user(self, user_id: str):

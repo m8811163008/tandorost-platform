@@ -65,7 +65,8 @@ class FitnessRepository:
         if user is None:
             return None
         user_physical_data = await self.database.read_user_physical_data(user_id=user_id)
-        assert(user_physical_data is not None)
+        if user_physical_data is None:
+            return None
         fitness_data = await self.fitness_data(user_id=user_id)
         assert(fitness_data is not None)
 

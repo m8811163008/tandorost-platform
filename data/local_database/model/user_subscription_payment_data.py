@@ -1,7 +1,7 @@
 
 from datetime import datetime
 from enum import StrEnum
-from pydantic import   BaseModel, Field, ConfigDict
+from pydantic import   BaseModel, Field, ConfigDict, computed_field
 
 class Currency(StrEnum):
     IRRIAL = 'ir_rial'
@@ -20,7 +20,7 @@ class SubscriptionType(StrEnum):
 class UserInDbSubscriptionPayment(BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
-    cafe_bazzar_order_id : str | None
+    cafe_bazzar_order_id : str | None = None
     paid_amount: float
     discount_amount : float
     currency: Currency
@@ -32,7 +32,7 @@ class UserInDbSubscriptionPayment(BaseModel):
     model_config = ConfigDict(use_enum_values=True)
 
 
-
+    @computed_field
     @property
     def user_ai_request_limit_foods(self) -> int:
         # For Gemini: 1 voice request per food, assume 10 foods for free tier
