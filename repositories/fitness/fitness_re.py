@@ -118,9 +118,9 @@ class FitnessRepository:
             # Losing weight 1.8–2.7 g/kg BW/day
             match activity_level:
                 case ActivityLevel.SEDENTARY.value:
-                    return 2
+                    return 1.8
                 case ActivityLevel.FAIRLY_ACTIVE.value:
-                    return 2.2 if is_trainig_day else 2.1
+                    return 2 if is_trainig_day else 2.1
                 case ActivityLevel.MODERATELY_ACTIVE.value:
                     return 2.3 if is_trainig_day else 2.2
                 case ActivityLevel.ACTIVE.value:
