@@ -9,4 +9,4 @@ class UserUpdateRequest(BaseModel):
     full_name: str | None = None
     language: Language = Language.ENGLISH
     change_weight_speed : ChangeWeightSpeed  | None = None
-    is_fasting : bool | None = None
+    is_time_restricted_eating : bool | None = None
