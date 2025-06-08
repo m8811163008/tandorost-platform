@@ -21,7 +21,7 @@ class TranslationManager:
         self.translation = gettext.translation(
             "messages",
             localedir=self.locales_dir,
-            languages=[parsed_language],
+            languages=[parsed_language.value],
             fallback=True,
         )
         self.current_language = language
