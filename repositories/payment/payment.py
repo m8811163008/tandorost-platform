@@ -18,5 +18,8 @@ class PaymentRepository:
     async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]:
         return await self.database.read_payment_subscription(user_id=user_id)
     
+    async def update_payment_subscription(self, payment_subscription :UserInDbSubscriptionPayment )-> UserInDbSubscriptionPayment:
+        return await self.database.update_payment_subscription(payment_subscription=payment_subscription)
+    
     async def read_user_food_count(self, user_id :str )-> UserFoodCount:
         return await self.database.read_user_food_counts(user_id=user_id)

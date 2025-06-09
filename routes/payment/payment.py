@@ -2,7 +2,7 @@
 
 from typing import Annotated
 
-from fastapi import  APIRouter, Depends
+from fastapi import  APIRouter, Depends,Body
 from fastapi.responses import JSONResponse
 from dependeny_manager import dm
 from domain_models.cafe_bazzar_payment import CafeBazzarPayment
@@ -63,7 +63,8 @@ async def cafe_bazzar_payment_info(
     200 : {"model" : UserInDbSubscriptionPayment, "description": "HTTP_200_OK",},
     })
 async def create_subscription_payment(
-    subscription_data: Annotated[UserInDbSubscriptionPayment, Depends()],
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+    subscription_data : Annotated[UserInDbSubscriptionPayment , Body()],
 ):
     subscription_payment = await dm.payment_repo.create_payment_subscription(subscription_data=subscription_data)
     return JSONResponse(

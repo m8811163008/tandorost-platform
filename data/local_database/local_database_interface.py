@@ -114,6 +114,10 @@ class DatabaseInterface(ABC):
     @abstractmethod
     async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]:
         pass
+    
+    @abstractmethod
+    async def update_payment_subscription(self, payment_subscription :UserInDbSubscriptionPayment)-> UserInDbSubscriptionPayment:
+        pass
 
     @abstractmethod
     async def read_user_food_counts(self, user_id :str )-> UserFoodCount:

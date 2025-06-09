@@ -331,6 +331,17 @@ class LocalDataBaseImpl(DatabaseInterface):
         ).to_list()
         
         return [UserInDbSubscriptionPayment(**sub) for sub in subscriptions]
+    
+    async def update_payment_subscription(self, payment_subscription :UserInDbSubscriptionPayment )-> UserInDbSubscriptionPayment:
+        if payment_subscription.id is None:
+            raise NotFoundError(message="Subscription ID is required for update")
+        result = await self.user_subscription_payment_collection.find_one_and_update(
+            filter={'_id': payment_subscription.id},
+            update={'$set': payment_subscription.model_dump(by_alias=True, exclude_none=True)},
+            upsert=False,
+            return_document=ReturnDocument.AFTER
+        )
+        return UserInDbSubscriptionPayment(**result)
 
 
     async def read_user_food_counts(self, user_id :str )-> UserFoodCount:

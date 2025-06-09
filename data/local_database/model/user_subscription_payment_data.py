@@ -28,6 +28,8 @@ class UserInDbSubscriptionPayment(BaseModel):
     purchase_date: datetime
     subscription_type: SubscriptionType
     updated_at: datetime | None = None
+    user_ai_requested_foods : int = 0
+
     
     model_config = ConfigDict(use_enum_values=True)
 
@@ -37,7 +39,7 @@ class UserInDbSubscriptionPayment(BaseModel):
     def user_ai_request_limit_foods(self) -> int:
         # For Gemini: 1 voice request per food, assume 10 foods for free tier
         if self.subscription_type == SubscriptionType.FREETIER:
-            return 30
+            return 3
         # For ONEMONTH: 20 requests per day, assume 30 days in a month
         elif self.subscription_type == SubscriptionType.ONEMONTH:
             return 20 * 30
@@ -46,3 +48,18 @@ class UserInDbSubscriptionPayment(BaseModel):
             return 20 * 90
         else:
             return 0
+    
+    @computed_field
+    @property
+    def is_active(self) -> bool:
+        now = datetime.now()
+        if self.subscription_type == SubscriptionType.ONEMONTH:
+            expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
+            if (now - expiry).days >= 30:
+                return False
+        elif self.subscription_type == SubscriptionType.THREEMONTH:
+            expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
+            if (now - expiry).days >= 90:
+                return False
+
+        return self.user_ai_requested_foods < self.user_ai_request_limit_foods
