@@ -50,7 +50,7 @@ async def verify(
        await dm.auth_repo.send_verification_code(code=verification_code, username=phone_number,body_id=verification_sms_panel_body_id, verification_type = verification_type)
        return JSONResponse(content=translation_manager.gettext(TranslationKeys.VERIFICATION_CODE_SEND))
     except UsernameNotRegisteredYet:
-        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=phone_number)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
@@ -82,7 +82,7 @@ async def register(
         await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code)
 
     except UsernameNotRegisteredYet :
-        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=user_name)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
@@ -94,7 +94,7 @@ async def register(
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_IN_USE', message=message).model_dump()
         )
     except InvalidVerificationCode:
-        message = translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE).format(user_name=user_name)
+        message = translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_VERIFICATION_CODE', message=message).model_dump()
@@ -132,13 +132,13 @@ async def forgot_password(
     try:
         await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code, is_register_request=False)
     except UsernameNotRegisteredYet :
-        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=user_name)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail = ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
         )
     except InvalidVerificationCode:
-        message = translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE).format(user_name=user_name)
+        message = translation_manager.gettext(TranslationKeys.INVALID_VERIFICATION_CODE)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_VERIFICATION_CODE', message=message).model_dump()
@@ -161,19 +161,19 @@ async def login_for_access_token(
     try:
         await dm.auth_repo.authenticate(username=form_data.username, password=form_data.password)
     except UsernameNotRegisteredYet:
-        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET).format(user_name=form_data.username)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail=ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
         )
     except UsernameIsInactive:
-        message = translation_manager.gettext(TranslationKeys.USERNAME_IS_INACTIVE).format(user_name=form_data.username)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_IS_INACTIVE)
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail = ErrorResponse(error_detail='TranslationKeys.USERNAME_IS_INACTIVE', message=message).model_dump()
         )
     except InvalidPassword:
-        message = translation_manager.gettext(TranslationKeys.INVALID_PASSWORD).format(user_name=form_data.username)
+        message = translation_manager.gettext(TranslationKeys.INVALID_PASSWORD)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_PASSWORD', message=message).model_dump()
