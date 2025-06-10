@@ -161,18 +161,21 @@ async def _handle_food_request(request: Callable[..., Any], **kwargs: Any) -> JS
         subscriptions = await dm.payment_repo.read_payment_subscription(user_id= user_id)
         # add count to user_ai_requested_foods for the earliest active subscription
         # if there is no active subscription raise Error
-        active_subscriptions = [s for s in subscriptions if getattr(s, "is_active", False)]
-        if not active_subscriptions:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail=ErrorResponse(
-                    error_detail='TranslationKeys.PERMISSION_DENIED',
-                    message=TranslationKeys.PERMISSION_DENIED
-                ).model_dump()
-            )
-        earliest_subscription = min(active_subscriptions, key=lambda s: getattr(s, "purchase_date", datetime.max))
-        earliest_subscription.user_ai_requested_foods = getattr(earliest_subscription, "user_ai_requested_foods", 0) + 1
-        await dm.payment_repo.update_payment_subscription(payment_subscription=earliest_subscription)
+        # if foods are zero then return empty list
+        
+        if(len(foods) != 0):
+            active_subscriptions = [s for s in subscriptions if getattr(s, "is_active", False)]
+            if not active_subscriptions:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN,
+                    detail=ErrorResponse(
+                        error_detail='TranslationKeys.PERMISSION_DENIED',
+                        message=TranslationKeys.PERMISSION_DENIED
+                    ).model_dump()
+                )
+            earliest_subscription = min(active_subscriptions, key=lambda s: getattr(s, "purchase_date", datetime.max))
+            earliest_subscription.user_ai_requested_foods = getattr(earliest_subscription, "user_ai_requested_foods", 0) + 1
+            await dm.payment_repo.update_payment_subscription(payment_subscription=earliest_subscription)
 
         return JSONResponse(
             content=[jsonable_encoder(food.model_dump(by_alias=True)) for food in foods]
