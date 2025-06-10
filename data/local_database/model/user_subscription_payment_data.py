@@ -39,7 +39,7 @@ class UserInDbSubscriptionPayment(BaseModel):
     def user_ai_request_limit_foods(self) -> int:
         # For Gemini: 1 voice request per food, assume 10 foods for free tier
         if self.subscription_type == SubscriptionType.FREETIER:
-            return 3
+            return 4
         # For ONEMONTH: 20 requests per day, assume 30 days in a month
         elif self.subscription_type == SubscriptionType.ONEMONTH:
             return 20 * 30
