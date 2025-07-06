@@ -53,7 +53,8 @@ async def cafe_bazzar_payment_info(
     payment_info =CafeBazzarPayment(
         caffe_bazzar_rsa=EnvirenmentVariable.CAFFE_BAZZAR_RSA(),
         caffe_bazzar_subscription_plan_one_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_ONE_MONTH_SDK(),
-        caffe_bazzar_subscription_plan_three_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK()
+        caffe_bazzar_subscription_plan_three_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK(),
+        caffe_bazzar_subscription_plan_six_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK()
     )
     return JSONResponse(
         content=jsonable_encoder(payment_info.model_dump())

@@ -14,6 +14,7 @@ class SubscriptionType(StrEnum):
     FREETIER = 'free_tier'
     ONEMONTH = 'one_month'
     THREEMONTH = 'three_month'
+    SIXMONTH = 'six_month'
 
 
 
@@ -46,6 +47,8 @@ class UserInDbSubscriptionPayment(BaseModel):
         # For THREEMONTH: 20 requests per day, 90 days
         elif self.subscription_type == SubscriptionType.THREEMONTH:
             return 20 * 90
+        elif self.subscription_type == SubscriptionType.SIXMONTH:
+            return 20 * 180
         else:
             return 0
     
@@ -60,6 +63,10 @@ class UserInDbSubscriptionPayment(BaseModel):
         elif self.subscription_type == SubscriptionType.THREEMONTH:
             expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
             if (now - expiry).days >= 90:
+                return False
+        elif self.subscription_type == SubscriptionType.SIXMONTH:
+            expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
+            if (now - expiry).days >= 180:
                 return False
 
         return self.user_ai_requested_foods < self.user_ai_request_limit_foods
