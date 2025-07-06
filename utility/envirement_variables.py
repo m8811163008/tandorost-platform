@@ -46,6 +46,10 @@ class EnvirenmentVariable:
     @staticmethod
     def CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK() -> str:
         return os.environ.get("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK")
+    
+    @staticmethod
+    def CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK() -> str:
+        return os.environ.get("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK")
 
     @staticmethod
     def _raise_env_error( var_name: str):
