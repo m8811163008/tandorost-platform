@@ -2,10 +2,11 @@ from enum import StrEnum
 from pydantic import BaseModel
 
 class AIModel(StrEnum):
-    GEMINI25PREVIEW = 'gemini-2.5-flash-preview-04-17'
-    GEMINI25PRO = 'gemini-2.5-pro-preview-03-25'
-    GEMINI2FLASH = 'gemini-2.0-flash'
-    GEMINI2FLASHLITE = 'gemini-2.0-flash-lite'
+    # TODO get list of models from gemini
+    GEMINI25PREVIEW = 'gemini-2.5-flash'
+    GEMINI25PRO = 'gemini-2.5-pro'
+    GEMINI2FLASH = 'gemini-2.5-flash-lite-preview-06-17'
+    GEMINI2FLASHLITE = 'gemini-2.0-flash'
 
 class GeminiConfig(BaseModel):
     api_key : str
