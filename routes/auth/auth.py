@@ -1,5 +1,6 @@
 
 from random import Random
+import re
 from fastapi import APIRouter, Form
 from fastapi.responses import JSONResponse
 from domain_models import (InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationCode,VerificationType, Token, Currency, PaymentMethod, SubscriptionType, UserInDbSubscriptionPayment)
@@ -8,6 +9,7 @@ from typing import Annotated
 from datetime import datetime
 from fastapi import Depends, HTTPException, status
 from domain_models.response_model import ErrorResponse
+from repositories.auth.utility import UsernameType, username_type
 from utility import (
     EnvirenmentVariable,
     check_verify_rate_limit,
@@ -15,7 +17,7 @@ from utility import (
     translation_manager
 )
 from dependeny_manager import dm  
-from utility.constants import  verification_sms_panel_body_id, rate_limit_second
+from utility.constants import  rate_limit_second
 
 
 router = APIRouter(
@@ -31,24 +33,21 @@ router = APIRouter(
     503 : {"description": "HTTP_503_SERVICE_UNAVAILABLE",},
     })
 async def verify(
-    phone_number : Annotated[str, Form(pattern=r"^09\d{9}$")],
+    username : Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
     verification_type : VerificationType
 ):  
     try:
-        await check_verify_rate_limit(phonenumber=phone_number, rate_limit_second=rate_limit_second)
+        await check_verify_rate_limit(username=username, rate_limit_second=rate_limit_second)
     except VerifiationCodeRequestReachedLimit as e:
         message = translation_manager.gettext(TranslationKeys.RATE_LIMIT_REACH).format(second= e.seconds_left)
         raise HTTPException(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
             detail= ErrorResponse(error_detail='TranslationKeys.RATE_LIMIT_REACH', message=message).model_dump()
         )
-    
-    random_code = str(Random().randint(1000, 9999))
-    verification_code = VerificationCode(created_at= datetime.now().isoformat(), verification_code= random_code)
-
+ 
     try:
-       await dm.auth_repo.send_verification_code(code=verification_code, username=phone_number,body_id=verification_sms_panel_body_id, verification_type = verification_type)
-       return JSONResponse(content=translation_manager.gettext(TranslationKeys.VERIFICATION_CODE_SEND))
+        await dm.auth_repo.save_verification_code(username=username, verification_type = verification_type)
+        
     except UsernameNotRegisteredYet:
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
@@ -61,11 +60,29 @@ async def verify(
             status_code=status.HTTP_409_CONFLICT,
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_IN_USE', message=message).model_dump()
         )
-    except NetworkConnectionError: 
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail= ErrorResponse(error_detail='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', message=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).model_dump()
-        )
+
+    user_type = username_type(username=username)
+    if user_type == UsernameType.PHONENUMBER:
+        try:
+            await dm.auth_repo.send_sms_verification_code(username=username)
+        except NetworkConnectionError: 
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail= ErrorResponse(error_detail='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', message=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).model_dump()
+            )
+    if user_type == UsernameType.EMAIL:
+        try:
+            subject = translation_manager.gettext(TranslationKeys.VERIFICATION_EMAIL_SUBJECT)
+            body = translation_manager.gettext(TranslationKeys.VERIFICATION_EMAIL_BODY)
+            await dm.auth_repo.send_email_verification_code(username=username, subject =subject, body = body)
+        except NetworkConnectionError: 
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail= ErrorResponse(error_detail='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', message=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).model_dump()
+            )
+    return JSONResponse(content=translation_manager.gettext(TranslationKeys.VERIFICATION_CODE_SEND))
+    
+
     
 @router.post("/register/", responses={
     200 : {"model" : None, "description": "HTTP_200_OK",},

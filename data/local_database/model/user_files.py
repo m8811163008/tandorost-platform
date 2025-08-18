@@ -4,7 +4,7 @@ from enum import StrEnum
 from pydantic import BaseModel, Field,ConfigDict
 
 
-class GallaryTag(StrEnum):
+class GallaryTag(Str):
     DEFAULT = 'default'
     PROFILE_IMAGE = 'profile_image'
     CERTIFICATE = 'certificate'

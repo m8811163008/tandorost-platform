@@ -15,13 +15,15 @@ class Address(BaseModel):
 
 class UserInDB(BaseModel):
     id : str | None = Field(alias="_id", default=None)
-    phone_number: str
+    phone_number: str | None
+    email: str | None
     address : Address | None = None
     full_name: str | None = None
     language: Language = Language.ENGLISH
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
-    is_verified : bool = False
+    is_phone_number_verified : bool = False
+    is_email_verified : bool = False
     change_weight_speed : ChangeWeightSpeed = ChangeWeightSpeed.CONSTANT
     is_time_restricted_eating : bool = False
     model_config = ConfigDict(use_enum_values=True)

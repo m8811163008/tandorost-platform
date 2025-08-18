@@ -25,9 +25,10 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def read_user_by_phone_number(self, phone_number: str) -> UserInDB | None:
+    async def read_user_by_username(self, username: str) -> UserInDB | None:
         """Retrieve a user from the database."""
         pass
+    
 
     @abstractmethod
     async def read_user_by_id(self, user_id : str) -> UserInDB | None:

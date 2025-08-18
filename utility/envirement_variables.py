@@ -50,6 +50,22 @@ class EnvirenmentVariable:
     @staticmethod
     def CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK() -> str:
         return os.environ.get("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK")
+    
+    @staticmethod
+    def EMAILSMTPUSERNAME() -> str:
+        return os.environ.get("EMAIL_SMTP_USERNAME") or EnvirenmentVariable._raise_env_error("EMAIL_SMTP_USERNAME")
+    
+    @staticmethod
+    def EMAILSMTPAPPPASSWORD() -> str:
+        return os.environ.get("EMAIL_SMTP_APP_PASSWORD") or EnvirenmentVariable._raise_env_error("EMAIL_SMTP_APP_PASSWORD")
+    
+    @staticmethod
+    def EMAILSMTPHOST() -> str:
+        return os.environ.get("EMAIL_SMTP_HOST") or EnvirenmentVariable._raise_env_error("EMAIL_SMTP_HOST")
+    
+    @staticmethod
+    def EMAILSMTPPORT() -> str:
+        return os.environ.get("EMAIL_SMTP_PORT") or EnvirenmentVariable._raise_env_error("EMAIL_SMTP_PORT")
 
     @staticmethod
     def _raise_env_error( var_name: str):

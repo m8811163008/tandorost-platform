@@ -50,7 +50,7 @@ async def update_user(
      user_dict = user_profile.model_dump()
      user_dict['_id'] = user_id
      user_in_db = UserInDB( **user_dict )
-     user_in_db.is_verified = True
+     user_in_db.is_phone_number_verified = True
      log_in_user = await dm.user_repo.read_user(user_id=user_id)
      assert(log_in_user is not None)
      assert(log_in_user.id is not None)

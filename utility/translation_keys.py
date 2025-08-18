@@ -42,3 +42,5 @@ class TranslationKeys:
     INTERNAL_ERROR = "internal_error"
     SERVICE_UNAVAILABLE = "service_unavailable"
     DEADLINE_EXCEEDED = "deadline_exceeded"
+    VERIFICATION_EMAIL_SUBJECT = "verification_email_subject"
+    VERIFICATION_EMAIL_BODY = "verification_email_body"

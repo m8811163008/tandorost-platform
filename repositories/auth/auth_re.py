@@ -1,38 +1,74 @@
 
-from datetime import timedelta
+from datetime import datetime, timedelta
+from random import Random
+import re
 
 from data.local_database import DatabaseInterface, Token
 from data.remote_api import VerifyPhoneNumberDetail, RemoteApiInterface
+from data.remote_api.model.email_config import EmailDetail, SenderEmails
 from domain_models import InvalidPassword, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, InvalidVerificationCode, NetworkConnectionError, HTTPStatusError,VerificationCode,VerificationType, UserInDB
-from repositories.auth.utility import create_access_token, get_password_hash,is_valid_password
+from repositories.auth.utility import UsernameType, create_access_token, get_password_hash,is_valid_password, username_type
 from utility.envirement_variables import EnvirenmentVariable
+from utility.translation_keys import TranslationKeys
 
 
 
 class AuthRepository:
-    def __init__(self, database: DatabaseInterface, remote_api:RemoteApiInterface):
+    def __init__(self, database: DatabaseInterface, remote_api:RemoteApiInterface, sms_body_id:str):
         self.database = database
         self.remote_api = remote_api
+        self.sms_body_id = sms_body_id
 
     #TODO user name is phone number , in future change to use both email and phone number
-    async def send_verification_code(self, code: VerificationCode, username : str, body_id : str, verification_type: VerificationType):
-        user_in_db = await self.database.read_user_by_phone_number(phone_number=username)
+    async def save_verification_code(self, username : str,  verification_type: VerificationType):
+        user_in_db = await self.database.read_user_by_username(username=username)
+        
         if user_in_db is None and verification_type.is_forgot_password():
             raise UsernameNotRegisteredYet()
-        if user_in_db is not None and user_in_db.is_verified and verification_type.is_register():
-            raise UsernameAlreadyInUse()
+        
+        user_type = username_type(username=username)
+        if user_in_db is not None and verification_type.is_register():
+            
+            if user_type == UsernameType.PHONENUMBER and user_in_db.is_phone_number_verified:
+                raise UsernameAlreadyInUse()
+            if user_type == UsernameType.EMAIL and user_in_db.is_email_verified:
+                raise UsernameAlreadyInUse()
         
         user_id =  None
         if user_in_db is not None and user_in_db.id is not None:
             user_id = user_in_db.id
+        
+        random_code = str(Random().randint(1000, 9999))
+        verification_code = VerificationCode(created_at= datetime.now().isoformat(),
+                                             phone_number_verification_code=random_code if user_type == UsernameType.PHONENUMBER else user_in_db.verification_code.phone_number_verification_code,
+                                             email_verification_code=random_code if user_type == UsernameType.EMAIL else user_in_db.verification_code.email_verification_code,)
     
-        user = UserInDB(_id = user_id , phone_number=username, verification_code=code)
+        user = UserInDB(_id = user_id ,
+                        phone_number = username if user_type == UsernameType.PHONENUMBER else user_in_db.phone_number,
+                        email = username if user_type == UsernameType.EMAIL else user_in_db.email,
+                        verification_code=verification_code)
+        
         await self.database.upsert_user(user=user)
+        
+
             
+    async def send_sms_verification_code(self,username : str,):
+        user_in_db = await self.database.read_user_by_username(username=username)
         try:
-            detail = VerifyPhoneNumberDetail(text=[code.verification_code],to=username, body_id=body_id )
-            await self.remote_api.send_verification_code(detail=detail)
+            detail = VerifyPhoneNumberDetail(text=[user_in_db.verification_code.phone_number_verification_code],to=username, body_id=self.sms_body_id )
+            await self.remote_api.send_sms_verification_code(detail=detail)
         except (HTTPStatusError, NetworkConnectionError, Exception):
+            raise NetworkConnectionError()
+    
+    async def send_email_verification_code(self,username : str,subject:str, body:str):
+        user_in_db = await self.database.read_user_by_username(username=username)
+        # update body
+        body_with_code = body.format(code = user_in_db.verification_code.email_verification_code)
+        
+        try:
+            detail = EmailDetail(sender_email = SenderEmails.verificationSender, recipient_email=username, subject=subject, body=body_with_code)
+            await self.remote_api.send_email_verification_code(detail=detail)
+        except Exception:
             raise NetworkConnectionError()
     
     async def verify_code(self, username:str, verification_code : str, is_register_request : bool = True):
@@ -43,7 +79,7 @@ class AuthRepository:
             raise UsernameNotRegisteredYet()
         if user.verification_code.verification_code != verification_code:
             raise InvalidVerificationCode()
-        if user.is_verified and is_register_request:
+        if user.is_phone_number_verified and is_register_request:
             raise UsernameAlreadyInUse()
 
     async def update_user_account(self, password: str, username:str, is_verified : bool = True) -> UserInDB:
@@ -51,7 +87,7 @@ class AuthRepository:
         assert(user is not None)
         hashed_password = get_password_hash(password=password)
         user.hashed_password = hashed_password
-        user.is_verified = is_verified
+        user.is_phone_number_verified = is_verified
         assert(user.id is not None)
         return await self.database.upsert_user(user=user)
 
@@ -59,7 +95,7 @@ class AuthRepository:
         user = await self.database.read_user_by_phone_number(username)
         if user is None or user.hashed_password is None:
             raise UsernameNotRegisteredYet()
-        if user.is_verified is False:
+        if user.is_phone_number_verified is False:
             raise UsernameIsInactive()
         if is_valid_password(password, user.hashed_password) is False:
             raise InvalidPassword()
@@ -82,6 +118,7 @@ class AuthRepository:
             token_instance.id = tokne_in_db.id
         return await self.database.upsert_token(token = token_instance)
     
-    async def read_user_by_phone_number(self, username: str):
-        return await self.database.read_user_by_phone_number(phone_number=username)
+    async def read_user_by_username(self, username: str):
+        return await self.database.read_user_by_username(identifier=username)
+        
         

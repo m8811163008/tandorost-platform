@@ -117,3 +117,9 @@ msgstr "The service may be temporarily overloaded or down. The service is tempor
 
 msgid "deadline_exceeded"
 msgstr "The service is unable to finish processing within the deadline. Your prompt (or context) is too large to be processed in time. Set a larger 'timeout' in your client request to avoid this error."
+
+msgid "verification_email_subject"
+msgstr "Verifiation code"
+
+msgid "verification_email_body"
+msgstr "Welcome, your verirication code is : {code}."

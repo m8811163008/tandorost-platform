@@ -4,6 +4,7 @@ import httpx
 from data.common_data_model.language import Language
 from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
 from data.remote_api.model.ai_model_cache import CacheModel
+from data.remote_api.model.email_config import EmailDetail, EmailSMTPCongif
 from data.remote_api.model.exceptions import *
 from data.remote_api.model.food_ai_model import UserRequestedFood
 from data.remote_api.model.gemini_config import  GeminiConfig
@@ -11,18 +12,22 @@ from data.remote_api.remote_api_interface import RemoteApiInterface
 from google import genai # type: ignore
 from google.genai import types # type: ignore
 import json
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 
 verify_end_point_uri = 'https://api.payamak-panel.com/post/Send.asmx/SendByBaseNumber'
 
 class RemoteApiImpl(RemoteApiInterface):
-    def __init__(self, sms_config : SMSPanelCongif,ai_config : GeminiConfig ):
+    def __init__(self, sms_config : SMSPanelCongif,email_config : EmailSMTPCongif, ai_config : GeminiConfig ):
         self.sms_config = sms_config
+        self.email_config = email_config
         self.ai_config = ai_config
         self.ai_client = genai.Client(api_key= self.ai_config.api_key)
                 
         
-    async def send_verification_code(self, detail : VerifyPhoneNumberDetail):
+    async def send_sms_verification_code(self, detail : VerifyPhoneNumberDetail):
         payload: dict[str, Any] = {}
         payload.update(self.sms_config.model_dump())
         payload.update(detail.model_dump(exclude={'text'}))
@@ -40,6 +45,26 @@ class RemoteApiImpl(RemoteApiInterface):
                 raise NetworkConnectionError()   # Handle the response
             finally:
                 await client.aclose()
+                
+    async def send_email_verification_code(self, detail : EmailDetail):
+        sender_email = self.email_config.username
+        sender_password = self.email_config.appPassword
+
+        message = MIMEMultipart()
+        message["From"] = detail.sender_email
+        message["To"] = detail.recipient_email
+        message["Subject"] = detail.subject
+        body = detail.body
+        #TODO add html body
+        message.attach(MIMEText(body, "plain"))
+
+        try:
+            with smtplib.SMTP_SSL(self.email_config.host, self.email_config.port) as server:
+                server.login(sender_email, sender_password)
+                server.sendmail(detail.sender_email, detail.recipient_email, message.as_string())
+        except Exception as e:
+            print(e)
+            raise NetworkConnectionError()
 
     
     async def read_foods_nutritions_by_text(self, foods : str) -> UserRequestedFood:

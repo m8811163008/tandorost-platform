@@ -2,4 +2,5 @@ from pydantic import  BaseModel
 
 class VerificationCode(BaseModel):
     created_at: str
-    verification_code : str
+    email_verification_code : str | None
+    phone_number_verification_code : str | None
