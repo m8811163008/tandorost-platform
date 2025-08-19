@@ -6,7 +6,7 @@ from repositories.user_files.user_files_re import UserFiles
 from utility import EnvirenmentVariable
 from data.remote_api import RemoteApiImpl
 from domain_models import SMSPanelCongif, GeminiConfig
-from repositories.auth import AuthRepository
+from repositories.auth import AuthRepository,UsernameType, username_type
 from repositories.user import UserRepository
 from repositories.food_nutritions import FoodNutritionsRepository
 from utility.constants import  verification_sms_panel_body_id

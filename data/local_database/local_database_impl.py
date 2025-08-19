@@ -52,9 +52,9 @@ class LocalDataBaseImpl(DatabaseInterface):
         if user_data is None:
             raise DocumentNotFound()
         
-    async def read_user_by_username(self, username: str) -> UserInDB | None:
+    async def read_user_by_identifier(self, identifier: str) -> UserInDB | None:
         user_data = await self.user_collection.find_one(
-            {"$or": [{"phone_number": username}, {"email": username}]}
+            {"$or": [{"phone_number": identifier}, {"email": identifier}]}
         )
         if user_data is None:
             return None

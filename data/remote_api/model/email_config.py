@@ -17,4 +17,4 @@ class EmailDetail(BaseModel):
     body: str
 
 class SenderEmails(StrEnum):
-    verificationSender : str = ''
+    verificationSender : str = 'tandorostplatform@gmail.com'

@@ -1,23 +1,20 @@
-
-from random import Random
-import re
 from fastapi import APIRouter, Form
 from fastapi.responses import JSONResponse
-from domain_models import (InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationCode,VerificationType, Token, Currency, PaymentMethod, SubscriptionType, UserInDbSubscriptionPayment)
+from domain_models import (InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationType, Token, Currency, PaymentMethod, SubscriptionType, UserInDbSubscriptionPayment)
 from fastapi.security import  OAuth2PasswordRequestForm
 from typing import Annotated
 from datetime import datetime
 from fastapi import Depends, HTTPException, status
 from domain_models.response_model import ErrorResponse
-from repositories.auth.utility import UsernameType, username_type
+# from repositories.auth import UsernameType, username_type
 from utility import (
     EnvirenmentVariable,
     check_verify_rate_limit,
     TranslationKeys,
     translation_manager
 )
-from dependeny_manager import dm  
-from utility.constants import  rate_limit_second
+from dependeny_manager import dm ,UsernameType, username_type
+from utility.constants import rate_limit_second
 
 
 router = APIRouter(
@@ -33,11 +30,11 @@ router = APIRouter(
     503 : {"description": "HTTP_503_SERVICE_UNAVAILABLE",},
     })
 async def verify(
-    username : Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
+    identifier : Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
     verification_type : VerificationType
 ):  
     try:
-        await check_verify_rate_limit(username=username, rate_limit_second=rate_limit_second)
+        await check_verify_rate_limit(identifier=identifier, rate_limit_second=rate_limit_second)
     except VerifiationCodeRequestReachedLimit as e:
         message = translation_manager.gettext(TranslationKeys.RATE_LIMIT_REACH).format(second= e.seconds_left)
         raise HTTPException(
@@ -46,7 +43,7 @@ async def verify(
         )
  
     try:
-        await dm.auth_repo.save_verification_code(username=username, verification_type = verification_type)
+        await dm.auth_repo.save_verification_code(identifier=identifier, verification_type = verification_type)
         
     except UsernameNotRegisteredYet:
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
@@ -61,10 +58,10 @@ async def verify(
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_IN_USE', message=message).model_dump()
         )
 
-    user_type = username_type(username=username)
+    user_type = username_type(username=identifier)
     if user_type == UsernameType.PHONENUMBER:
         try:
-            await dm.auth_repo.send_sms_verification_code(username=username)
+            await dm.auth_repo.send_sms_verification_code(username=identifier)
         except NetworkConnectionError: 
             raise HTTPException(
                 status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
@@ -74,7 +71,7 @@ async def verify(
         try:
             subject = translation_manager.gettext(TranslationKeys.VERIFICATION_EMAIL_SUBJECT)
             body = translation_manager.gettext(TranslationKeys.VERIFICATION_EMAIL_BODY)
-            await dm.auth_repo.send_email_verification_code(username=username, subject =subject, body = body)
+            await dm.auth_repo.send_email_verification_code(username=identifier, subject =subject, body = body)
         except NetworkConnectionError: 
             raise HTTPException(
                 status_code=status.HTTP_503_SERVICE_UNAVAILABLE,

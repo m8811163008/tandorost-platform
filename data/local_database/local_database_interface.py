@@ -25,7 +25,7 @@ class DatabaseInterface(ABC):
         pass
 
     @abstractmethod
-    async def read_user_by_username(self, username: str) -> UserInDB | None:
+    async def read_user_by_identifier(self, identifier: str) -> UserInDB | None:
         """Retrieve a user from the database."""
         pass
     
