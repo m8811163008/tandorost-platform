@@ -61,8 +61,8 @@ app.mount(protected_directory_path, StaticFiles(directory=protected_directory, c
 @app.get("/")
 async def read_root():
     # DEBUG CLEAR DATABASE
-    # from dependeny_manager import dm
-    # await dm.local_database.clear()
+    from dependeny_manager import dm
+    await dm.local_database.clear()
     welcome_message = translation_manager.gettext(TranslationKeys.WELCOME_MESSAGE).format(api_uri=f"{root_path}/openapi.json")
     return welcome_message
 

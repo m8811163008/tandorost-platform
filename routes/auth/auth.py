@@ -88,7 +88,7 @@ async def verify(
     401 : {"description": "HTTP_401_UNAUTHORIZED",},
     })
 async def register(
-    user_name: Annotated[str, Form(pattern=r"^09\d{9}$")],
+    user_name: Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
     password : Annotated[str, Form(min_length=4)],
     verification_code : Annotated[str, Form(min_length=4, max_length=4, pattern=r"^\d{4}$")],
 ):
@@ -139,7 +139,7 @@ async def createFreeSubscription(user_id : str, ):
     409 : {"description": "HTTP_409_CONFLICT",},
     })
 async def forgot_password(
-    user_name: Annotated[str, Form(pattern=r"^09\d{9}$")],
+    user_name: Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
     new_password : Annotated[str, Form(min_length=4)],
     verification_code : Annotated[str, Form(min_length=4, max_length=4, pattern=r"^\d{4}$")],
 ):

@@ -15,8 +15,8 @@ class Address(BaseModel):
 
 class UserInDB(BaseModel):
     id : str | None = Field(alias="_id", default=None)
-    phone_number: str | None
-    email: str | None
+    phone_number: str | None = None
+    email: str | None = None
     address : Address | None = None
     full_name: str | None = None
     language: Language = Language.ENGLISH
