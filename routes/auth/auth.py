@@ -52,7 +52,7 @@ async def verify(
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
         )
     except UsernameAlreadyInUse:
-        message = translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=phone_number)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=identifier)
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_IN_USE', message=message).model_dump()

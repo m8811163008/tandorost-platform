@@ -49,17 +49,15 @@ async def update_user(
 ) :
      user_dict = user_profile.model_dump()
      user_dict['_id'] = user_id
-     user_in_db = UserInDB( **user_dict )
-     user_in_db.is_phone_number_verified = True
+     updated_profile = UserInDB( **user_dict )
+
      log_in_user = await dm.user_repo.read_user(user_id=user_id)
      assert(log_in_user is not None)
      assert(log_in_user.id is not None)
-     if log_in_user.phone_number != user_profile.phone_number:
-         raise HTTPException(
-             status_code= status.HTTP_403_FORBIDDEN,
-             detail=TranslationKeys.PERMISSION_DENIED
-         )
-     user = await dm.user_repo.update_user( user=user_in_db)
+     updated_profile.is_phone_number_verified = log_in_user.is_phone_number_verified
+     updated_profile.is_email_verified = log_in_user.is_email_verified
+
+     user = await dm.user_repo.update_user( user=updated_profile)
      if user is None:
          raise HTTPException(
              status_code= status.HTTP_404_NOT_FOUND,
@@ -67,7 +65,7 @@ async def update_user(
          )
      else:
         return JSONResponse(
-            content=user.model_dump(by_alias=True,exclude={"verification_code", "hashed_password", "is_verified"})
+            content=user.model_dump(by_alias=True,exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"})
         )
 
 
