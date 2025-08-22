@@ -20,7 +20,7 @@ msgid "rate_limit_reach"
 msgstr "Request rate limit reached. Try {second} seconds later"
 
 msgid "username_not_registered_yet"
-msgstr "Please first register phone number for verification code"
+msgstr "Please first register user for verification code"
 
 msgid "invalid_verification_code"
 msgstr "Verification code is invalid. Check verification code again."

@@ -35,7 +35,7 @@ async def read_user(
     user = await dm.user_repo.read_user(user_id=user_id)
     assert(user is not None)
     return JSONResponse(
-        content=user.model_dump(by_alias=True,exclude={"verification_code", "hashed_password", "is_verified"})
+        content=user.model_dump(by_alias=True,exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"})
     )
 
 @router.put("/update_profile/",  responses={

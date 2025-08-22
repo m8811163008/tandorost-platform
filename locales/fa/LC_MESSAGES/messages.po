@@ -34,7 +34,7 @@ msgid "rate_limit_reach"
 msgstr "محدودیت تعداد درخواست‌ها رسید. {second} ثانیه بعد دوباره تلاش کنید"
 
 msgid "username_not_registered_yet"
-msgstr "لطفاً ابتدا شماره تلفن را برای دریافت کد تأیید ثبت کنید"
+msgstr "لطفاً ابتدا نام کاربری را برای دریافت کد تأیید ثبت کنید"
 
 msgid "invalid_verification_code"
 msgstr "کد تأیید نامعتبر است. دوباره بررسی کنید."

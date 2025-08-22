@@ -88,12 +88,12 @@ async def verify(
     401 : {"description": "HTTP_401_UNAUTHORIZED",},
     })
 async def register(
-    user_name: Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
+    identifier: Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
     password : Annotated[str, Form(min_length=4)],
     verification_code : Annotated[str, Form(min_length=4, max_length=4, pattern=r"^\d{4}$")],
 ):
     try:
-        await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code)
+        await dm.auth_repo.verify_code(username=identifier,verification_code = verification_code)
 
     except UsernameNotRegisteredYet :
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
@@ -102,7 +102,7 @@ async def register(
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_NOT_REGISTERED_YET', message=message).model_dump()
         )
     except UsernameAlreadyInUse : 
-        message = translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=user_name)
+        message = translation_manager.gettext(TranslationKeys.USERNAME_IN_USE).format(user_name=identifier)
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail= ErrorResponse(error_detail='TranslationKeys.USERNAME_IN_USE', message=message).model_dump()
@@ -115,7 +115,7 @@ async def register(
         )    
 
 
-    upserted_user = await dm.auth_repo.update_user_account(password=password,username=user_name)
+    upserted_user = await dm.auth_repo.update_user_account(password=password,username=identifier)
     assert(upserted_user.id != None)
     await createFreeSubscription(user_id=upserted_user.id)
     return JSONResponse(content=translation_manager.gettext(TranslationKeys.USER_REGISTERED))
@@ -139,12 +139,12 @@ async def createFreeSubscription(user_id : str, ):
     409 : {"description": "HTTP_409_CONFLICT",},
     })
 async def forgot_password(
-    user_name: Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
+    identifier: Annotated[str, Form(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
     new_password : Annotated[str, Form(min_length=4)],
     verification_code : Annotated[str, Form(min_length=4, max_length=4, pattern=r"^\d{4}$")],
 ):
     try:
-        await dm.auth_repo.verify_code(username=user_name,verification_code = verification_code, is_register_request=False)
+        await dm.auth_repo.verify_code(username=identifier,verification_code = verification_code, is_register_request=False)
     except UsernameNotRegisteredYet :
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
@@ -158,7 +158,7 @@ async def forgot_password(
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_VERIFICATION_CODE', message=message).model_dump()
         )    
 
-    await dm.auth_repo.update_user_account(password=new_password,username=user_name)
+    await dm.auth_repo.update_user_account(password=new_password,username=identifier)
     return JSONResponse(content=translation_manager.gettext(TranslationKeys.PASSWORD_RESTORED))
     
 
