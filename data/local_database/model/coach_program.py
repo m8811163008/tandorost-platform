@@ -10,12 +10,12 @@ class ProgramFeature(StrEnum):
     FORMING_CHECK_VIDEO_SUPPORT = 'forming_check_video_support'
     ACHIVEMENT = 'achievement'
     
-class Program(BaseModel):
+class CoachProgram(BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
     title : str
     description : str
-    durationWeeks: int
+    duration_weeks: int
     price : float
     currency : Currency
     features : list[ProgramFeature] = []

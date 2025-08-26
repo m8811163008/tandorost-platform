@@ -11,6 +11,8 @@ from typing import Any
 from pymongo import ReturnDocument
 from data.local_database import Token
 from data.local_database.local_database_interface import DatabaseInterface
+from data.local_database.model.coach import Coach
+from data.local_database.model.coach_program import CoachProgram
 from data.local_database.model.exceptions import DocumentNotFound, UserPhysicalDataValidationError
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_food_count import UserFoodCount
@@ -37,6 +39,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.user_food_nutritions_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserFoodNutritionCollectionCollection"]
         self.user_subscription_payment_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserSubscriptionPaymentCollection"]
         self.coache_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheCollection"]
+        self.coache_program_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheProgramCollection"]
         # self.trainer_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TrainerCollection"]
 
 
@@ -360,3 +363,41 @@ class LocalDataBaseImpl(DatabaseInterface):
             {"_id": 1}
         ).to_list()
         return UserFoodCount(count=len(user_food_counts))
+    
+    async def read_coach(self, user_id: str) -> Coach | None:
+        coach_data = await self.coache_collection.find_one({'user_id': user_id})
+        if coach_data is None:
+            return None
+        return Coach(**coach_data)
+
+
+    async def upsert_coach(self, coach: Coach) -> Coach:
+        if coach.id is None:
+            coach.id = str(uuid4())
+        result = await self.coache_collection.find_one_and_update(
+            filter={'_id': coach.id},
+            update={'$set': coach.model_dump(by_alias=True, exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+        )
+        return Coach(**result)
+
+    async def upsert_coach_program(self, program: CoachProgram) -> CoachProgram:
+        if program.id is None:
+            program.id = str(uuid4())
+        result = await self.coache_program_collection.find_one_and_update(
+            filter={'_id': program.id},
+            update={'$set': program.model_dump(by_alias=True, exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+        )
+        return CoachProgram(**result)
+
+    async def delete_coach_program(self, program_id: str) -> None:
+        await self.coache_program_collection.find_one_and_delete(
+            filter={'_id': program_id}
+        )
+
+    async def read_coach_programs(self, user_id: str) -> list[CoachProgram]:
+        programs = await self.coache_program_collection.find({'user_id': user_id}).to_list()
+        return [CoachProgram(**program) for program in programs]

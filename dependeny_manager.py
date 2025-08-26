@@ -1,5 +1,6 @@
 from data.local_database import LocalDataBaseImpl
 from data.remote_api.model.email_config import EmailSMTPCongif
+from repositories.coach.coach import CoachRepository
 from repositories.fitness.fitness_re import FitnessRepository
 from repositories.payment.payment import PaymentRepository
 from repositories.user_files.user_files_re import UserFiles
@@ -27,6 +28,7 @@ class DependencyManager():
         self.user_files_repo = UserFiles(database=self.local_database)
         self.fitness_repo = FitnessRepository(database = self.local_database)
         self.payment_repo = PaymentRepository(database = self.local_database)
+        self.coach_repo = CoachRepository(database = self.local_database)
 
 
 dm = DependencyManager()

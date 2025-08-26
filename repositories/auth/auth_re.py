@@ -117,9 +117,21 @@ class AuthRepository:
         user = await self.database.read_user_by_identifier(identifier=username)
         assert(user is not None and user.id is not None)
         access_token_expires = timedelta(minutes=access_token_expire_minute)
+
+        # Determine scopes based on user roles
+        scopes = []
+        if hasattr(user, "role"):
+            if "trainer" in user.role:
+                scopes.append("trainer")
+            if "bodybuilding_coach" in user.role:
+                scopes.append("coach")
+
+
         access_token = create_access_token(
             data={"sub": username,
-                  "user_id" : user.id.__str__()}, 
+                  "user_id" : user.id.__str__(),
+                  "scopes": scopes
+                  }, 
             key = EnvirenmentVariable.SECRET_KEY(),
             algorithm= EnvirenmentVariable.ALGORITHM(),
             expires_delta=access_token_expires

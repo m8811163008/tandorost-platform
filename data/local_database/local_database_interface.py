@@ -5,6 +5,8 @@ from data.local_database import Token
 
 
  
+from data.local_database.model.coach import Coach
+from data.local_database.model.coach_program import CoachProgram
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_physical_data import UserPhysicalData, UserPhysicalDataUpsert
@@ -127,4 +129,24 @@ class DatabaseInterface(ABC):
 
     @abstractmethod
     async def read_user_food_counts(self, user_id :str )-> UserFoodCount:
+        pass
+    
+    @abstractmethod
+    async def upsert_coach(self, coach :Coach )-> Coach:
+        pass
+    
+    @abstractmethod
+    async def read_coach(self, user_id :str )-> Coach:
+        pass
+    
+    @abstractmethod
+    async def upsert_coach_program(self, program :CoachProgram )-> CoachProgram:
+        pass
+    
+    @abstractmethod
+    async def delete_coach_program(self, program_id :str )-> None:
+        pass
+    
+    @abstractmethod
+    async def read_coach_programs(self, user_id :str )-> list[CoachProgram]:
         pass
