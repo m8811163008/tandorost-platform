@@ -8,6 +8,7 @@ from data.remote_api.model.exceptions import (
     ) 
 from data.local_database.model.token import (Token, TokenData) # type: ignore
 from data.local_database.model.user import (Address,UserInDB) # type: ignore
+from data.local_database.model.roles import (Role) # type: ignore
 from data.local_database.model.user_physical_data import (
     Gender, # type: ignore
     ActivityLevel, # type: ignore

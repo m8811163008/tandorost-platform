@@ -3,8 +3,8 @@ from datetime import datetime
 from enum import StrEnum
 from pydantic import   BaseModel, Field, ConfigDict, computed_field
 
-class Currency(StrEnum):
-    IRRIAL = 'ir_rial'
+from data.local_database.model.currency import Currency
+
 
 class PaymentMethod(StrEnum):
     INPAYMENTCAFEBAZZAR = 'in_app_payment_cafe_bazzar'

@@ -8,6 +8,7 @@ class GallaryTag(StrEnum):
     DEFAULT = 'default'
     PROFILE_IMAGE = 'profile_image'
     CERTIFICATE = 'certificate'
+    ACHIVEMENT = 'achievement'
 
 class ProcessingStatus(StrEnum):
     PENDING = 'pending'
@@ -45,6 +46,7 @@ class FileData(BaseModel):
     upload_date: datetime
     content_type: str
     file_upload_path: str
+    description: str | None = None
     # TODO implement admin panel for files processing status
     processing_status: ProcessingStatus = ProcessingStatus.APPROVED
     reject_processing_status_desc : ImageRejectionReason | None = None

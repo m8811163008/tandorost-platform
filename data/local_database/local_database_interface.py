@@ -66,6 +66,11 @@ class DatabaseInterface(ABC):
     async def upsert_token(self,  token: Token) -> Token:
         """Save a user token to the database."""
         pass
+    
+    @abstractmethod
+    async def delete_token(self,  user_id: str) -> None:
+        """Save a user token to the database."""
+        pass
 
     @abstractmethod
     async def read_token(self,  user_id:str) -> Token | None:

@@ -15,6 +15,7 @@ from utility import (
 )
 from dependeny_manager import dm ,UsernameType, username_type
 from utility.constants import rate_limit_second
+from utility.decode_jwt_user_id import read_user_or_raise
 
 
 router = APIRouter(
@@ -194,3 +195,11 @@ async def login_for_access_token(
         )
     token = await dm.auth_repo.issue_access_token(username= form_data.username,access_token_expire_minute=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
     return JSONResponse(content=token.model_dump(by_alias=True))
+
+@router.post("/logout/", status_code=status.HTTP_204_NO_CONTENT, responses={
+    204 : {"description": "HTTP_204_NO_CONTENT",},
+    })
+async def logout(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+):
+    await dm.auth_repo.logout(user_id=user_id)

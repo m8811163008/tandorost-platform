@@ -36,6 +36,8 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.user_static_file_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserStaticsFileCollection"]
         self.user_food_nutritions_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserFoodNutritionCollectionCollection"]
         self.user_subscription_payment_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserSubscriptionPaymentCollection"]
+        self.coache_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheCollection"]
+        # self.trainer_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TrainerCollection"]
 
 
     async def clear(self) -> None:
@@ -259,6 +261,13 @@ class LocalDataBaseImpl(DatabaseInterface):
             return_document=ReturnDocument.AFTER
         )
         return Token(**result)
+    
+    async def delete_token(self, user_id: str) -> None:
+        """Save a user token to the database."""
+        await self.auth_collection.find_one_and_delete(
+            filter={'user_id': user_id},
+        )
+        
     
 
     async def read_token(self,  user_id:str) -> Token | None:

@@ -130,6 +130,9 @@ class AuthRepository:
             token_instance.id = tokne_in_db.id
         return await self.database.upsert_token(token = token_instance)
     
+    async def logout(self,user_id: str,) -> None:
+        return await self.database.delete_token(user_id = user_id)
+    
     async def read_user_by_identifier(self, identifier: str):
         return await self.database.read_user_by_identifier(identifier=identifier)
         
