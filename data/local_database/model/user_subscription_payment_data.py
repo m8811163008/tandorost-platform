@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import StrEnum
 from pydantic import   BaseModel, Field, ConfigDict, computed_field
 
@@ -55,7 +55,7 @@ class UserInDbSubscriptionPayment(BaseModel):
     @computed_field
     @property
     def is_active(self) -> bool:
-        now = datetime.now()
+        now = datetime.now(timezone.utc)
         if self.subscription_type == SubscriptionType.ONEMONTH:
             expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
             if (now - expiry).days >= 30:

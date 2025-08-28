@@ -80,7 +80,7 @@ async def add_coach_program(
     program.user_id = user_id
     coach_program = await dm.coach_repo.upsert_coach_program(program=program)
     return JSONResponse(
-        content=coach_program.model_dump(by_alias=True)
+        content=coach_program.model_dump()
     )
 
 @router.delete("/delete_coach_program/", status_code=status.HTTP_204_NO_CONTENT, responses={
@@ -119,5 +119,5 @@ async def read_coach_programs(
             ).model_dump()
         )
     return JSONResponse(
-        content=[program.model_dump(by_alias=True) for program in programs]
+        content=[program.model_dump() for program in programs]
     )

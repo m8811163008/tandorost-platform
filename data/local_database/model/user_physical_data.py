@@ -49,7 +49,7 @@ class UserPhysicalData (BaseModel):
     calf_muscle_circumference: list[DataPoint]
     hip_circumference: list[DataPoint]
     activity_level: list[DataPoint]
-    model_config = ConfigDict(use_enum_values=True,)
+    model_config = ConfigDict(use_enum_values=True,populate_by_name=True)
 
 
     @property

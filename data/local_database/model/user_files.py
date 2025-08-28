@@ -50,7 +50,7 @@ class FileData(BaseModel):
     # TODO implement admin panel for files processing status
     processing_status: ProcessingStatus = ProcessingStatus.APPROVED
     reject_processing_status_desc : ImageRejectionReason | None = None
-    model_config = ConfigDict(use_enum_values=True,)
+    model_config = ConfigDict(use_enum_values=True,populate_by_name=True)
 
 
 

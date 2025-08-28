@@ -1,5 +1,5 @@
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from random import Random
 
 from data.local_database import DatabaseInterface, Token
@@ -38,7 +38,7 @@ class AuthRepository:
         current_phone_number_verification_code = None if user_in_db is None else user_in_db.verification_code.phone_number_verification_code
         current_email_verification_code =  None if user_in_db is None else user_in_db.verification_code.email_verification_code
         random_code = str(Random().randint(1000, 9999))
-        verification_code = VerificationCode(created_at= datetime.now().isoformat(),
+        verification_code = VerificationCode(created_at= datetime.now(timezone.utc).isoformat(),
                                              phone_number_verification_code=random_code if user_type == UsernameType.PHONENUMBER else current_phone_number_verification_code,
                                              email_verification_code=random_code if user_type == UsernameType.EMAIL else current_email_verification_code,)
         current_user_phone_number =  None if user_in_db is None else user_in_db.phone_number

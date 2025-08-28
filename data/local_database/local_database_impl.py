@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import uuid4
 from motor.motor_asyncio import (
     AsyncIOMotorClient,
@@ -98,7 +98,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         # await self.user_physical_data_collection.delete_many({})
         user_data = await self.user_physical_data_collection.find_one({"user_id":user_id})
         user_data_instance: UserPhysicalData
-        current_datetime = datetime.now()
+        current_datetime = datetime.now(timezone.utc)
         
         if user_data is None:
             if user_physical_data.birthday is None or user_physical_data.gender is None or user_physical_data.activity_level is None or user_physical_data.height is None or user_physical_data.weight is None:

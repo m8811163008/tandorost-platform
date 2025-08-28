@@ -1,7 +1,7 @@
 
 
 
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import uuid4
 from data.common_data_model.language import Language
 from data.local_database import DatabaseInterface
@@ -43,7 +43,7 @@ class FoodNutritionsRepository:
         
     async def _upsert_foods_on_database(self,user_id :str,   user_requested_food:UserRequestedFood)-> list[Food]:
         foods_list : list[Food]= []
-        upsert_date = datetime.now()
+        upsert_date = datetime.now(timezone.utc)
         for ingredient in user_requested_food.ingredients:
             food = Food(
                 user_id=user_id,

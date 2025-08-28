@@ -1,7 +1,7 @@
 
 
 
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import uuid4
 from fastapi import UploadFile
 from data.local_database import DatabaseInterface
@@ -26,7 +26,7 @@ class UserFiles:
         return await self.database.upsert_user_files(user_files = user_files)
     
     async def save_files_on_disk(self,user_id:str, tag:GallaryTag ,image_gallary_files: list[UploadFile],upload_directory:str) -> list[FileData]:
-        upload_date_time = datetime.now()
+        upload_date_time = datetime.now(timezone.utc)
         images_meta_data: list[FileData] = []
 
         for image_gallary_file in image_gallary_files:

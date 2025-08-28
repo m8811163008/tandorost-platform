@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from domain_models import (InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationType, Token, Currency, PaymentMethod, SubscriptionType, UserInDbSubscriptionPayment)
 from fastapi.security import  OAuth2PasswordRequestForm
 from typing import Annotated
-from datetime import datetime
+from datetime import datetime, timezone
 from fastapi import Depends, HTTPException, status
 from domain_models.response_model import ErrorResponse
 # from repositories.auth import UsernameType, username_type
@@ -128,7 +128,7 @@ async def createFreeSubscription(user_id : str, ):
         discount_amount= 0,
         currency = Currency.IRRIAL,
         payment_method=PaymentMethod.INPAYMENTCAFEBAZZAR,
-        purchase_date = datetime.now(),
+        purchase_date = datetime.now(timezone.utc),
         subscription_type= SubscriptionType.FREETIER
     )
     await dm.payment_repo.create_payment_subscription(subscription_data=subscription_data)
@@ -194,7 +194,7 @@ async def login_for_access_token(
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_PASSWORD', message=message).model_dump()
         )
     token = await dm.auth_repo.issue_access_token(username= form_data.username,access_token_expire_minute=EnvirenmentVariable.ACCESS_TOKEN_EXPIRE_MINUTES())
-    return JSONResponse(content=token.model_dump(by_alias=True))
+    return JSONResponse(content=token.model_dump())
 
 @router.post("/logout/", status_code=status.HTTP_204_NO_CONTENT, responses={
     204 : {"description": "HTTP_204_NO_CONTENT",},

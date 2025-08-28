@@ -109,7 +109,7 @@ async def read_foods_nutritions(
     )
     
     return JSONResponse(
-        content=[jsonable_encoder(food.model_dump(by_alias=True)) for food in foods]
+        content=[jsonable_encoder(food.model_dump()) for food in foods]
     )
 
 @router.post("/update_foods_nutritions/",responses={
@@ -130,7 +130,7 @@ async def update_foods_nutritions(
         )
     update_food = await dm.food_nutrition_repo.update_user_food(food=food)
     return JSONResponse(
-        content=jsonable_encoder(update_food.model_dump(by_alias=True))
+        content=jsonable_encoder(update_food.model_dump())
     )
 
 @router.delete("/delete_foods_nutritions/",status_code=status.HTTP_204_NO_CONTENT, responses={
@@ -178,7 +178,7 @@ async def _handle_food_request(request: Callable[..., Any], **kwargs: Any) -> JS
             await dm.payment_repo.update_payment_subscription(payment_subscription=earliest_subscription)
 
         return JSONResponse(
-            content=[jsonable_encoder(food.model_dump(by_alias=True)) for food in foods]
+            content=[jsonable_encoder(food.model_dump()) for food in foods]
         )   
     except InvalidArgumentError :
         message = TranslationKeys.INVALID_ARGUMENT

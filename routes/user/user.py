@@ -35,7 +35,7 @@ async def read_user(
     user = await dm.user_repo.read_user(user_id=user_id)
     assert(user is not None)
     return JSONResponse(
-        content=user.model_dump(by_alias=True,exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"})
+        content=user.model_dump(exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"})
     )
 
 @router.put("/update_profile/",  responses={
@@ -65,7 +65,7 @@ async def update_user(
          )
      else:
         return JSONResponse(
-            content=user.model_dump(by_alias=True,exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"})
+            content=user.model_dump(exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"})
         )
 
 
@@ -82,7 +82,7 @@ async def update_user_physical_data(
             user_id = user_id,
             user_physical_data=user_physical_data
         )
-        model_dump = physical_data.model_dump(by_alias=True)
+        model_dump = physical_data.model_dump()
         return JSONResponse(
             content=jsonable_encoder(model_dump)
         )
@@ -133,7 +133,7 @@ async def read_user_physical_data(
             status_code=status.HTTP_404_NOT_FOUND,
             detail= ErrorResponse(error_detail= 'TranslationKeys.OBJECT_NOT_FOUND', message=TranslationKeys.OBJECT_NOT_FOUND).model_dump()
         )
-    model_dump = physical_data.model_dump(by_alias=True)
+    model_dump = physical_data.model_dump()
     return JSONResponse(
         content=jsonable_encoder(model_dump))
 
@@ -148,7 +148,7 @@ async def read_user_profile_image(
         user_id=user_id,
     )
     return JSONResponse(
-        content=[jsonable_encoder(file.model_dump(by_alias=True)) for file in profile_image_meta_data]
+        content=[jsonable_encoder(file.model_dump()) for file in profile_image_meta_data]
     )
 
 
@@ -164,7 +164,7 @@ async def read_user_image_gallary(
         tags=tags
     )
     return JSONResponse(
-        content=[jsonable_encoder(file.model_dump(by_alias=True)) for file in images_gallary]
+        content=[jsonable_encoder(file.model_dump()) for file in images_gallary]
     )
 
 @router.post("/add_user_images/",  responses={
@@ -229,7 +229,7 @@ async def add_user_image(
     results = await dm.user_files_repo.upsert_user_files(user_files=images_meta_data)
 
     return JSONResponse(
-        content=[jsonable_encoder(file.model_dump(by_alias=True)) for file in results]
+        content=[jsonable_encoder(file.model_dump()) for file in results]
     )
 
 @router.post("/archive_user_images/", responses={

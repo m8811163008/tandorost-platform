@@ -29,7 +29,7 @@ class UserInDB(BaseModel):
     change_weight_speed : ChangeWeightSpeed = ChangeWeightSpeed.CONSTANT
     is_time_restricted_eating : bool = False
     role : list[Role] = [Role.TRAINER]
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True, populate_by_name=True)
 
 
     

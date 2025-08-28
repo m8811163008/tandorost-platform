@@ -19,7 +19,7 @@ class CoachProgram(BaseModel):
     price : float
     currency : Currency
     features : list[ProgramFeature] = []
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True, populate_by_name=True)
 
 
         

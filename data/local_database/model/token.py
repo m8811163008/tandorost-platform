@@ -6,7 +6,7 @@ class Token(BaseModel):
     user_id : str
     access_token: str
     token_type: str
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True, populate_by_name=True)
 
 
 class TokenData(BaseModel):
