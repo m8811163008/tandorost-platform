@@ -16,7 +16,7 @@ class CoachRepository:
 
     async def read_coach(self, user_id: str) -> Coach | None:
         """Retrieve a coach by user_id."""
-        return await self.database.read_coach_by_user_id(user_id=user_id)
+        return await self.database.read_coach(user_id=user_id)
 
     async def upsert_coach_program(self, program: CoachProgram) -> CoachProgram:
         """Insert or update a coach program."""

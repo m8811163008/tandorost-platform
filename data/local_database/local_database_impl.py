@@ -50,6 +50,8 @@ class LocalDataBaseImpl(DatabaseInterface):
         await self.user_static_file_collection.delete_many({})
         await self.user_food_nutritions_collection.delete_many({})
         await self.user_subscription_payment_collection.delete_many({})
+        await self.coache_collection.delete_many({})
+        await self.coache_program_collection.delete_many({})
         print('*****Database cleared!*****')
 
     async def _raise_for_invalid_user(self, user_id: str):
@@ -372,6 +374,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
 
     async def upsert_coach(self, coach: Coach) -> Coach:
+        # add id to update
         if coach.id is None:
             coach.id = str(uuid4())
         result = await self.coache_collection.find_one_and_update(

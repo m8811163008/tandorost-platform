@@ -35,15 +35,17 @@ async def read_coach(
 ):
     coach = await dm.coach_repo.read_coach(user_id=user_id)
     if coach is None:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=ErrorResponse(
-                error_detail='TranslationKeys.OBJECT_NOT_FOUND',
-                message=TranslationKeys.OBJECT_NOT_FOUND
-            ).model_dump()
-        )
+        coach = Coach(user_id=user_id,biography='', is_active=True)
+        coach = await dm.coach_repo.upsert_coach(coach=coach)
+        # raise HTTPException(
+        #     status_code=status.HTTP_404_NOT_FOUND,
+        #     detail=ErrorResponse(
+        #         error_detail='TranslationKeys.OBJECT_NOT_FOUND',
+        #         message=TranslationKeys.OBJECT_NOT_FOUND
+        #     ).model_dump()
+        # )
     return JSONResponse(
-        content=coach.model_dump(by_alias=True)
+        content=coach.model_dump()
     )
 
 @router.put("/update_coach_profile/", responses={
@@ -54,10 +56,7 @@ async def update_coach(
     user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
     coach_profile: Annotated[Coach, Body()]
 ):
-    coach_dict = coach_profile.model_dump()
-    coach_dict['_id'] = user_id
-    updated_coach = Coach(**coach_dict)
-    coach = await dm.coach_repo.upsert_coach(coach=updated_coach)
+    coach = await dm.coach_repo.upsert_coach(coach=coach_profile)
     if coach is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -67,7 +66,7 @@ async def update_coach(
             ).model_dump()
         )
     return JSONResponse(
-        content=coach.model_dump(by_alias=True)
+        content=coach.model_dump()
     )
 
 @router.post("/add_coach_program/", responses={
