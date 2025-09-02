@@ -25,8 +25,8 @@ class UserFiles:
     async def upsert_user_files(self,  user_files : list[FileData]) -> list[FileData]:
         return await self.database.upsert_user_files(user_files = user_files)
     
-    async def save_files_on_disk(self,user_id:str, tag:GallaryTag ,image_gallary_files: list[UploadFile],upload_directory:str) -> list[FileData]:
-        upload_date_time = datetime.now(timezone.utc)
+    async def save_files_on_disk(self,user_id:str, tag:GallaryTag ,image_gallary_files: list[UploadFile],upload_date : datetime | None, upload_directory:str) -> list[FileData]:
+        upload_date_time = upload_date if upload_date != None else datetime.now(timezone.utc)
         images_meta_data: list[FileData] = []
 
         for image_gallary_file in image_gallary_files:

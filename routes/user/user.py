@@ -1,5 +1,6 @@
 
 
+from datetime import datetime
 from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
@@ -175,7 +176,9 @@ async def read_user_image_gallary(
 async def add_user_image(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     tag: Annotated[GallaryTag, Form()],
-    image_gallary_files: list[UploadFile]
+    image_gallary_files: list[UploadFile],
+    upload_date: Annotated[datetime | None, Form()] = None,
+    
 ):    
     for image_gallary_file in image_gallary_files:
         if(image_gallary_file.content_type is not None):
@@ -216,7 +219,7 @@ async def add_user_image(
     
     upload_directory = f"{upload_directory_path}/user_{user_id}/"
     try:
-        images_meta_data = await dm.user_files_repo.save_files_on_disk(user_id=user_id, tag = tag,image_gallary_files=image_gallary_files, upload_directory=upload_directory)
+        images_meta_data = await dm.user_files_repo.save_files_on_disk(user_id=user_id, tag = tag,image_gallary_files=image_gallary_files,upload_date = upload_date, upload_directory=upload_directory)
     except Exception as e:
         raise HTTPException(
                     status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,

@@ -1,3 +1,4 @@
+from fastapi.security import SecurityScopes
 from starlette.requests import Request
 from starlette.responses import Response
 from typing import Optional
@@ -27,9 +28,9 @@ async def auth_middleware(request: Request, call_next: Callable[[Request], Await
             return handle_unauthorized_access()
         token = authorization.split(" ")[1]
         try:
-            user_id = jwt_user_id(token= token)
+            user_id = jwt_user_id(security_scopes=SecurityScopes(scopes=['trainer']) ,token= token)
             await read_user_or_raise(user_id=str(user_id))
-        except Exception :
+        except Exception as e:
             return handle_unauthorized_access()
     response = await call_next(request) # type: ignore
     return response # type: ignore
