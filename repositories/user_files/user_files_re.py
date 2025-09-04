@@ -25,7 +25,7 @@ class UserFiles:
     async def upsert_user_files(self,  user_files : list[FileData]) -> list[FileData]:
         return await self.database.upsert_user_files(user_files = user_files)
     
-    async def save_files_on_disk(self,user_id:str, tag:GallaryTag ,image_gallary_files: list[UploadFile],upload_date : datetime | None, upload_directory:str) -> list[FileData]:
+    async def save_files_on_disk(self,user_id:str, tag:GallaryTag ,image_gallary_files: list[UploadFile],upload_date : datetime | None, upload_directory:str, description : str | None = None) -> list[FileData]:
         upload_date_time = upload_date if upload_date != None else datetime.now(timezone.utc)
         images_meta_data: list[FileData] = []
 
@@ -58,6 +58,7 @@ class UserFiles:
                 upload_date=upload_date_time,
                 content_type=image_gallary_file.content_type,
                 file_upload_path=file_upload_path,
+                description=description
             )
             images_meta_data.append(meta_data)
         return images_meta_data

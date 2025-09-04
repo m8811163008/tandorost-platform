@@ -8,7 +8,7 @@ class ProgramFeature(StrEnum):
     PERSONALIZED_NUTRITION_GUIDE = 'personalized_nutrition_guide'
     PERSONALIZED_SPORT_SUPPLEMENT_GUIDE = 'personalized_sport_supplement_guide'
     FORMING_CHECK_VIDEO_SUPPORT = 'forming_check_video_support'
-    ACHIVEMENT = 'achievement'
+
     
 class CoachProgram(BaseModel):
     id : str | None = Field(alias="_id", default=None)

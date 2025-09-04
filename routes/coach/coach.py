@@ -69,11 +69,11 @@ async def update_coach(
         content=coach.model_dump()
     )
 
-@router.post("/add_coach_program/", responses={
+@router.post("/upsert_coach_program/", responses={
     200: {"model": CoachProgram, "description": "HTTP_200_OK"},
     400: {"description": "HTTP_400_BAD_REQUEST"},
 })
-async def add_coach_program(
+async def upsert_coach_program(
     user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
     program: Annotated[CoachProgram, Body()]
 ):
