@@ -14,6 +14,7 @@ from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
 from data.local_database.model.exceptions import DocumentNotFound, UserPhysicalDataValidationError
+from data.local_database.model.roles import Role
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_physical_data import DataPoint, UserPhysicalData, UserPhysicalDataUpsert
@@ -404,3 +405,12 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def read_coach_programs(self, user_id: str) -> list[CoachProgram]:
         programs = await self.coache_program_collection.find({'user_id': user_id}).to_list()
         return [CoachProgram(**program) for program in programs]
+    
+
+    async def read_coaches(self)-> list[Coach]:
+        coaches = await self.coache_collection.find({}).to_list()
+        return [Coach(**coach) for coach in coaches]
+    
+    async def read_coaches_profile(self)-> list[UserInDB]:
+        coachesProfile = await self.user_collection.find({"role": Role.BODYBUILDINGCOACH}).to_list()
+        return [UserInDB(**coachProfile) for coachProfile in coachesProfile]

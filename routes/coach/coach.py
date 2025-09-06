@@ -121,3 +121,55 @@ async def read_coach_programs(
     return JSONResponse(
         content=[program.model_dump() for program in programs]
     )
+
+
+@router.get("/read_coaches/", responses={
+    200: {"model": list[Coach], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_coaches(
+    user_id: Annotated[str, Security(read_user_or_raise)],
+):
+    coaches = await dm.coach_repo.read_coaches()
+    return JSONResponse(
+        content=[coach.model_dump() for coach in coaches]
+    )
+    
+@router.get("/read_coaches_profile/", responses={
+    200: {"model": list[UserInDB], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_coaches_profile(
+    user_id: Annotated[str, Security(read_user_or_raise)],
+):
+    coachesProfile = await dm.coach_repo.read_coaches_profile()
+    return JSONResponse(
+        content=[coachProfile.model_dump(exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"}) for coachProfile in coachesProfile]
+    )
+
+@router.get("/read_coach_programs_by_coach_id/", responses={
+    200: {"model": list[Coach], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_coach_programs_by_coach_id(
+    user_id: Annotated[str, Security(read_user_or_raise)],
+    coach_id : Annotated[str, Query()],
+):
+    coach_programs = await dm.coach_repo.read_coach_programs(user_id=coach_id)
+    return JSONResponse(
+        content=[coach_program.model_dump() for coach_program in coach_programs]
+    )
+
+    
+@router.get("/read_coach_images/", responses={
+    200: {"model": list[FileData], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_coach_images(
+    user_id: Annotated[str, Security(read_user_or_raise)],
+    coach_id : Annotated[str, Query()],
+):
+    coach_images = await dm.user_files_repo.read_user_image_gallary(user_id=coach_id, tags=[GallaryTag.CERTIFICATE, GallaryTag.ACHIVEMENT, GallaryTag.PROFILE_IMAGE])
+    return JSONResponse(
+        content=[jsonable_encoder(coach_image.model_dump()) for coach_image in coach_images]
+    )

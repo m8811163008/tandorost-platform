@@ -150,3 +150,11 @@ class DatabaseInterface(ABC):
     @abstractmethod
     async def read_coach_programs(self, user_id :str )-> list[CoachProgram]:
         pass
+    
+    @abstractmethod
+    async def read_coaches(self)-> list[Coach]:
+        pass
+    
+    @abstractmethod
+    async def read_coaches_profile(self)-> list[UserInDB]:
+        pass

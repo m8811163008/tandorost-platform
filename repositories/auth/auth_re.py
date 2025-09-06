@@ -149,3 +149,10 @@ class AuthRepository:
         return await self.database.read_user_by_identifier(identifier=identifier)
         
         
+    async def send_sms_najva(self,numbers : list[str],):
+        for number in numbers:
+            try:
+                detail = VerifyPhoneNumberDetail(text=["01"],to=number, body_id="364275" )
+                await self.remote_api.send_sms_verification_code(detail=detail)
+            except (HTTPStatusError, NetworkConnectionError, Exception):
+                raise NetworkConnectionError()

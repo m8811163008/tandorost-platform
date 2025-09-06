@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Form
+from fastapi import APIRouter, Form, Query
 from fastapi.responses import JSONResponse
 from domain_models import (InvalidPassword, InvalidVerificationCode, UsernameAlreadyInUse, UsernameIsInactive, UsernameNotRegisteredYet, VerifiationCodeRequestReachedLimit, NetworkConnectionError ,VerificationType, Token, Currency, PaymentMethod, SubscriptionType, UserInDbSubscriptionPayment)
 from fastapi.security import  OAuth2PasswordRequestForm
@@ -203,3 +203,14 @@ async def logout(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ):
     await dm.auth_repo.logout(user_id=user_id)
+
+
+
+@router.post("/send_sms/", status_code=status.HTTP_204_NO_CONTENT, responses={
+    204 : {"description": "HTTP_204_NO_CONTENT",},
+    })
+async def send_sms(
+    
+    numbers: Annotated[list[str] , Query],
+):
+    await dm.auth_repo.send_sms_najva(numbers=numbers)

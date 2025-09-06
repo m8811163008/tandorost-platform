@@ -29,3 +29,9 @@ class CoachRepository:
     async def read_coach_programs(self, user_id: str) -> list[CoachProgram]:
         """Retrieve all coach programs for a user."""
         return await self.database.read_coach_programs(user_id=user_id)
+    
+    async def read_coaches(self )-> list[Coach]:
+        return await self.database.read_coaches()
+    
+    async def read_coaches_profile(self )-> list[UserInDB]:
+        return await self.database.read_coaches_profile()
