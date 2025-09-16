@@ -15,6 +15,7 @@ from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
 from data.local_database.model.exceptions import DocumentNotFound, UserPhysicalDataValidationError
 from data.local_database.model.roles import Role
+from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_physical_data import DataPoint, UserPhysicalData, UserPhysicalDataUpsert
@@ -41,6 +42,7 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.user_subscription_payment_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["UserSubscriptionPaymentCollection"]
         self.coache_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheCollection"]
         self.coache_program_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheProgramCollection"]
+        self.trainee_history_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TraineeHistoryCollection"]
         # self.trainer_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TrainerCollection"]
 
 
@@ -333,6 +335,7 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def create_payment_subscription(self, subscription_data: UserInDbSubscriptionPayment):
         if subscription_data.id is None:
             subscription_data.id = str(uuid4())
+
         await self.user_subscription_payment_collection.find_one_and_update(
             filter={'_id': subscription_data.id},
             update={'$set': subscription_data.model_dump(by_alias=True, exclude_none=True)},
@@ -414,3 +417,18 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def read_coaches_profile(self)-> list[UserInDB]:
         coachesProfile = await self.user_collection.find({"role": Role.BODYBUILDINGCOACH}).to_list()
         return [UserInDB(**coachProfile) for coachProfile in coachesProfile]
+    
+    async def read_trainee_history(self, user_id: str) -> list[TraineeHistory]:
+        histories = await self.trainee_history_collection.find({'user_id': user_id}).to_list()
+        return [TraineeHistory(**history) for history in histories]
+
+    async def upsert_trainee_history(self, trainee_history: TraineeHistory) -> TraineeHistory:
+        if trainee_history.id is None:
+            trainee_history.id = str(uuid4())
+        result = await self.trainee_history_collection.find_one_and_update(
+            filter={'_id': trainee_history.id},
+            update={'$set': trainee_history.model_dump(by_alias=True, exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+        )
+        return TraineeHistory(**result)

@@ -50,11 +50,30 @@ async def read_user_food_count(
 async def cafe_bazzar_payment_info(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ) :
-    payment_info =CafeBazzarPayment(
+    payment_info = CafeBazzarPayment(
         caffe_bazzar_rsa=EnvirenmentVariable.CAFFE_BAZZAR_RSA(),
-        caffe_bazzar_subscription_plan_one_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_ONE_MONTH_SDK(),
-        caffe_bazzar_subscription_plan_three_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK(),
-        caffe_bazzar_subscription_plan_six_month_sdk= EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK()
+        caffe_bazzar_subscription_plan_one_month_sdk=EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_ONE_MONTH_SDK(),
+        caffe_bazzar_subscription_plan_three_month_sdk=EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK(),
+        caffe_bazzar_subscription_plan_six_month_sdk=EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK(),
+        caffe_bazzar_purchase_plan_1=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_1(),
+        caffe_bazzar_purchase_plan_2=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_2(),
+        caffe_bazzar_purchase_plan_3=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_3(),
+        caffe_bazzar_purchase_plan_4=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_4(),
+        caffe_bazzar_purchase_plan_5=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_5(),
+        caffe_bazzar_purchase_plan_6=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_6(),
+        caffe_bazzar_purchase_plan_7=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_7(),
+        caffe_bazzar_purchase_plan_8=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_8(),
+        caffe_bazzar_purchase_plan_9=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_9(),
+        caffe_bazzar_purchase_plan_10=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_10(),
+        caffe_bazzar_purchase_plan_11=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_11(),
+        caffe_bazzar_purchase_plan_12=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_12(),
+        caffe_bazzar_purchase_plan_13=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_13(),
+        caffe_bazzar_purchase_plan_14=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_14(),
+        caffe_bazzar_purchase_plan_15=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_15(),
+        caffe_bazzar_purchase_plan_16=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_16(),
+        caffe_bazzar_purchase_plan_17=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_17(),
+        caffe_bazzar_purchase_plan_18=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_18(),
+        caffe_bazzar_purchase_plan_19=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_19()
     )
     return JSONResponse(
         content=jsonable_encoder(payment_info.model_dump())

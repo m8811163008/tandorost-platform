@@ -6,6 +6,7 @@ from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, Secur
 from fastapi.responses import JSONResponse
 from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
+from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user_physical_data import UserPhysicalData
 from data.local_database.model.user_files import FileData
 from data.remote_api.model.exceptions import NotFoundError
@@ -172,4 +173,38 @@ async def read_coach_images(
     coach_images = await dm.user_files_repo.read_user_image_gallary(user_id=coach_id, tags=[GallaryTag.CERTIFICATE, GallaryTag.ACHIVEMENT, GallaryTag.PROFILE_IMAGE])
     return JSONResponse(
         content=[jsonable_encoder(coach_image.model_dump()) for coach_image in coach_images]
+    )
+
+@router.get("/read_trainee_history/", responses={
+    200: {"model": list[TraineeHistory], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_trainee_history(
+    user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
+):
+    trainee_history = await dm.coach_repo.read_trainee_history(user_id=user_id)
+    if trainee_history is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.OBJECT_NOT_FOUND',
+                message=TranslationKeys.OBJECT_NOT_FOUND
+            ).model_dump()
+        )
+    return JSONResponse(
+        content=[th.model_dump() for th in trainee_history]
+    )
+
+@router.post("/upsert_trainee_history/", responses={
+    200: {"model": TraineeHistory, "description": "HTTP_200_OK"},
+    400: {"description": "HTTP_400_BAD_REQUEST"},
+})
+async def upsert_trainee_history(
+    user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
+    trainee_history: Annotated[TraineeHistory, Body()]
+):
+    trainee_history.user_id = user_id
+    result = await dm.coach_repo.upsert_trainee_history(trainee_history=trainee_history)
+    return JSONResponse(
+        content=result.model_dump()
     )

@@ -52,6 +52,64 @@ class EnvirenmentVariable:
         return os.environ.get("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK")
     
     @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_1() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_1") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_1")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_2() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_2") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_2")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_3() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_3") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_3")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_4() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_4") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_4")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_5() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_5") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_5")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_6() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_6") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_6")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_7() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_7") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_7")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_8() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_8") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_8")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_9() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_9") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_9")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_10() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_10") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_10")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_11() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_11") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_11")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_12() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_12") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_12")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_13() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_13") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_13")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_14() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_14") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_14")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_15() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_15") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_15")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_16() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_16") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_16")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_17() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_17") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_17")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_18() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_18") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_18")
+    @staticmethod
+    def CAFFE_BAZZAR_PURCHASE_PLAN_19() -> str:
+        return os.environ.get("CAFFE_BAZZAR_PURCHASE_PLAN_19") or EnvirenmentVariable._raise_env_error("CAFFE_BAZZAR_PURCHASE_PLAN_19")
+    
+    @staticmethod
     def EMAILSMTPUSERNAME() -> str:
         return os.environ.get("EMAIL_SMTP_USERNAME") or EnvirenmentVariable._raise_env_error("EMAIL_SMTP_USERNAME")
     

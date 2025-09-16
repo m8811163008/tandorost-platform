@@ -21,6 +21,7 @@ class SubscriptionType(StrEnum):
 class UserInDbSubscriptionPayment(BaseModel):
     id : str | None = Field(alias="_id", default=None)
     user_id : str
+    program_id : str | None = None
     cafe_bazzar_order_id : str | None = None
     paid_amount: float
     discount_amount : float
@@ -32,7 +33,7 @@ class UserInDbSubscriptionPayment(BaseModel):
     user_ai_requested_foods : int = 0
 
     
-    model_config = ConfigDict(use_enum_values=True)
+    model_config = ConfigDict(use_enum_values=True, populate_by_name=True)
 
 
     @computed_field
@@ -55,17 +56,19 @@ class UserInDbSubscriptionPayment(BaseModel):
     @computed_field
     @property
     def is_active(self) -> bool:
+        # TODO add expiry date when program_id is not null
         now = datetime.now(timezone.utc)
+        expiry = self.purchase_date.replace(tzinfo=timezone.utc)
         if self.subscription_type == SubscriptionType.ONEMONTH:
-            expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
+            
             if (now - expiry).days >= 30:
                 return False
         elif self.subscription_type == SubscriptionType.THREEMONTH:
-            expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
+
             if (now - expiry).days >= 90:
                 return False
         elif self.subscription_type == SubscriptionType.SIXMONTH:
-            expiry = self.purchase_date.replace(tzinfo=None) if self.purchase_date.tzinfo else self.purchase_date
+            #expiry = self.purchase_date.replace(tzinfo=timezone.utc) if self.purchase_date.tzinfo else self.purchase_date
             if (now - expiry).days >= 180:
                 return False
 

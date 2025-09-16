@@ -7,6 +7,7 @@ from data.local_database import Token
  
 from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
+from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_physical_data import UserPhysicalData, UserPhysicalDataUpsert
@@ -158,3 +159,12 @@ class DatabaseInterface(ABC):
     @abstractmethod
     async def read_coaches_profile(self)-> list[UserInDB]:
         pass
+    
+    @abstractmethod
+    async def read_trainee_history(self, user_id :str)-> list[TraineeHistory]:
+        pass
+    
+    @abstractmethod
+    async def upsert_trainee_history(self, trainee_history : TraineeHistory)-> TraineeHistory:
+        pass
+    

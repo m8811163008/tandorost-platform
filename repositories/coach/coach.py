@@ -3,6 +3,7 @@
 from data.local_database import DatabaseInterface
 from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
+from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user_physical_data import UserPhysicalData
 from domain_models import  UserInDB, UserPhysicalDataUpsert
 
@@ -35,3 +36,11 @@ class CoachRepository:
     
     async def read_coaches_profile(self )-> list[UserInDB]:
         return await self.database.read_coaches_profile()
+    
+    
+    async def read_trainee_history(self, user_id :str)-> list[TraineeHistory]:
+        return await self.database.read_trainee_history(user_id = user_id)
+    
+    
+    async def upsert_trainee_history(self, trainee_history : TraineeHistory)-> TraineeHistory:
+        return await self.database.upsert_trainee_history(trainee_history = trainee_history)
