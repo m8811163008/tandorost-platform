@@ -60,7 +60,7 @@ class UserPhysicalData (BaseModel):
 
 class UserPhysicalDataUpsert (BaseModel):
     gender : Gender | None = None
-    birthday : date | None = None
+    birthday : datetime | None = None
     height: float | None = None
     weight: float | None = None
     waist_circumference: float | None = None

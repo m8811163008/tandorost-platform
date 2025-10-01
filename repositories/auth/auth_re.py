@@ -150,9 +150,16 @@ class AuthRepository:
         
         
     async def send_sms_najva(self,numbers : list[str],):
-        for number in numbers:
+        result = await self.database.save_najva_sms_to_local(numbers=numbers)
+        notDuplicatedNumbers = result[0]
+        countSavedNumbers = result[1]
+        _exception = 0
+        for index in range(0, len(result[0])):
             try:
-                detail = VerifyPhoneNumberDetail(text=["01"],to=number, body_id="364275" )
+                #save on data base
+                detail = VerifyPhoneNumberDetail(text=[str(countSavedNumbers - index)[:2]],to=notDuplicatedNumbers[index], body_id="364791" )
+                _exception = notDuplicatedNumbers[index]
                 await self.remote_api.send_sms_verification_code(detail=detail)
-            except (HTTPStatusError, NetworkConnectionError, Exception):
+            except (HTTPStatusError, NetworkConnectionError, Exception) as e:
+                print(f"Failed to send number for ${_exception}")
                 raise NetworkConnectionError()

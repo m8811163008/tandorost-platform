@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import datetime
+from typing import Tuple
 
 from data.local_database import Token
 
@@ -7,6 +8,7 @@ from data.local_database import Token
  
 from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
+from data.local_database.model.program_enrollment import ExerciseDefinition, ProgramEnrollment, WorkoutProgram
 from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user import UserInDB
 from data.local_database.model.user_food_count import UserFoodCount
@@ -168,3 +170,38 @@ class DatabaseInterface(ABC):
     async def upsert_trainee_history(self, trainee_history : TraineeHistory)-> TraineeHistory:
         pass
     
+    @abstractmethod
+    async def read_enrollments(self,coach_id:str | None, trainee_id :str | None)-> list[ProgramEnrollment]:
+        pass
+    
+    @abstractmethod
+    async def upsert_enrollment(self, program_enrollment : ProgramEnrollment)-> ProgramEnrollment:
+        pass
+    
+    @abstractmethod
+    async def read_coach_athletes_profile(self, coach_id:str )-> list[UserInDB]:
+        pass
+    
+    @abstractmethod
+    async def read_users_images_gallary(self,  users_id:list[str], tags:list[GallaryTag]) -> list[FileData]:
+        pass
+    
+    @abstractmethod
+    async def upsert_workout_program(self, workout_program : WorkoutProgram)-> WorkoutProgram:
+        pass
+    
+    @abstractmethod
+    async def read_workout_program(self, workout_id:str )-> WorkoutProgram:
+        pass
+
+    @abstractmethod
+    async def initialize_workout_definition(self) -> None:
+        pass
+       
+    @abstractmethod     
+    async def read_exercise_definition(self) -> list[ExerciseDefinition]:
+        pass
+    @abstractmethod     
+    async def save_najva_sms_to_local(self, numbers : list[str],) -> Tuple[list[str], int]:
+        # return last index of saved number and non duplicated numbers
+        pass

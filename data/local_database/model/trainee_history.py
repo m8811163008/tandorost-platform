@@ -32,4 +32,5 @@ class TraineeHistory(BaseModel):
     daily_activity_desc: str | None = None
     exercise_equipment: list[ExerciseEquipment]
     supplements: str | None = None
+    coach_analysis : str | None = None
     model_config = ConfigDict(use_enum_values=True, populate_by_name=True)

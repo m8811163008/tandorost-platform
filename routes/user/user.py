@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Annotated
 
-from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
+from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, Security, UploadFile, status
 from fastapi.responses import JSONResponse
 from data.local_database.model.user_physical_data import UserPhysicalData
 from data.local_database.model.user_files import FileData
@@ -139,6 +139,27 @@ async def read_user_physical_data(
         content=jsonable_encoder(model_dump))
 
 
+@router.get("/read_athlete_physical_data/",  responses={
+    200 : {"model" : UserPhysicalData, "description": "HTTP_200_OK",},
+    404 : {"description": "HTTP_404_NOT_FOUND",},
+    })
+async def read_athlete_physical_data(
+    user_id: Annotated[str , Security(read_user_or_raise, scopes=["coach"])],
+    athlete_user_id: str,
+) :
+    physical_data = await dm.user_repo.read_user_physical_data(
+        user_id=athlete_user_id,
+    )
+    if physical_data is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail= ErrorResponse(error_detail= 'TranslationKeys.OBJECT_NOT_FOUND', message=TranslationKeys.OBJECT_NOT_FOUND).model_dump()
+        )
+    model_dump = physical_data.model_dump()
+    return JSONResponse(
+        content=jsonable_encoder(model_dump))
+
+
 @router.get("/read_user_image_profile/",  responses={
     200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
     })
@@ -162,6 +183,22 @@ async def read_user_image_gallary(
 ) :
     images_gallary = await dm.user_files_repo.read_user_image_gallary(
         user_id=user_id,
+        tags=tags
+    )
+    return JSONResponse(
+        content=[jsonable_encoder(file.model_dump()) for file in images_gallary]
+    )
+    
+@router.get("/read_users_images_gallary/", responses={
+    200 : {"model" : list[FileData], "description": "HTTP_200_OK",},
+    })
+async def read_users_images_gallary(
+    user_id: Annotated[str , Security(read_user_or_raise, scopes=["coach"])],
+    tags: Annotated[list[GallaryTag] , Query()],
+    users_id: Annotated[list[str] , Query()],
+) :
+    images_gallary = await dm.user_files_repo.read_users_images_gallary(
+        users_id=users_id,
         tags=tags
     )
     return JSONResponse(

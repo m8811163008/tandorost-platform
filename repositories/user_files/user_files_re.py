@@ -19,6 +19,9 @@ class UserFiles:
     async def read_user_image_gallary(self,  user_id:str, tags:list[GallaryTag]) -> list[FileData]:
         return await self.database.read_user_image_gallary(user_id=user_id, tags=tags)
     
+    async def read_users_images_gallary(self,  users_id:list[str], tags:list[GallaryTag]) -> list[FileData]:
+        return await self.database.read_users_images_gallary(users_id=users_id, tags=tags)
+    
     async def read_user_static_files(self,  user_id:str) -> list[FileData]:
         return await self.database.read_user_static_files(user_id=user_id)
 

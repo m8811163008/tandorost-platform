@@ -1,5 +1,3 @@
-
-
 from typing import Annotated
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, Security, UploadFile, status
@@ -18,6 +16,7 @@ from utility.decode_jwt_user_id import read_user_or_raise
 from utility.translation_keys import TranslationKeys
 from utility.constants import upload_directory_path
 from fastapi.encoders import jsonable_encoder
+from data.local_database.model.program_enrollment import ExerciseDefinition, ProgramEnrollment, WorkoutProgram
 
 
 
@@ -167,7 +166,7 @@ async def read_coach_programs_by_coach_id(
     404: {"description": "HTTP_404_NOT_FOUND"},
 })
 async def read_coach_images(
-    user_id: Annotated[str, Security(read_user_or_raise)],
+    user_id: Annotated[str, Depends(read_user_or_raise)],
     coach_id : Annotated[str, Query()],
 ):
     coach_images = await dm.user_files_repo.read_user_image_gallary(user_id=coach_id, tags=[GallaryTag.CERTIFICATE, GallaryTag.ACHIVEMENT, GallaryTag.PROFILE_IMAGE])
@@ -181,8 +180,9 @@ async def read_coach_images(
 })
 async def read_trainee_history(
     user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
+    trainee_id: Annotated[str, Query()],
 ):
-    trainee_history = await dm.coach_repo.read_trainee_history(user_id=user_id)
+    trainee_history = await dm.coach_repo.read_trainee_history(user_id=trainee_id)
     if trainee_history is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -200,11 +200,133 @@ async def read_trainee_history(
     400: {"description": "HTTP_400_BAD_REQUEST"},
 })
 async def upsert_trainee_history(
-    user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
+    user_id: Annotated[str, Depends(read_user_or_raise)],
     trainee_history: Annotated[TraineeHistory, Body()]
 ):
-    trainee_history.user_id = user_id
     result = await dm.coach_repo.upsert_trainee_history(trainee_history=trainee_history)
     return JSONResponse(
         content=result.model_dump()
+    )
+    
+@router.get("/read_enrollments/", responses={
+    200: {"model": list[ProgramEnrollment], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_enrollments(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    coach_id: Annotated[str | None, Query()] = None,
+    trainee_id: Annotated[str | None, Query()] = None,
+):
+    if (coach_id is None and trainee_id is None):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.OBJECT_NOT_FOUND',
+                message="Atlest one of coach_id or trainee_id must be provided."
+            ).model_dump()
+        )
+    enrollments = await dm.coach_repo.read_enrollments(coach_id=coach_id, trainee_id=trainee_id)
+    if enrollments is None or len(enrollments) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.OBJECT_NOT_FOUND',
+                message=TranslationKeys.OBJECT_NOT_FOUND
+            ).model_dump()
+        )
+    return JSONResponse(
+        content=[jsonable_encoder(enrollment.model_dump()) for enrollment in enrollments]
+    )
+
+@router.post("/upsert_enrollment/", responses={
+    200: {"model": ProgramEnrollment, "description": "HTTP_200_OK"},
+    400: {"description": "HTTP_400_BAD_REQUEST"},
+})
+async def upsert_enrollment(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    program_enrollment: Annotated[ProgramEnrollment, Body()]
+):
+    result = await dm.coach_repo.upsert_enrollment(program_enrollment=program_enrollment)
+    return JSONResponse(
+        content=jsonable_encoder(result.model_dump())
+    )
+    
+@router.get("/read_coach_athletes_profile/", responses={
+    200: {"model": list[UserInDB], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_coach_athletes_profile(
+    user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
+):
+    coachesProfile = await dm.coach_repo.read_coach_athletes_profile(coach_id=user_id)
+    return JSONResponse(
+        content=[coachProfile.model_dump(exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"}) for coachProfile in coachesProfile]
+    )
+    
+@router.post("/upsert_workout_program/", responses={
+    200: {"model": WorkoutProgram, "description": "HTTP_200_OK"},
+    400: {"description": "HTTP_400_BAD_REQUEST"},
+})
+async def upsert_workout_program(
+    user_id: Annotated[str, Security(read_user_or_raise)],
+    workout_program: Annotated[WorkoutProgram, Body()]
+):
+    
+    result = await dm.coach_repo.upsert_workout_program(workout_program=workout_program)
+    return JSONResponse(
+        content=result.model_dump()
+    )
+
+@router.get("/read_workout_program/", responses={
+    200: {"model": list[ExerciseDefinition], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_workout_program(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    workout_id: Annotated[str, Query()]
+):
+    workout_program = await dm.coach_repo.read_workout_program(workout_id=workout_id)
+    if workout_program is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.OBJECT_NOT_FOUND',
+                message=TranslationKeys.OBJECT_NOT_FOUND
+            ).model_dump()
+        )
+    return JSONResponse(
+        content=workout_program.model_dump()
+    )
+    
+@router.get("/read_workouts_definition/", responses={
+    200: {"model": WorkoutProgram, "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_workouts_definition(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    workout_id: Annotated[str, Query()]
+):
+    workout_program = await dm.coach_repo.read_workout_program(workout_id=workout_id)
+    if workout_program is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=ErrorResponse(
+                error_detail='TranslationKeys.OBJECT_NOT_FOUND',
+                message=TranslationKeys.OBJECT_NOT_FOUND
+            ).model_dump()
+        )
+    return JSONResponse(
+        content=workout_program.model_dump()
+    )
+    
+@router.get("/read_exercise_definition/", responses={
+    200: {"model": list[ExerciseDefinition], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_exercise_definition(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+):
+    exercises_definition = await dm.coach_repo.read_exercise_definition()
+    return JSONResponse(
+        content=[exercise.model_dump() for exercise in exercises_definition]
     )

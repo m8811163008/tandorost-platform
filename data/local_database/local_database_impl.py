@@ -6,7 +6,7 @@ from motor.motor_asyncio import (
     AsyncIOMotorDatabase,
     AsyncIOMotorCollection,
 )
-from typing import Any
+from typing import Any, Tuple
 
 from pymongo import ReturnDocument
 from data.local_database import Token
@@ -14,6 +14,7 @@ from data.local_database.local_database_interface import DatabaseInterface
 from data.local_database.model.coach import Coach
 from data.local_database.model.coach_program import CoachProgram
 from data.local_database.model.exceptions import DocumentNotFound, UserPhysicalDataValidationError
+from data.local_database.model.program_enrollment import ExerciseDefinition, ProgramEnrollment, WorkoutProgram
 from data.local_database.model.roles import Role
 from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user import UserInDB
@@ -25,8 +26,10 @@ from data.local_database.model.user_files import (
     ProcessingStatus
     )
 from data.local_database.model.user_food import Food
+from data.local_database.utility.exercisesDefinition import ExercisesDefinition
 from data.remote_api.model.exceptions import NotFoundError
 from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment
+from datetime import datetime
 
 
 
@@ -43,6 +46,10 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.coache_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheCollection"]
         self.coache_program_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["CoacheProgramCollection"]
         self.trainee_history_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TraineeHistoryCollection"]
+        self.enrollments_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["EnrollmentsCollection"]
+        self.workout_program_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["WorkoutProgramCollection"]
+        self.workout_definition_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["WorkoutDefinitionCollection"]
+        self.najva_jan_ir_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["Najva-Jan-ir"]
         # self.trainer_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TrainerCollection"]
 
 
@@ -55,6 +62,11 @@ class LocalDataBaseImpl(DatabaseInterface):
         await self.user_subscription_payment_collection.delete_many({})
         await self.coache_collection.delete_many({})
         await self.coache_program_collection.delete_many({})
+        await self.trainee_history_collection.delete_many({})
+        await self.enrollments_collection.delete_many({})
+        await self.workout_program_collection.delete_many({})
+        await self.workout_definition_collection.delete_many({})
+        await self.najva_jan_ir_collection.delete_many({})
         print('*****Database cleared!*****')
 
     async def _raise_for_invalid_user(self, user_id: str):
@@ -432,3 +444,116 @@ class LocalDataBaseImpl(DatabaseInterface):
             return_document=ReturnDocument.AFTER
         )
         return TraineeHistory(**result)
+
+    # async def read_trainees_by_coach(self, coach_id: str) -> list[UserInDB]:
+    #     enrollments = await self.db["ProgramEnrollmentCollection"].find({'coach_id': coach_id}).to_list()
+    #     trainee_ids = [enrollment['trainee_id'] for enrollment in enrollments]
+    #     if not trainee_ids:
+    #         return []
+    #     trainees = await self.user_collection.find({'_id': {'$in': trainee_ids}}).to_list()
+    #     return [UserInDB(**trainee) for trainee in trainees]
+
+
+    async def read_enrollments(self, coach_id: str | None, trainee_id: str | None) -> list[ProgramEnrollment]:
+        query = {}
+        if coach_id is not None:
+            query["coach_id"] = coach_id
+        if trainee_id is not None:
+            query["trainee_id"] = trainee_id
+        enrollments = await self.enrollments_collection.find(query).to_list()
+        return [ProgramEnrollment(**enrollment) for enrollment in enrollments]
+
+    async def upsert_enrollment(self, program_enrollment: ProgramEnrollment) -> ProgramEnrollment:
+        if program_enrollment.id is None:
+            program_enrollment.id = str(uuid4())
+        result = await self.enrollments_collection.find_one_and_update(
+            filter={'_id': program_enrollment.id},
+            update={'$set': program_enrollment.model_dump(by_alias=True, exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+        )
+        return ProgramEnrollment(**result)
+    
+    async def read_coach_athletes_profile(self, coach_id: str) -> list[UserInDB]:
+        enrollments = await self.enrollments_collection.find({'coach_id': coach_id}).to_list()
+        trainee_ids = [enrollment['trainee_id'] for enrollment in enrollments]
+        if not trainee_ids:
+            return []
+        athletes = await self.user_collection.find({'_id': {'$in': trainee_ids}}).to_list()
+        return [UserInDB(**athlete) for athlete in athletes]
+    
+    async def read_users_images_gallary(self, users_id: list[str], tags: list[GallaryTag]) -> list[FileData]:
+        result: list[FileData] = []
+        query = {
+            'user_id': {'$in': users_id},
+            'tag': {'$in': tags}
+        }
+        files = await self.user_static_file_collection.find(query).to_list()
+        for file in files:
+            result.append(FileData(**file))
+        return result
+    
+    async def upsert_workout_program(self, workout_program: WorkoutProgram) -> WorkoutProgram:
+        if workout_program.id is None:
+            workout_program.id = str(uuid4())
+        result = await self.workout_program_collection.find_one_and_update(
+            filter={'_id': workout_program.id},
+            update={'$set': workout_program.model_dump(by_alias=True, exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER
+        )
+        return WorkoutProgram(**result)
+    
+    async def initialize_workout_definition(self) -> None:
+        for exercise in ExercisesDefinition.exercises:
+            if exercise.id is None:
+                exercise.id = str(uuid4())
+            
+            await self.workout_definition_collection.find_one_and_update(
+                filter={"_id": exercise.id},
+                update={"$set": exercise.model_dump(by_alias=True)},
+                upsert=True,
+                return_document=ReturnDocument.AFTER
+            )
+            
+    async def read_exercise_definition(self) -> list[ExerciseDefinition]:
+        exercises = await self.workout_definition_collection.find({}).to_list()
+        if not exercises:
+            await self.initialize_workout_definition()
+            exercises = await self.workout_definition_collection.find({}).to_list()
+        return [ExerciseDefinition(**exercise) for exercise in exercises]
+
+    async def read_workout_program(self, workout_id: str) -> WorkoutProgram:
+        program = await self.workout_program_collection.find_one({'_id': workout_id})
+        return WorkoutProgram(**program)
+    
+    
+    async def save_najva_sms_to_local(self, numbers: list[str]) -> Tuple[list[str], int]:
+        # 1. Fetch saved numbers
+        saved_docs = await self.najva_jan_ir_collection.find({}, {"_id": 0, "number": 1}).to_list()
+        saved_numbers = set(doc["number"] for doc in saved_docs if "number" in doc)
+
+        # 2. Normalize numbers to a standard format (e.g., always start with +98)
+        def normalize_number(num: str) -> str:
+            n = num.strip()
+            if n.startswith("+98"):
+                return n
+            if n.startswith("0098"):
+                return "+" + n[2:]
+            if n.startswith("98"):
+                return "+98" + n[2:]
+            if n.startswith("0") and len(n) == 11:
+                return "+98" + n[1:]
+            return n
+
+        normalized_saved = set(normalize_number(n) for n in saved_numbers)
+        normalized_input = set(normalize_number(n) for n in numbers)
+
+        # 3. Remove duplicates (already saved)
+        to_save = normalized_input - normalized_saved
+
+        # 4. Save not duplicated numbers to collection
+        if to_save:
+            await self.najva_jan_ir_collection.insert_many([{"number": n} for n in to_save])
+        count = await self.najva_jan_ir_collection.count_documents({})
+        return list(to_save), count

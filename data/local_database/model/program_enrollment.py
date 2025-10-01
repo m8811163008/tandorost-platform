@@ -74,16 +74,18 @@ class ExerciseDefinition(BaseModel):
 # Section 3: Program Structure (Embedded Documents)
 # =======================================================================
 
-class RestPeriod(BaseModel):
+class SetPrescription(BaseModel):
     """
     Represents a rest period within a workout.
 
     This is a small, self-contained model intended to be embedded within a list
     of sets or exercises.
     """
-    duration_seconds: int 
-    note: str | None = None  
-
+    repetitions : int | None = None
+    percent_1rm: int | None = None
+    duration_seconds: int | None = None
+    rest_after_set_seconds: int 
+    note: str | None = None
 
 class PrescribedExercise(BaseModel):
     """
@@ -92,14 +94,14 @@ class PrescribedExercise(BaseModel):
     This model links to an ExerciseDefinition and specifies the target sets,
     reps, duration, or intensity for a trainee. It should be embedded within a WorkoutDay.
     """
-    exercise_definition_id: str 
+    is_rest: bool = False
+    rest_period : int | None = None
+    exercise_definition_id: str | None = None 
     note: str | None = None  
 
     # The lists below represent sets. They can contain a number (reps, seconds, %)
     # or a RestPeriod object for rest between sets.
-    duration_seconds: list[int | RestPeriod] | None = None
-    repetitions: list[int | RestPeriod] | None = None 
-    percent_1rm: list[int | RestPeriod] | None = None
+    sets: list[SetPrescription] | None = None  
 
 
 class WorkoutDay(BaseModel):
@@ -110,7 +112,7 @@ class WorkoutDay(BaseModel):
     and inter-exercise rest periods. This model should be embedded within a WorkoutProgram.
     """
     is_rest_day: bool = True
-    activities: list[PrescribedExercise | RestPeriod] | None = None 
+    activities: list[PrescribedExercise] | None = None 
 
 
 class WorkoutProgram(BaseModel):
@@ -126,7 +128,8 @@ class WorkoutProgram(BaseModel):
     # "A list of daily workouts. When a program is created, "
     # "this is auto-populated with rest days based on 'coach_program duration_weeks'. "
     # "A coach can then modify individual days by adding exercises."
-    days: list[WorkoutDay] 
+    days: list[WorkoutDay | None]
+    model_config = ConfigDict(populate_by_name=True)
 
 # =======================================================================
 # Section 4: Linking and Logging Models (Referenced Documents)
@@ -143,8 +146,8 @@ class ProgramEnrollment(BaseModel):
     trainee_id: str
     coach_id: str
     workout_program_id: str 
+    coach_program_id : str
     enrollment_date: datetime.datetime = Field(default_factory=datetime.datetime.now(datetime.timezone.utc))
-    coach_analysis: str | None = None
 
     model_config = ConfigDict(populate_by_name=True)
 
