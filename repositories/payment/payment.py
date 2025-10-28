@@ -15,8 +15,12 @@ class PaymentRepository:
         return await self.database.create_payment_subscription(subscription_data=subscription_data)
 
     
-    async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]:
+    async def read_payment_subscription(self, user_id :str)-> list[UserInDbSubscriptionPayment]:
         return await self.database.read_payment_subscription(user_id=user_id)
+            
+        
+    async def read_payment_subscription_by_coach_user_id(self, coach_id :str )-> list[UserInDbSubscriptionPayment]:
+        return await self.database.read_payment_subscription_by_coach_user_id(coach_id=coach_id)
     
     async def update_payment_subscription(self, payment_subscription :UserInDbSubscriptionPayment )-> UserInDbSubscriptionPayment:
         return await self.database.update_payment_subscription(payment_subscription=payment_subscription)

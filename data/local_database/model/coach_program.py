@@ -1,7 +1,8 @@
 
 from enum import StrEnum
-from data.local_database.model.currency import Currency
 from pydantic import  BaseModel, Field,ConfigDict
+
+from .currency import Currency
 
 class ProgramFeature(StrEnum):
     PHONE_SUPPORT = 'phone_support'

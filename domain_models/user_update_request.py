@@ -12,3 +12,4 @@ class UserUpdateRequest(BaseModel):
     change_weight_speed : ChangeWeightSpeed  | None = None
     role : list[Role] | None = None
     is_time_restricted_eating : bool | None = None
+    finance_card_id : str | None = None

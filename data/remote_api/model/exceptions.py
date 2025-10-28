@@ -54,3 +54,8 @@ class ParameterError(Exception):
     """Raised when the response contains a null parameter and AI models could not complete the request."""
     def __init__(self, message: str="The response contains a null parameter, and the AI models could not complete the request. Verify your input and try again."):
         super().__init__(message)
+        
+class VerifyRejection(Exception):
+    """Raised when the response contains a null parameter and AI models could not complete the request."""
+    def __init__(self, message: str="The verification response is False"):
+        super().__init__(message)

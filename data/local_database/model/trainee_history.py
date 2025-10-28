@@ -19,6 +19,7 @@ class ExerciseEquipment(StrEnum):
     DUMBBELL = 'dumbbell'
     BAND = 'band'
     KETTLEBELL = 'kettlebell'
+    SMITH_MACHINE = 'smith_machine'
     
 class TraineeHistory(BaseModel):
     id : str | None = Field(alias="_id", default=None)
@@ -33,4 +34,6 @@ class TraineeHistory(BaseModel):
     exercise_equipment: list[ExerciseEquipment]
     supplements: str | None = None
     coach_analysis : str | None = None
+    coach_foods_instructions : str | None = None
+    coach_supplements_instruction : str | None = None
     model_config = ConfigDict(use_enum_values=True, populate_by_name=True)

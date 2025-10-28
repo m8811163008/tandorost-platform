@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from enum import StrEnum
 from pydantic import   BaseModel, Field, ConfigDict, computed_field
 
-from data.local_database.model.currency import Currency
+from .currency import Currency
 
 
 class PaymentMethod(StrEnum):
@@ -16,13 +16,23 @@ class SubscriptionType(StrEnum):
     THREEMONTH = 'three_month'
     SIXMONTH = 'six_month'
 
+class PaymentStatus(StrEnum):
+    PENDING_SETTLE = 'pending_settle'
+    PENDING_TRANSFER = 'pending_transfer'
+    FAILED = 'failed'
+    COMPLETED = 'completed'
+    REFUND = 'refund'
+    
 
 
 class UserInDbSubscriptionPayment(BaseModel):
     id : str | None = Field(alias="_id", default=None)
-    user_id : str
+    subscriber_user_id : str
+    coach_user_id : str | None = None
     program_id : str | None = None
     cafe_bazzar_order_id : str | None = None
+    payment_status : PaymentStatus = PaymentStatus.PENDING_SETTLE
+    platform_settlement_month: datetime | None = None
     paid_amount: float
     discount_amount : float
     currency: Currency
@@ -31,6 +41,7 @@ class UserInDbSubscriptionPayment(BaseModel):
     subscription_type: SubscriptionType
     updated_at: datetime | None = None
     user_ai_requested_foods : int = 0
+    
 
     
     model_config = ConfigDict(use_enum_values=True, populate_by_name=True)

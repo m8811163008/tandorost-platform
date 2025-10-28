@@ -9,6 +9,7 @@ class GallaryTag(StrEnum):
     PROFILE_IMAGE = 'profile_image'
     CERTIFICATE = 'certificate'
     ACHIVEMENT = 'achievement'
+    VERIFICATION = "verification"
 
 class ProcessingStatus(StrEnum):
     PENDING = 'pending'

@@ -2,20 +2,25 @@ from abc import ABC, abstractmethod
 import datetime
 from typing import Tuple
 
-from data.local_database import Token
+from .model import( Token, Coach, CoachProgram,DocumentNotFound, UserPhysicalDataValidationError,ExercisesDefinition,
+                    ExerciseDefinition,
+                    Role,
+                    TraineeHistory,
+                    UserInDB,
+                    UserFoodCount,
+                    DataPoint, UserPhysicalData, UserPhysicalDataUpsert,
+                    GallaryTag, 
+                    FileData, 
+                    ProcessingStatus,
+                    Food,
+                    UserInDbSubscriptionPayment,
+                    ProgramEnrollment,
+                    WorkoutProgram,
+                    Referral
+                   )
 
 
- 
-from data.local_database.model.coach import Coach
-from data.local_database.model.coach_program import CoachProgram
-from data.local_database.model.program_enrollment import ExerciseDefinition, ProgramEnrollment, WorkoutProgram
-from data.local_database.model.trainee_history import TraineeHistory
-from data.local_database.model.user import UserInDB
-from data.local_database.model.user_food_count import UserFoodCount
-from data.local_database.model.user_physical_data import UserPhysicalData, UserPhysicalDataUpsert
-from data.local_database.model.user_files import FileData, GallaryTag
-from data.local_database.model.user_food import Food
-from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment
+
 
 
 class DatabaseInterface(ABC):
@@ -28,7 +33,12 @@ class DatabaseInterface(ABC):
     async def clear(self):
         """For debugging. Use with caution."""
         pass
-
+    
+    @abstractmethod     
+    async def save_najva_sms_to_local(self, numbers : list[str],) -> Tuple[list[str], int]:
+        # return last index of saved number and non duplicated numbers
+        pass
+    
     @abstractmethod
     async def read_user_by_identifier(self, identifier: str) -> UserInDB | None:
         """Retrieve a user from the database."""
@@ -127,6 +137,10 @@ class DatabaseInterface(ABC):
         pass
     
     @abstractmethod
+    async def read_payment_subscription_by_coach_user_id(self, coach_id :str )-> list[UserInDbSubscriptionPayment]:
+        pass
+    
+    @abstractmethod
     async def update_payment_subscription(self, payment_subscription :UserInDbSubscriptionPayment)-> UserInDbSubscriptionPayment:
         pass
 
@@ -201,7 +215,21 @@ class DatabaseInterface(ABC):
     @abstractmethod     
     async def read_exercise_definition(self) -> list[ExerciseDefinition]:
         pass
+
     @abstractmethod     
-    async def save_najva_sms_to_local(self, numbers : list[str],) -> Tuple[list[str], int]:
-        # return last index of saved number and non duplicated numbers
+    async def upsert_referral(self,referral : Referral) -> Referral:
+        pass
+    
+    @abstractmethod     
+    async def read_referral_by_invite_contact(self,invite_contact : str) -> list[Referral]:
+        pass
+    
+    @abstractmethod     
+    async def read_referral_by_user_id(self,user_id : str) -> list[Referral]:
+        pass
+    @abstractmethod     
+    async def read_referral_by_inviter_id(self,inviter_id : str) -> list[Referral]:
+        pass
+    @abstractmethod     
+    async def read_coach_profiles(self,) -> list[UserInDB]:
         pass

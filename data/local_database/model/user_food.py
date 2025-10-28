@@ -4,7 +4,7 @@ from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from data.common_data_model.language import Language
+from ...common_data_model.language import Language
 
 
 class TotalMacroNutritionPerFood(BaseModel):

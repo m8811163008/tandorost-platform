@@ -1,5 +1,7 @@
 import gettext
-from domain_models import Language
+
+from data.common_data_model.language import Language
+
 # from typing import List, Tuple
 
 class TranslationManager:

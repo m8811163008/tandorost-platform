@@ -5,7 +5,7 @@ from typing import Optional
 from utility.decode_jwt_user_id import jwt_user_id, read_user_or_raise
 from typing import Callable, Awaitable
 from fastapi.responses import HTMLResponse
-from utility.constants import protected_directory, root_path
+from utility.constants import protected_directory, root_path, regular_directory
 
 def handle_unauthorized_access() -> HTMLResponse:
     try:
@@ -32,5 +32,8 @@ async def auth_middleware(request: Request, call_next: Callable[[Request], Await
             await read_user_or_raise(user_id=str(user_id))
         except Exception as e:
             return handle_unauthorized_access()
+    if request.url.path.startswith(f"{root_path}/{regular_directory}"):
+        # Allow access to regular_directory for everyone, no auth required
+        pass
     response = await call_next(request) # type: ignore
     return response # type: ignore

@@ -9,27 +9,28 @@ from motor.motor_asyncio import (
 from typing import Any, Tuple
 
 from pymongo import ReturnDocument
-from data.local_database import Token
-from data.local_database.local_database_interface import DatabaseInterface
-from data.local_database.model.coach import Coach
-from data.local_database.model.coach_program import CoachProgram
-from data.local_database.model.exceptions import DocumentNotFound, UserPhysicalDataValidationError
-from data.local_database.model.program_enrollment import ExerciseDefinition, ProgramEnrollment, WorkoutProgram
-from data.local_database.model.roles import Role
-from data.local_database.model.trainee_history import TraineeHistory
-from data.local_database.model.user import UserInDB
-from data.local_database.model.user_food_count import UserFoodCount
-from data.local_database.model.user_physical_data import DataPoint, UserPhysicalData, UserPhysicalDataUpsert
-from data.local_database.model.user_files import (
-    GallaryTag, 
-    FileData, 
-    ProcessingStatus
-    )
-from data.local_database.model.user_food import Food
-from data.local_database.utility.exercisesDefinition import ExercisesDefinition
-from data.remote_api.model.exceptions import NotFoundError
-from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment
-from datetime import datetime
+
+from .model import( Token, Coach, CoachProgram,DocumentNotFound, UserPhysicalDataValidationError,ExercisesDefinition,
+                    ExerciseDefinition,
+                    Role,
+                    TraineeHistory,
+                    UserInDB,
+                    UserFoodCount,
+                    DataPoint, 
+                    UserPhysicalData, 
+                    UserPhysicalDataUpsert,
+                    GallaryTag, 
+                    FileData, 
+                    ProcessingStatus,
+                    Food,
+                    UserInDbSubscriptionPayment,
+                    WorkoutProgram,
+                    ProgramEnrollment,
+                    Referral
+                   )
+from .local_database_interface import DatabaseInterface
+
+
 
 
 
@@ -49,10 +50,17 @@ class LocalDataBaseImpl(DatabaseInterface):
         self.enrollments_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["EnrollmentsCollection"]
         self.workout_program_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["WorkoutProgramCollection"]
         self.workout_definition_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["WorkoutDefinitionCollection"]
+        self.referral_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["ReferralCollection"]
         self.najva_jan_ir_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["Najva-Jan-ir"]
         # self.trainer_collection : AsyncIOMotorCollection[dict[str, Any]] = self.db["TrainerCollection"]
 
-
+    async def initialize(self):
+        # Initialized manually
+        exercises = await self.workout_definition_collection.find({}).to_list()
+        if not exercises:
+            await self.initialize_workout_definition()
+            
+            
     async def clear(self) -> None:
         await self.user_collection.delete_many({})
         await self.auth_collection.delete_many({})
@@ -66,9 +74,39 @@ class LocalDataBaseImpl(DatabaseInterface):
         await self.enrollments_collection.delete_many({})
         await self.workout_program_collection.delete_many({})
         await self.workout_definition_collection.delete_many({})
-        await self.najva_jan_ir_collection.delete_many({})
+        await self.referral_collection.delete_many({})
+        # await self.najva_jan_ir_collection.delete_many({})
         print('*****Database cleared!*****')
 
+    async def save_najva_sms_to_local(self, numbers: list[str]) -> Tuple[list[str], int]:
+        # 1. Fetch saved numbers
+        saved_docs = await self.najva_jan_ir_collection.find({}, {"_id": 0, "number": 1}).to_list()
+        saved_numbers = set(doc["number"] for doc in saved_docs if "number" in doc)
+
+        # 2. Normalize numbers to a standard format (e.g., always start with +98)
+        def normalize_number(num: str) -> str:
+            n = num.strip()
+            if n.startswith("+98"):
+                return n
+            if n.startswith("0098"):
+                return "+" + n[2:]
+            if n.startswith("98"):
+                return "+98" + n[2:]
+            if n.startswith("0") and len(n) == 11:
+                return "+98" + n[1:]
+            return n
+
+        normalized_saved = set(normalize_number(n) for n in saved_numbers)
+        normalized_input = set(normalize_number(n) for n in numbers)
+
+        # 3. Remove duplicates (already saved)
+        to_save = normalized_input - normalized_saved
+
+        # 4. Save not duplicated numbers to collection
+        if to_save:
+            await self.najva_jan_ir_collection.insert_many([{"number": n} for n in to_save])
+        count = await self.najva_jan_ir_collection.count_documents({})
+        return list(to_save), count
     async def _raise_for_invalid_user(self, user_id: str):
         user_data = await self.user_collection.find_one({"_id": user_id})
         if user_data is None:
@@ -174,7 +212,7 @@ class LocalDataBaseImpl(DatabaseInterface):
     async def delete_user_physical_data(self, user_id: str, data_point_id: str):
         user_data = await self.user_physical_data_collection.find_one({"user_id": user_id})
         if user_data is None:
-            raise NotFoundError()
+            raise DocumentNotFound()
         user_physical_data = UserPhysicalData(**user_data)
         data_point_found = False
         for attribute in [
@@ -203,7 +241,7 @@ class LocalDataBaseImpl(DatabaseInterface):
             setattr(user_physical_data, attribute, updated_data_points)
         
         if not data_point_found:
-            raise NotFoundError()
+            raise DocumentNotFound()
         
         await self.user_physical_data_collection.find_one_and_update(
             filter={"user_id": user_id},
@@ -335,7 +373,7 @@ class LocalDataBaseImpl(DatabaseInterface):
 
         if len(existing_foods) != len(foods_ids):
             missing_ids = set(foods_ids) - {food["_id"] for food in existing_foods}
-            raise NotFoundError(message=str(missing_ids))
+            raise DocumentNotFound(message=str(missing_ids))
 
         # Delete all foods
         await self.user_food_nutritions_collection.delete_many(
@@ -358,14 +396,21 @@ class LocalDataBaseImpl(DatabaseInterface):
     
     async def read_payment_subscription(self, user_id :str )-> list[UserInDbSubscriptionPayment]:
         subscriptions = await self.user_subscription_payment_collection.find(
-            {"user_id": user_id}
+            {"subscriber_user_id": user_id}
+        ).to_list()
+        
+        return [UserInDbSubscriptionPayment(**sub) for sub in subscriptions]
+    
+    async def read_payment_subscription_by_coach_user_id(self, coach_id :str )-> list[UserInDbSubscriptionPayment]:
+        subscriptions = await self.user_subscription_payment_collection.find(
+            {"coach_user_id": coach_id}
         ).to_list()
         
         return [UserInDbSubscriptionPayment(**sub) for sub in subscriptions]
     
     async def update_payment_subscription(self, payment_subscription :UserInDbSubscriptionPayment )-> UserInDbSubscriptionPayment:
         if payment_subscription.id is None:
-            raise NotFoundError(message="Subscription ID is required for update")
+            raise DocumentNotFound(message="Subscription ID is required for update")
         result = await self.user_subscription_payment_collection.find_one_and_update(
             filter={'_id': payment_subscription.id},
             update={'$set': payment_subscription.model_dump(by_alias=True, exclude_none=True)},
@@ -506,8 +551,7 @@ class LocalDataBaseImpl(DatabaseInterface):
     
     async def initialize_workout_definition(self) -> None:
         for exercise in ExercisesDefinition.exercises:
-            if exercise.id is None:
-                exercise.id = str(uuid4())
+            assert(exercise.id != None)
             
             await self.workout_definition_collection.find_one_and_update(
                 filter={"_id": exercise.id},
@@ -517,43 +561,43 @@ class LocalDataBaseImpl(DatabaseInterface):
             )
             
     async def read_exercise_definition(self) -> list[ExerciseDefinition]:
+        # Initialized manully 
         exercises = await self.workout_definition_collection.find({}).to_list()
-        if not exercises:
-            await self.initialize_workout_definition()
-            exercises = await self.workout_definition_collection.find({}).to_list()
         return [ExerciseDefinition(**exercise) for exercise in exercises]
 
     async def read_workout_program(self, workout_id: str) -> WorkoutProgram:
         program = await self.workout_program_collection.find_one({'_id': workout_id})
         return WorkoutProgram(**program)
+
+
+    async def upsert_referral(self,referral : Referral) -> Referral:
+        if referral.id is None:
+            referral.id = str(uuid4())
+        update_result = await self.referral_collection.find_one_and_update(
+            filter={"_id": referral.id},
+            update={"$set": referral.model_dump(by_alias=True,exclude_none=True)},
+            upsert=True,
+            return_document=ReturnDocument.AFTER,
+        )
+
+        return Referral(**update_result)
     
+
+    async def read_referral_by_invite_contact(self,invite_contact : str) -> list[Referral]:
+        referrals = await self.referral_collection.find({"invited_contact": invite_contact}).to_list()
+        return [Referral(**referral) for referral in referrals]
     
-    async def save_najva_sms_to_local(self, numbers: list[str]) -> Tuple[list[str], int]:
-        # 1. Fetch saved numbers
-        saved_docs = await self.najva_jan_ir_collection.find({}, {"_id": 0, "number": 1}).to_list()
-        saved_numbers = set(doc["number"] for doc in saved_docs if "number" in doc)
+  
+    async def read_referral_by_user_id(self,user_id : str) -> list[Referral]:
+        referrals = await self.referral_collection.find({"invited_user_id": user_id}).to_list()
+        return [Referral(**referral) for referral in referrals]
+    
 
-        # 2. Normalize numbers to a standard format (e.g., always start with +98)
-        def normalize_number(num: str) -> str:
-            n = num.strip()
-            if n.startswith("+98"):
-                return n
-            if n.startswith("0098"):
-                return "+" + n[2:]
-            if n.startswith("98"):
-                return "+98" + n[2:]
-            if n.startswith("0") and len(n) == 11:
-                return "+98" + n[1:]
-            return n
-
-        normalized_saved = set(normalize_number(n) for n in saved_numbers)
-        normalized_input = set(normalize_number(n) for n in numbers)
-
-        # 3. Remove duplicates (already saved)
-        to_save = normalized_input - normalized_saved
-
-        # 4. Save not duplicated numbers to collection
-        if to_save:
-            await self.najva_jan_ir_collection.insert_many([{"number": n} for n in to_save])
-        count = await self.najva_jan_ir_collection.count_documents({})
-        return list(to_save), count
+    async def read_referral_by_inviter_id(self,inviter_id : str) -> list[Referral]:
+        referrals = await self.referral_collection.find({"inviter_id": inviter_id}).to_list()
+        return [Referral(**referral) for referral in referrals]
+    
+    async def read_coach_profiles(self,) -> list[UserInDB]:
+        users = await self.user_collection.find({}).to_list()
+        return [UserInDB(**user) for user in users]
+            

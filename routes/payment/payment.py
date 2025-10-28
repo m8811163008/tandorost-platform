@@ -2,7 +2,7 @@
 
 from typing import Annotated
 
-from fastapi import  APIRouter, Depends,Body
+from fastapi import  APIRouter, Depends,Body, Query
 from fastapi.responses import JSONResponse
 from dependeny_manager import dm
 from domain_models.cafe_bazzar_payment import CafeBazzarPayment
@@ -26,11 +26,18 @@ router = APIRouter(
     })
 async def read_subscriptions(
     user_id: Annotated[str , Depends(read_user_or_raise)],
+    coach_id : Annotated[str | None, Query()] = None
 ) :
-    subscription_payment = await dm.payment_repo.read_payment_subscription(user_id=user_id)
+    subscription_payment = None
+    if(coach_id == None):
+        subscription_payment = await dm.payment_repo.read_payment_subscription(user_id=user_id)
+    else:
+        subscription_payment = await dm.payment_repo.read_payment_subscription_by_coach_user_id(coach_id=coach_id)
+    
     return JSONResponse(
         content=jsonable_encoder([item.model_dump() for item in subscription_payment])
         )
+
 @router.get("/read_user_food_count/",responses={
     200 : {"model" : UserFoodCount, "description": "HTTP_200_OK",},
     404 : {"description": "HTTP_404_NOT_FOUND",},
@@ -55,6 +62,7 @@ async def cafe_bazzar_payment_info(
         caffe_bazzar_subscription_plan_one_month_sdk=EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_ONE_MONTH_SDK(),
         caffe_bazzar_subscription_plan_three_month_sdk=EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_THREE_MONTH_SDK(),
         caffe_bazzar_subscription_plan_six_month_sdk=EnvirenmentVariable.CAFFE_BAZZAR_SUBSCRIPTION_PLAN_SIX_MONTH_SDK(),
+        caffe_bazzar_purchase_plan_0=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_0(),
         caffe_bazzar_purchase_plan_1=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_1(),
         caffe_bazzar_purchase_plan_2=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_2(),
         caffe_bazzar_purchase_plan_3=EnvirenmentVariable.CAFFE_BAZZAR_PURCHASE_PLAN_3(),

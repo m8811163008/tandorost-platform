@@ -1,13 +1,16 @@
 
 from typing import Any
 import httpx
+from pydantic import BaseModel
 from data.common_data_model.language import Language
-from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError
+from data.remote_api import SMSPanelCongif, VerifyPhoneNumberDetail, NetworkConnectionError, VerificationResponse
 from data.remote_api.model.ai_model_cache import CacheModel
 from data.remote_api.model.email_config import EmailDetail, EmailSMTPCongif
 from data.remote_api.model.exceptions import *
 from data.remote_api.model.food_ai_model import UserRequestedFood
 from data.remote_api.model.gemini_config import  GeminiConfig
+from data.remote_api.model.verification_model_cache import VerificationCacheModel
+
 from data.remote_api.remote_api_interface import RemoteApiInterface
 from google import genai # type: ignore
 from google.genai import types # type: ignore
@@ -78,7 +81,15 @@ class RemoteApiImpl(RemoteApiInterface):
                     mime_type=meme_type,
                     )
                 ],)
-        
+
+    async def verifyByAi(self, fileBytes : bytes,meme_type: str, language : Language) -> True:
+        return await self._verify_by_ai(contents=[
+                    f'Input is verification video and the user spoken language is : {language}',
+                    types.Part.from_bytes(
+                    data=fileBytes,
+                    mime_type=meme_type,
+                    )
+                ],)
 
     async def _read_foods_nutritions(self, contents: list[Any], current_model_index:int =0) -> UserRequestedFood:
         # Todo recursively use models
@@ -118,6 +129,48 @@ class RemoteApiImpl(RemoteApiInterface):
         except json.JSONDecodeError:
             raise ParameterError()
         
+    async def _verify_by_ai(self, contents: list[Any], current_model_index:int =0):
+        # Todo recursively use models
+        try: 
+            response = self.ai_client.models.generate_content(  # type: ignore
+                model=self.ai_config.models[current_model_index],
+                contents=contents,
+                config = types.GenerateContentConfig(
+                    # cached_content=self._context_caching.name,
+                    system_instruction= VerificationCacheModel.system_instruction(),
+                    temperature=0.0,
+                    top_k = 1,
+                    response_mime_type = 'application/json',
+                    response_schema =  VerificationResponse,
+                )
+            )
+            
+        except (InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError) as e :
+            raise e
+        except ResourceExhaustedError as e:
+            # recursively use models
+            if current_model_index < len(self.ai_config.models):
+                # TODO save model index to use
+                current_model_index = current_model_index + 1
+                return await self._verify_by_ai(contents = contents, current_model_index =current_model_index)
+            else: 
+                raise e
+        except Exception as e:
+            raise e
+        
+        try:
+            if response.text is None:
+                raise ParameterError()
+            
+            res_dict = json.loads(response.text)
+            
+            result = VerificationResponse(**res_dict)
+            if(result.is_verified == False):
+                raise VerifyRejection()
+        
+        except json.JSONDecodeError:
+            raise ParameterError()
+        
 
         
     @property
@@ -131,5 +184,6 @@ class RemoteApiImpl(RemoteApiInterface):
                 ttl=f"{60 * 60 * 72}s",
             )
         )
+
 
 

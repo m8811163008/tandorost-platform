@@ -9,11 +9,11 @@ from data.local_database.model.user_physical_data import UserPhysicalData
 from data.local_database.model.user_files import FileData
 from data.remote_api.model.exceptions import NotFoundError
 from dependeny_manager import dm
-from domain_models import  UserUpdateRequest, UserPhysicalDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,UserPhysicalDataValidationError
+from domain_models import  UserUpdateRequest, UserPhysicalDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,UserPhysicalDataValidationError,username_type,UsernameType, NetworkConnectionError
 
-from domain_models.response_model import ErrorResponse
+from domain_models import ErrorResponse, Referral
 from utility.decode_jwt_user_id import read_user_or_raise
-from utility.translation_keys import TranslationKeys
+from utility import TranslationKeys, translation_manager
 from utility.constants import upload_directory_path
 from fastapi.encoders import jsonable_encoder
 
@@ -286,4 +286,60 @@ async def archive_user_images(
             images_id = images_id
         ).model_dump()
     )
+    
+@router.post("/send_invite/", responses={
+    204 : {"description": "HTTP_204_NO_CONTENT",},
+    503 : {"description": "HTTP_503_SERVICE_UNAVAILABLE",}
+    }, status_code=status.HTTP_204_NO_CONTENT)
+async def send_invite(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+    identifier : Annotated[str, Query(pattern=r"(^09\d{9}$)|(^[^@]+@[^@]+\.[^@]+$)")],
+):
+    await dm.user_repo.save_referral(inviter_id=user_id,invite_contact= identifier)
 
+    user_type = username_type(username=identifier)
+    if user_type == UsernameType.PHONENUMBER:
+        try:
+            await dm.user_repo.send_sms(inviter_id=user_id, phone_number=identifier)
+        except NetworkConnectionError: 
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail= ErrorResponse(error_detail='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', message=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).model_dump()
+            )
+        
+    if user_type == UsernameType.EMAIL:
+        try:
+            subject = translation_manager.gettext(TranslationKeys.INVITE_USER_EMAIL_SUBJECT)
+            body = translation_manager.gettext(TranslationKeys.INVITE_USER_EMAIL_BODY)
+            await dm.user_repo.send_email(inviter_id=user_id,email = identifier, subject=subject, body=body)
+        except NetworkConnectionError: 
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail= ErrorResponse(error_detail='TranslationKeys.REMOTE_SERVICE_UNAVAILABLE', message=translation_manager.gettext(TranslationKeys.REMOTE_SERVICE_UNAVAILABLE)).model_dump()
+            )
+    
+
+@router.get("/read_referral_by_user_id/", responses={
+    200 : {"model" : list[Referral], "description": "HTTP_200_OK",},
+    })
+async def read_referral_by_user_id(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+) :
+    claimed_referrals = await dm.user_repo.read_referral_by_user_id(
+        user_id=user_id,
+    )
+    return JSONResponse(
+        content=[jsonable_encoder(claimed_referral.model_dump()) for claimed_referral in claimed_referrals]
+    )
+@router.get("/read_referral_by_inviter_id/", responses={
+    200 : {"model" : list[Referral], "description": "HTTP_200_OK",},
+    })
+async def read_referral_by_inviter_id(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+) :
+    claimed_referrals = await dm.user_repo.read_referral_by_inviter_id(
+        inviter_id=user_id,
+    )
+    return JSONResponse(
+        content=[jsonable_encoder(claimed_referral.model_dump()) for claimed_referral in claimed_referrals]
+    )

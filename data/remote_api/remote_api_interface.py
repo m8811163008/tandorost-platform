@@ -16,6 +16,7 @@ class RemoteApiInterface(ABC):
     async def send_email_verification_code(self, detail : EmailDetail):
         """Verify phone number."""
         pass
+
     
     # Ai methods    
     @abstractmethod
@@ -24,4 +25,9 @@ class RemoteApiInterface(ABC):
 
     @abstractmethod
     async def read_foods_nutritions_by_voice(self, foods : bytes,meme_type: str, language : Language) -> UserRequestedFood:
+        pass
+    
+    
+    @abstractmethod
+    async def verifyByAi(self, fileBytes : bytes,meme_type: str, language : Language):
         pass

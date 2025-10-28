@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, time, timezone
 from typing import Annotated, Any, Callable
 
 from fastapi import  APIRouter, Body, Depends, Form, HTTPException, Query, UploadFile, status
@@ -103,7 +103,17 @@ async def read_foods_nutritions(
     date_1: Annotated[datetime , Query()],
     date_2: Annotated[datetime , Query()],
 ) :
-    start_date, end_date = sorted([date_1, date_2])
+    
+    # 1. Define the End Date (now, in UTC)
+    end_date = datetime.now(timezone.utc)
+
+    # 2. Define the Start Date (today's midnight, in UTC)
+    # CORRECT: Use datetime.combine() to turn the date object back into a datetime 
+    # object at 00:00:00 (time.min) and then set the timezone.
+    start_date = datetime.combine(end_date.date(), time.min, tzinfo=timezone.utc)
+    # TODO create local mchanism for clock to store food based on local and filter from 03:30 morning local time
+    
+    start_date, end_date = sorted([start_date, end_date])
     foods = await dm.food_nutrition_repo.read_foods_nutritions(
         user_id=user_id, start_date=start_date, end_date=end_date
     )

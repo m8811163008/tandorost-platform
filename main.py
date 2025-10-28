@@ -1,4 +1,5 @@
 
+from contextlib import asynccontextmanager
 import logging
 from fastapi import  FastAPI , Depends
 
@@ -20,11 +21,16 @@ from utility import (
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
-from utility.constants import root_path, protected_directory_path, protected_directory
+from utility.constants import root_path, protected_directory_path, protected_directory, regular_directory_path,regular_directory
 from fastapi.staticfiles import StaticFiles
+from dependeny_manager import dm
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await dm.local_database.initialize()
+    yield
 
-app = FastAPI(root_path=root_path, dependencies=[Depends(get_accept_language)])
+app = FastAPI(root_path=root_path, dependencies=[Depends(get_accept_language)], lifespan=lifespan)
 
 
 # Initialize routers
@@ -56,8 +62,8 @@ async def log_requests(request: Request, call_next: Callable[[Request], Awaitabl
     logging.info(f"Response status: {response.status_code}")
     return response
 
-
 app.mount(protected_directory_path, StaticFiles(directory=protected_directory, check_dir=True))
+app.mount(regular_directory_path, StaticFiles(directory=regular_directory, check_dir=True))
 
 
 @app.get("/")

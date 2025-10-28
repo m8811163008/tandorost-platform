@@ -1,10 +1,12 @@
 # Export data layer models to prevent DRY
 from httpx import HTTPStatusError # type: ignore
 from data.remote_api.model.verify_phone_number_config import SMSPanelCongif, VerifyPhoneNumberDetail # type: ignore
-from data.local_database import Token, TokenData # type: ignore
+from data.local_database import Token, TokenData, UsernameType, username_type # type: ignore
+from data.remote_api.remote_api_interface import RemoteApiInterface
 from data.remote_api.model.exceptions import (
     NetworkConnectionError, # type: ignore
-    InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError # type: ignore
+    InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError,ResourceExhaustedError ,VerifyRejection,
+    
     ) 
 from data.local_database.model.token import (Token, TokenData) # type: ignore
 from data.local_database.model.user import (Address,UserInDB) # type: ignore
@@ -28,6 +30,7 @@ from data.local_database.model.user_food import (
     TotalMacroNutritionPerFood, # type: ignore
 )
 from data.remote_api.model.gemini_config import GeminiConfig # type: ignore
+from data.remote_api import EmailDetail, SenderEmails # type: ignore
 from data.remote_api.model.food_ai_model import (
     MacroNutritionPerUnitOfMeasurement,  # type: ignore
     CarbohydrateSource,  # type: ignore
@@ -39,3 +42,4 @@ from data.local_database.model.change_weight_speed import ChangeWeightSpeed # ty
 
 from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment, Currency, PaymentMethod, SubscriptionType # type: ignore
 from data.local_database.model.user_food_count import UserFoodCount # type: ignore
+from data.local_database.model.referral import Referral, ReferralStatus # type: ignore

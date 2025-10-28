@@ -1,7 +1,7 @@
 
-from data.common_data_model.language import Language
-from data.local_database.model.change_weight_speed import ChangeWeightSpeed
-from data.local_database.model.roles import Role
+from ...common_data_model.language import Language
+from .change_weight_speed import ChangeWeightSpeed
+from .roles import Role
 from domain_models.verification_code import VerificationCode
 from pydantic import  BaseModel, Field,ConfigDict
 
@@ -20,7 +20,7 @@ class UserInDB(BaseModel):
     email: str | None = None
     address : Address | None = None
     full_name: str | None = None
-    language: Language = Language.ENGLISH
+    language: Language = Language.PERSIAN
     hashed_password: str | None = None
     verification_code: VerificationCode | None = None
     is_phone_number_verified : bool = False
@@ -28,6 +28,7 @@ class UserInDB(BaseModel):
     #TODO move change_weight_speed and  is_time_restricted_eating to user_physical_data_collection
     change_weight_speed : ChangeWeightSpeed = ChangeWeightSpeed.CONSTANT
     is_time_restricted_eating : bool = False
+    finance_card_id : str | None = None
     role : list[Role] = [Role.TRAINER]
     model_config = ConfigDict(use_enum_values=True, populate_by_name=True)
 

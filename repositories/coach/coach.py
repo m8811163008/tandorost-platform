@@ -66,3 +66,6 @@ class CoachRepository:
     async def read_exercise_definition(self )-> list[ExerciseDefinition]:
         return await self.database.read_exercise_definition()
     
+    async def read_coach_profiles(self )-> list[UserInDB]:
+        return await self.database.read_coach_profiles()
+    

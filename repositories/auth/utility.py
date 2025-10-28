@@ -24,15 +24,3 @@ def create_access_token(data: dict[str, Any],key : str, algorithm: str, expires_
     encoded_jwt = jwt.encode(to_encode,key = key, algorithm = algorithm) # type: ignore
     return encoded_jwt
 
-class UsernameType(StrEnum):
-    EMAIL = auto()
-    PHONENUMBER = auto()
-    INVALID = auto()
-
-def username_type(username: str) -> UsernameType:
-    if re.match(r'^09\d{9}$', username):
-        return UsernameType.PHONENUMBER
-    elif re.match(r'^[^@]+@[^@]+\.[^@]+$', username):
-        return UsernameType.EMAIL
-    else:
-        return UsernameType.INVALID

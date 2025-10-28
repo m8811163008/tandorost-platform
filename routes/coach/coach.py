@@ -18,7 +18,7 @@ from utility.constants import upload_directory_path
 from fastapi.encoders import jsonable_encoder
 from data.local_database.model.program_enrollment import ExerciseDefinition, ProgramEnrollment, WorkoutProgram
 
-
+from utility.translation_utils import translation_manager
 
 router = APIRouter(
     prefix="/coach",
@@ -169,7 +169,7 @@ async def read_coach_images(
     user_id: Annotated[str, Depends(read_user_or_raise)],
     coach_id : Annotated[str, Query()],
 ):
-    coach_images = await dm.user_files_repo.read_user_image_gallary(user_id=coach_id, tags=[GallaryTag.CERTIFICATE, GallaryTag.ACHIVEMENT, GallaryTag.PROFILE_IMAGE])
+    coach_images = await dm.user_files_repo.read_user_image_gallary(user_id=coach_id, tags=[GallaryTag.CERTIFICATE, GallaryTag.ACHIVEMENT, GallaryTag.PROFILE_IMAGE, GallaryTag.VERIFICATION])
     return JSONResponse(
         content=[jsonable_encoder(coach_image.model_dump()) for coach_image in coach_images]
     )
@@ -179,7 +179,7 @@ async def read_coach_images(
     404: {"description": "HTTP_404_NOT_FOUND"},
 })
 async def read_trainee_history(
-    user_id: Annotated[str, Security(read_user_or_raise, scopes=["coach"])],
+    user_id: Annotated[str, Security(read_user_or_raise)],
     trainee_id: Annotated[str, Query()],
 ):
     trainee_history = await dm.coach_repo.read_trainee_history(user_id=trainee_id)
@@ -327,6 +327,31 @@ async def read_exercise_definition(
     user_id: Annotated[str, Depends(read_user_or_raise)],
 ):
     exercises_definition = await dm.coach_repo.read_exercise_definition()
+    
+    def translate_exercise(exercise):
+        # Translate steps and tips using translation_manager
+            return {
+                **exercise.model_dump(),
+                'title': translation_manager.gettext(getattr(TranslationKeys, exercise.title)),
+                'preparation_steps': [translation_manager.gettext(getattr(TranslationKeys, key)) for key in exercise.preparation_steps],
+                'execution_steps': [translation_manager.gettext(getattr(TranslationKeys, key)) for key in exercise.execution_steps],
+                'key_tips': [translation_manager.gettext(getattr(TranslationKeys, key)) for key in exercise.key_tips],
+            }
+
     return JSONResponse(
-        content=[exercise.model_dump() for exercise in exercises_definition]
+        content=[translate_exercise(exercise) for exercise in exercises_definition]
+    )
+    
+
+@router.get("/read_coach_profiles/", responses={
+    200: {"model": list[UserInDB], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_coach_profiles(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+):
+    coach_profiles = await dm.coach_repo.read_coach_profiles()
+    
+    return JSONResponse(
+        content=[coach_profile.model_dump(exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"}) for coach_profile in coach_profiles]
     )

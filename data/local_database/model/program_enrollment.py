@@ -1,7 +1,7 @@
 import datetime
 from enum import StrEnum
 from pydantic import BaseModel, ConfigDict, Field
-from data.local_database.model.trainee_history import ExerciseEquipment
+from .trainee_history import ExerciseEquipment
 
 
 # =======================================================================
@@ -43,9 +43,8 @@ class ExerciseDefinition(BaseModel):
     """
     id: str | None = Field(alias="_id", default=None)
     title: str
-    video_url: str | None = None
-    thumb_image_url: str | None = None
-    cover_image_url: str | None = None
+    video_urls: list[str] | None = None
+    cover_image_url: list[str] | None = None
     preparation_steps: list[str]  
     execution_steps: list[str]  
     key_tips: list[str]
@@ -94,14 +93,14 @@ class PrescribedExercise(BaseModel):
     This model links to an ExerciseDefinition and specifies the target sets,
     reps, duration, or intensity for a trainee. It should be embedded within a WorkoutDay.
     """
-    is_rest: bool = False
-    rest_period : int | None = None
-    exercise_definition_id: str | None = None 
+    exercise_definition_id: list[str] | None = None 
     note: str | None = None  
 
     # The lists below represent sets. They can contain a number (reps, seconds, %)
     # or a RestPeriod object for rest between sets.
-    sets: list[SetPrescription] | None = None  
+    # comptable with exercise_definition_id for superset,compoundset etc.
+    # exerciseA setA exerciseB setB1 | exerciseA null exerciseB setB2 | exerciseA null exerciseB setB3 
+    sets: list[SetPrescription | None] | None = None  
 
 
 class WorkoutDay(BaseModel):
@@ -112,6 +111,7 @@ class WorkoutDay(BaseModel):
     and inter-exercise rest periods. This model should be embedded within a WorkoutProgram.
     """
     is_rest_day: bool = True
+    is_done : bool = False
     activities: list[PrescribedExercise] | None = None 
 
 
@@ -147,23 +147,11 @@ class ProgramEnrollment(BaseModel):
     coach_id: str
     workout_program_id: str 
     coach_program_id : str
+    trainee_history_id : str
     enrollment_date: datetime.datetime = Field(default_factory=datetime.datetime.now(datetime.timezone.utc))
 
     model_config = ConfigDict(populate_by_name=True)
 
 
-class ExerciseLog(BaseModel):
-    """
-    Records a trainee's actual performance of an exercise on a specific date.
-    """
-    id: str | None = Field(alias="_id", default=None)
-    trainee_id: str 
-    exercise_definition_id: str 
-    completed_at: datetime.datetime
-    # These lists represent the actual performance for each set
-    duration_seconds: list[int] | None = None
-    repetitions: list[int] | None = None  
-    weight_grams: list[int | None] | None = None 
 
-    model_config = ConfigDict(populate_by_name=True)
     

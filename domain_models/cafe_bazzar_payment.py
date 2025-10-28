@@ -5,6 +5,7 @@ class CafeBazzarPayment(BaseModel):
     caffe_bazzar_subscription_plan_one_month_sdk: str
     caffe_bazzar_subscription_plan_three_month_sdk: str
     caffe_bazzar_subscription_plan_six_month_sdk: str
+    caffe_bazzar_purchase_plan_0: str
     caffe_bazzar_purchase_plan_1: str
     caffe_bazzar_purchase_plan_2: str
     caffe_bazzar_purchase_plan_3: str
