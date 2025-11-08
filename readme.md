@@ -133,7 +133,6 @@
     * اضافه کردن نوع مکمل
     * تجویز روش مصرف
 
-
 # Git Trunk Strategy
 
 This document outlines the Git trunk strategy used in the fitness platform project. The strategy focuses on maintaining a clean and efficient workflow for development, ensuring that the main branch remains stable while allowing for feature development and collaboration.
@@ -176,13 +175,23 @@ This document outlines the Git trunk strategy used in the fitness platform proje
 
 3. **Tagging Releases**: After merging a release branch into `main`, tag the commit with the version number:
    - `git tag -a vX.Y.Z -m "Release version X.Y.Z"`
+Then Push the tag into origin:
+    # Push a specific tag
+    - `git push origin vX.Y.Z"` 
+    # OR, push all local tags at once (common practice after a release)
+    - `git push --tags"` 
 
-The trunk (main) branch is main (see the "Main Branch" section in readme.md). Short recommended flow:
 
+Tagging a Commit
+"Tag the commit with the version number" means applying a permanent, human-readable alias or label directly to a specific point in your Git history, which corresponds to the final state of the code for that release.It provides a clear, memorable reference point. Instead of telling someone to use "commit a1b2c3d4f5g6...," you can simply tell them to use v1.0.0 and improve immutability and stability.
+
+The trunk branch is main (see the "Main Branch" section in readme.md). Short recommended flow:
+Do not add comit directlly on truch branch if you can and use branch and merge back into truck.
 Use feature branches for development (e.g. feature/...) and open PRs into main.
 
 Create a release branch from main for stabilizing a release: release/vX.Y.Z. Run CI/CD and deploy that release branch to staging/testing (e.g., your Python backend, cafe bazzar, Google play, web server).
-After verification, merge the release branch back into main and create a tag on main (vX.Y.Z) for the production release. Deploy production from the tagged commit on main and deploy on stores and web etc.
+Our main branch is named truck to use A domain-specific language (DSL) and A domain-specific language model (DSLM). 
+After verification, merge the release branch back into main and create a tag on main (vX.Y.Z) for the production release. Deploy production from the tagged commit on main and deploy on stores and web etc.// TODO how to create favors 
 Keep main always production-ready; use release branches for pre-release testing and fixes.
 
 By following this Git trunk strategy, we ensure a streamlined development process that promotes collaboration, code quality, and efficient release management.
