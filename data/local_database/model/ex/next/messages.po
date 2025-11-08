@@ -1,0 +1,4150 @@
+
+msgid "E_D_SHRUG_TITLE"
+msgstr "Shrug"
+
+msgid "E_D_SHRUG_FOCUS"
+msgstr "Traps"
+
+msgid "E_D_SHRUG_EQUIP"
+msgstr "Bodyweight"
+
+msgid "E_D_SHRUG_PREP_ONE"
+msgstr "Stand with feet shoulder width apart and arms. extended at your sides."
+
+msgid "E_D_SHRUG_EXEC_ONE"
+msgstr "Exhale and shrug your shoulders as high as possible with straight arms."
+
+msgid "E_D_SHRUG_EXEC_TWO"
+msgstr "Hold for a few seconds at the top position."
+
+msgid "E_D_SHRUG_EXEC_THREE"
+msgstr "Inhale, lower back to the starting position and repeat."
+
+msgid "E_D_SHRUG_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SHRUG_BARBELL_TITLE"
+msgstr "Shrug: Barbell"
+
+msgid "E_D_SHRUG_BARBELL_FOCUS"
+msgstr "Traps"
+
+msgid "E_D_SHRUG_BARBELL_EQUIP"
+msgstr "Barbell"
+
+msgid "E_D_SHRUG_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart on the floor."
+
+msgid "E_D_SHRUG_BARBELL_PREP_TWO"
+msgstr "Hold the bar in front of your thighs with palms facing backward and arms extended."
+
+msgid "E_D_SHRUG_BARBELL_EXEC_ONE"
+msgstr "Exhale and shrug your shoulders as high as possible with straight arms."
+
+msgid "E_D_SHRUG_BARBELL_EXEC_TWO"
+msgstr "Hold for a few seconds at the top position,"
+
+msgid "E_D_SHRUG_BARBELL_EXEC_THREE"
+msgstr "Lower the barbell to the starting position and repeat."
+
+msgid "E_D_SHRUG_BARBELL_TIP_ONE"
+msgstr "Place your hands closer or wider to better exercise different muscles."
+
+msgid "E_D_SHRUG_BARBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SHRUG_CABLE_TITLE"
+msgstr "Shrug: Cable"
+
+msgid "E_D_SHRUG_CABLE_FOCUS"
+msgstr "Traps"
+
+msgid "E_D_SHRUG_CABLE_EQUIP"
+msgstr "Cable Machine"
+
+msgid "E_D_SHRUG_CABLE_PREP_ONE"
+msgstr "Stand before the machine with feet shoulder width apart,"
+
+msgid "E_D_SHRUG_CABLE_PREP_TWO"
+msgstr "Hold the bar in front of your thighs with palms facing backward and arms extended."
+
+msgid "E_D_SHRUG_CABLE_EXEC_ONE"
+msgstr "Exhale and shrug your shoulders as high as possible with straight arms."
+
+msgid "E_D_SHRUG_CABLE_EXEC_TWO"
+msgstr "Hold for a few seconds at the top position,"
+
+msgid "E_D_SHRUG_CABLE_EXEC_THREE"
+msgstr "Lower the bar to the starting position and repeat."
+
+msgid "E_D_SHRUG_CABLE_TIP_ONE"
+msgstr "Place your hands closer or wider to better exercise different muscles."
+
+msgid "E_D_SHRUG_CABLE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SHRUG_DUMBBELL_TITLE"
+msgstr "Shrug: Dumbbell"
+
+msgid "E_D_SHRUG_DUMBBELL_FOCUS"
+msgstr "Traps"
+
+msgid "E_D_SHRUG_DUMBBELL_EQUIP"
+msgstr "Dumbbell"
+
+msgid "E_D_SHRUG_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart on the floor."
+
+msgid "E_D_SHRUG_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in each hand in a neutral grip at your sides with arms extended."
+
+msgid "E_D_SHRUG_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and shrug your shoulders as high as possible with straight arms."
+
+msgid "E_D_SHRUG_DUMBBELL_EXEC_TWO"
+msgstr "Hold for a few seconds at the top position."
+
+msgid "E_D_SHRUG_DUMBBELL_EXEC_THREE"
+msgstr "Inhale and slowly lower the dumbbells to the starting position and repeat."
+
+msgid "E_D_SHRUG_DUMBBELL_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SHRUG_MACHINE_TITLE"
+msgstr "Shrug: Machine"
+
+msgid "E_D_SHRUG_MACHINE_FOCUS"
+msgstr "Traps"
+
+msgid "E_D_SHRUG_MACHINE_EQUIP"
+msgstr "Lever Shrug Machine"
+
+msgid "E_D_SHRUG_MACHINE_PREP_ONE"
+msgstr "Stand with your back facing the machine and feet shoulder width apart."
+
+msgid "E_D_SHRUG_MACHINE_PREP_TWO"
+msgstr "Hold a handle in each hand."
+
+msgid "E_D_SHRUG_MACHINE_EXEC_ONE"
+msgstr "Exhale and shrug your shoulders as high as possible with straight arms."
+
+msgid "E_D_SHRUG_MACHINE_EXEC_TWO"
+msgstr "Hold for a few seconds at the top position."
+
+msgid "E_D_SHRUG_MACHINE_EXEC_THREE"
+msgstr "Inhale and lower to the starting position and repeat."
+
+msgid "E_D_SHRUG_MACHINE_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SHRUG_SMITH_MACHINE_TITLE"
+msgstr "Shrug: Smith Machine"
+
+msgid "E_D_SHRUG_SMITH_MACHINE_FOCUS"
+msgstr "Traps"
+
+msgid "E_D_SHRUG_SMITH_MACHINE_EQUIP"
+msgstr "Smith Machine"
+
+msgid "E_D_SHRUG_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand in the machine, facing forward,"
+
+msgid "E_D_SHRUG_SMITH_MACHINE_PREP_TWO"
+msgstr "Hold the bar in front of your thighs in a close overhand grip with arms extended."
+
+msgid "E_D_SHRUG_SMITH_MACHINE_EXEC_ONE"
+msgstr "Exhale and shrug your shoulders as high as possible with straight arms."
+
+msgid "E_D_SHRUG_SMITH_MACHINE_EXEC_TWO"
+msgstr "Hold for a few seconds at the top position,"
+
+msgid "E_D_SHRUG_SMITH_MACHINE_EXEC_THREE"
+msgstr "Inhale and lower to the starting position and repeat."
+
+msgid "E_D_SHRUG_SMITH_MACHINE_TIP_ONE"
+msgstr "Place your hands closer or wider to better exercise different muscles."
+
+msgid "E_D_SHRUG_SMITH_MACHINE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SIDE_BRIDGE_TITLE"
+msgstr "Side Bridge"
+
+msgid "E_D_SIDE_BRIDGE_FOCUS"
+msgstr "Abs"
+
+msgid "E_D_SIDE_BRIDGE_EQUIP"
+msgstr "Bodyweight"
+
+msgid "E_D_SIDE_BRIDGE_PREP_ONE"
+msgstr "Lie flat on one side with legs extended and your forearm on the floor."
+
+msgid "E_D_SIDE_BRIDGE_PREP_TWO"
+msgstr "Position your elbow directly under your shoulder. Rest the other hand on your waist."
+
+msgid "E_D_SIDE_BRIDGE_EXEC_ONE"
+msgstr "Squeeze your obliques to raise your hips upward."
+
+msgid "E_D_SIDE_BRIDGE_EXEC_TWO"
+msgstr "Lower your hips down to the starting position and repeat."
+
+msgid "E_D_SIDE_BRIDGE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_BRIDGE_TIP_ONE"
+msgstr "Keep your head, torso and thighs in a straight line."
+
+msgid "E_D_SIDE_BRIDGE_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_BRIDGE_TIP_THREE"
+msgstr "Do not put the body weight on your shoulder."
+
+msgid "E_D_SIDE_LUNGE_TITLE"
+msgstr "Side Lunge"
+
+msgid "E_D_SIDE_LUNGE_FOCUS"
+msgstr "Glutes, Quadriceps, Hamstrings"
+
+msgid "E_D_SIDE_LUNGE_EQUIP"
+msgstr "Bodyweight"
+
+msgid "E_D_SIDE_LUNGE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart and toes pointing outwards."
+
+msgid "E_D_SIDE_LUNGE_PREP_TWO"
+msgstr "Bring your hands together in front of your chest."
+
+msgid "E_D_SIDE_LUNGE_EXEC_ONE"
+msgstr "Inhale and step one leg fo the side and bend at the knee until the thigh is parallel with the floor."
+
+msgid "E_D_SIDE_LUNGE_EXEC_TWO"
+msgstr "Keep the opposite leg in place and straight."
+
+msgid "E_D_SIDE_LUNGE_EXEC_THREE"
+msgstr "Exhale and return to the starting position."
+
+msgid "E_D_SIDE_LUNGE_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_LUNGE_TIP_ONE"
+msgstr "Do not let your knee go over your toes."
+
+msgid "E_D_SIDE_LUNGE_TIP_TWO"
+msgstr "To a void damage to knees, control your body movement while lowering."
+
+msgid "E_D_SIDE_LUNGE_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_TITLE"
+msgstr "Side Lunge: Barbell"
+
+msgid "E_D_SIDE_LUNGE_BARBELL_FOCUS"
+msgstr "Quadriceps, Glutes, Hamstrings"
+
+msgid "E_D_SIDE_LUNGE_BARBELL_EQUIP"
+msgstr "Barbell"
+
+msgid "E_D_SIDE_LUNGE_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart,"
+
+msgid "E_D_SIDE_LUNGE_BARBELL_PREP_TWO"
+msgstr "Hold a barbell across your shoulders with palms facing forward."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_EXEC_ONE"
+msgstr "Inhale and step one leg fo the side and bend at the knee until the thigh is parallel with the floor."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_EXEC_TWO"
+msgstr "Keep the opposite leg in place and straight."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_EXEC_THREE"
+msgstr "Exhale and return to the starting position."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_TIP_ONE"
+msgstr "Do not let your knee go over your toes."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_TIP_TWO"
+msgstr "To avoid damage to knees, control your body movement while lowering."
+
+msgid "E_D_SIDE_LUNGE_BARBELL_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_LUNGE_CABLE_TITLE"
+msgstr "Side Lunge: Cable"
+
+msgid "E_D_SIDE_LUNGE_CABLE_FOCUS"
+msgstr "Glutes, Quadriceps, Hamstrings"
+
+msgid "E_D_SIDE_LUNGE_CABLE_EQUIP"
+msgstr "Cable Machine"
+
+msgid "E_D_SIDE_LUNGE_CABLE_PREP_ONE"
+msgstr "Stand beside the machine with feet shoulder width apart."
+
+msgid "E_D_SIDE_LUNGE_CABLE_PREP_TWO"
+msgstr "Hold the handle at shoulder level."
+
+msgid "E_D_SIDE_LUNGE_CABLE_EXEC_ONE"
+msgstr "Inhale and step one leg fo the side and bend at the knee until the thigh is parallel with the floor."
+
+msgid "E_D_SIDE_LUNGE_CABLE_EXEC_TWO"
+msgstr "Keep the opposite leg in place and straight."
+
+msgid "E_D_SIDE_LUNGE_CABLE_EXEC_THREE"
+msgstr "Exhale and return to the starting position."
+
+msgid "E_D_SIDE_LUNGE_CABLE_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_LUNGE_CABLE_TIP_ONE"
+msgstr "Do not let your knee go over your toes."
+
+msgid "E_D_SIDE_LUNGE_CABLE_TIP_TWO"
+msgstr "To avoid damage to knees, control your body movement while lowering."
+
+msgid "E_D_SIDE_LUNGE_CABLE_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_TITLE"
+msgstr "Side Lunge: Dumbbell"
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_FOCUS"
+msgstr "Glutes, Quadriceps, Hamstrings"
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_EQUIP"
+msgstr "Dumbbell"
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in both hands in front of your chest."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_EXEC_ONE"
+msgstr "Inhale and step one leg fo the side and bend at the knee until the thigh is parallel with the floor."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_EXEC_TWO"
+msgstr "Keep the opposite leg in place and straight."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_EXEC_THREE"
+msgstr "Exhale and return to the starting position."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_TIP_ONE"
+msgstr "Do not let your knee go over your toes."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_TIP_TWO"
+msgstr "To avoid damage to knees, control your body movement while lowering."
+
+msgid "E_D_SIDE_LUNGE_DUMBBELL_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_TITLE"
+msgstr "Side Lunge: Kettlebell"
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_FOCUS"
+msgstr "Glutes, Quadriceps, Hamstrings"
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_EQUIP"
+msgstr "Kettlebell"
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_PREP_TWO"
+msgstr "Hold kettlebells in both hands in front of your chest."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_EXEC_ONE"
+msgstr "Inhale and step one leg fo the side and bend at the knee until the thigh is parallel with the floor."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_EXEC_TWO"
+msgstr "Keep the opposite leg in place and straight."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_EXEC_THREE"
+msgstr "Exhale and return to the starting position."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_TIP_ONE"
+msgstr "Do not let your knee go over your toes."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_TIP_TWO"
+msgstr "To avoid damage to knees, control your body movement while lowering."
+
+msgid "E_D_SIDE_LUNGE_KETTLEBELL_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_TITLE"
+msgstr "Side Lying Bicep Curl"
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_FOCUS"
+msgstr "Biceps, Forearms"
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_EQUIP"
+msgstr "Bodyweight"
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_PREP_ONE"
+msgstr "Lie on one side and bend your knees and waist."
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_PREP_TWO"
+msgstr "Rest your hands on your knees."
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_EXEC_ONE"
+msgstr "Squeeze your biceps to raise your upper body by pulling your thigh."
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_EXEC_TWO"
+msgstr "Lower your body back to the starting px slowly and repeat."
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_LYING_BICEP_CURL_TIP_ONE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_PLANK_TITLE"
+msgstr "Side Plank"
+
+msgid "E_D_SIDE_PLANK_FOCUS"
+msgstr "Abs"
+
+msgid "E_D_SIDE_PLANK_EQUIP"
+msgstr "Bodyweight"
+
+msgid "E_D_SIDE_PLANK_PREP_ONE"
+msgstr "Lie flat on one side with legs extended and your forearm on the floor."
+
+msgid "E_D_SIDE_PLANK_PREP_TWO"
+msgstr "Position your elbow directly under your shoulder. Keep the other arm straight by your side."
+
+msgid "E_D_SIDE_PLANK_EXEC_ONE"
+msgstr "Squeeze your obliques to raise your hips upward."
+
+msgid "E_D_SIDE_PLANK_EXEC_TWO"
+msgstr "Keep this position as long as you can,"
+
+msgid "E_D_SIDE_PLANK_EXEC_THREE"
+msgstr "Relax and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SIDE_PLANK_TIP_ONE"
+msgstr "Keep your head, torso and thighs in a straight line."
+
+msgid "E_D_SIDE_PLANK_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIDE_PLANK_TIP_THREE"
+msgstr "Do not put the body weight on your shoulder."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_TITLE"
+msgstr "Single Arm Bent-over Row: Cable"
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_FOCUS"
+msgstr "Back, Traps, Biceps, Shoulders"
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_EQUIP"
+msgstr "Cable Machine"
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_PREP_ONE"
+msgstr "Hold the handle with one hand in a neutral grip with arm extended."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_PREP_TWO"
+msgstr "Position the opposite leg forward and bend the nee slightly to lean your torse forward,"
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_EXEC_ONE"
+msgstr "Squeeze your lats and bend the elbow fo pull the handle toward your rib cage."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_TIP_ONE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_CABLE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_TITLE"
+msgstr "Single Arm Bent-over Row: Dumbbell"
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_PREP_ONE"
+msgstr "Place one foot on the floor with the opposite hand and leg on the bench."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_PREP_TWO"
+msgstr "Bend over to hold a dumbbell with your free hand and extend the arm."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_EXEC_ONE"
+msgstr "Squeeze your lats and bend the elbow for pull the dumbbell forward your rib cage."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_EXEC_TWO"
+msgstr "Lower the dumbbell slowly until your arms fully extended again and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_TIP_ONE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_DUMBBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_TITLE"
+msgstr "Single Leg Deadlift"
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_PREP_ONE"
+msgstr "Stand with one foot slightly off the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_PREP_TWO"
+msgstr "Stretch your arms at your sides."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_EXEC_ONE"
+msgstr "Lift the raised leg behind and lower your body and arms."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_EXEC_TWO"
+msgstr "Pause until your torso and the lifted leg are parallel with the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_EXEC_THREE"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_TIP_ONE"
+msgstr "Do not let the raised leg touch the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_BODYWEIGHT_TIP_THREE"
+msgstr "Keep the still knee slightly bent throughout the movement."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_TITLE"
+msgstr "Single Leg Deadlift - Dumbbell"
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_PREP_ONE"
+msgstr "Stand with one foot slightly off the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_PREP_TWO"
+msgstr "Stretch your arms and hold a dumbbell in each hand in an overhand rip in front of your thighs."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_EXEC_ONE"
+msgstr "Lift the raised leg behind you and lower your torso and arms."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_EXEC_TWO"
+msgstr "Pause until your torso and the lifted leg are parallel with the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_EXEC_THREE"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_TIP_ONE"
+msgstr "Move the dumbbells vertically."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_TIP_TWO"
+msgstr "Do not let the raised leg touch the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_TIP_THREE"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_DUMBBELL_TIP_FOUR"
+msgstr "Keep the still knee slightly bent throughout the movement."
+
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_TITLE"
+msgstr "Single Leg Hip Thrust: Barbell"
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_PREP_ONE"
+msgstr "Sit with your back against the bench and feet flat on the floor."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_PREP_TWO"
+msgstr "Lift your hips slightly off the floor and hold the barbell in an overhand grip on the crease of your hips."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_EXEC_ONE"
+msgstr "Push your hips upwards and lift one leg up with knees bent until the other thigh is parallel to the floor."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_EXEC_TWO"
+msgstr "Squeeze your glutes and hold for a few seconds at the top position."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_EXEC_THREE"
+msgstr "Pause for a few seconds, inhale, slowly lower the barbell to the starting position and repeat."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_TIP_ONE"
+msgstr "Do not allow our knees fall inward or outward."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_TIP_TWO"
+msgstr "Do not contact your glutes with the floor during the exercise."
+
+msgid "E_D_SINGLE_LEG_HIP_THRUST_BARBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise"
+
+msgid "E_D_SINGLE_LEG_PLANK_TITLE"
+msgstr "Single Leg Plank"
+
+msgid "E_D_SINGLE_LEG_PLANK_PREP_ONE"
+msgstr "Lie face down with elbows under your shoulders and toes on the floor to support your torso, Lift your hips off the floor to form a straight line from head to feet."
+
+msgid "E_D_SINGLE_LEG_PLANK_EXEC_ONE"
+msgstr "Brace your core and glutes to lift one leg off the floor,"
+
+msgid "E_D_SINGLE_LEG_PLANK_EXEC_TWO"
+msgstr "Hold for a few seconds and return to the starting position and repeat."
+
+msgid "E_D_SINGLE_LEG_PLANK_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_LEG_PLANK_TIP_ONE"
+msgstr "Do not drop your hips too low or raise them too high."
+
+msgid "E_D_SINGLE_LEG_PLANK_TIP_TWO"
+msgstr "Keep a straight head and back during the exercise."
+
+msgid "E_D_SIT_UP_BODYWEIGHT_TITLE"
+msgstr "Sit-Up"
+
+msgid "E_D_SIT_UP_BODYWEIGHT_PREP_ONE"
+msgstr "Lie on your back with knees bent and feet flat on the floor slightly apart, Place your hands behind your head with elbows wide."
+
+msgid "E_D_SIT_UP_BODYWEIGHT_EXEC_ONE"
+msgstr "Exhale and squeeze your abs to raise your body up towards your knees."
+
+msgid "E_D_SIT_UP_BODYWEIGHT_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_SIT_UP_BODYWEIGHT_TIP_ONE"
+msgstr "Keep a braced core during the exercise."
+
+
+
+msgid "E_D_SIT_UP_KETTLEBELL_TITLE"
+msgstr "Sit-Up: Kettlebell"
+
+msgid "E_D_SIT_UP_KETTLEBELL_PREP_ONE"
+msgstr "Lie on your back with knees bent and feet flat on the floor slightly apart."
+
+msgid "E_D_SIT_UP_KETTLEBELL_PREP_TWO"
+msgstr "Hold a kettlebell with both hands above your hips."
+
+msgid "E_D_SIT_UP_KETTLEBELL_EXEC_ONE"
+msgstr "Exhale and squeeze your abs to sit up and press the kettlebell overhead until arms are fully stretched."
+
+msgid "E_D_SIT_UP_KETTLEBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_SIT_UP_KETTLEBELL_TIP_ONE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SKULL_CRUSHER_BAND_TITLE"
+msgstr "Skull Crusher: Band"
+
+msgid "E_D_SKULL_CRUSHER_BAND_PREP_ONE"
+msgstr "Secure a band around a bench and lie on it with feet on the floor."
+
+msgid "E_D_SKULL_CRUSHER_BAND_PREP_TWO"
+msgstr "Hold the handles in an overhand grip. with arms bent and elbows lifted."
+
+msgid "E_D_SKULL_CRUSHER_BAND_EXEC_ONE"
+msgstr "Exhale and extend your elbows to press your hands up until your arms are straight."
+
+msgid "E_D_SKULL_CRUSHER_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and repeat."
+
+msgid "E_D_SKULL_CRUSHER_BAND_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_SKULL_CRUSHER_BAND_TIP_TWO"
+msgstr "Keep your upper arms still during the exercise,"
+
+msgid "E_D_SKULL_CRUSHER_BAND_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_TITLE"
+msgstr "Skull Crusher : Barbell"
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_PREP_ONE"
+msgstr "Lie on a bench with feet on the floor, Hold a bar in an overhands grip with arms bent and elbows lifted."
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_EXEC_ONE"
+msgstr "Exhale and extend your elbows to press your hands up until your arms are straight."
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and repeat."
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_TIP_TWO"
+msgstr "Keep your upper arms still during the exercise,"
+
+msgid "E_D_SKULL_CRUSHER_BARBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SKULL_CRUSHER_CABLE_TITLE"
+msgstr "Skull Crusher: Cable"
+
+msgid "E_D_SKULL_CRUSHER_CABLE_PREP_ONE"
+msgstr "Lie on a bench with feet on the floor."
+
+msgid "E_D_SKULL_CRUSHER_CABLE_PREP_TWO"
+msgstr "Hold the barr in an overhand grip arms bent and elbows lifted."
+
+msgid "E_D_SKULL_CRUSHER_CABLE_EXEC_ONE"
+msgstr "Exhale and extend your elbows to press your hands up until your arms are straight."
+
+msgid "E_D_SKULL_CRUSHER_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_SKULL_CRUSHER_CABLE_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_SKULL_CRUSHER_CABLE_TIP_TWO"
+msgstr "Keep your upper arms still during the exercise,"
+
+msgid "E_D_SKULL_CRUSHER_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_TITLE"
+msgstr "Skull Crusher: Dumbbell"
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_PREP_ONE"
+msgstr "Lie on a bench and put your planted feet on the ground."
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in each hand in a neutral grip with arms bent and elbows lifted."
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and extend your elbows to press your hands up until your arms are straight."
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and repeat."
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_TIP_TWO"
+msgstr "Keep your upper arms still during the exercise,"
+
+msgid "E_D_SKULL_CRUSHER_DUMBBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_TITLE"
+msgstr "Sled Calf Press: Machine"
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_PREP_ONE"
+msgstr "Sit on the machine and position your toes shoulder width apart at the bottom of the platform."
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_PREP_TWO"
+msgstr "Hold handles on your sides."
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_EXEC_ONE"
+msgstr "Exhale and press on the platform to extend your ankles as far as possible."
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_EXEC_TWO"
+msgstr "Inhale and extend your calves to lower fo the starting position slowly and repeat."
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_TIP_ONE"
+msgstr "Do not lock your knees during the exercise."
+
+msgid "E_D_SLED_CALF_PRESS_MACHINE_TIP_TWO"
+msgstr "Keep your legs and torso static during the exercise,"
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_TITLE"
+msgstr "Snatch Press Under: Barbell"
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_PREP_TWO"
+msgstr "Held a barbell on your shoulders behind you with your hands slightly wider than shoulder width apart."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_EXEC_ONE"
+msgstr "Descend your body to a squat position while extending your arms to press the barbell over your head."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_EXEC_TWO"
+msgstr "Brace you core and drive through your feet to stand up straight."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_EXEC_THREE"
+msgstr "Lower the barbell to the starting position and repeat."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_TIP_ONE"
+msgstr "Do not flare your elbows out."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_TIP_TWO"
+msgstr "Do not let your knees go over your toes when you squat."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_TIP_THREE"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_TIP_FOUR"
+msgstr "Keep your knees and elbows slightly bent during the exercise."
+
+msgid "E_D_SNATCH_PRESS_UNDER_BARBELL_TIP_FIVE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SNATCH_PULL_BARBELL_TITLE"
+msgstr "Snatch Pull: Barbell"
+
+msgid "E_D_SNATCH_PULL_BARBELL_PREP_ONE"
+msgstr "Put your feet under the bar."
+
+msgid "E_D_SNATCH_PULL_BARBELL_PREP_TWO"
+msgstr "Bend down and crouch to grip the bar with a wider than shoulder width, overhand grip."
+
+msgid "E_D_SNATCH_PULL_BARBELL_EXEC_ONE"
+msgstr "Drive your hips up and straighten your legs to pull the barbell up."
+
+msgid "E_D_SNATCH_PULL_BARBELL_EXEC_TWO"
+msgstr "Once the bar passes your mid-thigh, jump slightly."
+
+msgid "E_D_SNATCH_PULL_BARBELL_EXEC_THREE"
+msgstr "Accelerate the bar upward towards your chest."
+
+msgid "E_D_SNATCH_PULL_BARBELL_EXEC_FOUR"
+msgstr "Quickly move the bar down to your thighs with your body totally upright."
+
+msgid "E_D_SNATCH_PULL_BARBELL_EXEC_FIVE"
+msgstr "Slowly return the bar to the starting point and repeat,"
+
+msgid "E_D_SNATCH_PULL_BARBELL_TIP_ONE"
+msgstr "Do not pull the bar using your arms."
+
+msgid "E_D_SNATCH_PULL_BARBELL_TIP_TWO"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_SNATCH_PULL_BARBELL_TIP_THREE"
+msgstr "Keep your knees and elbows slightly bent during the exercise."
+
+msgid "E_D_SNATCH_PULL_BARBELL_TIP_FOUR"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SNATCH_BARBELL_TITLE"
+msgstr "Snatch: Barbell"
+
+msgid "E_D_SNATCH_BARBELL_PREP_ONE"
+msgstr "Put your feet under the bar."
+
+msgid "E_D_SNATCH_BARBELL_PREP_TWO"
+msgstr "Bend down to grip the bar with a wider than shoulder width and in an overhand grip."
+
+msgid "E_D_SNATCH_BARBELL_EXEC_ONE"
+msgstr "rive your hips up and straighten your legs to pull the barbell up."
+
+msgid "E_D_SNATCH_BARBELL_EXEC_TWO"
+msgstr "Once the bar passes your mid-thigh, jump slightly and drop your body under the bar while lifting the barbell overhead with palms facing forward."
+
+msgid "E_D_SNATCH_BARBELL_EXEC_THREE"
+msgstr "As you lift he barbell, lower your hips to. front squat position."
+
+msgid "E_D_SNATCH_BARBELL_EXEC_FOUR"
+msgstr "Brace you core and drive through your feet to stand up straight."
+
+msgid "E_D_SNATCH_BARBELL_EXEC_FIVE"
+msgstr "Lower the barbell to the starting position slowly and repeat."
+
+msgid "E_D_SNATCH_BARBELL_TIP_ONE"
+msgstr "Do not let your knees go over your toes when you squat."
+
+msgid "E_D_SNATCH_BARBELL_TIP_TWO"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_SNATCH_BARBELL_TIP_THREE"
+msgstr "Keep your knees and elbows slightly bent during the exercise."
+
+msgid "E_D_SNATCH_BARBELL_TIP_FOUR"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_TITLE"
+msgstr "Spiderman Push-up"
+
+msgid "E_D_SPIDERMAN_PUSH_UP_PREP_ONE"
+msgstr "Lie prone on the floor with feet together, hands slightly wider than shoulder width apart and arms extended, Form a straight line from head to toe."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_EXEC_ONE"
+msgstr "Inhale and bend the elbows to lower your body down until your chest almost touches the floor."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_EXEC_TWO"
+msgstr "Drive one knee towards the same side."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_EXEC_THREE"
+msgstr "Exhale and raise your body back to the starting position."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_EXEC_FOUR"
+msgstr "Complete alternating between left and right."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_TIP_ONE"
+msgstr "Do not fully extend your arms,"
+
+msgid "E_D_SPIDERMAN_PUSH_UP_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SPIDERMAN_PUSH_UP_TIP_THREE"
+msgstr "Do not let your chest touch the floor."
+
+msgid "E_D_SPLIT_JERK_BARBELL_TITLE"
+msgstr "Split Jerk: Barbell"
+
+msgid "E_D_SPLIT_JERK_BARBELL_PREP_ONE"
+msgstr "Hold a barbell with a slightly wider than shoulder overhand grip."
+
+msgid "E_D_SPLIT_JERK_BARBELL_PREP_TWO"
+msgstr "Put the bar on your chest with your head retracted and feet shoulder width apart."
+
+msgid "E_D_SPLIT_JERK_BARBELL_EXEC_ONE"
+msgstr "Bend your knees slightly into a half-squat position."
+
+msgid "E_D_SPLIT_JERK_BARBELL_EXEC_TWO"
+msgstr "Quickly split feet with one foot forward and drive the bar directly above your head until your arms are straight."
+
+msgid "E_D_SPLIT_JERK_BARBELL_EXEC_THREE"
+msgstr "Bring your feet together and hold the bar for a few seconds."
+
+msgid "E_D_SPLIT_JERK_BARBELL_EXEC_FOUR"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_SPLIT_JERK_BARBELL_TIP_ONE"
+msgstr "Do not let your knees go over your toes when you squat."
+
+msgid "E_D_SPLIT_JERK_BARBELL_TIP_TWO"
+msgstr "Bend your knees when you split your feet."
+
+msgid "E_D_SPLIT_JERK_BARBELL_TIP_THREE"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_SPLIT_JERK_BARBELL_TIP_FOUR"
+msgstr "Keep a straight back and braced core during the exercise"
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_TITLE"
+msgstr "Split Squat"
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_PREP_ONE"
+msgstr "Stand and take a step forward with one foot."
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_PREP_TWO"
+msgstr "Keep your arms extended by your sides."
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_EXEC_ONE"
+msgstr "Inhale and lower the behind knee almost down on the floor and bend the front knee until the thigh is parallel to the floor."
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_TIP_ONE"
+msgstr "Do not let your front knee go over your toes,"
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_TIP_TWO"
+msgstr "Do not let your back knee touch the floor"
+
+msgid "E_D_SPLIT_SQUAT_BODYWEIGHT_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SPLIT_SQUAT_BAND_TITLE"
+msgstr "Split Squat: Band"
+
+msgid "E_D_SPLIT_SQUAT_BAND_PREP_ONE"
+msgstr "Stand and take a step forward with one foot."
+
+msgid "E_D_SPLIT_SQUAT_BAND_PREP_TWO"
+msgstr "Place the band under the midfoot of the front leg. Hold the handles next to your shoulders with palms facing each other."
+
+msgid "E_D_SPLIT_SQUAT_BAND_EXEC_ONE"
+msgstr "Inhale and lower the behind knee almost down on the floor and bend the front knee until the thigh is parallel to the floor."
+
+msgid "E_D_SPLIT_SQUAT_BAND_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SPLIT_SQUAT_BAND_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SPLIT_SQUAT_BAND_TIP_ONE"
+msgstr "Do not let your front knee go over your toes,"
+
+msgid "E_D_SPLIT_SQUAT_BAND_TIP_TWO"
+msgstr "Do not let your back knee touch the floor."
+
+msgid "E_D_SPLIT_SQUAT_BAND_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_TITLE"
+msgstr "Split Squat - Barbell"
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_PREP_ONE"
+msgstr "Stand and take a step forward with one foot."
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_PREP_TWO"
+msgstr "Hold the barbell on the back of your shoulders with palms facing forward."
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_EXEC_ONE"
+msgstr "Inhale and lower the behind knee almost down on the floor and bend the front knee until the thigh is parallel to the floor."
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_TIP_ONE"
+msgstr "Do not let your front knee go over your toes,"
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_TIP_TWO"
+msgstr "Do not let your back knee touch the floor,"
+
+msgid "E_D_SPLIT_SQUAT_BARBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_TITLE"
+msgstr "Split Squat - Dumbbell"
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_PREP_ONE"
+msgstr "Stand and take a step forward with one foot."
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_PREP_TWO"
+msgstr "Hold one dumbbell in each hand with arms extended by your sides."
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_EXEC_ONE"
+msgstr "Inhale and lower the behind knee almost down on the floor and bend the front knee until the thigh is parallel to the floor."
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_TIP_ONE"
+msgstr "Do not let your front knee go over your toes,"
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_TIP_TWO"
+msgstr "Do not let your back knee touch the floor,"
+
+msgid "E_D_SPLIT_SQUAT_DUMBBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_TITLE"
+msgstr "Split Squat: Smith Machine"
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand under the machine and take a step forward with one foot."
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_PREP_TWO"
+msgstr "Hold the bar on the back of your shoulders with palms facing forward."
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_EXEC_ONE"
+msgstr "Inhale and lower the behind knee almost down on the floor and bend the front knee until the thigh is parallel to the floor."
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_TIP_ONE"
+msgstr "Do not let your front knee go over your toes,"
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_TIP_TWO"
+msgstr "Do not let your back knee touch the floor,"
+
+msgid "E_D_SPLIT_SQUAT_SMITH_MACHINE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SQUAT_BODYWEIGHT_TITLE"
+msgstr "Squat"
+
+msgid "E_D_SQUAT_BODYWEIGHT_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SQUAT_BODYWEIGHT_PREP_TWO"
+msgstr "Keep your arms straight and parallel to the floor in front of your body."
+
+msgid "E_D_SQUAT_BODYWEIGHT_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SQUAT_BODYWEIGHT_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_BODYWEIGHT_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_BODYWEIGHT_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_BODYWEIGHT_TIP_TWO"
+msgstr "Do not let our knees go over your toes."
+
+msgid "E_D_SQUAT_BODYWEIGHT_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_BODYWEIGHT_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_TITLE"
+msgstr "Squat Calf Press: Machine"
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_PREP_ONE"
+msgstr "Sit on the machine, bend your legs and position your foes shoulder width apart at the bottom of the platform."
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_PREP_TWO"
+msgstr "Hold handles on your sides."
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_EXEC_ONE"
+msgstr "Inhale and press on the platform to extend your legs and lower your heels as far as possible."
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_TIP_ONE"
+msgstr "Do not lock your knees during the exercise."
+
+msgid "E_D_SQUAT_CALF_PRESS_MACHINE_TIP_TWO"
+msgstr "Keep your legs and torso static during the exercise,"
+
+msgid "E_D_SQUAT_PULSE_TITLE"
+msgstr "Squat Pulse"
+
+msgid "E_D_SQUAT_PULSE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SQUAT_PULSE_PREP_TWO"
+msgstr "Keep your arms straight and parallel to the floor in front of your body."
+
+msgid "E_D_SQUAT_PULSE_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SQUAT_PULSE_EXEC_TWO"
+msgstr "Exhale and drive through the heels and midfoot to lift your body a couple inches."
+
+msgid "E_D_SQUAT_PULSE_EXEC_THREE"
+msgstr "Squat down again until our highs are parallel +o the floor and repeat."
+
+msgid "E_D_SQUAT_PULSE_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_PULSE_TIP_TWO"
+msgstr "Do not let your knees go over your toes."
+
+msgid "E_D_SQUAT_PULSE_TIP_THREE"
+msgstr "Keep your arms still and knees bent."
+
+msgid "E_D_SQUAT_PULSE_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_ROW_BAND_TITLE"
+msgstr "Squat Row: Band"
+
+msgid "E_D_SQUAT_ROW_BAND_PREP_ONE"
+msgstr "Secure the band to an object."
+
+msgid "E_D_SQUAT_ROW_BAND_PREP_TWO"
+msgstr "Stand with feet shoulder width apart. Hold the handles and keep your arms straight in front of your body."
+
+msgid "E_D_SQUAT_ROW_BAND_EXEC_ONE"
+msgstr "Squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SQUAT_ROW_BAND_EXEC_TWO"
+msgstr "Push through the heels and midfoot to stand up, and squeeze your lats to pull the handle toward your rib cage."
+
+msgid "E_D_SQUAT_ROW_BAND_EXEC_THREE"
+msgstr "Repeat slowly."
+
+msgid "E_D_SQUAT_ROW_BAND_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_ROW_BAND_TIP_TWO"
+msgstr "Do not let your knees go aver your toes."
+
+msgid "E_D_SQUAT_ROW_BAND_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_ROW_BAND_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_ROW_BAND_TIP_FIVE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SQUAT_BAND_TITLE"
+msgstr "Squat- Band"
+
+msgid "E_D_SQUAT_BAND_PREP_ONE"
+msgstr "Stand with your midfoot shoulder width apart on the band."
+
+msgid "E_D_SQUAT_BAND_PREP_TWO"
+msgstr "Hold the handles behind your shoulders with palms facing forward and arms bent at your sides."
+
+msgid "E_D_SQUAT_BAND_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor,"
+
+msgid "E_D_SQUAT_BAND_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_BAND_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_BAND_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_BAND_TIP_TWO"
+msgstr "Do not let your knees go aver your toes."
+
+msgid "E_D_SQUAT_BAND_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_BAND_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_BAND_TIP_FIVE"
+msgstr "Make a vertical movement with the handles, do not tilt the arms."
+
+msgid "E_D_SQUAT_DUMBBELL_TITLE"
+msgstr "Squat Dumbbell"
+
+msgid "E_D_SQUAT_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SQUAT_DUMBBELL_PREP_TWO"
+msgstr "Held a dumbbell in each hand in a neutral grip at your sides with arms straight down,"
+
+msgid "E_D_SQUAT_DUMBBELL_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor,"
+
+msgid "E_D_SQUAT_DUMBBELL_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_DUMBBELL_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_DUMBBELL_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_DUMBBELL_TIP_TWO"
+msgstr "Do not let your knees go aver your toes."
+
+msgid "E_D_SQUAT_DUMBBELL_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_DUMBBELL_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_DUMBBELL_TIP_FIVE"
+msgstr "Make a vertical movement with the dumbbells, do not tilt the arms."
+
+msgid "E_D_SQUAT_MACHINE_TITLE"
+msgstr "Squat Machine"
+
+msgid "E_D_SQUAT_MACHINE_PREP_ONE"
+msgstr "Stand on the machine with feet shoulder width apart."
+
+msgid "E_D_SQUAT_MACHINE_PREP_TWO"
+msgstr "Hold the handles with shoulders against the pads."
+
+msgid "E_D_SQUAT_MACHINE_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SQUAT_MACHINE_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_MACHINE_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_MACHINE_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_MACHINE_TIP_TWO"
+msgstr "Do not let your knees go over your toes."
+
+msgid "E_D_SQUAT_MACHINE_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_MACHINE_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_TITLE"
+msgstr "Squat: Smith Machine"
+
+msgid "E_D_SQUAT_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand under the machine with feet shoulder width apart."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_PREP_TWO"
+msgstr "Hold the bar on the back of your shoulders with hands slightly wider than shoulder width apart and palms facing forward."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor,"
+
+msgid "E_D_SQUAT_SMITH_MACHINE_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_TIP_TWO"
+msgstr "Do not let your knees go aver your toes."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_TITLE"
+msgstr "Single Leg Deadlift"
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_PREP_ONE"
+msgstr "Stand with one foot slightly off the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_PREP_TWO"
+msgstr "Stretch your arms at your sides."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_EXEC_ONE"
+msgstr "Lift the raised leg behind and lower your body and arms."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_EXEC_TWO"
+msgstr "Pause until your torso and the lifted leg are parallel with the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_EXEC_THREE"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_TIP_ONE"
+msgstr "Do not let the raised leg touch the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_TIP_THREE"
+msgstr "Keep the still knee slightly bent throughout the movement."
+
+msgid "E_D_SIT_UP_TITLE"
+msgstr "Sit-Up"
+
+msgid "E_D_SIT_UP_PREP_ONE"
+msgstr "Lie on your back with knees bent and feet flat on the floor slightly apart, Place your hands behind your head with elbows wide."
+
+msgid "E_D_SIT_UP_EXEC_ONE"
+msgstr "Exhale and squeeze your abs to raise your body up towards your knees."
+
+msgid "E_D_SIT_UP_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_SIT_UP_TIP_ONE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIT_UP_TWIST_TITLE"
+msgstr "Sit-Up Twist"
+
+msgid "E_D_SIT_UP_TWIST_PREP_ONE"
+msgstr "Lie on your back with knees bent and feet flat on the floor slightly apart."
+
+msgid "E_D_SIT_UP_TWIST_PREP_TWO"
+msgstr "Clasp your hands together above your chest."
+
+msgid "E_D_SIT_UP_TWIST_EXEC_ONE"
+msgstr "Exhale and squeeze your abs to sit up and rotate your body to bring one elbow close to the opposite knee."
+
+msgid "E_D_SIT_UP_TWIST_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, inhale and return to the starting position slowly."
+
+msgid "E_D_SIT_UP_TWIST_EXEC_THREE"
+msgstr "Complete alternating between left and right."
+
+msgid "E_D_SIT_UP_TWIST_TIP_ONE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SIT_UP_DUMBBELL_TITLE"
+msgstr "Sit-Up Dumbbell"
+
+msgid "E_D_SIT_UP_DUMBBELL_PREP_ONE"
+msgstr "Lie on your back with knees bent and feet flat on the floor slightly apart."
+
+msgid "E_D_SIT_UP_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in each hand in a narrow grip above your chest."
+
+msgid "E_D_SIT_UP_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and squeeze your abs to sit up and press the dumbbells overhead until arms are fully stretched."
+
+msgid "E_D_SIT_UP_DUMBBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_SIT_UP_DUMBBELL_TIP_ONE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_SPLIT_SQUAT_TITLE"
+msgstr "Split Squat"
+
+msgid "E_D_SPLIT_SQUAT_PREP_ONE"
+msgstr "Stand and take a step forward with one foot."
+
+msgid "E_D_SPLIT_SQUAT_PREP_TWO"
+msgstr "Keep your arms extended by your sides."
+
+msgid "E_D_SPLIT_SQUAT_EXEC_ONE"
+msgstr "Inhale and lower the behind knee almost down on the floor and bend the front knee until the thigh is parallel to the floor."
+
+msgid "E_D_SPLIT_SQUAT_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_SPLIT_SQUAT_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SPLIT_SQUAT_TIP_ONE"
+msgstr "Do not let your front knee go over your toes,"
+
+msgid "E_D_SPLIT_SQUAT_TIP_TWO"
+msgstr "Do not let your back knee touch the floor"
+
+msgid "E_D_SPLIT_SQUAT_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SQUAT_TITLE"
+msgstr "Squat"
+
+msgid "E_D_SQUAT_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SQUAT_PREP_TWO"
+msgstr "Keep your arms straight and parallel to the floor in front of your body."
+
+msgid "E_D_SQUAT_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SQUAT_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_TIP_TWO"
+msgstr "Do not let our knees go over your toes."
+
+msgid "E_D_SQUAT_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_TITLE"
+msgstr "Standing Around the World: Dumbbell"
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_PREP_TWO"
+msgstr "Extend your arms and hold a dumbbell in each hand next to your thighs with palms facing forward."
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_EXEC_ONE"
+msgstr "Inhale and move dumbbells in a semi circle to reach above your head."
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_EXEC_TWO"
+msgstr "Exhale and bring dumbbells back to the preparation position and repeat."
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_TIP_ONE"
+msgstr "Do not shrug our shoulders when raising arms up,"
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement,"
+
+msgid "E_D_STANDING_AROUND_THE_WORLD_DUMBBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_BACKHAND_RAISE_TITLE"
+msgstr "Standing Backhand Raise"
+
+msgid "E_D_STANDING_BACKHAND_RAISE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart and knees bent."
+
+msgid "E_D_STANDING_BACKHAND_RAISE_PREP_TWO"
+msgstr "Lean over slightly and push your hips backward. Extend your arms at your sides with palms facing backward."
+
+msgid "E_D_STANDING_BACKHAND_RAISE_EXEC_ONE"
+msgstr "Rotate at the shoulders as you bring hands up. and backward as high as possible."
+
+msgid "E_D_STANDING_BACKHAND_RAISE_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_BACKHAND_RAISE_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_TITLE"
+msgstr "Standing Calf Raise"
+
+msgid "E_D_STANDING_CALF_RAISE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart. Rest your arms by your sides."
+
+msgid "E_D_STANDING_CALF_RAISE_EXEC_ONE"
+msgstr "Elevate your heels off the ground slowly and as. high as possible."
+
+msgid "E_D_STANDING_CALF_RAISE_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_TIP_ONE"
+msgstr "Keep your head, spine and neck in line."
+
+msgid "E_D_STANDING_CALF_RAISE_TIP_TWO"
+msgstr "To increase difficulty, position eight plates on the ground."
+
+msgid "E_D_STANDING_CALF_RAISE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_BARBELL_TITLE"
+msgstr "Standing Calf Raise On Step: Barbell"
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_BARBELL_PREP_ONE"
+msgstr "Stand and held the barbell on your shoulders with palms facing forward, Place the toes and the balls of your feet shoulder width apart onto a platform."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_BARBELL_EXEC_ONE"
+msgstr "Elevate your heels slowly as high as possible,"
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_BARBELL_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_BARBELL_TIP_ONE"
+msgstr "Keep your head, spine and neck in line."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_BARBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_DUMBBELL_TITLE"
+msgstr "Standing Calf Raise On Step: Dumbbell"
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_DUMBBELL_PREP_ONE"
+msgstr "Stand with « dumbbell in each hand beside your body, Place the toes and the balls of your feet shoulder width apart onto a platform."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_DUMBBELL_EXEC_ONE"
+msgstr "Elevate your heels slowly as high as possible,"
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_DUMBBELL_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return fo the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_DUMBBELL_TIP_ONE"
+msgstr "Keep your head, spine and neck in line."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_DUMBBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_TITLE"
+msgstr "Standing Calf Raise On Step Smith Machine"
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand under the machine and hold the barbell on your shoulders with palms facing forward."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_PREP_TWO"
+msgstr "Place the toes and the balls of your feet shoulder width apart onto a platform."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_EXEC_ONE"
+msgstr "Elevate your heels slowly as high as possible,"
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return fo the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_TIP_ONE"
+msgstr "Keep your head, spine and neck line."
+
+msgid "E_D_STANDING_CALF_RAISE_ON_STEP_SMITH_MACHINE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_TITLE"
+msgstr "Standing Calf Raise- Band"
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_PREP_ONE"
+msgstr "Stand on the middle of the band with feet slightly apart."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_PREP_TWO"
+msgstr "Hold a handle in each hand next to your thighs."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_EXEC_ONE"
+msgstr "Elevate your heels off the ground slowly and as. high as possible."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_TIP_ONE"
+msgstr "Keep your head, spine and neck in line."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_TIP_TWO"
+msgstr "To increase difficulty, position weight plates on the ground."
+
+msgid "E_D_STANDING_CALF_RAISE_BAND_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_TITLE"
+msgstr "Standing Calf Raise- Barbell"
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_PREP_TWO"
+msgstr "Hold the barbell on your shoulders with palms facing forward and elbows pointed to the ground."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_EXEC_ONE"
+msgstr "Elevate your heels off the ground slowly and as. high as possible."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_TIP_ONE"
+msgstr "Keep your head, spine and neck in line."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_TIP_TWO"
+msgstr "To increase difficulty, position weight plates on the ground."
+
+msgid "E_D_STANDING_CALF_RAISE_BARBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_TITLE"
+msgstr "Standing Calf Raise- Machine"
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_PREP_ONE"
+msgstr "Stand on the machine with your foes shoulder width apart on the footpads and shoulders against the pads."
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_PREP_TWO"
+msgstr "Hold the handles with palms facing forward."
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_EXEC_ONE"
+msgstr "Elevate your heels slowly as high as possible,"
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return fo the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_TIP_ONE"
+msgstr "Rest the other leg beside the bench."
+
+msgid "E_D_STANDING_CALF_RAISE_MACHINE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_TITLE"
+msgstr "Single Arm Bent-over Row: Kettlebell"
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_PREP_ONE"
+msgstr "Hold the kettlebell with one hand in a neutral grip with arm extended."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_PREP_TWO"
+msgstr "Position the opposite leg forward and bend the knee slightly to lean your torso forward."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_EXEC_ONE"
+msgstr "Squeeze your lats and bend the elbow fo pull the kettlebell toward your rib cage."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position and switch fo the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_TIP_ONE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_SINGLE_ARM_BENT_OVER_ROW_KETTLEBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_TITLE"
+msgstr "Single Arm Lat Pulldown: Cable"
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_PREP_ONE"
+msgstr "Sit on the bench facing the machine."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_PREP_TWO"
+msgstr "Hold the handle with one hand in an overhand grip and the arm stretched upward."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_EXEC_ONE"
+msgstr "Contract your lats and bend your elbows to pull the handle down to your chest."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds and return to the starting position slowly and repeat."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_EXEC_THREE"
+msgstr "Complete alternating between left and right."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_TIP_ONE"
+msgstr "Lean slightly backward and do not arch your back during the movement."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_TIP_TWO"
+msgstr "Keep the upward movement controlled to avoid pulling yourself out of position."
+
+msgid "E_D_SINGLE_ARM_LAT_PULLDOWN_CABLE_TIP_THREE"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_TITLE"
+msgstr "Single Arm Lateral Raise: Cable"
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_PREP_ONE"
+msgstr "Stand with your feet slightly wider than shoulder width apart."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_PREP_TWO"
+msgstr "Reach across your body to hold the opposite handle with one hand in a neutral grip in front of your thighs."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_EXEC_ONE"
+msgstr "Squeeze your working shoulder and pull the handle across your body laterally until the arm is parallel to the floor."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_EXEC_TWO"
+msgstr "Lower the handle to the starting position and repeat."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_EXEC_THREE"
+msgstr "Alternate to your opposite hand and repeat."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_TIP_ONE"
+msgstr "Do not shrug your shoulder when raising the arm up"
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_TIP_TWO"
+msgstr "Keep your working elbow slightly bent throughout the movement."
+
+msgid "E_D_SINGLE_ARM_LATERAL_RAISE_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_TITLE"
+msgstr "Single Leg Deadlift Kettlebell"
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_PREP_ONE"
+msgstr "Stand with one foot slightly off the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_PREP_TWO"
+msgstr "Stretch your arms and hold a kettlebell in the opposite hand in an overhand grip at your side."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_EXEC_ONE"
+msgstr "Lift the raised leg behind and lower your body and the arm holding kettlebell."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_EXEC_TWO"
+msgstr "Pause until your torso and the lifted leg are parallel with the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_EXEC_THREE"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_TIP_ONE"
+msgstr "Move the kettlebells vertically."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_TIP_TWO"
+msgstr "Do not let the raised leg touch the floor."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_TIP_THREE"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_SINGLE_LEG_DEADLIFT_KETTLEBELL_TIP_FOUR"
+msgstr "Keep the still knee slightly bent throughout the movement."
+
+msgid "E_D_SQUAT_BARBELL_TITLE"
+msgstr "Squat: Barbell"
+
+msgid "E_D_SQUAT_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_SQUAT_BARBELL_PREP_TWO"
+msgstr "Hold the bar on the back of your shoulders with hands slightly wider than shoulder width apart and palms facing forward."
+
+msgid "E_D_SQUAT_BARBELL_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor,"
+
+msgid "E_D_SQUAT_BARBELL_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SQUAT_BARBELL_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SQUAT_BARBELL_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SQUAT_BARBELL_TIP_TWO"
+msgstr "Do not let your knees go aver your toes."
+
+msgid "E_D_SQUAT_BARBELL_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SQUAT_BARBELL_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SQUAT_BARBELL_TIP_FIVE"
+msgstr "Make a vertical movement with the barbell, do not tilt the arms."
+
+msgid "E_D_SQUAT_SMITH_MACHINE_TIP_FIVE"
+msgstr "Make a vertical movement with the bar, do not tilt the arms."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_TITLE"
+msgstr "Standing Calf Raise- Smith Machine"
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand under the machine with feet hip width apart."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_PREP_TWO"
+msgstr "Unlock the bar and held it with hands shoulder width apart and arms fully extended."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_EXEC_ONE"
+msgstr "Elevate your heels off the ground slowly and as high as possible."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_TIP_ONE"
+msgstr "Keep your head, spine and neck in line."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_TIP_TWO"
+msgstr "To increase difficulty, position eight plates on the ground."
+
+msgid "E_D_STANDING_CALF_RAISE_SMITH_MACHINE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_TITLE"
+msgstr "Standing Chest Fly: Band"
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_PREP_ONE"
+msgstr "Secure the band to an object and stand with your back to it with one foot in front of the other."
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_PREP_TWO"
+msgstr "Hold the handles with palms facing forward and extend your arms to the sides."
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_EXEC_ONE"
+msgstr "Exhale, squeeze your chest and press the handles together until your hands touch each other."
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CHEST_FLY_BAND_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_TITLE"
+msgstr "Standing Chest Fly + Cable"
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_PREP_ONE"
+msgstr "Stand with your back to the machine with one foot in front of the other."
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_PREP_TWO"
+msgstr "Hold the handles with palms facing forward and extend your arms to the sides."
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_EXEC_ONE"
+msgstr "Exhale, squeeze your chest and press the handles together until your hands touch each other."
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_CHEST_FLY_CABLE_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_TITLE"
+msgstr "Standing Chest Press Band"
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_PREP_ONE"
+msgstr "Secure the band to an object."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_PREP_TWO"
+msgstr "Stand with your back jolt with one leg in front and knees bent."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_PREP_THREE"
+msgstr "Bring the handles to your chest with arms bent and palms down."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_EXEC_ONE"
+msgstr "Exhale and squeeze your chest to push the handles forward to extend your arms straight."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_EXEC_TWO"
+msgstr "Inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_TIP_ONE"
+msgstr "Do not lock out your elbows during the exercise."
+
+msgid "E_D_STANDING_CHEST_PRESS_BAND_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_TITLE"
+msgstr "Standing Chest Press: Cable"
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_PREP_ONE"
+msgstr "Stand with your back to the machine with one leg in front and knees bent."
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_PREP_TWO"
+msgstr "ring the handles to your chest with arms bent and palms down."
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_EXEC_ONE"
+msgstr "Exhale and squeeze your chest to push the handles forward until your hands meet together."
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_EXEC_TWO"
+msgstr "Inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_TIP_ONE"
+msgstr "Do not lock out your elbows during the exercise."
+
+msgid "E_D_STANDING_CHEST_PRESS_CABLE_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_TITLE"
+msgstr "Standing Decline Fly Band"
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_PREP_ONE"
+msgstr "Secure the band to a high position and stand with your back jot."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_PREP_TWO"
+msgstr "Lean slightly forward."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_PREP_THREE"
+msgstr "Hold the handles with palms down and extend your arms to the sides."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_EXEC_ONE"
+msgstr "Exhale, squeeze your chest and press the handles together until your hands touch each other."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_DECLINE_FLY_BAND_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_TITLE"
+msgstr "Standing Decline Fly Cable"
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_PREP_ONE"
+msgstr "Stand with one foot in front of the other."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_PREP_TWO"
+msgstr "Hold the handles with palms facing forward and extend your arms to the sides."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_EXEC_ONE"
+msgstr "Pull your hands down in front of your body in an arc motion until your hands meet."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_EXEC_TWO"
+msgstr "Squeeze your chest and hold for a few seconds."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_EXEC_THREE"
+msgstr "Slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_DECLINE_FLY_CABLE_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_TITLE"
+msgstr "Standing Decline Press + Band"
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_PREP_ONE"
+msgstr "Secure the band to a high object."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_PREP_TWO"
+msgstr "Stand with your back to it with one leg in front and knees bent."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_PREP_THREE"
+msgstr "Bring the handles to your chest with arms bent and palms down."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_EXEC_ONE"
+msgstr "Exhale and squeeze your chest to push the handles downward to extend your arms straight."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_EXEC_TWO"
+msgstr "Inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_TIP_ONE"
+msgstr "Do not lock out your elbows during the exercise."
+
+msgid "E_D_STANDING_DECLINE_PRESS_BAND_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_TITLE"
+msgstr "Standing Glute Kickback Band"
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_PREP_ONE"
+msgstr "Attach one end of the band to a low object and the other end to one ankle."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_PREP_TWO"
+msgstr "Stand facing the object and bend forward at the hips."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_PREP_THREE"
+msgstr "Shift your weight to the free leg."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_EXEC_ONE"
+msgstr "Exhale and kick your attached leg back until your thigh is parallel with the floor."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_EXEC_TWO"
+msgstr "Squeeze your glutes and hold for a few seconds at the top position."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_EXEC_THREE"
+msgstr "Inhale and slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_TIP_ONE"
+msgstr "Keep your pelvis staying pointed forward."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_TIP_TWO"
+msgstr "Keep your torso steady with a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_BAND_TIP_THREE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_TITLE"
+msgstr "Standing Glute Kickback: Cable"
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_PREP_ONE"
+msgstr "Attach the rope of the machine around your ankle."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_PREP_TWO"
+msgstr "Stand facing the machine and bend forward at the hips."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_PREP_THREE"
+msgstr "Shift your weight to the free leg."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_EXEC_ONE"
+msgstr "Exhale and kick your attached leg back until your thigh is parallel with the floor."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_EXEC_TWO"
+msgstr "Squeeze your glutes and hold for a few seconds at the top position."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_EXEC_THREE"
+msgstr "Inhale and slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_TIP_ONE"
+msgstr "Keep your pelvis staying pointed forward."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_TIP_TWO"
+msgstr "Keep your torso steady with a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_CABLE_TIP_THREE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_TITLE"
+msgstr "Standing Glute Kickback Machine"
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_PREP_ONE"
+msgstr "Stand on the machine with the roller underneath one knee."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_PREP_TWO"
+msgstr "Hold the handle with both hands in an overhand grip."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_EXEC_ONE"
+msgstr "Exhale and kick your working leg back."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_EXEC_TWO"
+msgstr "Squeeze your glutes and hold for a few seconds at the top position."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_EXEC_THREE"
+msgstr "Inhale and slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_TIP_ONE"
+msgstr "Keep your pelvis staying pointed forward"
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_TIP_TWO"
+msgstr "Keep your torso steady with a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_GLUTE_KICKBACK_MACHINE_TIP_THREE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_TITLE"
+msgstr "Standing Incline Fly: Band"
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_PREP_ONE"
+msgstr "Secure the band to a low position and stand with your back to it."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_PREP_TWO"
+msgstr "Lean slightly forward."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_PREP_THREE"
+msgstr "Hold the handles with palms facing forward and extend your arms to the sides."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_EXEC_ONE"
+msgstr "Pull your hands up in front of your body in an arc motion until your hands meet above your head."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_EXEC_TWO"
+msgstr "Squeeze your chest and hold for a few seconds."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_EXEC_THREE"
+msgstr "Slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_INCLINE_FLY_BAND_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_TITLE"
+msgstr "Standing Incline Fly Cable"
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_PREP_ONE"
+msgstr "Stand with one foot in front of the other."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_PREP_TWO"
+msgstr "Hold the handles with palms facing forward and extend your arms to the sides."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_EXEC_ONE"
+msgstr "Pull your hands up in front of your body in an are motion until your hands meet above your head."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_EXEC_TWO"
+msgstr "Squeeze your chest and hold for a few seconds."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_EXEC_THREE"
+msgstr "Slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_INCLINE_FLY_CABLE_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_TITLE"
+msgstr "Standing Incline Fly: Dumbbell"
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in each hand with palms facing forward and arms extended by your sides."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_EXEC_ONE"
+msgstr "Pull your hands up in front of your body in a semi-circle motion until your hands meet above your head."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_EXEC_TWO"
+msgstr "Squeeze your chest and hold for a few seconds."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_EXEC_THREE"
+msgstr "Slowly return to the starting position and repeat."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_INCLINE_FLY_DUMBBELL_TIP_TWO"
+msgstr "Keep your elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_TITLE"
+msgstr "Standing Incline Press Band"
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_PREP_ONE"
+msgstr "Secure the band to a low object."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_PREP_TWO"
+msgstr "Stand with your back to it with one leg in front and knees bent."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_PREP_THREE"
+msgstr "Bring the handles to your chest with arms bent and palms down."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_EXEC_ONE"
+msgstr "Exhale and squeeze your chest to push the handles forward to extend your arms straight."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_EXEC_TWO"
+msgstr "Inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_TIP_ONE"
+msgstr "Do not lock out your elbows during the exercise."
+
+msgid "E_D_STANDING_INCLINE_PRESS_BAND_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_TITLE"
+msgstr "Standing Leg Extension: Band"
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_PREP_ONE"
+msgstr "Stand upright and attach one end of the band to one ankle."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_PREP_TWO"
+msgstr "Shift your weight on one leg and lift the other leg."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_PREP_THREE"
+msgstr "Hold something to stabilize you."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_EXEC_ONE"
+msgstr "Extend the working knee and bring your foot forward until your leg is straight."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_TIP_ONE"
+msgstr "Do not move your knee around throughout the movement."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_TIP_TWO"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_STANDING_LEG_EXTENSION_BAND_TIP_THREE"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_TITLE"
+msgstr "Standing Rear Delt Row: Band"
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_PREP_ONE"
+msgstr "Secure the band to a high object."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_PREP_TWO"
+msgstr "Stand with one foot behind you."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_PREP_THREE"
+msgstr "Hold the handle with arms stretched."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_EXEC_ONE"
+msgstr "Squeeze your shoulder blades and bend the elbows to pull the band downwards to your chest."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_EXEC_TWO"
+msgstr "Return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_BAND_TIP_ONE"
+msgstr "Keep a straight back during the exercise."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_TITLE"
+msgstr "Standing Rear Delt Row: Cable"
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_PREP_ONE"
+msgstr "Stand in front of the machine with feet shoulder width apart,"
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_PREP_TWO"
+msgstr "Hold the handle with two hands and arms stretched."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_EXEC_ONE"
+msgstr "Squeeze your shoulder blades and bend the elbows to pull the handle towards your chest."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_TIP_ONE"
+msgstr "Pull the handle horizontally."
+
+msgid "E_D_STANDING_REAR_DELT_ROW_CABLE_TIP_TWO"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_TITLE"
+msgstr "Standing Reverse Fly Band"
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_PREP_ONE"
+msgstr "Secure the band to an object."
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_PREP_TWO"
+msgstr "Stand facing it with one foot in front."
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_PREP_THREE"
+msgstr "Hold a handle in each hand with arms straight at shoulder level."
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_EXEC_ONE"
+msgstr "Exhale and squeeze your shoulder blades together to pull your arms out to your sides."
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds when your arms are parallel to your shoulders."
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_EXEC_THREE"
+msgstr "Inhale, return to the starting position and repeat."
+
+msgid "E_D_STANDING_REVERSE_FLY_BAND_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_ROW_TITLE"
+msgstr "Standing Row"
+
+msgid "E_D_STANDING_ROW_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STANDING_ROW_PREP_TWO"
+msgstr "Held the bar in front of upper abs in a narrow overhand grip."
+
+msgid "E_D_STANDING_ROW_PREP_THREE"
+msgstr "Lower your body until arms are extended and keep your body in a straight line."
+
+msgid "E_D_STANDING_ROW_EXEC_ONE"
+msgstr "Squeeze your lats and bend your elbows to pull yourself toward the bar."
+
+msgid "E_D_STANDING_ROW_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_ROW_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_ROW_CABLE_TITLE"
+msgstr "Standing Row: Cable"
+
+msgid "E_D_STANDING_ROW_CABLE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STANDING_ROW_CABLE_PREP_TWO"
+msgstr "Hold the handle in a narrow neutral grip in front of upper abs with arms extended."
+
+msgid "E_D_STANDING_ROW_CABLE_EXEC_ONE"
+msgstr "Squeeze your lats and bend your elbows to pull the handle toward your rib cage."
+
+msgid "E_D_STANDING_ROW_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_STANDING_ROW_CABLE_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SIDE_BEND_TITLE"
+msgstr "Standing Side Bend"
+
+msgid "E_D_STANDING_SIDE_BEND_PREP_ONE"
+msgstr "Stand with feet shoulder width apart and arms extended at your sides."
+
+msgid "E_D_STANDING_SIDE_BEND_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to one side as far as possible."
+
+msgid "E_D_STANDING_SIDE_BEND_EXEC_TWO"
+msgstr "Hold for a few seconds, return to the starting position and repeat."
+
+msgid "E_D_STANDING_SIDE_BEND_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SIDE_BEND_TIP_ONE"
+msgstr "Keep your head up throughout the movement."
+
+msgid "E_D_STANDING_SIDE_BEND_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_TITLE"
+msgstr "Standing Side Bend - Barbell"
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart,"
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_PREP_TWO"
+msgstr "Place the bar on the back of your shoulders and bend arms to hold it with palms facing forward."
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to one side as far as possible."
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_EXEC_TWO"
+msgstr "Hold for a few seconds, return to the starting position and repeat."
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_TIP_ONE"
+msgstr "Keep your head up throughout the movement."
+
+msgid "E_D_STANDING_SIDE_BEND_BARBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_TITLE"
+msgstr "Standing Side Bend- Cable"
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_PREP_ONE"
+msgstr "Stand sideways next to the machine with feet shoulder width apart."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_PREP_TWO"
+msgstr "Grip the handle in one hand with the palm facing towards you."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to the opposite side as far as possible."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_EXEC_TWO"
+msgstr "Hold for a few seconds, return to the starting position and repeat."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_TIP_ONE"
+msgstr "Do not pull with your arms during the exercise."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_TIP_TWO"
+msgstr "Keep your head up throughout the movement."
+
+msgid "E_D_STANDING_SIDE_BEND_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_TITLE"
+msgstr "Standing Side Bend - Dumbbell"
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in one hand in a neutral grip and place your free hand behind your head."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to the opposite side as far as possible."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_EXEC_TWO"
+msgstr "Hold for a few seconds, return to the starting position and repeat."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_TIP_ONE"
+msgstr "Keep your head up throughout the movement."
+
+msgid "E_D_STANDING_SIDE_BEND_DUMBBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_TITLE"
+msgstr "Standing Side Crunch: and"
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_PREP_ONE"
+msgstr "Attach the band to an object above your head."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_PREP_TWO"
+msgstr "Grip the handle in one hand with the palm facing towards you."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to the gripping side as far as possible."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_EXEC_TWO"
+msgstr "Hold for a few seconds, return to the starting position and repeat."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_TIP_ONE"
+msgstr "Do not pull down with your arms during the exercise."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_TIP_TWO"
+msgstr "Keep your head up throughout the movement."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_BAND_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_TITLE"
+msgstr "Standing Side Crunch: Cable"
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_PREP_ONE"
+msgstr "Stand sideways next to the machine with feet shoulder width apart."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_PREP_TWO"
+msgstr "Grip the handle in one hand with the palm facing towards you."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to the gripping side as far as possible."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_EXEC_TWO"
+msgstr "Hold for a few seconds, return to the starting position and repeat."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_TIP_ONE"
+msgstr "Do not pull down with your arms during the exercise."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_TIP_TWO"
+msgstr "Keep your head up throughout the movement."
+
+msgid "E_D_STANDING_SIDE_CRUNCH_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_TITLE"
+msgstr "Standing Single Leg Calf Raise"
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_PREP_ONE"
+msgstr "Raise one foot and wind it behind the calf of the other leg."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_PREP_TWO"
+msgstr "Hold onto a bar or rack to stabilize your trunk."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_EXEC_ONE"
+msgstr "Elevate your one heel off the ground slowly and as high as possible."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return fo the starting position slowly and repeat."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_TIP_ONE"
+msgstr "To increase difficulty, position weight plates on the ground."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_TITLE"
+msgstr "Standing Single Leg Calf Raise Dumbbell"
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_PREP_ONE"
+msgstr "Stand on one leg with the other bent and slightly off the ground."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in each hand by your sides with arms extended."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_EXEC_ONE"
+msgstr "Elevate the standing heel off the ground slowly and as high as possible."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return fo the starting position slowly and repeat."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_TIP_ONE"
+msgstr "To increase difficulty, position weight plates on the ground."
+
+msgid "E_D_STANDING_SINGLE_LEG_CALF_RAISE_DUMBBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_TITLE"
+msgstr "Standing Single Leg Curl"
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart on the floor."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_PREP_TWO"
+msgstr "Rest your hands on an object to support you and shift your weight to one leg."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_EXEC_ONE"
+msgstr "Squeeze your hamstrings to curl the other leg backwards and raise the heel toward your hips until the calf is parallel with the floor."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_TIP_ONE"
+msgstr "Keep a straight back and thighs parallel during the exercise."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_TITLE"
+msgstr "Standing Single Leg Curl: Band"
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_PREP_ONE"
+msgstr "Attach one end of the band to a low object and the other to one ankle and hold the machine with both hands."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_PREP_TWO"
+msgstr "Shift your weight to the standing leg."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_EXEC_ONE"
+msgstr "Squeeze your hamstrings to curl the attached leg backwards and raise the heel toward your hips until the calf is parallel with the floor."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_BAND_TIP_ONE"
+msgstr "Keep a straight back and thighs parallel during the exercise."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_TITLE"
+msgstr "Standing Single Leg Curl: Cable"
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_PREP_ONE"
+msgstr "Stand in front of the machine."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_PREP_TWO"
+msgstr "Attach the rope ground one ankle and hold the machine with both hands."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_PREP_THREE"
+msgstr "Shift your weight to the standing leg."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_EXEC_ONE"
+msgstr "Squeeze your hamstrings to curl the attached leg backwards and raise the heel toward your hips until the calf is parallel with the floor."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_CABLE_TIP_ONE"
+msgstr "Keep a straight back and thighs parallel during the exercise."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_TITLE"
+msgstr "Standing Single Leg Curl: Machine"
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_PREP_ONE"
+msgstr "Kneel down on the machine with one knee supported and the opposite leg straight against the roller."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_PREP_TWO"
+msgstr "Place your elbows on the pad."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_EXEC_ONE"
+msgstr "Squeeze your hamstrings to curl your straight leg backwards and raise the heel toward your hips until the calf is parallel with the floor."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_EXEC_TWO"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_EXEC_THREE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_SINGLE_LEG_CURL_MACHINE_TIP_ONE"
+msgstr "Keep a straight back and thighs parallel during the exercise."
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_TITLE"
+msgstr "Standing Torso Rotation Machine"
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_PREP_ONE"
+msgstr "Stand on the machine with knees slightly bent."
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_PREP_TWO"
+msgstr "Hold the handle in an overhand grip."
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_EXEC_ONE"
+msgstr "Rotate your lower body to one side while keeping your upper body still"
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_EXEC_TWO"
+msgstr "Feel the contraction in your obliques and return to the starting position slowly."
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_EXEC_THREE"
+msgstr "Complete alternating between left and right."
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_TIP_ONE"
+msgstr "Keep your upper body still throughout the movement."
+
+msgid "E_D_STANDING_TORSO_ROTATION_MACHINE_TIP_TWO"
+msgstr "Keep a straight back and tightened glutes throughout the movement."
+
+msgid "E_D_STANDING_TWIST_BAND_TITLE"
+msgstr "Standing Twist Band"
+
+msgid "E_D_STANDING_TWIST_BAND_PREP_ONE"
+msgstr "Attach the band to an object and stand with your lower body back tot."
+
+msgid "E_D_STANDING_TWIST_BAND_PREP_TWO"
+msgstr "Take a big step forward with one leg."
+
+msgid "E_D_STANDING_TWIST_BAND_PREP_THREE"
+msgstr "Hold the handle with arms extended."
+
+msgid "E_D_STANDING_TWIST_BAND_EXEC_ONE"
+msgstr "Exhale and squeeze your obliques to twist your, torso and bring your arms to the front."
+
+msgid "E_D_STANDING_TWIST_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STANDING_TWIST_BAND_TIP_ONE"
+msgstr "Keep your arms extended and elbows slightly bent throughout the movement."
+
+msgid "E_D_STANDING_TWIST_BAND_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STANDING_TWIST_BARBELL_TITLE"
+msgstr "Standing Twist Barbell"
+
+msgid "E_D_STANDING_TWIST_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart,"
+
+msgid "E_D_STANDING_TWIST_BARBELL_PREP_TWO"
+msgstr "Hold the barbell across your back shoulders with hands slightly wider than shoulder width and palms facing forward."
+
+msgid "E_D_STANDING_TWIST_BARBELL_EXEC_ONE"
+msgstr "Rotate your torso to one side while keeping your lower body still."
+
+msgid "E_D_STANDING_TWIST_BARBELL_EXEC_TWO"
+msgstr "Pause for a few seconds and return to the starting position slowly."
+
+msgid "E_D_STANDING_TWIST_BARBELL_EXEC_THREE"
+msgstr "Complete alternating between left and right."
+
+msgid "E_D_STANDING_TWIST_BARBELL_TIP_ONE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STEP_UP_TITLE"
+msgstr "Step-up"
+
+msgid "E_D_STEP_UP_PREP_ONE"
+msgstr "Stand in front of a bench with feet shoulder width apart and arms extended by your sides."
+
+msgid "E_D_STEP_UP_EXEC_ONE"
+msgstr "Put one foot on the bench."
+
+msgid "E_D_STEP_UP_EXEC_TWO"
+msgstr "Inhale and drive through the front heel and midfoot to bring the leg behind onto the bench."
+
+msgid "E_D_STEP_UP_EXEC_THREE"
+msgstr "and stand up straight with legs together."
+
+msgid "E_D_STEP_UP_EXEC_FOUR"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_STEP_UP_EXEC_FIVE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STEP_UP_TIP_ONE"
+msgstr "Do not se the leg on the floor to assist the upward movement."
+
+msgid "E_D_STEP_UP_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STEP_UP_BARBELL_TITLE"
+msgstr "Step-up- Barbell"
+
+msgid "E_D_STEP_UP_BARBELL_PREP_ONE"
+msgstr "Stand in front of a bench,"
+
+msgid "E_D_STEP_UP_BARBELL_PREP_TWO"
+msgstr "Hold a barbell on your back across the shoulders with palms wide apart and facing forward,"
+
+msgid "E_D_STEP_UP_BARBELL_EXEC_ONE"
+msgstr "Put one foot on the bench."
+
+msgid "E_D_STEP_UP_BARBELL_EXEC_TWO"
+msgstr "Inhale and drive through the front heel and midfoot to bring the leg behind onto the bench and stand up straight with legs together."
+
+msgid "E_D_STEP_UP_BARBELL_EXEC_THREE"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_STEP_UP_BARBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STEP_UP_BARBELL_TIP_ONE"
+msgstr "Do not use the leg on the floor to assist the upward movement."
+
+msgid "E_D_STEP_UP_BARBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STEP_UP_DUMBBELL_TITLE"
+msgstr "Step-up Dumbbell"
+
+msgid "E_D_STEP_UP_DUMBBELL_PREP_ONE"
+msgstr "Stand in front of a bench."
+
+msgid "E_D_STEP_UP_DUMBBELL_PREP_TWO"
+msgstr "Hold one dumbbell in each hand with palms facing each other and arms straight beside your body."
+
+msgid "E_D_STEP_UP_DUMBBELL_EXEC_ONE"
+msgstr "Put one foot on the bench"
+
+msgid "E_D_STEP_UP_DUMBBELL_EXEC_TWO"
+msgstr "Inhale and drive through the front heel and midfoot to bring the leg behind onto the bench."
+
+msgid "E_D_STEP_UP_DUMBBELL_EXEC_THREE"
+msgstr "and stand up straight with legs together."
+
+msgid "E_D_STEP_UP_DUMBBELL_EXEC_FOUR"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_STEP_UP_DUMBBELL_EXEC_FIVE"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_STEP_UP_DUMBBELL_TIP_ONE"
+msgstr "Do not use the leg on the floor to assist the upward movement."
+
+msgid "E_D_STEP_UP_DUMBBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_TITLE"
+msgstr "Stiff Leg Deadlift - Band"
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_PREP_ONE"
+msgstr "Stand with feet shoulder width apart and place the band under your midfoot."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_PREP_TWO"
+msgstr "Bend at the waist with your back and legs straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_PREP_THREE"
+msgstr "Hold the handles in a neutral grip."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_EXEC_ONE"
+msgstr "Exhale and squeeze your glutes and tighten your lats to lift the handles until standing up straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_TIP_ONE"
+msgstr "Move the handles vertically."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_TIP_THREE"
+msgstr "Keep your legs straight but do not lock your knees."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_TIP_FOUR"
+msgstr "Do not pull upward using your arms er shoulders."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BAND_TIP_FIVE"
+msgstr "Do not thrust your hips forward at the top position."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_TITLE"
+msgstr "Stiff Leg Deadlift - Barbell"
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_PREP_TWO"
+msgstr "Bend at the waist with your back and legs straight and hold a barbell in an overhand grip."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_EXEC_ONE"
+msgstr "Exhale and squeeze your glutes and tighten your lats to lift the barbell until standing up straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_TIP_ONE"
+msgstr "Move the bar vertically."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_TIP_THREE"
+msgstr "Keep your legs straight but do not lock your knees."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_TIP_FOUR"
+msgstr "Do not pull upward using your arms er shoulders."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_BARBELL_TIP_FIVE"
+msgstr "Do not thrust your hips forward at the top position."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_TITLE"
+msgstr "Stiff Leg Deadlift - Dumbbell"
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_PREP_TWO"
+msgstr "Bend at the waist with your back and legs straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_PREP_THREE"
+msgstr "Hold a dumbbell in an overhand grip."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and squeeze your glutes and tighten your lats to lift the dumbbell until standing up straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_TIP_ONE"
+msgstr "Move the dumbbell vertically."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_TIP_THREE"
+msgstr "Keep your legs straight but do not lock your knees."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_TIP_FOUR"
+msgstr "Do not pull upward using your arms er shoulders."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_DUMBBELL_TIP_FIVE"
+msgstr "Do not thrust your hips forward at the top position."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_TITLE"
+msgstr "Stiff Leg Deadlift - Kettlebell"
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_PREP_TWO"
+msgstr "Bend at the waist with arms stretched and legs straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_PREP_THREE"
+msgstr "Hold a kettlebell with both hands between your shins with arms extended."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_EXEC_ONE"
+msgstr "Exhale and squeeze your glutes and tighten your lats to lift the kettlebell until standing up straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_TIP_ONE"
+msgstr "Move the kettlebell vertically."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_TIP_THREE"
+msgstr "Keep your legs straight but do not lock your knees."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_TIP_FOUR"
+msgstr "Do not pull upward using your arms er shoulders."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_KETTLEBELL_TIP_FIVE"
+msgstr "Do not thrust your hips forward at the top position."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_TITLE"
+msgstr "Stiff Leg Deadlift - Smith Machine"
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_PREP_TWO"
+msgstr "Bend at the waist with your back and legs straight. Hold the bar in an overhand grip."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_EXEC_ONE"
+msgstr "Exhale and squeeze your glutes and tighten your, lats to lift the bar until standing up straight."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_TIP_ONE"
+msgstr "Move the bar vertically."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_TIP_TWO"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_TIP_THREE"
+msgstr "Keep your legs straight but do not lock your knees."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_TIP_FOUR"
+msgstr "Do not pull upward using your arms er shoulders."
+
+msgid "E_D_STIFF_LEG_DEADLIFT_SMITH_MACHINE_TIP_FIVE"
+msgstr "Do not thrust your hips forward at the top position."
+
+msgid "E_D_STRAIGHT_ARM_PLANK_TITLE"
+msgstr "Straight Arm Plank"
+
+msgid "E_D_STRAIGHT_ARM_PLANK_PREP_ONE"
+msgstr "Lie prone with your hands shoulder width apart and directly under your shoulders, legs extended and foes on the floor."
+
+msgid "E_D_STRAIGHT_ARM_PLANK_EXEC_ONE"
+msgstr "Push your body up with toes and hands on the floor."
+
+msgid "E_D_STRAIGHT_ARM_PLANK_EXEC_TWO"
+msgstr "Keep this position as long as you can,"
+
+msgid "E_D_STRAIGHT_ARM_PLANK_TIP_ONE"
+msgstr "Keep your head, torso and thighs in a straight line."
+
+msgid "E_D_STRAIGHT_ARM_PLANK_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_STRAIGHT_ARM_PLANK_TIP_THREE"
+msgstr "Keep your shoulders down and do not put the body weight on your shoulders."
+
+msgid "E_D_STRAIGHT_ARM_PLANK_TIP_FOUR"
+msgstr "Do not lock out your elbows during the exercise."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_TITLE"
+msgstr "Sumo Deadlift: Barbell"
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_PREP_ONE"
+msgstr "Stand with your feet very wide apart and toes outwards."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_PREP_TWO"
+msgstr "Squat down with arms extended to hold. the bar with a shoulder width grip, one overhand and one underhand."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_EXEC_ONE"
+msgstr "Exhale and squeeze your glutes and tighten your lats to lift the barbell until standing up straight."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_EXEC_TWO"
+msgstr "Rotate your shoulders back until feeling slightly stretched."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_EXEC_THREE"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_TIP_ONE"
+msgstr "Position your hips between the level of shoulders and knees at the starting position,"
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_TIP_TWO"
+msgstr "Move the bar vertically"
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_TIP_THREE"
+msgstr "Brace the abs to support your straight back throughout the movement."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_TIP_FOUR"
+msgstr "Do not pull upward using your arms er shoulders."
+
+msgid "E_D_SUMO_DEADLIFT_BARBELL_TIP_FIVE"
+msgstr "Do not thrust your hips forward at the top position."
+
+msgid "E_D_SUMO_SQUAT_TITLE"
+msgstr "Sumo Squat"
+
+msgid "E_D_SUMO_SQUAT_PREP_ONE"
+msgstr "Toke a wide stance with toes pointed outward."
+
+msgid "E_D_SUMO_SQUAT_PREP_TWO"
+msgstr "Keep your arms extended in front of your body with palms facing forward."
+
+msgid "E_D_SUMO_SQUAT_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SUMO_SQUAT_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SUMO_SQUAT_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SUMO_SQUAT_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SUMO_SQUAT_TIP_TWO"
+msgstr "Do not let your knees go over your toes."
+
+msgid "E_D_SUMO_SQUAT_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SUMO_SQUAT_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_TITLE"
+msgstr "Sumo Squat: Barbell"
+
+msgid "E_D_SUMO_SQUAT_BARBELL_PREP_ONE"
+msgstr "Take a wide stance with toes pointed outward."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_PREP_TWO"
+msgstr "Hold the barbell on the back of your shoulders with hands slightly wider than shoulder width and palms facing forward."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_TIP_TWO"
+msgstr "Do not let your knees go over your toes."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SUMO_SQUAT_BARBELL_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_TITLE"
+msgstr "Sumo Squat: Dumbbell"
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_PREP_ONE"
+msgstr "Take a wide stance with toes pointed outward."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in both hands in front of your body with arms extended."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot fo the starting position slowly and repeat."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_TIP_TWO"
+msgstr "Do not let your knees go over your toes."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SUMO_SQUAT_DUMBBELL_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_TITLE"
+msgstr "Sumo Squat: Kettlebell"
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_PREP_ONE"
+msgstr "Take a wide stance with toes pointed outward."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_PREP_TWO"
+msgstr "Bend your elbows to hold a kettlebell front of your chest."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_TIP_TWO"
+msgstr "Do not let our knees go over your toes."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SUMO_SQUAT_KETTLEBELL_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_TITLE"
+msgstr "Sumo Squat: Smith Machine"
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_PREP_ONE"
+msgstr "Take a wide stance with toes pointed outward."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_PREP_TWO"
+msgstr "Hold the barbell on the back of your shoulders with hands slightly wider than shoulder width and palms facing forward."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_EXEC_ONE"
+msgstr "Inhale and squat down until your thighs are parallel to the floor."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_EXEC_TWO"
+msgstr "Hold for a few seconds to feel the contraction."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_EXEC_THREE"
+msgstr "Exhale, drive through the heels and midfoot to the starting position slowly and repeat."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_TIP_ONE"
+msgstr "Keep the tiptoes in the same direction as your knees."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_TIP_TWO"
+msgstr "Do not let our knees go over your toes."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_TIP_THREE"
+msgstr "Do not lock out your knees at the top."
+
+msgid "E_D_SUMO_SQUAT_SMITH_MACHINE_TIP_FOUR"
+msgstr "Keep your glutes, quadriceps and hamstrings engaged."
+
+msgid "E_D_SUPERMAN_TITLE"
+msgstr "Superman"
+
+msgid "E_D_SUPERMAN_PREP_ONE"
+msgstr "Lie face down on the floor with your legs extended together."
+
+msgid "E_D_SUPERMAN_PREP_TWO"
+msgstr "Extend your arms in front and keep your body in a straight line."
+
+msgid "E_D_SUPERMAN_EXEC_ONE"
+msgstr "Lift your upper body and legs off the ground simultaneously slowly."
+
+msgid "E_D_SUPERMAN_EXEC_TWO"
+msgstr "Hold at the top position for a few seconds until your lower back muscles are contracted."
+
+msgid "E_D_SUPERMAN_EXEC_THREE"
+msgstr "Return to the starting position slowly and repeat."
+
+msgid "E_D_SUPERMAN_TIP_ONE"
+msgstr "Fully stretch your core and back muscles during the exercise."
+
+msgid "E_D_SUPERMAN_TIP_TWO"
+msgstr "Keep your head in a neutral position during the exercise."
+
+msgid "E_D_SUPERMAN_ROW_TITLE"
+msgstr "Superman Row"
+
+msgid "E_D_SUPERMAN_ROW_PREP_ONE"
+msgstr "Lie on your stomach with legs slightly lifted together."
+
+msgid "E_D_SUPERMAN_ROW_PREP_TWO"
+msgstr "Support on your elbows at your sides with arms bent."
+
+msgid "E_D_SUPERMAN_ROW_EXEC_ONE"
+msgstr "Slowly extend your arms and lift your upper body off the ground."
+
+msgid "E_D_SUPERMAN_ROW_EXEC_TWO"
+msgstr "Hold at the top position fora few seconds until your lower back muscles are contracted."
+
+msgid "E_D_SUPERMAN_ROW_EXEC_THREE"
+msgstr "Return to the staring position slowly and repeat."
+
+msgid "E_D_SUPERMAN_ROW_TIP_ONE"
+msgstr "You can do this exercise holding a towel,"
+
+msgid "E_D_SUPERMAN_ROW_TIP_TWO"
+msgstr "Fully stretch your core and back muscles during the exercise."
+
+msgid "E_D_SUPERMAN_ROW_TIP_THREE"
+msgstr "Keep your head in a neutral position during the exercise."
+
+msgid "E_D_SUPINE_FLOOR_ROW_TITLE"
+msgstr "Supine Floor Row"
+
+msgid "E_D_SUPINE_FLOOR_ROW_PREP_ONE"
+msgstr "Lie down with knees bent and feet on the floor."
+
+msgid "E_D_SUPINE_FLOOR_ROW_PREP_TWO"
+msgstr "Bend your elbows at 90 degrees out to your sides against the floor with hands in fists and palms facing forward."
+
+msgid "E_D_SUPINE_FLOOR_ROW_EXEC_ONE"
+msgstr "Squeeze your shoulder blades and push your elbows into the floor to lift your back off the ground."
+
+msgid "E_D_SUPINE_FLOOR_ROW_EXEC_TWO"
+msgstr "Pause at the top for a few seconds, return to the starting position slowly and repeat."
+
+msgid "E_D_SUPINE_FLOOR_ROW_TIP_ONE"
+msgstr "Keep your forearms still throughout the movement."
+
+msgid "E_D_SUPINE_FLOOR_ROW_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_THRUSTER_BARBELL_TITLE"
+msgstr "Thruster: Barbell"
+
+msgid "E_D_THRUSTER_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_THRUSTER_BARBELL_PREP_TWO"
+msgstr "Place the barbell in the front across your shoulders and grip it with palms facing upward."
+
+msgid "E_D_THRUSTER_BARBELL_EXEC_ONE"
+msgstr "Descend your body to a squat position."
+
+msgid "E_D_THRUSTER_BARBELL_EXEC_TWO"
+msgstr "Drive through your heels and hips to stand up."
+
+msgid "E_D_THRUSTER_BARBELL_EXEC_THREE"
+msgstr "Drive the bar directly above your head until your arms are straight."
+
+msgid "E_D_THRUSTER_BARBELL_EXEC_FOUR"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_THRUSTER_BARBELL_TIP_ONE"
+msgstr "Do not let your knees go over your toes when you squat."
+
+msgid "E_D_THRUSTER_BARBELL_TIP_TWO"
+msgstr "To avoid injuries, hold the bar firmly as you stand up and push it."
+
+msgid "E_D_THRUSTER_BARBELL_TIP_THREE"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_THRUSTER_BARBELL_TIP_FOUR"
+msgstr "Keep a straight back and braced core during the exercise"
+
+msgid "E_D_THRUSTER_KETTLEBELL_TITLE"
+msgstr "Thruster: Kettlebell"
+
+msgid "E_D_THRUSTER_KETTLEBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart and toes pointing outwards."
+
+msgid "E_D_THRUSTER_KETTLEBELL_PREP_TWO"
+msgstr "Bend the elbows in front of you and hold two kettlebells beside your shoulders with a neutral grip."
+
+msgid "E_D_THRUSTER_KETTLEBELL_EXEC_ONE"
+msgstr "Descend your body to a squat position."
+
+msgid "E_D_THRUSTER_KETTLEBELL_EXEC_TWO"
+msgstr "Drive through your heels and hips to standup."
+
+msgid "E_D_THRUSTER_KETTLEBELL_EXEC_THREE"
+msgstr "Drive the Kettlebells directly above your head until your arms are straight."
+
+msgid "E_D_THRUSTER_KETTLEBELL_EXEC_FOUR"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_THRUSTER_KETTLEBELL_TIP_ONE"
+msgstr "Do not let your knees go over your toes when you squat."
+
+msgid "E_D_THRUSTER_KETTLEBELL_TIP_TWO"
+msgstr "Rotate the wrists as you pull the kettlebells towards your shoulders,"
+
+msgid "E_D_THRUSTER_KETTLEBELL_TIP_THREE"
+msgstr "To add difficulty, add weights gradually."
+
+msgid "E_D_THRUSTER_KETTLEBELL_TIP_FOUR"
+msgstr "Keep a straight back and braced core during the exercise"
+
+msgid "E_D_TOES_TO_BAR_TITLE"
+msgstr "Toes To Bar"
+
+msgid "E_D_TOES_TO_BAR_PREP_ONE"
+msgstr "Hold on the pull-up bar with an overhand grip wider than the shoulder width."
+
+msgid "E_D_TOES_TO_BAR_PREP_TWO"
+msgstr "Keep your body suspended and straight."
+
+msgid "E_D_TOES_TO_BAR_EXEC_ONE"
+msgstr "Bend at the hips and lift up your legs until your toes touch the bar."
+
+msgid "E_D_TOES_TO_BAR_EXEC_TWO"
+msgstr "Exhale and return to the starting position and repeat."
+
+msgid "E_D_TOES_TO_BAR_TIP_ONE"
+msgstr "Keep your spine in a natural position."
+
+msgid "E_D_TOES_TO_BAR_TIP_TWO"
+msgstr "Do half the movement first and continue once you get ready."
+
+msgid "E_D_TRICEPS_DIP_TITLE"
+msgstr "Triceps Dip"
+
+msgid "E_D_TRICEPS_DIP_PREP_ONE"
+msgstr "Keep your torso upright with your feet crossed below the body."
+
+msgid "E_D_TRICEPS_DIP_PREP_TWO"
+msgstr "Hold a bar in each hand with your arms straight and elbows tight."
+
+msgid "E_D_TRICEPS_DIP_EXEC_ONE"
+msgstr "Bend your elbows to lower yourself until your upper arms are parallel to the floor, keeping your body erect."
+
+msgid "E_D_TRICEPS_DIP_EXEC_TWO"
+msgstr "Pause for a few seconds and push yourself up to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_DIP_TIP_ONE"
+msgstr "Keep your legs stationary throughout the movement."
+
+msgid "E_D_TRICEPS_DIP_TIP_TWO"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_TITLE"
+msgstr "Triceps Dip (Assisted)"
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_PREP_ONE"
+msgstr "Keep your torso upright and knees on the pads with legs together."
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_PREP_TWO"
+msgstr "Hold a bar in each hand with your arms straight and elbows tight."
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_EXEC_ONE"
+msgstr "Bend your elbows to lower yourself until your upper arms are parallel to the floor, keeping your body erect."
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_EXEC_TWO"
+msgstr "Pause for a few seconds and push yourself up to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_TIP_ONE"
+msgstr "Keep your legs stationary throughout the movement."
+
+msgid "E_D_TRICEPS_DIP_ASSISTED_TIP_TWO"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_TITLE"
+msgstr "Triceps Dip On Bench"
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_PREP_ONE"
+msgstr "Put a bench behind your back and grip the edge next to your hips with your torso upright."
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_PREP_TWO"
+msgstr "Stretch your arms with fingers facing forward and elbows tight."
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_EXEC_ONE"
+msgstr "Bend your elbows to lower yourself until your upper arms are parallel to the floor, keeping your body erect."
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_EXEC_TWO"
+msgstr "Pause for a few seconds and push yourself up to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_TIP_ONE"
+msgstr "Keep your torso upright and legs extended,"
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_TIP_TWO"
+msgstr "To increase difficulty, put your legs on another bench in front of you."
+
+msgid "E_D_TRICEPS_DIP_ON_BENCH_TIP_THREE"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_TITLE"
+msgstr "Triceps Dip On Floor"
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_PREP_ONE"
+msgstr "Position your hands shoulder width apart behind you on the floor."
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_PREP_TWO"
+msgstr "Bend your knees and lift your hips up. Stretch your arms with fingers facing forward and elbows tight."
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_EXEC_ONE"
+msgstr "Slowly bend your elbows to lower yourself until your elbows are bent between 45 and 90 degrees"
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_EXEC_TWO"
+msgstr "Push yourself up to the starting position and repeat."
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TRICEPS_DIP_ON_FLOOR_TIP_TWO"
+msgstr "Keep your shoulders down and away from your ears."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_TITLE"
+msgstr "Triceps Extension Cable"
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_PREP_TWO"
+msgstr "Hold the machine handle with one hand in an underhand grip. and the elbow tucked to your body."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_EXEC_ONE"
+msgstr "Exhale and extend your elbow to press your hand down until the arm is straight."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and switch fo the other side and repeat the same repetitions."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_TIP_TWO"
+msgstr "Keep your working elbow still and close to your side throughout the movement."
+
+msgid "E_D_TRICEPS_EXTENSION_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_TITLE"
+msgstr "Triceps Extension Machine"
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_PREP_ONE"
+msgstr "Sit on the machine with back supported and feet on the floor."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_PREP_TWO"
+msgstr "Hold the handles in a neutral grip. Bend your arms and tuck elbows to your torso."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_EXEC_ONE"
+msgstr "Exhale and extend your elbows to press your hands down until your arms are straight."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_TIP_TWO"
+msgstr "Keep your elbows still and close to your sides throughout the movement."
+
+msgid "E_D_TRICEPS_EXTENSION_MACHINE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_TITLE"
+msgstr "Triceps Kickback Band"
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_PREP_ONE"
+msgstr "Stand with feet hip-width apart on the band and bend at the hips."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_PREP_TWO"
+msgstr "Hold the handles in an underhand grip. Bend your arms and tuck elbows to your torso."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_EXEC_ONE"
+msgstr "Exhale and extend your elbows to press your hands backwards until your arms are straight."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_TIP_TWO"
+msgstr "Keep your elbows still and close to your sides throughout the movement."
+
+msgid "E_D_TRICEPS_KICKBACK_BAND_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_TITLE"
+msgstr "Triceps Kickback: Cable"
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_PREP_ONE"
+msgstr "Stand before the machine with feet shoulder width apart."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_PREP_TWO"
+msgstr "Bend at the hips and hold the handle in an underhand with one hand."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_PREP_THREE"
+msgstr "Bend your arm and tuck the elbow to your torso."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_EXEC_ONE"
+msgstr "Exhale and extend your elbow to press your hand backwards until your arm is straight."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_TIP_TWO"
+msgstr "Keep your elbows still and close to your sides throughout the movement."
+
+msgid "E_D_TRICEPS_KICKBACK_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_TITLE"
+msgstr "Triceps Kickback Dumbbell"
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_PREP_ONE"
+msgstr "Place one foot on the floor with the opposite hand and leg on the bench."
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_PREP_TWO"
+msgstr "Bend over to hold a dumbbell in a neutral grip. Bend the arm and tuck the elbow to your torso."
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and extend your elbow to press your hand backwards until your arm is straight."
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale, return to the starting position slowly and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_TIP_ONE"
+msgstr "Do not lock out your elbow at the top."
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_TIP_TWO"
+msgstr "Keep the working upper arm still and close to your side,"
+
+msgid "E_D_TRICEPS_KICKBACK_DUMBBELL_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_TITLE"
+msgstr "Triceps Pushdown: Band"
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_PREP_ONE"
+msgstr "Secure the band to a high position and stand facing it with feet hip width apart."
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_PREP_TWO"
+msgstr "Hold the handles over the chest with palms facing forward and elbows against your body."
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_EXEC_ONE"
+msgstr "Exhale and pull the handles down towards your thighs until your arms are fully extended."
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_TIP_ONE"
+msgstr "Keep your upper arms steady by your sides."
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_TIP_TWO"
+msgstr "Lean slightly forward and keep your knees slightly bent throughout the movement,"
+
+msgid "E_D_TRICEPS_PUSHDOWN_BAND_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_TITLE"
+msgstr "Triceps Pushdown: Cable"
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_PREP_ONE"
+msgstr "Stand with feet hip width apart."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_PREP_TWO"
+msgstr "Hold the bar over the chest with palms facing forward and elbows bent against your body."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_EXEC_ONE"
+msgstr "Exhale and pull the bar down towards your thighs until your arms are fully extended."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_TIP_ONE"
+msgstr "Keep your upper arms steady by your sides."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_TIP_TWO"
+msgstr "Lean slightly forward and keep your knees slightly bent throughout the movement."
+
+msgid "E_D_TRICEPS_PUSHDOWN_CABLE_TIP_THREE"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_TITLE"
+msgstr "Tuck Crunch: Dumbbell"
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_PREP_ONE"
+msgstr "Lie flat on the floor and hold a dumbbell in each hand."
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_PREP_TWO"
+msgstr "at the sides of your hips. Lift your shoulders, arms and legs slightly off the ground."
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_EXEC_ONE"
+msgstr "Squeeze your abs and bend your knees to bring your torso and legs close to each other as much as possible"
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_EXEC_TWO"
+msgstr "Return to the starting position slowly and repeat."
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_TIP_ONE"
+msgstr "Do not let your legs and shoulders touch the ground."
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_TIP_TWO"
+msgstr "Keep your arms parallel to the floor."
+
+msgid "E_D_TUCK_CRUNCH_DUMBBELL_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_TITLE"
+msgstr "Turkish Get Up: Kettlebell"
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_PREP_ONE"
+msgstr "Lie with your left arm stretched on the floor, 45 degrees with your body and your right arm holding a kettlebell, stretched perpendicular o the floor."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_PREP_TWO"
+msgstr "Bend your right leg and have your right foot flat on the floor."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_ONE"
+msgstr "Press your left elbow and drive through your right foot to roll up onto your left forearm,"
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_TWO"
+msgstr "Press away from the floor with your left hand as you lift your forearm and lockout your elbow."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_THREE"
+msgstr "Raise your butt off the floor and have your left knee land where you sat."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_FOUR"
+msgstr "Rotate your left lower leg to align your left leg in ‘the same direction as your right leg"
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_FIVE"
+msgstr "Drive through your right foot to stand up."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_SIX"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_EXEC_SEVEN"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_TIP_ONE"
+msgstr "Keep the wrist and elbow of the still arm straight throughout the movement."
+
+msgid "E_D_TURKISH_GET_UP_KETTLEBELL_TIP_TWO"
+msgstr "Keep your shoulder packed and stare at the kettlebell during the exercise."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_TITLE"
+msgstr "Twisting Overhead Press + Band"
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_PREP_ONE"
+msgstr "Secure the band to a low object and stand next to it with knees bent."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_PREP_TWO"
+msgstr "Hold the handle in one hand at shoulder height with the elbow bent at your side."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_EXEC_ONE"
+msgstr "Squeeze the shoulder and twist your body to the other side to press the handle diagonally up until your arm is straight overhead."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position slowly and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_BAND_TIP_TWO"
+msgstr "Keep your knees bent and feet fixed throughout the movement."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_TITLE"
+msgstr "Twisting Overhead Press Cable"
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_PREP_ONE"
+msgstr "Stand back to the machine with knees bent."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_PREP_TWO"
+msgstr "Hold the handle in one hand at shoulder height with the elbow bent at your side."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_EXEC_ONE"
+msgstr "Squeeze the shoulder and twist your body to the other side to press the handle diagonally up until your arm is straight overhead."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position slowly and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_TIP_ONE"
+msgstr "Do not lock out your elbows at the top."
+
+msgid "E_D_TWISTING_OVERHEAD_PRESS_CABLE_TIP_TWO"
+msgstr "Keep your knees bent and feet fixed throughout the movement."
+
+msgid "E_D_UP_DOWN_TWIST_BAND_TITLE"
+msgstr "Up-Down Twist: Band"
+
+msgid "E_D_UP_DOWN_TWIST_BAND_PREP_ONE"
+msgstr "Attach the band to a high object and stand back to it."
+
+msgid "E_D_UP_DOWN_TWIST_BAND_PREP_TWO"
+msgstr "Take a big step forward with one leg. Twist your torso to the opposite side to hold the handle with arms extended."
+
+msgid "E_D_UP_DOWN_TWIST_BAND_EXEC_ONE"
+msgstr "Pull the handle diagonally downward across your body to hips height by rotating torso, lowering arms, and bending knees."
+
+msgid "E_D_UP_DOWN_TWIST_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_UP_DOWN_TWIST_BAND_TIP_ONE"
+msgstr "Keep your elbows and knees slightly bent throughout the movement."
+
+msgid "E_D_UP_DOWN_TWIST_BAND_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_TITLE"
+msgstr "Up-Down Twist: Cable"
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_PREP_ONE"
+msgstr "Take a big step forward with one leg and your back to the machine."
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_PREP_TWO"
+msgstr "Twist your torso to the opposite side to hold the handle with arms extended"
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_EXEC_ONE"
+msgstr "Pull the handle diagonally downward across your body to hips height by rotating torso, lowering arms, and bending knees."
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_EXEC_TWO"
+msgstr "Pause for a few seconds, return to the starting position and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_TIP_ONE"
+msgstr "Keep your elbows and knees slightly bent throughout the movement."
+
+msgid "E_D_UP_DOWN_TWIST_CABLE_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_TITLE"
+msgstr "Up-Down Twist: Dumbbell"
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart. Hold one dumbbell with both hands."
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_PREP_TWO"
+msgstr "Twist your torso and bring the dumbbell up above and behind your head."
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_EXEC_ONE"
+msgstr "Pull the dumbbell diagonally downward across your body to hips height by rotating torso, lowering arms, and bending knees."
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_EXEC_TWO"
+msgstr "Return on the starting position and switch to the other side and repeat the same repetitions."
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_TIP_ONE"
+msgstr "Do not lock out your knees when standing up."
+
+msgid "E_D_UP_DOWN_TWIST_DUMBBELL_TIP_TWO"
+msgstr "keep your arm straight and shoulders locked in place throughout the movement."
+
+msgid "E_D_UPRIGHT_ROW_BAND_TITLE"
+msgstr "Upright Row: Band"
+
+msgid "E_D_UPRIGHT_ROW_BAND_PREP_ONE"
+msgstr "Stand with your midfoot together on the band."
+
+msgid "E_D_UPRIGHT_ROW_BAND_PREP_TWO"
+msgstr "Hold one handle in each hand in an overhand grip in front of your hips with arms extended."
+
+msgid "E_D_UPRIGHT_ROW_BAND_EXEC_ONE"
+msgstr "Raise your elbows up and out to the sides until the handles are at your chin level"
+
+msgid "E_D_UPRIGHT_ROW_BAND_EXEC_TWO"
+msgstr "Contract your shoulders and hold for a few seconds."
+
+msgid "E_D_UPRIGHT_ROW_BAND_EXEC_THREE"
+msgstr "Lower the handles to the starting position slowly and repeat."
+
+msgid "E_D_UPRIGHT_ROW_BAND_TIP_ONE"
+msgstr "Keep your hands moving vertically."
+
+msgid "E_D_UPRIGHT_ROW_BAND_TIP_TWO"
+msgstr "Keep your elbows higher than your forearms during the exercise."
+
+msgid "E_D_UPRIGHT_ROW_BAND_TIP_THREE"
+msgstr "Keep the handles close to your body."
+
+msgid "E_D_UPRIGHT_ROW_BAND_TIP_FOUR"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_TITLE"
+msgstr "Upright Row: Barbell"
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_PREP_TWO"
+msgstr "Hold the barbell in an overhand grip at shoulder width in front of your hips with arms extended."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_EXEC_ONE"
+msgstr "Raise your elbows up and out to the sides until the bar is at your chin level"
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_EXEC_TWO"
+msgstr "Contract your shoulders and hold for a few seconds."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_EXEC_THREE"
+msgstr "Lower the bar to the starting position slowly and repeat."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_TIP_ONE"
+msgstr "Keep your hands moving vertically."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_TIP_TWO"
+msgstr "Keep your elbows higher than your forearms during the exercise."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_TIP_THREE"
+msgstr "Keep the bar close to your body."
+
+msgid "E_D_UPRIGHT_ROW_BARBELL_TIP_FOUR"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_UPRIGHT_ROW_CABLE_TITLE"
+msgstr "Upright Row: Cable"
+
+msgid "E_D_UPRIGHT_ROW_CABLE_PREP_ONE"
+msgstr "Stand before the machine with feet shoulder width apart, Hold the bar in an overhand grip at shoulder width in front of your hips with arms extended."
+
+msgid "E_D_UPRIGHT_ROW_CABLE_EXEC_ONE"
+msgstr "Raise your elbows up and out to the sides until the bar is at your chin level"
+
+msgid "E_D_UPRIGHT_ROW_CABLE_EXEC_TWO"
+msgstr "Contract your shoulders and hold for a few seconds."
+
+msgid "E_D_UPRIGHT_ROW_CABLE_EXEC_THREE"
+msgstr "Lower the bar to the starting position slowly and repeat."
+
+msgid "E_D_UPRIGHT_ROW_CABLE_TIP_ONE"
+msgstr "Keep your hands moving vertically."
+
+msgid "E_D_UPRIGHT_ROW_CABLE_TIP_TWO"
+msgstr "Keep your elbows higher than your forearms during the exercise."
+
+msgid "E_D_UPRIGHT_ROW_CABLE_TIP_THREE"
+msgstr "Keep the bar close to your body."
+
+msgid "E_D_UPRIGHT_ROW_CABLE_TIP_FOUR"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_TITLE"
+msgstr "Upright Row Dumbbell"
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_PREP_TWO"
+msgstr "Hold a dumbbell in each hand in an overhand grip at shoulder width in front of your hips with arms extended."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_EXEC_ONE"
+msgstr "Raise your elbows up and out to the sides until the dumbbells are at your chin level"
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_EXEC_TWO"
+msgstr "Contract your shoulders and hold for a few seconds."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_EXEC_THREE"
+msgstr "Lower the dumbbells to the starting position slowly and repeat."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_TIP_ONE"
+msgstr "Keep your hands moving vertically."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_TIP_TWO"
+msgstr "Keep your elbows higher than your forearms during the exercise."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_TIP_THREE"
+msgstr "Keep the dumbbells close to your body."
+
+msgid "E_D_UPRIGHT_ROW_DUMBBELL_TIP_FOUR"
+msgstr "Keep a straight back during the exercise"
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_TITLE"
+msgstr "Upright Row: Smith Machine"
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_PREP_ONE"
+msgstr "Stand under the machine with feet shoulder width apart."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_PREP_TWO"
+msgstr "Hold the barbell in an overhand grip at shoulder width in front of your hips with arms extended."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_EXEC_ONE"
+msgstr "Raise your elbows up and out to the sides until the bar is at your chin level."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_EXEC_TWO"
+msgstr "Contract your shoulders and hold for a few seconds."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_EXEC_THREE"
+msgstr "Lower the bar to the starting position slowly and repeat."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_TIP_ONE"
+msgstr "Keep your elbows higher than your forearms during the exercise."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_TIP_TWO"
+msgstr "Keep the bar close to your body."
+
+msgid "E_D_UPRIGHT_ROW_SMITH_MACHINE_TIP_THREE"
+msgstr "Keep a straight back during the exercise,"
+
+msgid "E_D_V_UP_TITLE"
+msgstr "V Up"
+
+msgid "E_D_V_UP_PREP_ONE"
+msgstr "Lie flat on the floor with your arms fully extended overhead and legs extended apart in front."
+
+msgid "E_D_V_UP_EXEC_ONE"
+msgstr "Exhale and raise your arms and legs simultaneously to meet at the top."
+
+msgid "E_D_V_UP_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_V_UP_TIP_ONE"
+msgstr "Do not let your legs touch the ground when, lowering them."
+
+msgid "E_D_V_UP_TIP_TWO"
+msgstr "To increase difficulty, use ankle weights or hold a barbell."
+
+msgid "E_D_V_UP_TIP_THREE"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_V_UP_BAND_TITLE"
+msgstr "V Up: Band"
+
+msgid "E_D_V_UP_BAND_PREP_ONE"
+msgstr "Attach the handles to your feet."
+
+msgid "E_D_V_UP_BAND_PREP_TWO"
+msgstr "Lie flat on the floor with your arms fully extended overhead and legs extended apart in front."
+
+msgid "E_D_V_UP_BAND_EXEC_ONE"
+msgstr "Exhale and raise your arms and legs simultaneously to meet at the top."
+
+msgid "E_D_V_UP_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_V_UP_BAND_TIP_ONE"
+msgstr "Do not let your legs touch the ground when lowering them."
+
+msgid "E_D_V_UP_BAND_TIP_TWO"
+msgstr "Keep a braced core during he exercise."
+
+msgid "E_D_V_UP_DUMBBELL_TITLE"
+msgstr "V Up: Dumbbell"
+
+msgid "E_D_V_UP_DUMBBELL_PREP_ONE"
+msgstr "Lie flat on the floor with your arms fully extended overhead holding a dumbbell together and legs extended apart in front."
+
+msgid "E_D_V_UP_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and raise your arms and legs simultaneously to meet at the top."
+
+msgid "E_D_V_UP_DUMBBELL_EXEC_TWO"
+msgstr "Pause for a few seconds, inhale and return to the starting position slowly and repeat."
+
+msgid "E_D_V_UP_DUMBBELL_TIP_ONE"
+msgstr "Do not let your legs touch the ground when lowering them."
+
+msgid "E_D_V_UP_DUMBBELL_TIP_TWO"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_WALL_PUSH_UP_TITLE"
+msgstr "Wall Push-up"
+
+msgid "E_D_WALL_PUSH_UP_PREP_ONE"
+msgstr "Stand in front of a wall and a big step away from it."
+
+msgid "E_D_WALL_PUSH_UP_PREP_TWO"
+msgstr "Put your hands slightly wider than shoulder width apart on the wall and push against it with extended arms."
+
+msgid "E_D_WALL_PUSH_UP_EXEC_ONE"
+msgstr "Inhale and bend the elbows to press your upper body towards the well."
+
+msgid "E_D_WALL_PUSH_UP_EXEC_TWO"
+msgstr "Exhale and push back to the starting position and repeat."
+
+msgid "E_D_WALL_PUSH_UP_TIP_ONE"
+msgstr "Do not fully extend your arms."
+
+msgid "E_D_WALL_PUSH_UP_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_WIDE_ARM_PUSH_UP_TITLE"
+msgstr "Wide Arm Push-up"
+
+msgid "E_D_WIDE_ARM_PUSH_UP_PREP_ONE"
+msgstr "Lie prone on the floor with feet put together, hands very wide apart and arms extended."
+
+msgid "E_D_WIDE_ARM_PUSH_UP_PREP_TWO"
+msgstr "Forma straight line from head to toe."
+
+msgid "E_D_WIDE_ARM_PUSH_UP_EXEC_ONE"
+msgstr "Inhale and bend the elbows to lower your body down until your chest almost touches the floor."
+
+msgid "E_D_WIDE_ARM_PUSH_UP_EXEC_TWO"
+msgstr "Exhale and raise your body back to the starting position and repeat."
+
+msgid "E_D_WIDE_ARM_PUSH_UP_TIP_ONE"
+msgstr "Do not fully extend your arms,"
+
+msgid "E_D_WIDE_ARM_PUSH_UP_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_WIDE_ARM_PUSH_UP_TIP_THREE"
+msgstr "Do not let your chest touch the floor."
+
+msgid "E_D_WIDE_CURL_BARBELL_TITLE"
+msgstr "Wide Curl: Barbell"
+
+msgid "E_D_WIDE_CURL_BARBELL_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_WIDE_CURL_BARBELL_PREP_TWO"
+msgstr "Hold the barbell in a wide underhand grip, resting it against your thighs."
+
+msgid "E_D_WIDE_CURL_BARBELL_EXEC_ONE"
+msgstr "Exhale and curl your forearms towards your chest."
+
+msgid "E_D_WIDE_CURL_BARBELL_EXEC_TWO"
+msgstr "Squeeze your biceps when the bar touches your chest and hold for a few seconds."
+
+msgid "E_D_WIDE_CURL_BARBELL_EXEC_THREE"
+msgstr "Return to the starting position and repeat."
+
+msgid "E_D_WIDE_CURL_BARBELL_TIP_ONE"
+msgstr "Keep your elbows tucked to your sides."
+
+msgid "E_D_WIDE_CURL_BARBELL_TIP_TWO"
+msgstr "Keep a straight back and braced core during the exercise."
+
+msgid "E_D_WIDE_CURL_BARBELL_TIP_THREE"
+msgstr "Keep your knees slightly bent throughout the movement."
+
+msgid "E_D_WINDMILL_KETTLEBELL_TITLE"
+msgstr "Windmill: Kettlebell"
+
+msgid "E_D_WINDMILL_KETTLEBELL_PREP_ONE"
+msgstr "Stand with feet wider than shoulder width apart."
+
+msgid "E_D_WINDMILL_KETTLEBELL_PREP_TWO"
+msgstr "Hold a kettlebell in one hand and press it overhead with the arm extended."
+
+msgid "E_D_WINDMILL_KETTLEBELL_EXEC_ONE"
+msgstr "Bend at your waist and squeeze obliques to the opposite side until touching your feet with the free hand."
+
+msgid "E_D_WINDMILL_KETTLEBELL_EXEC_TWO"
+msgstr "Hold for a few seconds and brace your glutes."
+
+msgid "E_D_WINDMILL_KETTLEBELL_EXEC_THREE"
+msgstr "Return to the starting position slowly and repeat."
+
+msgid "E_D_WINDMILL_KETTLEBELL_EXEC_FOUR"
+msgstr "Switch to the other side and repeat the same repetitions."
+
+msgid "E_D_WINDMILL_KETTLEBELL_TIP_ONE"
+msgstr "Keep the arm holding the kettlebell steady and fully extended overhead."
+
+msgid "E_D_WINDMILL_KETTLEBELL_TIP_TWO"
+msgstr "Keep looking up at the kettlebell and a straight back during the exercise."
+
+msgid "E_D_WIPERS_TITLE"
+msgstr "Wipers"
+
+msgid "E_D_WIPERS_PREP_ONE"
+msgstr "Lie on the floor with arms stretched to your sides to stabilize your body."
+
+msgid "E_D_WIPERS_PREP_TWO"
+msgstr "Lift your legs straight together off the ground until they are vertical to the floor."
+
+msgid "E_D_WIPERS_EXEC_ONE"
+msgstr "Twist your legs to one side while keeping your upper body in place and your knees and feet together."
+
+msgid "E_D_WIPERS_EXEC_TWO"
+msgstr "Pause for a few seconds and return to the starting position slowly."
+
+msgid "E_D_WIPERS_EXEC_THREE"
+msgstr "Complete alternating between left and right."
+
+msgid "E_D_WIPERS_TIP_ONE"
+msgstr "Do not let your legs bounce on the floor fo assist the movement."
+
+msgid "E_D_WIPERS_TIP_TWO"
+msgstr "Keep your legs straight and together throughout the movement."
+
+msgid "E_D_WIPERS_TIP_THREE"
+msgstr "To add difficulty, keep your legs straight."
+
+msgid "E_D_WIPERS_TIP_FOUR"
+msgstr "Keep a braced core during the exercise."
+
+msgid "E_D_WRIST_CURL_BAND_TITLE"
+msgstr "Wrist Curl: Band"
+
+msgid "E_D_WRIST_CURL_BAND_PREP_ONE"
+msgstr "Sit down and secure the band under one foot."
+
+msgid "E_D_WRIST_CURL_BAND_PREP_TWO"
+msgstr "Rest one forearm on your thigh with the wrist ahead of the knee. Hold the handle with an underhand grip."
+
+msgid "E_D_WRIST_CURL_BAND_EXEC_ONE"
+msgstr "Exhale and curl your working wrist up."
+
+msgid "E_D_WRIST_CURL_BAND_EXEC_TWO"
+msgstr "Pause for a few seconds at the top position."
+
+msgid "E_D_WRIST_CURL_BAND_EXEC_THREE"
+msgstr "Inhale and return to the starting position and repeat."
+
+msgid "E_D_WRIST_CURL_BAND_TIP_ONE"
+msgstr "Use the opposite hand to secure the exercised forearm."
+
+msgid "E_D_WRIST_CURL_BAND_TIP_TWO"
+msgstr "Keep your thighs and the exercised forearm parallel to the floor,"
+
+msgid "E_D_WRIST_CURL_BAND_TIP_THREE"
+msgstr "Keep your working elbow and wrist at the same height during the exercise."
+
+msgid "E_D_WRIST_CURL_BARBELL_TITLE"
+msgstr "Wrist Curl: Barbell"
+
+msgid "E_D_WRIST_CURL_BARBELL_PREP_ONE"
+msgstr "Sit on a bench and rest your forearms on the thighs with the wrists ahead of the knees."
+
+msgid "E_D_WRIST_CURL_BARBELL_PREP_TWO"
+msgstr "Hold the barbell in both hands with an underhand grip."
+
+msgid "E_D_WRIST_CURL_BARBELL_EXEC_ONE"
+msgstr "Exhale and curl your wrists up."
+
+msgid "E_D_WRIST_CURL_BARBELL_EXEC_TWO"
+msgstr "Pause or a few seconds at he top position."
+
+msgid "E_D_WRIST_CURL_BARBELL_EXEC_THREE"
+msgstr "Inhale and return to the starting position and repeat."
+
+msgid "E_D_WRIST_CURL_BARBELL_TIP_ONE"
+msgstr "Keep your thighs and forearms parallel to the floor."
+
+msgid "E_D_WRIST_CURL_BARBELL_TIP_TWO"
+msgstr "Keep your elbows and wrists at the same height during he exercise."
+
+msgid "E_D_WRIST_CURL_CABLE_TITLE"
+msgstr "Wrist Curl: Cable"
+
+msgid "E_D_WRIST_CURL_CABLE_PREP_ONE"
+msgstr "Sit on a bench and rest your forearms on the with the wrists ahead of the knees."
+
+msgid "E_D_WRIST_CURL_CABLE_PREP_TWO"
+msgstr "Hold the in both hands with n underhand grip."
+
+msgid "E_D_WRIST_CURL_CABLE_EXEC_ONE"
+msgstr "Exhale and curl your wrists up."
+
+msgid "E_D_WRIST_CURL_CABLE_EXEC_TWO"
+msgstr "Pause or"
+
+msgid "E_D_WRIST_CURL_CABLE_EXEC_THREE"
+msgstr "Inhale and return to the starting position and repeat."
+
+msgid "E_D_WRIST_CURL_CABLE_TIP_ONE"
+msgstr "Keep your thighs and forearms parallel to Floor."
+
+msgid "E_D_WRIST_CURL_CABLE_TIP_TWO"
+msgstr "Keep your elbows and wrists at the same h during he exercise."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_TITLE"
+msgstr "Wrist Curl: Dumbbell"
+
+msgid "E_D_WRIST_CURL_DUMBBELL_PREP_ONE"
+msgstr "Sit before the machine and rest your forearms on the thighs with the wrists ahead of the knees."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_PREP_TWO"
+msgstr "Hold the bar in both hands with an underhand grip."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_EXEC_ONE"
+msgstr "Exhale and curl your wrists up."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_EXEC_TWO"
+msgstr "Pause r a few seconds at the top position."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_EXEC_THREE"
+msgstr "Inhale and return to the starting position and repeat."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_TIP_ONE"
+msgstr "Keep your thighs and forearms parallel to the floor."
+
+msgid "E_D_WRIST_CURL_DUMBBELL_TIP_TWO"
+msgstr "Keep your elbows and wrists at the same height during the exercise."
+
+msgid "E_D_WRIST_ROLLER_PLATE_TITLE"
+msgstr "Wrist Roller: Plate"
+
+msgid "E_D_WRIST_ROLLER_PLATE_PREP_ONE"
+msgstr "Stand with feet shoulder width apart."
+
+msgid "E_D_WRIST_ROLLER_PLATE_PREP_TWO"
+msgstr "Hold the wrist roller with hands shoulder width apart in an overhand grip and arms horizontal."
+
+msgid "E_D_WRIST_ROLLER_PLATE_EXEC_ONE"
+msgstr "Rotate your wrists alternatively onward to bring the plate up to the bar by rolling the rope around the roller."
+
+msgid "E_D_WRIST_ROLLER_PLATE_EXEC_TWO"
+msgstr "Lower the plate to the starting position slowly by rotating your wrists alternatively outward once it reaches the bar."
+
+msgid "E_D_WRIST_ROLLER_PLATE_TIP_ONE"
+msgstr "Start with the rope unwrapped around the roller."
+
+msgid "E_D_WRIST_ROLLER_PLATE_TIP_TWO"
+msgstr "Keep your torso upright and move your forearms and fists only."
+
+msgid "E_D_WRIST_ROLLER_PLATE_TIP_THREE"
+msgstr "Keep your elbows and wrists at the same height during the exercise."
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_TITLE"
+msgstr "Zercher Carry: Barbell"
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_PREP_ONE"
+msgstr "Place the bar in front of your chest with arms crossed, Brace your trunk and stand up tall"
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_EXEC_ONE"
+msgstr "Start walking and hold the bar steadily."
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_EXEC_TWO"
+msgstr "Drop your bar slowly at the end of your track."
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_EXEC_THREE"
+msgstr "Repeat for reps."
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_TIP_ONE"
+msgstr "Do not hold the bar in your hands."
+
+msgid "E_D_ZERCHER_CARRY_BARBELL_TIP_TWO"
+msgstr "To add difficulty, increase the distance of walk gradually,"

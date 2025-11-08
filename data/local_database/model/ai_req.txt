@@ -1,0 +1,350 @@
+Create a ExerciseDefinition List from the exercises:
+
+Here is an example:
+
+
+If you can Then create test to test the output and verify the result is correct for each ExerciseDefinitionan?If some exercises reject the test declare them in next response.
+
+Step 1:
+
+I will send you po messages file for instructions and prepration and key tips for each exercise.
+
+for example for "Ab Wheel" we have a title id that is E_D_AB_WHEEL_TITLE and we have two prepration steps
+
+and three execution steps and  we have 2 tips to create an ExerciseDefinition model.
+
+
+
+msgid "E_D_AB_WHEEL_TITLE"
+
+msgstr "Ab Wheel"
+
+
+
+msgid "E_D_AB_WHEEL_PREP_ONE"
+
+msgstr "Put the wheel roller right under your shoulders on the floor."
+
+
+
+msgid "E_D_AB_WHEEL_PREP_TWO"
+
+msgstr "Kneel on the floor and hold the handles of the wheel roller with your arms extended."
+
+
+
+msgid "E_D_AB_WHEEL_EXEC_ONE"
+
+msgstr "Inhale and slowly roll the wheel forward until your torso is parallel to the ground."
+
+
+
+msgid "E_D_AB_WHEEL_EXEC_TWO"
+
+msgstr "Pause for a few seconds when your body is fully extended"
+
+
+
+msgid "E_D_AB_WHEEL_EXEC_THREE"
+
+msgstr "Exhale and pull the wheel back toward yourself to the starting position and repeat"
+
+
+
+msgid "E_D_AB_WHEEL_TIP_ONE"
+
+msgstr "To add difficulty, leave only your feet on the floor"
+
+
+
+msgid "E_D_AB_WHEEL_TIP_TWO"
+
+msgstr "Keep a straight back and braced core during the exercise"
+
+
+
+
+
+Step 2-A:  
+
+I will send you exercise txt file.
+
+From that figure out FOCUS AREA list for creating ExerciseDefinition.
+
+for example in Ab Wheel we have FOCUS AREA Abs, Shoulders, Back so the focus areas list are [FocusArea.ABDOMEN, FocusArea.SHOULDER, FocusArea.BACK]
+
+find out which type of focus areas we deal with for each exercise, here is the FocusArea enums:
+
+
+
+class FocusArea(StrEnum):
+
+    """Enumeration for primary muscle groups targeted by an exercise."""
+
+    ARM = 'arm'
+
+    SHOULDER = 'shoulder'
+
+    CHEST = 'chest'
+
+    BACK = 'back'
+
+    LEG = 'leg'
+
+    BUTTOCKS = 'buttocks'
+
+    ABDOMEN = 'abdomen'
+
+    FULL_BODY = 'full_body'
+
+
+
+
+
+Step 2-B: 
+
+I will send you exercise txt file.
+
+From that figure out Exercise Equipment list for creating ExerciseDefinition.
+
+For example in Ab Wheel we have FOCUS AREA Abs, Shoulders, Back so the focus areas list are [FocusArea.ABDOMEN, FocusArea.SHOULDER, FocusArea.BACK]
+
+Find out which type of focus areas we deal with for each exercise, here is the ExerciseEquipment enums:
+Do not add to ExerciseEquipment enum, instead figure it out what each exercise use? 
+for example for an exercise with a roller nearest option whould be body weight or for a pull-up bar the nearest option would be weight machine
+
+
+class ExerciseEquipment(StrEnum):
+
+    BODY_WEIGHT = 'body_weight'
+
+    BENCH = 'bench'
+
+    WEIGHT_MACHINE = 'weight_machine'
+
+    CABLE_MACHINE = 'cable_machine'
+
+    BARBELL = 'barbell'
+
+    DUMBBELL = 'dumbbell'
+
+    BAND = 'band'
+
+    KETTLEBELL = 'kettlebell'
+
+    SMITH_MACHINE = 'smith_machine'
+
+
+
+
+
+Step 3: 
+
+base on exercise name and execution steps and your exercise history database guess the best ExerciseMetricType 
+
+for example Ab Wheel is ExerciseMetricType.REPS_ONLY type.
+
+find out which type of exercise ExerciseMetricType we deal with , here is the ExerciseMetricType enums:
+
+
+
+class ExerciseMetricType(StrEnum):
+
+    """
+
+    Enumeration for how an exercise's performance is measured.
+
+    Renamed from 'ExerciseRecordType' for clarity.
+
+    """
+
+    REPS_ONLY = 'reps_only' 
+
+    PERCENT_1RM_AND_REPS = 'percent_1rm_and_reps'  
+
+    TIME_BASED = 'time_based'
+
+
+
+Step 4: 
+
+Base on information you gathered in last steps, create ExerciseDefinition
+
+Hre is the final create ExerciseDefinition result for provided exercise example:
+
+        ExerciseDefinition(
+
+            id='exercise-1',
+
+            title= "E_D_AB_WHEEL_TITLE",
+
+            video_urls=['regular_directory/exercises/videos/ab_wheel.mp4'],
+
+            cover_image_url=['regular_directory/exercises/images/ab_wheel.png'],
+
+                preparation_steps=[
+
+                    'E_D_AB_WHEEL_PREP_ONE',
+
+                    'E_D_AB_WHEEL_PREP_TWO'
+
+                ],
+
+                execution_steps=[
+
+                    'E_D_AB_WHEEL_EXEC_ONE',
+
+                    'E_D_AB_WHEEL_EXEC_TWO',
+
+                    'E_D_AB_WHEEL_EXEC_THREE'
+
+                ],
+
+                key_tips=[
+
+                    'E_D_AB_WHEEL_TIP_ONE',
+
+                    'E_D_AB_WHEEL_TIP_TWO'
+
+                ],
+
+            focus_areas=[FocusArea.ABDOMEN, FocusArea.SHOULDER, FocusArea.BACK],
+
+            equipment=ExerciseEquipment.BODY_WEIGHT,
+
+            metric_type=ExerciseMetricType.REPS_ONLY
+
+        )
+
+
+
+Step 6: Create a  simple python list and return exercises you created 
+
+class ExercisesDefinition:
+
+    """Container class holding a list of all defined ExerciseDefinition objects."""
+
+    exercises: List[ExerciseDefinition] = [
+
+        ExerciseDefinition(
+
+            id='exercise-1',
+
+            title= "E_D_AB_WHEEL_TITLE",
+
+            video_urls=['regular_directory/exercises/videos/ab_wheel.mp4'],
+
+            cover_image_url=['regular_directory/exercises/images/ab_wheel.png'],
+
+                preparation_steps=[
+
+                    'E_D_AB_WHEEL_PREP_ONE',
+
+                    'E_D_AB_WHEEL_PREP_TWO'
+
+                ],
+
+                execution_steps=[
+
+                    'E_D_AB_WHEEL_EXEC_ONE',
+
+                    'E_D_AB_WHEEL_EXEC_TWO',
+
+                    'E_D_AB_WHEEL_EXEC_THREE'
+
+                ],
+
+                key_tips=[
+
+                    'E_D_AB_WHEEL_TIP_ONE',
+
+                    'E_D_AB_WHEEL_TIP_TWO'
+
+                ],
+
+            focus_areas=[FocusArea.ABDOMEN, FocusArea.SHOULDER, FocusArea.BACK],
+
+            equipment=ExerciseEquipment.BODY_WEIGHT,
+
+            metric_type=ExerciseMetricType.REPS_ONLY
+
+        ),
+
+]
+Start ExerciseDefinition id use 'exercise-index' format for id and start from index 322
+
+I will send you the list of exercises images, all of them have cover image and some of them has video
+
+images:
+
+Standing Side Crunch band.png
+Standing Side Crunch Cable.png
+Standing Single Leg Calf Raise Dumbbell.png
+Standing Single Leg Calf Raise.png
+Standing Single Leg Curl Band.png
+Standing Single Leg Curl Cable.png
+Standing Single Leg Curl Machine.png
+Standing Single Leg Curl.png
+Standing Torso Rotation Machine.png
+Standing Twist  Band.png
+Standing Twist Barbell.png
+Step-up Dumbbell.png
+Step-up- Barbell.png
+Step-up.png
+Stiff Leg Deadlift - Band.png
+Stiff Leg Deadlift - Barbell.png
+Stiff Leg Deadlift - Dumbbell.png
+Stiff Leg Deadlift - Kettlebell.png
+Stiff Leg Deadlift - Smith Machine.png
+Straight Arm Plank.png
+Sumo Deadlift Barbell.png
+Sumo Squat Barbell.png
+Sumo Squat Dumbbell.png
+Sumo Squat Kettlebell.png
+Sumo Squat Smith Machine.png
+Sumo Squat.png
+Superman Row.png
+Superman.png
+Supine Floor Row.png
+Thruster Barbell.png
+Thruster Kettlebell.png
+Toes To Bar.png
+Triceps Dip (Assisted).png
+Triceps Dip On Bench.png
+Triceps Dip On Floor.png
+Triceps Dip.png
+Triceps Extension Cable.png
+Triceps Extension Machine.png
+Triceps Kickback  Band.png
+Triceps Kickback Cable.png
+Triceps Kickback Dumbbell.png
+Triceps Pushdown Band.png
+Triceps Pushdown Cable.png
+Tuck Crunch Dumbbell.png
+Turkish Get Up Kettlebell.png
+Twisting Overhead Press Band.png
+Twisting Overhead Press Cable.png
+Up-Down Twist Band.png
+Up-Down Twist Cable.png
+Up-Down Twist Dumbbell.png
+Upright Row Band.png
+Upright Row Barbell.png
+Upright Row Cable.png
+Upright Row Dumbbell.png
+Upright Row Smith Machine.png
+V Up Band.png
+V Up Dumbbell.png
+V Up.png
+Wall Push-up.png
+Wide Arm Push-up.png
+Wide Curl Barbell.png
+Windmill Kettlebell.png
+Wipers.png
+Wrist Curl Band.png
+Wrist Curl Barbell.png
+Wrist Curl Cable.png
+Wrist Curl Dumbbell.png
+Wrist Roller Plate.png
+Zercher Carry Barbell.png
+
+Do this prompt in 2 Responses , send 1 response to I can check it and if it is ok then send the rest

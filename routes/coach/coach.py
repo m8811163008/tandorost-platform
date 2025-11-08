@@ -330,13 +330,18 @@ async def read_exercise_definition(
     
     def translate_exercise(exercise):
         # Translate steps and tips using translation_manager
+        try:
             return {
-                **exercise.model_dump(),
-                'title': translation_manager.gettext(getattr(TranslationKeys, exercise.title)),
-                'preparation_steps': [translation_manager.gettext(getattr(TranslationKeys, key)) for key in exercise.preparation_steps],
-                'execution_steps': [translation_manager.gettext(getattr(TranslationKeys, key)) for key in exercise.execution_steps],
-                'key_tips': [translation_manager.gettext(getattr(TranslationKeys, key)) for key in exercise.key_tips],
-            }
+                        **exercise.model_dump(),
+                        'title': translation_manager.gettext(getattr(TranslationKeys, exercise.title)),
+                        'preparation_steps': [translation_manager.gettext(getattr(TranslationKeys, key,'')) for key in exercise.preparation_steps],
+                        'execution_steps': [translation_manager.gettext(getattr(TranslationKeys, key,'')) for key in exercise.execution_steps],
+                        'key_tips': [translation_manager.gettext(getattr(TranslationKeys, key,'')) for key in exercise.key_tips],
+                    } 
+        except Exception as e:
+            print(e)
+            
+            
 
     return JSONResponse(
         content=[translate_exercise(exercise) for exercise in exercises_definition]
