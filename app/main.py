@@ -72,6 +72,6 @@ async def read_root():
     from dependeny_manager import dm
     await dm.local_database.clear()
     welcome_message = translation_manager.gettext(TranslationKeys.WELCOME_MESSAGE).format(api_uri=f"{root_endpoint}/openapi.json")
-    return "welcome_messages"
+    return welcome_message
 
 

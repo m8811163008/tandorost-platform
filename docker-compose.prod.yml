@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tandorost_platform
+    env_file:
+      - .env.production
+
+    command: /etc/poetry/bin/poetry run fastapi app/main.py --host 0.0.0.0 --port 8001
+
+    # 5. PORTS (Keep this the same)
+    ports:
+      - "8001:8001"
+
+  mongodb:
+    image: mongo:latest # Use the official MongoDB image
+    container_name: tandorost_db
+    restart: always
+    ports:
+      - "27017:27017" # Expose the standard MongoDB port (optional for inter-container communication)
+    volumes:
+      - mongo_data:/data/db # Persist the database data
+
+volumes:
+  .:
+  mongo_data:
+
+

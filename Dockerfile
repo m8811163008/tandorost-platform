@@ -1,3 +1,4 @@
+# `docker-compose logs -f` for real time hot reload
 # For Debug and DEVELOPE
 # syntax=docker/dockerfile:1
 
