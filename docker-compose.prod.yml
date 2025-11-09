@@ -9,7 +9,7 @@ services:
     env_file:
       - .env.production
 
-    command: /etc/poetry/bin/poetry run fastapi app/main.py --host 0.0.0.0 --port 8001
+    command: /etc/poetry/bin/poetry run fastapi run app/main.py --host 0.0.0.0 --port 8001 --proxy-headers
 
     # 5. PORTS (Keep this the same)
     ports:
