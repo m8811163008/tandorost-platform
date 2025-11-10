@@ -6,6 +6,11 @@ leep 2 - Wait a moment
 *.pyc
 **/__pycache__/
 
+
+protected_assets/
+.protected_assets/
+
+
 # Ignore VS Code settings
 .vscode/
 

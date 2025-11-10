@@ -6,8 +6,7 @@ venv/
 .env.development
 
 
-protected_assets/
-.protected_assets/
+
 
 __pycache__/
 .__pycache__/
