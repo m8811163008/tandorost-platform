@@ -3,6 +3,7 @@ from datetime import datetime, timedelta, timezone
 from random import Random
 from typing import Any, Callable
 
+
 from fastapi import HTTPException, UploadFile, status
 from fastapi.responses import JSONResponse
 
@@ -117,7 +118,11 @@ class AuthRepository:
     async def update_user_account(self, password: str, username: str, is_verified: bool = True) -> UserInDB:
         user = await self.database.read_user_by_identifier(identifier=username)
         user_type = username_type(username=username)
-        hashed_password = get_password_hash(password=password)
+        try:
+            
+            hashed_password = get_password_hash(password=password)
+        except Exception as e:
+            print(e.__str__())
 
         if user is None:
             # Registration flow: create new user

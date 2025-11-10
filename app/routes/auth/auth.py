@@ -256,6 +256,7 @@ async def logout(
     })
 async def verify_google(
     google_token: Annotated[str, Body()],
+    # TODO update default password on front side
     default_google_user_password : Annotated[str | None, Query()] = "4321"
 ):
     try:
@@ -271,11 +272,13 @@ async def verify_google(
         if user_in_db is None:
             # Registration flow: create user with email verified
             # You may want to store Google ID, name, and picture if your model supports it
+            assert default_google_user_password is not None, "Google default password must be provided for new user registration."
             upserted_user = await dm.auth_repo.update_user_account(
-                password=default_google_user_password,  # default_google_user_password
+                password=default_google_user_password, 
                 username=user_email,
                 is_verified=True
             )
+            assert upserted_user.id is not None
             # Optionally, create free subscription for new users
             await createFreeSubscription(user_id=upserted_user.id)
             await dm.user_repo.update_referral_when_register(invite_contact=user_email, invited_user_id=upserted_user.id)
