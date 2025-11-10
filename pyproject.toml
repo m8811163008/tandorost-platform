@@ -25,6 +25,7 @@ google-auth = "2.40.3"
 # Add Uvicorn for local development
 uvicorn = "^0.29.0" 
 pytest = "^8.1.1"
+debugpy = "^1.8"
 
 [build-system]
 requires = ["poetry-core"]

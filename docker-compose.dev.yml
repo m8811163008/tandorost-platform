@@ -12,10 +12,10 @@ services:
     volumes:
       - .:/tandorost-platform # This syncs your local code into the container
 
-    command: /etc/poetry/bin/poetry run fastapi dev app/main.py --host 0.0.0.0 --port 8001 --reload
-
+    command: /etc/poetry/bin/poetry run python -m debugpy --listen 0.0.0.0:5678  --wait-for-client -m fastapi dev app/main.py --host 0.0.0.0 --port 8001 --reload
     # 5. PORTS (Keep this the same)
     ports:
+      - "5678:5678"
       - "8001:8001"
 
   mongodb:

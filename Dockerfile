@@ -30,6 +30,9 @@ COPY . .
 # FIX: Use the explicit, reliable path for the Poetry executable in $POETRY_HOME.
 RUN $POETRY_HOME/bin/poetry install --no-root
 
+# 🌟 NEW: Install debugpy for VS Code Remote Debugging
+# This is installed globally to be available for the 'docker-compose.debug.yml' command
+RUN pip install debugpy
 
 # 5. Expose the application port
 EXPOSE 8001

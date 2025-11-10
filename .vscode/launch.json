@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Remote Attach (Docker)",
+            "type": "python",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            // 🌟 Crucial: This must match your WORKDIR in the Dockerfile!
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/tandorost-platform"
+                }
+            ],
+            "justMyCode": true, // Set to false if you want to step into third-party libraries
+            "logToFile": true // Useful for troubleshooting connection issues
+        }
+    ]
+}
