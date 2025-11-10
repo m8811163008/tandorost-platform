@@ -2,6 +2,9 @@
 venv/
 .venv/
 
+.env.production
+.env.development
+
 
 protected_assets/
 .protected_assets/
