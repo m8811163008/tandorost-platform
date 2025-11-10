@@ -5,7 +5,7 @@ from data.common_data_model.language import Language
 # from typing import List, Tuple
 
 class TranslationManager:
-    def __init__(self, default_language: Language = Language.ENGLISH, locales_dir: str = "locales"):
+    def __init__(self, default_language: Language = Language.ENGLISH, locales_dir: str = "app/locales"):
         self.default_language = default_language
         self.locales_dir = locales_dir
         self.translation: gettext.NullTranslations | None = None

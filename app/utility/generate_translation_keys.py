@@ -31,10 +31,13 @@ def generate_translation_keys(po_file_path: str, output_file_path: str):
 # Example usage
 if __name__ == "__main__":
     # Path to the .po file
-    po_file = "c:/projects/tandorost-platform/locales/en/LC_MESSAGES/messages.po"
+    # po_file = "c:/projects/tandorost-platform/app/locales/en/LC_MESSAGES/messages.po"
+    po_file = "/tandorost-platform/app/locales/en/LC_MESSAGES/messages.po"
+
 
     # Path to the output Python file
-    output_file = "c:/projects/tandorost-platform/utility/translation_keys.py"
+    # output_file = "c:/projects/tandorost-platform/app/utility/translation_keys.py"
+    output_file = "/tandorost-platform/app/utility/translation_keys.py"
 
     # Generate the translation keys
     generate_translation_keys(po_file, output_file)
