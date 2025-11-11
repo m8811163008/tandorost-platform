@@ -68,10 +68,17 @@ app.mount(regular_directory_path, StaticFiles(directory=f"{root_volume}/{regular
 
 @app.get("/")
 async def read_root():
-    # DEBUG CLEAR DATABASE
-    from dependeny_manager import dm
-    await dm.local_database.clear()
+
     welcome_message = translation_manager.gettext(TranslationKeys.WELCOME_MESSAGE).format(api_uri=f"{root_endpoint}/openapi.json")
     return welcome_message
+
+# UNCOMMENT WITH CAUTION
+# @app.get("/clear")
+# async def clear():
+#     # DEBUG CLEAR DATABASE
+#     from dependeny_manager import dm
+#     await dm.local_database.clear()
+    
+#     return "DATABASE CLEARED"
 
 
