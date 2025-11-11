@@ -1,0 +1,11 @@
+token_url = "auth/token/"
+root_volume = "app"
+root_endpoint = "/api/v1"
+protected_directory = "protected_assets"
+regular_directory = "regular_directory"
+protected_directory_path = f"/{root_volume}/{protected_directory}"
+regular_directory_path = f"/{root_volume}/{regular_directory}"
+upload_directory_path = f"{root_volume}/{protected_directory}/uploads"
+verification_sms_panel_body_id = '316187'
+invite_sms_panel_body_id = '381796'
+rate_limit_second = 120

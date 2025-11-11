@@ -1,0 +1,32 @@
+# pyproject.toml
+[tool.poetry]
+name = "fitness-platform-webservice"
+# STARTING VERSION: 0.0.0 for initial release
+version = "1.0.0" 
+description = "FastAPI webservice for the fitness platform project.Https://Tandorost-a.ir"
+authors = ["Milad Hesami <m8811163008@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.13.6"
+fastapi = {extras = ["standard"], version = "0.115.12"}
+pydantic = "2.11.2"
+pyjwt = "2.10.1"
+bcrypt = "5.0.0"
+motor = "3.7.0"
+polib = "1.2.0"
+httpx = "0.28.1"
+google-genai = "1.11.0"
+google-auth = "2.40.3"
+
+[tool.poetry.group.dev.dependencies]
+# Add Uvicorn for local development
+uvicorn = "^0.29.0" 
+pytest = "^8.1.1"
+debugpy = "^1.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

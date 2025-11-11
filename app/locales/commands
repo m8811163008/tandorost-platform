@@ -1,0 +1,4 @@
+#You need to install the gettext package, which includes the msgfmt tool.
+#Compile the .po file into a .mo file using the msgfmt tool:
+msgfmt -o C:\projects\tandorost-platform\locales\en\LC_MESSAGES\messages.mo C:\projects\tandorost-platform\locales\en\LC_MESSAGES\messages.po
+python utility/generate_translation_keys.py

@@ -1,0 +1,565 @@
+
+C:\projects\tandorost-platform\regular_directory\exercises\videos>dir /b
+ab_wheel.mp4
+arm_circles.mp4
+arnold_dumbbell.mp4
+backward_lunge.mp4
+backward_lunge_dumbbell.mp4
+backward_lunge_with_leg.mp4
+back_extension_machine.mp4
+back_extension_on_floor.mp4
+band_pull_through.mp4
+bench_fly_cable.mp4
+bench_fly_dumbbell.mp4
+bench_jump.mp4
+bench_pistol_squat.mp4
+bench_press_band.mp4
+bench_press_barbell.mp4
+bench_press_cable.mp4
+bench_press_close_grip_barbell.mp4
+bench_press_close_grip_dumbbell.mp4
+bench_press_dumbbell.mp4
+bench_press_smith_machine.mp4
+bench_press_wide_grip_barbell.mp4
+bench_press_wide_grip_smith_machine.mp4
+bench_squat_barbell.mp4
+bench_squat_dumbbell.mp4
+bent_arm_pullover_barbell.mp4
+bent_knee_side_plank.mp4
+bent_knee_wipers.mp4
+bent_over_rear_delt_row_band.mp4
+bent_over_rear_delt_row_dumbbell.mp4
+bent_over_rear_delt_row_kettlebell.mp4
+bent_over_rear_delt_row_smith_machine.mp4
+bent_over_reverse_fly_band.mp4
+bent_over_reverse_fly_cable.mp4
+bent_over_reverse_fly_dumbbell.mp4
+bent_over_row_barbell.mp4
+bent_over_row_dumbbell.mp4
+bent_over_row_kettlebell.mp4
+bent_over_row_reverse_grip_barbell.mp4
+bent_over_row_reverse_grip_dumbell.mp4
+bent_over_row_smith_machine.mp4
+bent_over_row_with_twist_band.mp4
+bicep_curl.mp4
+bicep_curl_barbell.mp4
+bicep_curl_cable.mp4
+bicep_curl_dumbbell.mp4
+bicep_curl_smith_machine.mp4
+bicycle_crunch_band.mp4
+
+
+
+C:\projects\tandorost-platform\regular_directory\exercises\images>dir /b
+ab_wheel.png
+alternating_punch.png
+alternating_v_up_band.png
+arm_circles.png
+arnold_dumbbell.png
+backward _lunge_dumbbell.png
+backward_lunge kettlebell.png
+backward_lunge _cable.png
+backward_lunge.png
+backward_lunge_barbell.png
+backward_lunge_smith_machine.png
+backward_lunge_with_leg.png
+back_extension _on_floor.png
+back_extension.png
+back_extension_band.png
+back_extension_machine.png
+back_extension_on_floor.png
+ball_slams.png
+band_pull_through.png
+bench_fly_cable.png
+bench_fly_dumbbell.png
+bench_jump.png
+bench_pistol_squat.png
+
+bench_press_band.png
+bench_press_barbell.png
+bench_press_cable.png
+bench_press_close_grip_barbell.png
+bench_press_close_grip_dumbbell.png
+bench_press_dumbbell.png
+bench_press_smith_machine.png
+bench_press_wide_grip_barbell.png
+bench_press_wide_grip_smith_machine.png
+bench_squat.png
+bench_squat_barbell.png
+bench_squat_dumbbell.png
+bent_arm_pullover_barbell.png
+bent_knee_bicycle_crunch.png
+bent_knee_side_plank.png
+bent_knee_wipers.png
+bent_over_rear_delt_row_band.png
+bent_over_rear_delt_row_barbell.png
+bent_over_rear_delt_row_dumbbell.png
+bent_over_rear_delt_row_kettlebell.png
+bent_over_rear_delt_row_smith_machine.png
+bent_over_reverse_fly_band.png
+bent_over_reverse_fly_cable.png
+bent_over_reverse_fly_dumbbell.png
+bent_over_row_band.png
+bent_over_row_barbell.png
+bent_over_row_dumbbell.png
+bent_over_row_kettlebell.png
+bent_over_row_reverse_grip_barbell.png
+bent_over_row_reverse_grip_dumbell.png
+bent_over_row_smith_machine.png
+bent_over_row_with_twist_band.png
+----az in ja
+bicep_curl.png
+bicep_curl_band.png
+bicep_curl_barbell.png
+bicep_curl_cable.png
+bicep_curl_dumbbell.png
+bicep_curl_machine.png
+bicep_curl_smith_machine.png
+bicycle_crunch.png
+bicycle_crunch_band.png
+bird_dog.png
+boxer_shuffle.png
+bulgarian_split_squat.png
+bulgarian_split_squat_barbell.png
+bulgarian_split_squat_dumbbell.png
+burpee.png
+butt_kicks.png
+cable_pull_through.png
+chest_dip.png
+chest_dip_assisted.png
+chin_up.png
+chin_up_assisted.png
+clean_and_press_barbell.png
+clean_and_press_kettlebell.png
+clean_barbell.png
+close_grip_push_up.png
+concentration_curl_band.png
+concentration_curl_barbell.png
+concentration_curl_cable.png
+concentration_curl_dumbbell.png
+crossbody_crunch.png
+crossbody_hammer_curl_dumbbell.png
+crossbody_mountain_climber.png
+crunch.png
+crunch_legs_on_stability_ball.png
+crunch_machine.png
+cuban_rotation.png
+cuban_rotation_band.png
+cuban_rotation_dumbbell.png
+curtsey_lunge.png
+curtsey_lunge_barbell.png
+curtsey_lunge_dumbbell.png
+curtsey_lunge_kettlebell.png
+deadlift _kettlebell.png
+deadlift_band.png
+deadlift_barbell.png
+deadlift_dumbbell.png
+deadlift_high_pull_barbell.png
+deadlift_smith_machine.png
+decline_bench_fly_cable.png
+decline_bench_fly_dumbbell.png
+decline_bench_press_barbell.png
+decline_bench_press_cable.png
+decline_bench_press_dumbbell.png
+decline_bench_press_smith_machine.png
+decline_bench_press_wide_grip_ barbell.png
+decline_bench_pullover_barbell.png
+decline_bent_arm_pullover _barbell.png
+decline_crunch.png
+decline_push_up.png
+decline_reverse_crunch.png
+diamond_push_up.png
+
+donkey_kick.png
+donkey_kick_machine.png
+down_up_twist_band.png
+down_up_twist_cable.png
+drag_curl_barbell.png
+drag_curl_cable.png
+drag_curl_dumbbell.png
+dumbbell_swing.png
+elbow_arm_circles.png
+external_rotation_band.png
+external_rotation_cable.png
+external_rotation_dumbbell.png
+face_pull_band.png
+face_pull_cable.png
+farmer_s_carry_dumbbell.png
+farmer_s_carry_kettlebell.png
+fire_hydrant.png
+flat_around_the_world_dumbbell.png
+Floor Bent-Arm Pullover  Kettlebell.png
+Floor Press Barbell.png
+Front Raise Band.png
+Front Raise Barbell.png
+Front Raise Cable.png
+Front Raise Dumbbell.png
+Front Raise Plate.png
+Front Raise.png
+Front Squat Barbell.png
+Front Squat Cable.png
+Front Squat Kettlebell.png
+Front Squat Smith Machine.png
+Front Squat- Dumbbell.png
+Glute Bridge - Dumbbell.png
+Glute Bridge Abduction.png
+Glute Bridge Barbell.png
+Glute Bridge Feet On Bench Barbell.png
+Glute Bridge Feet On Bench.png
+Glute Bridge.png
+Glute Frog Bridge.png
+Glute Ham Raise.png
+Glute Kickback Band.png
+Glute Kickback.png
+Good Morning Band.png
+Good Morning Barbell.png
+Good Morning Smith Machine.png
+Gorilla Chin Crunch.png
+Hack Squat Barbell.png
+Hack Squat Machine.png
+Hammer Curl Band.png
+Hammer Curl Cable.png
+Hammer Curl Dumbbell.png
+Hang Clean Barbell.png
+Hang Snatch Barbell.png
+Hanging Knee Raise.png
+Hanging Leg Raise Twist.png
+Hanging Leg Raise.png
+Heel Touch.png
+High Knee Skips.png
+Hip Abductor Band.png
+Hip Abductor Cable.png
+Hip Adductor Machine.png
+Hip Extension Machine.png
+Hip Flexion Band.png
+Hip Flexion Machine.png
+Hip Frog Extension Smith Machine.png
+Hip Frog Extension.png
+Hip Thrust Barbell.png
+Hip Thrust- Cable.png
+Hip Thrust- Smith Machine.png
+Hip Thrust.png
+Incline Around the World Dumbbell.png
+Incline Bench Fly Cable.png
+Incline Bench Fly Dumbbell.png
+Incline Bench Press Barbell.png
+Incline Bench Press Cable.png
+Incline Bench Press Close Grip Barbell.png
+Incline Bench Press Dumbbell.png
+Incline Bench Press Smith Machine.png
+Incline Bicep Curl Dumbbell.png
+Incline Chest Press.png
+Incline Push-Up.png
+Incline Reverse Fly - Dumbbell.png
+Incline Row Barbell.png
+Incline Row Cable.png
+Incline Row Dumbbell.png
+Internal Rotation Band.png
+Internal Rotation Cable.png
+Inverted Row Reverse Grip.png
+Inverted Row.png
+Jump Squat Barbell.png
+Jump Squat- Dumbbell.png
+Jump Squat.png
+Jumping Jack.png
+Kettlebell Swing.png
+Knee Push-up.png
+Knee Raise Twist.png
+Knee Raise.png
+Kneeling Crunch Band.png
+Kneeling Crunch Cable.png
+Kneeling Plank.png
+Kneeling Pull-down Band.png
+Kneeling Torso Rotation Machine.png
+Kneeling Triceps Extension.png
+Lat Pulldown (Close Grip) Band.png
+Lat Pulldown (Close Grip) Cable.png
+Lat Pulldown (Reverse Grip) Band.png
+Lat Pulldown (Reverse Grip) Cable.png
+Lat Pulldown (Straight Arm) Band.png
+Lat Pulldown (Straight Arm) Cable.png
+Lat Pulldown (Wide Grip) Cable.png
+Lat Pulldown Cable.png
+Lat Pulldown Machine.png
+Lat Pulldown With Twist Band.png
+Lateral Bench Jump.png
+Lateral Raise - Machine.png
+Lateral Raise Band.png
+Lateral Raise Cable.png
+Lateral Raise Dumbbell.png
+Lateral Raise Kettlebell.png
+Lateral Raise.png
+Lateral Step-up Smith Machine.png
+Leg Bicep Curl.png
+Leg Extension Band.png
+Leg Extension Machine.png
+Leg Press Machine.png
+Leg Press Smith Machine.png
+Long Arm Crunch.png
+Lunge Barbell.png
+Lunge Cable.png
+Lunge Dumbbell.png
+Lunge Kettlebell.png
+Lunge.png
+Lying Hip Adductor.png
+Lying Hip Raise Smith Machine.png
+Lying Knee Raise.png
+Lying Leg Curl Band.png
+Lying Leg Curl- Dumbbell.png
+Lying Leg Curl- Machine.png
+Lying Leg Raise.png
+Lying Reverse Fly.png
+Mountain Climber.png
+Muscle Up.png
+Oblique Crunch.png
+Oblique V Up.png
+Overhead Press (Close Grip) Barbell.png
+Overhead Press (Wide Grip)  Barbell.png
+Overhead Press Band.png
+Overhead Press Barbell.png
+Overhead Press Cable.png
+Overhead Press Dumbbell.png
+Overhead Press Kettlebell.png
+Overhead Press Smith Machine.png
+Overhead Press.png
+Overhead Squat Barbell.png
+Overhead Triceps Extension Band.png
+Overhead Triceps Extension Barbell.png
+Overhead Triceps Extension Cable.png
+Overhead Triceps Extension Dumbbell.png
+Pec Deck Fly Machine.png
+Pendlay Row Barbell.png
+Pike Push-up Feet On Bench.png
+Pike Push-up.png
+Pistol Squat.png
+Plank.png
+Power Clean Barbell.png
+Power Push Away.png
+Power Snatch Barbell.png
+Prayer Push.png
+Preacher Curl Barbell.png
+Preacher Curl Cable.png
+Preacher Curl Dumbbell.png
+Preacher Curl Machine.png
+Prone Flutter Kicks.png
+Pull Apart Band.png
+Pull Up (Assisted).png
+Pull Up (Close Grip).png
+Pull Up (Reverse Grip).png
+Pull Up (Wide Grip).png
+Pull Up Band.png
+Pull Up Plate.png
+Pull Up.png
+Pullover  Barbell.png
+Pullover - Dumbbell.png
+Pullover Cable.png
+Pullover Machine.png
+Push Press Barbell.png
+Push-Up Band.png
+Push-Up Row Dumbbell.png
+Push-Up to Side Plank.png
+Push-Up.png
+Rack Pull Barbell.png
+Renegade Row  Kettlebell.png
+Renegade Row Dumbbell.png
+Reverse Concentration Curl Dumbbell.png
+Reverse Crunch Cable.png
+Reverse Crunch Machine.png
+Reverse Crunch.png
+Reverse Curl Band.png
+Reverse Curl Barbell.png
+Reverse Curl Cable.png
+Reverse Curl Dumbbell.png
+Reverse Plank.png
+Reverse Wrist Curl Band.png
+Reverse Wrist Curl Barbell.png
+Reverse Wrist Curl Cable.png
+Reverse Wrist Curl Dumbbell.png
+Romanian Deadlift Barbell.png
+Romanian Deadlift Dumbbell.png
+Row in Doorway.png
+Russian Twist Dumbbell.png
+Russian Twist.png
+Seated Calf Press Machine.png
+Seated Calf Raise Barbell.png
+Seated Calf Raise Dumbbell.png
+Seated Calf Raise Machine.png
+Seated Chest Fly Machine.png
+Seated Chest Press Machine.png
+Seated Crunch Machine.png
+Seated Hip Abductor  Machine.png
+Seated Hip Adductor Machine.png
+Seated Hip External Rotation Band.png
+Seated Hip Internal Rotation Band.png
+Seated In-And-Out Dumbbell.png
+Seated In-And-Out.png
+Seated Leg Curl Machine.png
+Seated Leg Press Machine.png
+Seated Overhead Press Barbell.png
+Seated Overhead Press Dumbbell.png
+Seated Overhead Press Machine.png
+Seated Overhead Press Smith Machine.png
+Seated Rear Delt Row Dumbbell.png
+Seated Reverse Fly Machine.png
+Seated Row (Close Grip) Machine.png
+Seated Row (Wide Grip) Cable.png
+Seated Row Cable.png
+Seated Row Machine.png
+Seated Row With Twist Band.png
+Seated Torso Rotation Machine.png
+Shrug Barbell.png
+Shrug Cable.png
+Shrug Dumbbell.png
+Shrug Machine.png
+Shrug Smith Machine.png
+Shrug.png
+Side Bridge.png
+Side Lunge Barbell.png
+Side Lunge Cable.png
+Side Lunge Dumbbell.png
+Side Lunge Kettlebell.png
+Side Lunge.png
+Side Lying Bicep Curl.png
+Side Plank.png
+Single Arm Bent-over Row Cable.png
+Single Arm Bent-over Row Dumbbell.png
+Single Arm Bent-over Row Kettlebell.png
+Single Arm Lat Pulldown Cable.png
+Single Arm Lateral Raise Cable.png
+Single Leg Deadlift - Dumbbell.png
+Single Leg Deadlift Kettlebell.png
+Single Leg Deadlift.png
+Single Leg Hip Thrust Barbell.png
+Single Leg Plank.png
+Sit-Up Dumbbell.png
+Sit-Up Kettlebell.png
+Sit-Up Twist.png
+Sit-Up.png
+// TA INJA
+Skull Crusher  Barbell.png
+Skull Crusher Band.png
+Skull Crusher Cable.png
+Skull Crusher Dumbbell.png
+Sled Calf Press Machine.png
+Snatch Barbell.png
+Snatch Press Under Barbell.png
+Snatch Pull Barbell.png
+Spiderman Push-up.png
+Split Jerk Barbell.png
+Split Squat - Barbell.png
+Split Squat - Dumbbell.png
+Split Squat Band.png
+Split Squat Smith Machine.png
+Split Squat.png
+Squat Barbell.png
+Squat Calf Press Machine.png
+Squat Dumbbell.png
+Squat Machine.png
+Squat Pulse.png
+Squat Row Band.png
+Squat Smith Machine.png
+Squat- Band.png
+Squat.png
+Standing Around the World Dumbbell.png
+Standing Backhand Raise.png
+Standing Calf Raise  Machine.png
+Standing Calf Raise Band.png
+Standing Calf Raise Barbell.png
+Standing Calf Raise On Step Barbell.png
+Standing Calf Raise On Step Dumbbell.png
+Standing Calf Raise On Step Smith Machine.png
+Standing Calf Raise Smith Machine.png
+Standing Calf Raise.png
+Standing Chest Fly Band.png
+Standing Chest Fly Cable.png
+Standing Chest Press Band.png
+Standing Chest Press Cable.png
+Standing Decline Fly Band.png
+Standing Decline Fly Cable.png
+Standing Decline Press Band.png
+Standing Glute Kickback Band.png
+Standing Glute Kickback Cable.png
+Standing Glute Kickback Machine.png
+Standing Incline Fly  Cable.png
+Standing Incline Fly Band.png
+Standing Incline Fly Dumbbell.png
+Standing Incline Press Band.png
+Standing Leg Extension Band.png
+Standing Rear Delt Row Band.png
+Standing Rear Delt Row Cable.png
+Standing Reverse Fly Band.png
+Standing Row Cable.png
+Standing Row.png
+Standing Side Bend - Barbell.png
+Standing Side Bend - Dumbbell.png
+Standing Side Bend- Cable.png
+Standing Side Bend.png
+Standing Side Crunch band.png
+Standing Side Crunch Cable.png
+Standing Single Leg Calf Raise Dumbbell.png
+Standing Single Leg Calf Raise.png
+Standing Single Leg Curl Band.png
+Standing Single Leg Curl Cable.png
+Standing Single Leg Curl Machine.png
+Standing Single Leg Curl.png
+Standing Torso Rotation Machine.png
+Standing Twist  Band.png
+Standing Twist Barbell.png
+Step-up Dumbbell.png
+Step-up- Barbell.png
+Step-up.png
+Stiff Leg Deadlift - Band.png
+Stiff Leg Deadlift - Barbell.png
+Stiff Leg Deadlift - Dumbbell.png
+Stiff Leg Deadlift - Kettlebell.png
+Stiff Leg Deadlift - Smith Machine.png
+Straight Arm Plank.png
+Sumo Deadlift Barbell.png
+Sumo Squat Barbell.png
+Sumo Squat Dumbbell.png
+Sumo Squat Kettlebell.png
+Sumo Squat Smith Machine.png
+Sumo Squat.png
+Superman Row.png
+Superman.png
+Supine Floor Row.png
+Thruster Barbell.png
+Thruster Kettlebell.png
+Toes To Bar.png
+Triceps Dip (Assisted).png
+Triceps Dip On Bench.png
+Triceps Dip On Floor.png
+Triceps Dip.png
+Triceps Extension Cable.png
+Triceps Extension Machine.png
+Triceps Kickback  Band.png
+Triceps Kickback Cable.png
+Triceps Kickback Dumbbell.png
+Triceps Pushdown Band.png
+Triceps Pushdown Cable.png
+Tuck Crunch Dumbbell.png
+Turkish Get Up Kettlebell.png
+Twisting Overhead Press Band.png
+Twisting Overhead Press Cable.png
+Up-Down Twist Band.png
+Up-Down Twist Cable.png
+Up-Down Twist Dumbbell.png
+Upright Row Band.png
+Upright Row Barbell.png
+Upright Row Cable.png
+Upright Row Dumbbell.png
+Upright Row Smith Machine.png
+V Up Band.png
+V Up Dumbbell.png
+V Up.png
+Wall Push-up.png
+Wide Arm Push-up.png
+Wide Curl Barbell.png
+Windmill Kettlebell.png
+Wipers.png
+Wrist Curl Band.png
+Wrist Curl Barbell.png
+Wrist Curl Cable.png
+Wrist Curl Dumbbell.png
+Wrist Roller Plate.png
+Zercher Carry Barbell.png

@@ -1,13 +1,15 @@
-# Ignore the specific file
-leep 2 - Wait a moment
-
 # Ignore virtual environments
 venv/
 .venv/
 
-# Ignore Python cache files
-*.pyc
-**/__pycache__/
+protected_assets/
+.protected_assets/
 
-# Ignore VS Code settings
-.vscode/
+.env.production
+.env.development
+
+
+
+
+__pycache__/
+.__pycache__/

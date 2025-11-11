@@ -1,0 +1,22 @@
+# Ignore the specific file
+leep 2 - Wait a moment
+
+
+# Ignore Python cache files
+*.pyc
+**/__pycache__/
+
+
+protected_assets/
+.protected_assets/
+
+
+# Ignore VS Code settings
+.vscode/
+
+# .gitignore
+
+# Environment files
+.env
+.env.development
+.env.prod
