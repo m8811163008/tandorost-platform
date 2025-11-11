@@ -14,8 +14,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-1',
             title="E_D_AB_WHEEL_TITLE",
-            video_urls=['regular_directory/exercises/videos/ab_wheel.mp4'],
-            cover_image_url=['regular_directory/exercises/images/ab_wheel.png'],
+            video_urls=['app/regular_directory/exercises/videos/ab_wheel.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/ab_wheel.png'],
             preparation_steps=[
                 'E_D_AB_WHEEL_PREP_ONE',
                 'E_D_AB_WHEEL_PREP_TWO'
@@ -37,7 +37,7 @@ class ExercisesDefinition:
             id='exercise-2',
             title="E_D_ALTERNATING_PUNCH_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/alternating_punch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/alternating_punch.png'],
             preparation_steps=[
                 'E_D_ALTERNATING_PUNCH_PREP_ONE',
                 'E_D_ALTERNATING_PUNCH_PREP_TWO',
@@ -61,7 +61,7 @@ class ExercisesDefinition:
             id='exercise-3',
             title="E_D_ALTERNATING_V_UP_BAND_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/alternating_v_up_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/alternating_v_up_band.png'],
             preparation_steps=[
                 'E_D_ALTERNATING_V_UP_BAND_PREP_ONE',
                 'E_D_ALTERNATING_V_UP_BAND_PREP_TWO'
@@ -80,8 +80,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-4',
             title="E_D_ARM_CIRCLES_TITLE",
-            video_urls=['regular_directory/exercises/videos/arm_circles.mp4'],
-            cover_image_url=['regular_directory/exercises/images/arm_circles.png'],
+            video_urls=['app/regular_directory/exercises/videos/arm_circles.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/arm_circles.png'],
             preparation_steps=[
                 'E_D_ARM_CIRCLES_PREP_ONE',
                 'E_D_ARM_CIRCLES_PREP_TWO'
@@ -102,8 +102,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-5',
             title="E_D_ARNOLD_PRESS_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/arnold_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/arnold_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/arnold_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/arnold_dumbbell.png'],
             preparation_steps=[
                 'E_D_ARNOLD_PRESS_DUMBBELL_PREP_ONE',
                 'E_D_ARNOLD_PRESS_DUMBBELL_PREP_TWO'
@@ -125,7 +125,7 @@ class ExercisesDefinition:
             id='exercise-6',
             title="E_D_BACK_EXTENSION_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/back_extension.png'],
+            cover_image_url=['app/regular_directory/exercises/images/back_extension.png'],
             preparation_steps=[
                 'E_D_BACK_EXTENSION_PREP_ONE',
                 'E_D_BACK_EXTENSION_PREP_TWO'
@@ -145,8 +145,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-7',
             title="E_D_BACK_EXTENSION_ON_FLOOR_TITLE",
-            video_urls=['regular_directory/exercises/videos/back_extension_on_floor.mp4'],
-            cover_image_url=['regular_directory/exercises/images/back_extension_on_floor.png'],
+            video_urls=['app/regular_directory/exercises/videos/back_extension_on_floor.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/back_extension_on_floor.png'],
             preparation_steps=[
                 'E_D_BACK_EXTENSION_ON_FLOOR_PREP_ONE'
             ],
@@ -166,7 +166,7 @@ class ExercisesDefinition:
             id='exercise-8',
             title="E_D_BACK_EXTENSION_BAND_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/back_extension_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/back_extension_band.png'],
             preparation_steps=[
                 'E_D_BACK_EXTENSION_BAND_PREP_ONE',
                 'E_D_BACK_EXTENSION_BAND_PREP_TWO'
@@ -186,8 +186,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-9',
             title="E_D_BACK_EXTENSION_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/back_extension_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/back_extension_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/back_extension_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/back_extension_machine.png'],
             preparation_steps=[
                 'E_D_BACK_EXTENSION_MACHINE_PREP_ONE',
                 'E_D_BACK_EXTENSION_MACHINE_PREP_TWO'
@@ -208,8 +208,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-10',
             title="E_D_BACKWARD_LUNGE_TITLE",
-            video_urls=['regular_directory/exercises/videos/backward_lunge.mp4'],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge.png'],
+            video_urls=['app/regular_directory/exercises/videos/backward_lunge.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_PREP_ONE',
                 'E_D_BACKWARD_LUNGE_PREP_TWO'
@@ -230,8 +230,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-11',
             title="E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TITLE",
-            video_urls=['regular_directory/exercises/videos/backward_lunge_with_leg.mp4'],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge_with_leg.png'],
+            video_urls=['app/regular_directory/exercises/videos/backward_lunge_with_leg.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_with_leg.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_PREP_ONE'
             ],
@@ -252,7 +252,7 @@ class ExercisesDefinition:
             id='exercise-12',
             title="E_D_BACKWARD_LUNGE_BARBELL_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_barbell.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_BARBELL_PREP_ONE',
                 'E_D_BACKWARD_LUNGE_BARBELL_PREP_TWO'
@@ -274,7 +274,7 @@ class ExercisesDefinition:
             id='exercise-13',
             title="E_D_BACKWARD_LUNGE_CABLE_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge_cable.png'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_cable.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_CABLE_PREP_ONE',
                 'E_D_BACKWARD_LUNGE_CABLE_PREP_TWO'
@@ -295,8 +295,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-14',
             title="E_D_BACKWARD_LUNGE_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/backward_lunge_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/backward_lunge_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_dumbbell.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_DUMBBELL_PREP_ONE'
             ],
@@ -317,7 +317,7 @@ class ExercisesDefinition:
             id='exercise-15',
             title="E_D_BACKWARD_LUNGE_KETTLEBELL_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge kettlebell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge kettlebell.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_KETTLEBELL_PREP_ONE',
                 'E_D_BACKWARD_LUNGE_KETTLEBELL_PREP_TWO'
@@ -339,7 +339,7 @@ class ExercisesDefinition:
             id='exercise-16',
             title="E_D_BACKWARD_LUNGE_SMITH_MACHINE_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/backward_lunge_smith_machine.png'],
+            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_smith_machine.png'],
             preparation_steps=[
                 'E_D_BACKWARD_LUNGE_SMITH_MACHINE_PREP_ONE',
                 'E_D_BACKWARD_LUNGE_SMITH_MACHINE_PREP_TWO'
@@ -361,7 +361,7 @@ class ExercisesDefinition:
             id='exercise-17',
             title="E_D_BALL_SLAMS_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/ball_slams.png'],
+            cover_image_url=['app/regular_directory/exercises/images/ball_slams.png'],
             preparation_steps=[
                 'E_D_BALL_SLAMS_PREP_ONE',
                 'E_D_BALL_SLAMS_PREP_TWO'
@@ -382,8 +382,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-18',
             title="E_D_BAND_PULL_THROUGH_TITLE",
-            video_urls=['regular_directory/exercises/videos/band_pull_through.mp4'],
-            cover_image_url=['regular_directory/exercises/images/band_pull_through.png'],
+            video_urls=['app/regular_directory/exercises/videos/band_pull_through.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/band_pull_through.png'],
             preparation_steps=[
                 'E_D_BAND_PULL_THROUGH_PREP_ONE',
                 'E_D_BAND_PULL_THROUGH_PREP_TWO'
@@ -406,8 +406,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-19',
             title="E_D_BENCH_FLY_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_fly_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_fly_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_fly_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_fly_cable.png'],
             preparation_steps=[
                 'E_D_BENCH_FLY_CABLE_PREP_ONE',
                 'E_D_BENCH_FLY_CABLE_PREP_TWO'
@@ -429,8 +429,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-20',
             title="E_D_BENCH_FLY_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_fly_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_fly_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_fly_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_fly_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENCH_FLY_DUMBBELL_PREP_ONE',
                 'E_D_BENCH_FLY_DUMBBELL_PREP_TWO'
@@ -452,8 +452,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-21',
             title="E_D_BENCH_JUMP_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_jump.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_jump.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_jump.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_jump.png'],
             preparation_steps=[
                 'E_D_BENCH_JUMP_PREP_ONE',
                 'E_D_BENCH_JUMP_PREP_TWO',
@@ -479,7 +479,7 @@ class ExercisesDefinition:
             id='exercise-22',
             title="E_D_BENCH_PISTOL_SQUAT_TITLE",
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bench_pistol_squat.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_pistol_squat.png'],
             preparation_steps=[
                 'E_D_BENCH_PISTOL_SQUAT_PREP_ONE',
                 'E_D_BENCH_PISTOL_SQUAT_PREP_TWO',
@@ -503,8 +503,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-24',
             title= "E_D_BENCH_PRESS_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_band.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_BAND_PREP_ONE', # Lie on a bench and loop a resistance band around your back and hold the ends.
                 'E_D_BENCH_PRESS_BAND_PREP_TWO'  # Position your hands shoulder-width apart, elbows bent.
@@ -525,8 +525,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-25',
             title= "E_D_BENCH_PRESS_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_barbell.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_BARBELL_PREP_ONE', # Lie on a flat bench with your eyes directly under the bar.
                 'E_D_BENCH_PRESS_BARBELL_PREP_TWO'  # Grip the bar slightly wider than shoulder-width, unrack the bar.
@@ -547,8 +547,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-26',
             title= "E_D_BENCH_PRESS_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_cable.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_CABLE_PREP_ONE', # Lie on a flat bench centered between two low cable pulleys.
                 'E_D_BENCH_PRESS_CABLE_PREP_TWO'  # Grab the handles with an overhand grip, palms facing forward.
@@ -569,8 +569,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-27',
             title= "E_D_BENCH_PRESS_CLOSE_GRIP_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_close_grip_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_close_grip_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_close_grip_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_close_grip_barbell.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_CLOSE_GRIP_BARBELL_PREP_ONE', # Lie on a flat bench and take a close, overhand grip on the barbell (about shoulder-width apart).
                 'E_D_BENCH_PRESS_CLOSE_GRIP_BARBELL_PREP_TWO'  # Unrack the bar and hold it over your chest with arms fully extended.
@@ -591,8 +591,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-28',
             title= "E_D_BENCH_PRESS_CLOSE_GRIP_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_close_grip_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_close_grip_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_close_grip_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_close_grip_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_CLOSE_GRIP_DUMBBELL_PREP_ONE', # Lie on a flat bench, holding a dumbbell in each hand.
                 'E_D_BENCH_PRESS_CLOSE_GRIP_DUMBBELL_PREP_TWO'  # Bring the dumbbells together above your chest, palms facing each other (neutral grip).
@@ -613,8 +613,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-29',
             title= "E_D_BENCH_PRESS_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_DUMBBELL_PREP_ONE', # Lie on a flat bench with a dumbbell in each hand, palms facing forward.
                 'E_D_BENCH_PRESS_DUMBBELL_PREP_TWO'  # Position the dumbbells at shoulder level with your elbows bent at a 90-degree angle.
@@ -635,8 +635,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-30',
             title= "E_D_BENCH_PRESS_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_smith_machine.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_SMITH_MACHINE_PREP_ONE', # Set up a flat bench inside the Smith Machine.
                 'E_D_BENCH_PRESS_SMITH_MACHINE_PREP_TWO'  # Lie down and grip the bar slightly wider than shoulder-width, unhook the bar.
@@ -657,8 +657,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-31',
             title= "E_D_BENCH_PRESS_WIDE_GRIP_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_wide_grip_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_wide_grip_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_wide_grip_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_wide_grip_barbell.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_WIDE_GRIP_BARBELL_PREP_ONE', # Lie on a flat bench and grip the barbell significantly wider than shoulder-width.
                 'E_D_BENCH_PRESS_WIDE_GRIP_BARBELL_PREP_TWO'  # Unrack the bar and hold it over your chest.
@@ -679,8 +679,8 @@ class ExercisesDefinition:
         ExerciseDefinition(
             id='exercise-32',
             title= "E_D_BENCH_PRESS_WIDE_GRIP_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_press_wide_grip_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_press_wide_grip_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_press_wide_grip_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_press_wide_grip_smith_machine.png'],
             preparation_steps=[
                 'E_D_BENCH_PRESS_WIDE_GRIP_SMITH_MACHINE_PREP_ONE', # Set up a flat bench inside the Smith Machine.
                 'E_D_BENCH_PRESS_WIDE_GRIP_SMITH_MACHINE_PREP_TWO'  # Lie down and grip the bar significantly wider than shoulder-width, unhook the bar.
@@ -702,7 +702,7 @@ class ExercisesDefinition:
             id='exercise-33',
             title= "E_D_BENCH_SQUAT_TITLE",
             video_urls=[], # No video provided in your list
-            cover_image_url=['regular_directory/exercises/images/bench_squat.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_squat.png'],
             preparation_steps=[
                 'E_D_BENCH_SQUAT_PREP_ONE', # Stand in front of a sturdy bench or box with feet shoulder-width apart.
                 'E_D_BENCH_SQUAT_PREP_TWO'  # Keep your chest up, eyes looking straight ahead.
@@ -723,8 +723,8 @@ class ExercisesDefinition:
 ExerciseDefinition(
             id='exercise-34',
             title= "E_D_BENCH_SQUAT_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_squat_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_squat_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_squat_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_squat_barbell.png'],
             preparation_steps=[
                 'E_D_BENCH_SQUAT_BARBELL_PREP_ONE', # Load a barbell onto your upper back and stand in front of a bench.
                 'E_D_BENCH_SQUAT_BARBELL_PREP_TWO'  # Ensure your feet are shoulder-width apart and chest is up.
@@ -745,8 +745,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-35',
             title= "E_D_BENCH_SQUAT_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bench_squat_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bench_squat_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bench_squat_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bench_squat_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENCH_SQUAT_DUMBBELL_PREP_ONE', # Hold a dumbbell in each hand or a single dumbbell vertically (goblet style).
                 'E_D_BENCH_SQUAT_DUMBBELL_PREP_TWO'  # Stand in front of a bench, feet shoulder-width apart.
@@ -767,8 +767,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-36',
             title= "E_D_BENT_ARM_PULLOVER_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_arm_pullover_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_arm_pullover_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_arm_pullover_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_arm_pullover_barbell.png'],
             preparation_steps=[
                 'E_D_BENT_ARM_PULLOVER_BARBELL_PREP_ONE', # Lie perpendicular across a flat bench, supporting your upper back and shoulders.
                 'E_D_BENT_ARM_PULLOVER_BARBELL_PREP_TWO'  # Hold a barbell with a slightly bent-arm grip over your chest.
@@ -790,7 +790,7 @@ ExerciseDefinition(
             id='exercise-37',
             title= "E_D_BENT_KNEE_BICYCLE_CRUNCH_TITLE",
             video_urls=[], # No video provided in your list
-            cover_image_url=['regular_directory/exercises/images/bent_knee_bicycle_crunch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_knee_bicycle_crunch.png'],
             preparation_steps=[
                 'E_D_BENT_KNEE_BICYCLE_CRUNCH_PREP_ONE', # Lie flat on your back, interlace your fingers behind your head.
                 'E_D_BENT_KNEE_BICYCLE_CRUNCH_PREP_TWO'  # Lift your shoulders slightly off the floor and bring your knees up to a 90-degree angle.
@@ -811,8 +811,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-38',
             title= "E_D_BENT_KNEE_SIDE_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_knee_side_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_knee_side_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_knee_side_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_knee_side_plank.png'],
             preparation_steps=[
                 'E_D_BENT_KNEE_SIDE_PLANK_PREP_ONE', # Lie on your side with your knees bent and stacked.
                 'E_D_BENT_KNEE_SIDE_PLANK_PREP_TWO'  # Prop yourself up on your forearm, ensuring your elbow is directly under your shoulder.
@@ -833,8 +833,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-39',
             title= "E_D_BENT_KNEE_WIPERS_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_knee_wipers.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_knee_wipers.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_knee_wipers.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_knee_wipers.png'],
             preparation_steps=[
                 'E_D_BENT_KNEE_WIPERS_PREP_ONE', # Lie on your back with arms extended out to the sides for balance.
                 'E_D_BENT_KNEE_WIPERS_PREP_TWO'  # Bend your knees and lift your feet off the floor until your thighs are vertical.
@@ -855,8 +855,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-40',
             title= "E_D_BENT_OVER_REAR_DELT_ROW_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_rear_delt_row_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_rear_delt_row_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_band.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REAR_DELT_ROW_BAND_PREP_ONE', # Stand on the middle of a resistance band, holding the ends.
                 'E_D_BENT_OVER_REAR_DELT_ROW_BAND_PREP_TWO'  # Hinge at the hips so your torso is nearly parallel to the floor, arms hanging straight down.
@@ -878,7 +878,7 @@ ExerciseDefinition(
             id='exercise-41',
             title= "E_D_BENT_OVER_REAR_DELT_ROW_BARBELL_TITLE",
             video_urls=[], # No video provided in your list
-            cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_barbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REAR_DELT_ROW_BARBELL_PREP_ONE', # Load a barbell and take a wide grip (palms facing down).
                 'E_D_BENT_OVER_REAR_DELT_ROW_BARBELL_PREP_TWO'  # Hinge forward at the hips, keeping your back flat, until your torso is parallel to the ground.
@@ -899,8 +899,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-42',
             title= "E_D_BENT_OVER_REAR_DELT_ROW_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_rear_delt_row_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_rear_delt_row_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REAR_DELT_ROW_DUMBBELL_PREP_ONE', # Hold a dumbbell in each hand (neutral grip).
                 'E_D_BENT_OVER_REAR_DELT_ROW_DUMBBELL_PREP_TWO'  # Bend over until your torso is nearly parallel to the floor, arms hanging straight down.
@@ -921,8 +921,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-43',
             title= "E_D_BENT_OVER_REAR_DELT_ROW_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_rear_delt_row_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_rear_delt_row_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_kettlebell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REAR_DELT_ROW_KETTLEBELL_PREP_ONE', # Hold a kettlebell in each hand by the handles.
                 'E_D_BENT_OVER_REAR_DELT_ROW_KETTLEBELL_PREP_TWO'  # Hinge at the hips with a flat back, arms extended downward.
@@ -943,8 +943,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-44',
             title= "E_D_BENT_OVER_REAR_DELT_ROW_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_rear_delt_row_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_rear_delt_row_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_smith_machine.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REAR_DELT_ROW_SMITH_MACHINE_PREP_ONE', # Set the Smith Machine bar height for your starting position.
                 'E_D_BENT_OVER_REAR_DELT_ROW_SMITH_MACHINE_PREP_TWO'  # Stand under the bar, bend your knees slightly, and hinge at the hips until your torso is parallel to the ground, grabbing the bar wide.
@@ -965,8 +965,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-45',
             title= "E_D_BENT_OVER_REVERSE_FLY_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_reverse_fly_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_reverse_fly_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_reverse_fly_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_reverse_fly_band.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REVERSE_FLY_BAND_PREP_ONE', # Stand on the middle of a resistance band, cross the ends, and hold them in your hands.
                 'E_D_BENT_OVER_REVERSE_FLY_BAND_PREP_TWO'  # Hinge at your hips with a slight bend in your knees until your torso is parallel to the floor.
@@ -987,8 +987,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-46',
             title= "E_D_BENT_OVER_REVERSE_FLY_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_reverse_fly_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_reverse_fly_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_reverse_fly_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_reverse_fly_cable.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REVERSE_FLY_CABLE_PREP_ONE', # Set up two cable pulleys at a low height and stand between them.
                 'E_D_BENT_OVER_REVERSE_FLY_CABLE_PREP_TWO'  # Grab the opposite handle (right hand grabs left cable, and vice versa), and bend over at the hips.
@@ -1009,8 +1009,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-47',
             title= "E_D_BENT_OVER_REVERSE_FLY_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_reverse_fly_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_reverse_fly_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_reverse_fly_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_reverse_fly_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_REVERSE_FLY_DUMBBELL_PREP_ONE', # Hold a dumbbell in each hand (neutral grip).
                 'E_D_BENT_OVER_REVERSE_FLY_DUMBBELL_PREP_TWO'  # Hinge at the hips until your torso is parallel to the floor, arms extended down.
@@ -1032,7 +1032,7 @@ ExerciseDefinition(
             id='exercise-48',
             title= "E_D_BENT_OVER_ROW_BAND_TITLE",
             video_urls=[], # No video provided in your list
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_band.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_BAND_PREP_ONE', # Stand on the middle of a resistance band with feet shoulder-width apart, holding the ends.
                 'E_D_BENT_OVER_ROW_BAND_PREP_TWO'  # Hinge at the hips so your torso is at a 45-degree angle to the floor, arms hanging straight.
@@ -1053,8 +1053,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-49',
             title= "E_D_BENT_OVER_ROW_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_barbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_BARBELL_PREP_ONE', # Stand over a barbell with feet shoulder-width apart, grip the bar overhand.
                 'E_D_BENT_OVER_ROW_BARBELL_PREP_TWO'  # Hinge at the hips with a flat back until your torso is roughly 45 degrees, hanging the bar with straight arms.
@@ -1075,8 +1075,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-50',
             title= "E_D_BENT_OVER_ROW_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_dumbbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_DUMBBELL_PREP_ONE', # Hold a dumbbell in each hand (neutral grip) and stand tall.
                 'E_D_BENT_OVER_ROW_DUMBBELL_PREP_TWO'  # Hinge at the hips until your torso is roughly 45 degrees, maintaining a flat back.
@@ -1097,8 +1097,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-51',
             title= "E_D_BENT_OVER_ROW_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_kettlebell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_KETTLEBELL_PREP_ONE', # Hold a kettlebell in each hand by the handle.
                 'E_D_BENT_OVER_ROW_KETTLEBELL_PREP_TWO'  # Hinge at the hips, keeping your back flat, until your torso is around a 45-degree angle.
@@ -1119,8 +1119,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-52',
             title= "E_D_BENT_OVER_ROW_REVERSE_GRIP_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_reverse_grip_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_reverse_grip_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_reverse_grip_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_reverse_grip_barbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_REVERSE_GRIP_BARBELL_PREP_ONE', # Stand over a barbell and grip it with an underhand (reverse) grip, hands shoulder-width apart.
                 'E_D_BENT_OVER_ROW_REVERSE_GRIP_BARBELL_PREP_TWO'  # Hinge forward at the hips to the bent-over position.
@@ -1141,8 +1141,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-53',
             title= "E_D_BENT_OVER_ROW_REVERSE_GRIP_DUMBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_reverse_grip_dumbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_reverse_grip_dumbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_reverse_grip_dumbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_reverse_grip_dumbell.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_REVERSE_GRIP_DUMBELL_PREP_ONE', # Hold a dumbbell in each hand with an underhand (supinated) grip.
                 'E_D_BENT_OVER_ROW_REVERSE_GRIP_DUMBELL_PREP_TWO'  # Hinge forward at the hips to assume the bent-over position.
@@ -1163,8 +1163,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-54',
             title= "E_D_BENT_OVER_ROW_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_smith_machine.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_SMITH_MACHINE_PREP_ONE', # Stand facing the Smith Machine bar, setting it at a height where you can bend over and grab it.
                 'E_D_BENT_OVER_ROW_SMITH_MACHINE_PREP_TWO'  # Hinge at the hips, grab the bar with an overhand grip, and unhook it.
@@ -1185,8 +1185,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-55',
             title= "E_D_BENT_OVER_ROW_WITH_TWIST_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/bent_over_row_with_twist_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bent_over_row_with_twist_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/bent_over_row_with_twist_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bent_over_row_with_twist_band.png'],
             preparation_steps=[
                 'E_D_BENT_OVER_ROW_WITH_TWIST_BAND_PREP_ONE', # Stand on the middle of a resistance band, holding both ends.
                 'E_D_BENT_OVER_ROW_WITH_TWIST_BAND_PREP_TWO'  # Hinge at the hips with a flat back, arms extended.
@@ -1207,8 +1207,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-24',
             title='E_D_BICEP_CURL_TITLE',
-            video_urls=['regular_directory/exercises/videos/bicep_curl.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl.png'],
+            video_urls=['app/regular_directory/exercises/videos/bicep_curl.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_PREP_ONE',
                 'E_D_BICEP_CURL_PREP_TWO'
@@ -1230,7 +1230,7 @@ ExerciseDefinition(
             id='exercise-25',
             title='E_D_BICEP_CURL_BAND_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl_band.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_BAND_PREP_ONE',
                 'E_D_BICEP_CURL_BAND_PREP_TWO'
@@ -1252,8 +1252,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-26',
             title='E_D_BICEP_CURL_BARBELL_TITLE',
-            video_urls=['regular_directory/exercises/videos/bicep_curl_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bicep_curl_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl_barbell.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_BARBELL_PREP_ONE',
                 'E_D_BICEP_CURL_BARBELL_PREP_TWO'
@@ -1275,8 +1275,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-27',
             title='E_D_BICEP_CURL_CABLE_TITLE',
-            video_urls=['regular_directory/exercises/videos/bicep_curl_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/bicep_curl_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl_cable.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_CABLE_PREP_ONE'
             ],
@@ -1298,8 +1298,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-28',
             title='E_D_BICEP_CURL_DUMBBELL_TITLE',
-            video_urls=['regular_directory/exercises/videos/bicep_curl_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/bicep_curl_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_DUMBBELL_PREP_ONE'
             ],
@@ -1321,7 +1321,7 @@ ExerciseDefinition(
             id='exercise-29',
             title='E_D_BICEP_CURL_MACHINE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl_machine.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl_machine.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_MACHINE_PREP_ONE',
                 'E_D_BICEP_CURL_MACHINE_PREP_TWO'
@@ -1344,8 +1344,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-30',
             title='E_D_BICEP_CURL_SMITH_MACHINE_TITLE',
-            video_urls=['regular_directory/exercises/videos/bicep_curl_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bicep_curl_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/bicep_curl_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bicep_curl_smith_machine.png'],
             preparation_steps=[
                 'E_D_BICEP_CURL_SMITH_MACHINE_PREP_ONE',
                 'E_D_BICEP_CURL_SMITH_MACHINE_PREP_TWO'
@@ -1368,7 +1368,7 @@ ExerciseDefinition(
             id='exercise-31',
             title='E_D_BICYCLE_CRUNCH_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bicycle_crunch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bicycle_crunch.png'],
             preparation_steps=[
                 'E_D_BICYCLE_CRUNCH_PREP_ONE'
             ],
@@ -1389,8 +1389,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-32',
             title='E_D_BICYCLE_CRUNCH_BAND_TITLE',
-            video_urls=['regular_directory/exercises/videos/bicycle_crunch_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/bicycle_crunch_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/bicycle_crunch_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/bicycle_crunch_band.png'],
             preparation_steps=[
                 'E_D_BICYCLE_CRUNCH_BAND_PREP_ONE',
                 'E_D_BICYCLE_CRUNCH_BAND_PREP_TWO'
@@ -1413,7 +1413,7 @@ ExerciseDefinition(
             id='exercise-33',
             title='E_D_BIRD_DOG_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bird_dog.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bird_dog.png'],
             preparation_steps=[
                 'E_D_BIRD_DOG_PREP_ONE'
             ],
@@ -1434,7 +1434,7 @@ ExerciseDefinition(
             id='exercise-34',
             title='E_D_BOXER_SHUFFLE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/boxer_shuffle.png'],
+            cover_image_url=['app/regular_directory/exercises/images/boxer_shuffle.png'],
             preparation_steps=[
                 'E_D_BOXER_SHUFFLE_PREP_ONE',
                 'E_D_BOXER_SHUFFLE_PREP_TWO',
@@ -1457,7 +1457,7 @@ ExerciseDefinition(
             id='exercise-35',
             title='E_D_BULGARIAN_SPLIT_SQUAT_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bulgarian_split_squat.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bulgarian_split_squat.png'],
             preparation_steps=[
                 'E_D_BULGARIAN_SPLIT_SQUAT_PREP_ONE',
                 'E_D_BULGARIAN_SPLIT_SQUAT_PREP_TWO'
@@ -1483,7 +1483,7 @@ ExerciseDefinition(
             id='exercise-36',
             title='E_D_BULGARIAN_SPLIT_SQUAT_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bulgarian_split_squat_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bulgarian_split_squat_barbell.png'],
             preparation_steps=[
                 'E_D_BULGARIAN_SPLIT_SQUAT_BARBELL_PREP_ONE',
                 'E_D_BULGARIAN_SPLIT_SQUAT_BARBELL_PREP_TWO'
@@ -1509,7 +1509,7 @@ ExerciseDefinition(
             id='exercise-37',
             title='E_D_BULGARIAN_SPLIT_SQUAT_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/bulgarian_split_squat_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/bulgarian_split_squat_dumbbell.png'],
             preparation_steps=[
                 'E_D_BULGARIAN_SPLIT_SQUAT_DUMBBELL_PREP_ONE',
                 'E_D_BULGARIAN_SPLIT_SQUAT_DUMBBELL_PREP_TWO'
@@ -1535,7 +1535,7 @@ ExerciseDefinition(
             id='exercise-38',
             title='E_D_BURPEE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/burpee.png'],
+            cover_image_url=['app/regular_directory/exercises/images/burpee.png'],
             preparation_steps=[
                 'E_D_BURPEE_PREP_ONE',
                 'E_D_BURPEE_PREP_TWO'
@@ -1560,7 +1560,7 @@ ExerciseDefinition(
             id='exercise-39',
             title='E_D_BUTT_KICKS_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/butt_kicks.png'],
+            cover_image_url=['app/regular_directory/exercises/images/butt_kicks.png'],
             preparation_steps=[
                 'E_D_BUTT_KICKS_PREP_ONE'
             ],
@@ -1582,7 +1582,7 @@ ExerciseDefinition(
             id='exercise-40',
             title='E_D_CABLE_PULL_THROUGH_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/cable_pull_through.png'],
+            cover_image_url=['app/regular_directory/exercises/images/cable_pull_through.png'],
             preparation_steps=[
                 'E_D_CABLE_PULL_THROUGH_PREP_ONE',
                 'E_D_CABLE_PULL_THROUGH_PREP_TWO'
@@ -1607,7 +1607,7 @@ ExerciseDefinition(
             id='exercise-41',
             title='E_D_CHEST_DIP_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/chest_dip.png'],
+            cover_image_url=['app/regular_directory/exercises/images/chest_dip.png'],
             preparation_steps=[
                 'E_D_CHEST_DIP_PREP_ONE',
                 'E_D_CHEST_DIP_PREP_TWO'
@@ -1630,7 +1630,7 @@ ExerciseDefinition(
             id='exercise-42',
             title='E_D_CHEST_DIP_ASSISTED_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/chest_dip_assisted.png'],
+            cover_image_url=['app/regular_directory/exercises/images/chest_dip_assisted.png'],
             preparation_steps=[
                 'E_D_CHEST_DIP_ASSISTED_PREP_ONE',
                 'E_D_CHEST_DIP_ASSISTED_PREP_TWO'
@@ -1653,7 +1653,7 @@ ExerciseDefinition(
             id='exercise-43',
             title='E_D_CHIN_UP_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/chin_up.png'],
+            cover_image_url=['app/regular_directory/exercises/images/chin_up.png'],
             preparation_steps=[
                 'E_D_CHIN_UP_PREP_ONE',
                 'E_D_CHIN_UP_PREP_TWO'
@@ -1677,7 +1677,7 @@ ExerciseDefinition(
             id='exercise-44',
             title='E_D_CHIN_UP_ASSISTED_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/chin_up_assisted.png'],
+            cover_image_url=['app/regular_directory/exercises/images/chin_up_assisted.png'],
             preparation_steps=[
                 'E_D_CHIN_UP_ASSISTED_PREP_ONE',
                 'E_D_CHIN_UP_ASSISTED_PREP_TWO'
@@ -1701,7 +1701,7 @@ ExerciseDefinition(
             id='exercise-45',
             title='E_D_CLEAN_PRESS_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/clean_and_press_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/clean_and_press_barbell.png'],
             preparation_steps=[
                 'E_D_CLEAN_PRESS_BARBELL_PREP_ONE',
             ],
@@ -1726,7 +1726,7 @@ ExerciseDefinition(
             id='exercise-46',
             title='E_D_CLEAN_PRESS_KETTLEBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/clean_and_press_kettlebell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/clean_and_press_kettlebell.png'],
             preparation_steps=[
                 'E_D_CLEAN_PRESS_KETTLEBELL_PREP_ONE',
                 'E_D_CLEAN_PRESS_KETTLEBELL_PREP_TWO'
@@ -1752,7 +1752,7 @@ ExerciseDefinition(
             id='exercise-47',
             title='E_D_CLEAN_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/clean_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/clean_barbell.png'],
             preparation_steps=[
                 'E_D_CLEAN_BARBELL_PREP_ONE',
                 'E_D_CLEAN_BARBELL_PREP_TWO'
@@ -1777,7 +1777,7 @@ ExerciseDefinition(
             id='exercise-48',
             title='E_D_CLOSE_GRIP_PUSH_UP_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/close_grip_push_up.png'],
+            cover_image_url=['app/regular_directory/exercises/images/close_grip_push_up.png'],
             preparation_steps=[
                 'E_D_CLOSE_GRIP_PUSH_UP_PREP_ONE',
                 'E_D_CLOSE_GRIP_PUSH_UP_PREP_TWO',
@@ -1801,7 +1801,7 @@ ExerciseDefinition(
             id='exercise-49',
             title='E_D_CONCENTRATION_CURL_BAND_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/concentration_curl_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/concentration_curl_band.png'],
             preparation_steps=[
                 'E_D_CONCENTRATION_CURL_BAND_PREP_ONE',
                 'E_D_CONCENTRATION_CURL_BAND_PREP_TWO'
@@ -1825,7 +1825,7 @@ ExerciseDefinition(
             id='exercise-50',
             title='E_D_CONCENTRATION_CURL_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/concentration_curl_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/concentration_curl_barbell.png'],
             preparation_steps=[
                 'E_D_CONCENTRATION_CURL_BARBELL_PREP_ONE',
                 'E_D_CONCENTRATION_CURL_BARBELL_PREP_TWO'
@@ -1848,7 +1848,7 @@ ExerciseDefinition(
             id='exercise-51',
             title='E_D_CONCENTRATION_CURL_CABLE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/concentration_curl_cable.png'],
+            cover_image_url=['app/regular_directory/exercises/images/concentration_curl_cable.png'],
             preparation_steps=[
                 'E_D_CONCENTRATION_CURL_CABLE_PREP_ONE',
                 'E_D_CONCENTRATION_CURL_CABLE_PREP_TWO'
@@ -1872,7 +1872,7 @@ ExerciseDefinition(
             id='exercise-52',
             title='E_D_CONCENTRATION_CURL_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/concentration_curl_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/concentration_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_CONCENTRATION_CURL_DUMBBELL_PREP_ONE',
                 'E_D_CONCENTRATION_CURL_DUMBBELL_PREP_TWO'
@@ -1896,7 +1896,7 @@ ExerciseDefinition(
             id='exercise-53',
             title='E_D_CROSSBODY_CRUNCH_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/crossbody_crunch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/crossbody_crunch.png'],
             preparation_steps=[
                 'E_D_CROSSBODY_CRUNCH_PREP_ONE',
                 'E_D_CROSSBODY_CRUNCH_PREP_TWO'
@@ -1920,7 +1920,7 @@ ExerciseDefinition(
             id='exercise-54',
             title='E_D_CROSSBODY_HAMMER_CURL_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/crossbody_hammer_curl_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/crossbody_hammer_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_CROSSBODY_HAMMER_CURL_DUMBBELL_PREP_ONE',
                 'E_D_CROSSBODY_HAMMER_CURL_DUMBBELL_PREP_TWO'
@@ -1944,7 +1944,7 @@ ExerciseDefinition(
             id='exercise-55',
             title='E_D_CROSSBODY_MOUNTAIN_CLIMBER_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/crossbody_mountain_climber.png'],
+            cover_image_url=['app/regular_directory/exercises/images/crossbody_mountain_climber.png'],
             preparation_steps=[
                 'E_D_CROSSBODY_MOUNTAIN_CLIMBER_PREP_ONE',
                 'E_D_CROSSBODY_MOUNTAIN_CLIMBER_PREP_TWO'
@@ -1969,7 +1969,7 @@ ExerciseDefinition(
             id='exercise-56',
             title='E_D_CRUNCH_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/crunch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/crunch.png'],
             preparation_steps=[
                 'E_D_CRUNCH_PREP_ONE',
                 'E_D_CRUNCH_PREP_TWO'
@@ -1992,7 +1992,7 @@ ExerciseDefinition(
             id='exercise-57',
             title='E_D_CRUNCH_LEGS_ON_STABILITY_BALL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/crunch_legs_on_stability_ball.png'],
+            cover_image_url=['app/regular_directory/exercises/images/crunch_legs_on_stability_ball.png'],
             preparation_steps=[
                 'E_D_CRUNCH_LEGS_ON_STABILITY_BALL_PREP_ONE',
                 'E_D_CRUNCH_LEGS_ON_STABILITY_BALL_PREP_TWO'
@@ -2015,7 +2015,7 @@ ExerciseDefinition(
             id='exercise-58',
             title='E_D_CRUNCH_MACHINE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/crunch_machine.png'],
+            cover_image_url=['app/regular_directory/exercises/images/crunch_machine.png'],
             preparation_steps=[
                 'E_D_CRUNCH_MACHINE_PREP_ONE',
                 'E_D_CRUNCH_MACHINE_PREP_TWO'
@@ -2038,7 +2038,7 @@ ExerciseDefinition(
             id='exercise-59',
             title='E_D_CUBAN_ROTATION_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/cuban_rotation.png'],
+            cover_image_url=['app/regular_directory/exercises/images/cuban_rotation.png'],
             preparation_steps=[
                 'E_D_CUBAN_ROTATION_PREP_ONE',
                 'E_D_CUBAN_ROTATION_PREP_TWO'
@@ -2060,7 +2060,7 @@ ExerciseDefinition(
             id='exercise-60',
             title='E_D_CUBAN_ROTATION_BAND_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/cuban_rotation_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/cuban_rotation_band.png'],
             preparation_steps=[
                 'E_D_CUBAN_ROTATION_BAND_PREP_ONE',
                 'E_D_CUBAN_ROTATION_BAND_PREP_TWO'
@@ -2083,7 +2083,7 @@ ExerciseDefinition(
             id='exercise-61',
             title='E_D_CUBAN_ROTATION_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/cuban_rotation_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/cuban_rotation_dumbbell.png'],
             preparation_steps=[
                 'E_D_CUBAN_ROTATION_DUMBBELL_PREP_ONE',
                 'E_D_CUBAN_ROTATION_DUMBBELL_PREP_TWO'
@@ -2106,7 +2106,7 @@ ExerciseDefinition(
             id='exercise-62',
             title='E_D_CURTSEY_LUNGE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/curtsey_lunge.png'],
+            cover_image_url=['app/regular_directory/exercises/images/curtsey_lunge.png'],
             preparation_steps=[
                 'E_D_CURTSEY_LUNGE_PREP_ONE',
                 'E_D_CURTSEY_LUNGE_PREP_TWO'
@@ -2131,7 +2131,7 @@ ExerciseDefinition(
             id='exercise-63',
             title='E_D_CURTSEY_LUNGE_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/curtsey_lunge_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/curtsey_lunge_barbell.png'],
             preparation_steps=[
                 'E_D_CURTSEY_LUNGE_BARBELL_PREP_ONE',
                 'E_D_CURTSEY_LUNGE_BARBELL_PREP_TWO'
@@ -2156,7 +2156,7 @@ ExerciseDefinition(
             id='exercise-64',
             title='E_D_CURTSEY_LUNGE_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/curtsey_lunge_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/curtsey_lunge_dumbbell.png'],
             preparation_steps=[
                 'E_D_CURTSEY_LUNGE_DUMBBELL_PREP_ONE',
                 'E_D_CURTSEY_LUNGE_DUMBBELL_PREP_TWO'
@@ -2181,7 +2181,7 @@ ExerciseDefinition(
             id='exercise-65',
             title='E_D_CURTSEY_LUNGE_KETTLEBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/curtsey_lunge_kettlebell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/curtsey_lunge_kettlebell.png'],
             preparation_steps=[
                 'E_D_CURTSEY_LUNGE_KETTLEBELL_PREP_ONE',
                 'E_D_CURTSEY_LUNGE_KETTLEBELL_PREP_TWO'
@@ -2206,7 +2206,7 @@ ExerciseDefinition(
             id='exercise-66',
             title='E_D_DEADLIFT_HIGH_PULL_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/deadlift_high_pull_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/deadlift_high_pull_barbell.png'],
             preparation_steps=[
                 'E_D_DEADLIFT_HIGH_PULL_BARBELL_PREP_ONE',
                 'E_D_DEADLIFT_HIGH_PULL_BARBELL_PREP_TWO'
@@ -2232,7 +2232,7 @@ ExerciseDefinition(
             id='exercise-67',
             title='E_D_DEADLIFT_BAND_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/deadlift_band.png'],
+            cover_image_url=['app/regular_directory/exercises/images/deadlift_band.png'],
             preparation_steps=[
                 'E_D_DEADLIFT_BAND_PREP_ONE',
                 'E_D_DEADLIFT_BAND_PREP_TWO'
@@ -2258,7 +2258,7 @@ ExerciseDefinition(
             id='exercise-68',
             title='E_D_DEADLIFT_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/deadlift_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/deadlift_barbell.png'],
             preparation_steps=[
                 'E_D_DEADLIFT_BARBELL_PREP_ONE',
                 'E_D_DEADLIFT_BARBELL_PREP_TWO'
@@ -2285,7 +2285,7 @@ ExerciseDefinition(
             id='exercise-69',
             title='E_D_DEADLIFT_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/deadlift_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/deadlift_dumbbell.png'],
             preparation_steps=[
                 'E_D_DEADLIFT_DUMBBELL_PREP_ONE',
                 'E_D_DEADLIFT_DUMBBELL_PREP_TWO'
@@ -2314,7 +2314,7 @@ ExerciseDefinition(
             id='exercise-71',
             title='E_D_DEADLIFT_SMITH_MACHINE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/deadlift_smith_machine.png'],
+            cover_image_url=['app/regular_directory/exercises/images/deadlift_smith_machine.png'],
             preparation_steps=[
                 'E_D_DEADLIFT_SMITH_MACHINE_PREP_ONE',
                 'E_D_DEADLIFT_SMITH_MACHINE_PREP_TWO'
@@ -2341,7 +2341,7 @@ ExerciseDefinition(
             id='exercise-72',
             title='E_D_DECLINE_BENCH_FLY_CABLE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_fly_cable.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_fly_cable.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_FLY_CABLE_PREP_ONE',
                 'E_D_DECLINE_BENCH_FLY_CABLE_PREP_TWO'
@@ -2365,7 +2365,7 @@ ExerciseDefinition(
             id='exercise-73',
             title='E_D_DECLINE_BENCH_FLY_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_fly_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_fly_dumbbell.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_FLY_DUMBBELL_PREP_ONE',
                 'E_D_DECLINE_BENCH_FLY_DUMBBELL_PREP_TWO'
@@ -2389,7 +2389,7 @@ ExerciseDefinition(
             id='exercise-74',
             title='E_D_DECLINE_BENCH_PRESS_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_press_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_press_barbell.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_PRESS_BARBELL_PREP_ONE',
                 'E_D_DECLINE_BENCH_PRESS_BARBELL_PREP_TWO'
@@ -2411,7 +2411,7 @@ ExerciseDefinition(
             id='exercise-75',
             title='E_D_DECLINE_BENCH_PRESS_WIDE_GRIP_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_press_wide_grip_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_press_wide_grip_barbell.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_PRESS_WIDE_GRIP_BARBELL_PREP_ONE',
                 'E_D_DECLINE_BENCH_PRESS_WIDE_GRIP_BARBELL_PREP_TWO'
@@ -2433,7 +2433,7 @@ ExerciseDefinition(
             id='exercise-76',
             title='E_D_DECLINE_BENCH_PRESS_CABLE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_press_cable.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_press_cable.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_PRESS_CABLE_PREP_ONE',
                 'E_D_DECLINE_BENCH_PRESS_CABLE_PREP_TWO'
@@ -2455,7 +2455,7 @@ ExerciseDefinition(
             id='exercise-77',
             title='E_D_DECLINE_BENCH_PRESS_DUMBBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_press_dumbbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_press_dumbbell.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_PRESS_DUMBBELL_PREP_ONE',
                 'E_D_DECLINE_BENCH_PRESS_DUMBBELL_PREP_TWO'
@@ -2477,7 +2477,7 @@ ExerciseDefinition(
             id='exercise-78',
             title='E_D_DECLINE_BENCH_PRESS_SMITH_MACHINE_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_press_smith_machine.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_press_smith_machine.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_PRESS_SMITH_MACHINE_PREP_ONE',
                 'E_D_DECLINE_BENCH_PRESS_SMITH_MACHINE_PREP_TWO'
@@ -2499,7 +2499,7 @@ ExerciseDefinition(
             id='exercise-79',
             title='E_D_DECLINE_BENCH_PULLOVER_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bench_pullover_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bench_pullover_barbell.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENCH_PULLOVER_BARBELL_PREP_ONE',
                 'E_D_DECLINE_BENCH_PULLOVER_BARBELL_PREP_TWO'
@@ -2523,7 +2523,7 @@ ExerciseDefinition(
             id='exercise-80',
             title='E_D_DECLINE_BENT_ARM_PULLOVER_BARBELL_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_bent_arm_pullover_barbell.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_bent_arm_pullover_barbell.png'],
             preparation_steps=[
                 'E_D_DECLINE_BENT_ARM_PULLOVER_BARBELL_PREP_ONE',
                 'E_D_DECLINE_BENT_ARM_PULLOVER_BARBELL_PREP_TWO'
@@ -2547,7 +2547,7 @@ ExerciseDefinition(
             id='exercise-81',
             title='E_D_DECLINE_CRUNCH_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_crunch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_crunch.png'],
             preparation_steps=[
                 'E_D_DECLINE_CRUNCH_PREP_ONE',
                 'E_D_DECLINE_CRUNCH_PREP_TWO'
@@ -2570,7 +2570,7 @@ ExerciseDefinition(
             id='exercise-82',
             title='E_D_DECLINE_PUSH_UP_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_push_up.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_push_up.png'],
             preparation_steps=[
                 'E_D_DECLINE_PUSH_UP_PREP_ONE',
                 'E_D_DECLINE_PUSH_UP_PREP_TWO',
@@ -2594,7 +2594,7 @@ ExerciseDefinition(
             id='exercise-83',
             title='E_D_DECLINE_REVERSE_CRUNCH_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/decline_reverse_crunch.png'],
+            cover_image_url=['app/regular_directory/exercises/images/decline_reverse_crunch.png'],
             preparation_steps=[
                 'E_D_DECLINE_REVERSE_CRUNCH_PREP_ONE',
                 'E_D_DECLINE_REVERSE_CRUNCH_PREP_TWO'
@@ -2616,7 +2616,7 @@ ExerciseDefinition(
             id='exercise-84',
             title='E_D_DIAMOND_PUSHUP_TITLE',
             video_urls=[],
-            cover_image_url=['regular_directory/exercises/images/diamond_push_up.png'],
+            cover_image_url=['app/regular_directory/exercises/images/diamond_push_up.png'],
             preparation_steps=[
                 'E_D_DIAMOND_PUSHUP_PREP_ONE',
                 'E_D_DIAMOND_PUSHUP_PREP_TWO'
@@ -2637,8 +2637,8 @@ ExerciseDefinition(
 ExerciseDefinition(
 			id='exercise-85',
 			title= "E_D_DONKEY_KICK_TITLE",
-			video_urls=['regular_directory/exercises/videos/donkey_kick.mp4'],
-			cover_image_url=['regular_directory/exercises/images/donkey_kick.png'],
+			video_urls=['app/regular_directory/exercises/videos/donkey_kick.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/donkey_kick.png'],
 			preparation_steps=[
 				'E_D_DONKEY_KICK_PREP_ONE'
 			],
@@ -2661,8 +2661,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-86',
 			title= "E_D_DONKEY_KICK_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/donkey_kick_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/donkey_kick_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/donkey_kick_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/donkey_kick_machine.png'],
 			preparation_steps=[
 				'E_D_DONKEY_KICK_MACHINE_PREP_ONE'
 			],
@@ -2683,8 +2683,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-87',
 			title= "E_D_DOWN_UP_TWIST_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/down_up_twist_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/down_up_twist_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/down_up_twist_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/down_up_twist_band.png'],
 			preparation_steps=[
 				'E_D_DOWN_UP_TWIST_BAND_PREP_ONE',
 				'E_D_DOWN_UP_TWIST_BAND_PREP_TWO'
@@ -2705,8 +2705,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-88',
 			title= "E_D_DOWN_UP_TWIST_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/down_up_twist_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/down_up_twist_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/down_up_twist_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/down_up_twist_cable.png'],
 			preparation_steps=[
 				'E_D_DOWN_UP_TWIST_CABLE_PREP_ONE',
 				'E_D_DOWN_UP_TWIST_CABLE_PREP_TWO'
@@ -2727,8 +2727,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-89',
 			title= "E_D_DRAG_CURL_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/drag_curl_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/drag_curl_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/drag_curl_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/drag_curl_barbell.png'],
 			preparation_steps=[
 				'E_D_DRAG_CURL_BARBELL_PREP_ONE',
 				'E_D_DRAG_CURL_BARBELL_PREP_TWO'
@@ -2748,8 +2748,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-90',
 			title= "E_D_DRAG_CURL_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/drag_curl_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/drag_curl_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/drag_curl_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/drag_curl_cable.png'],
 			preparation_steps=[
 				'E_D_DRAG_CURL_CABLE_PREP_ONE',
 				'E_D_DRAG_CURL_CABLE_PREP_TWO'
@@ -2769,8 +2769,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-91',
 			title= "E_D_DRAG_CURL_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/drag_curl_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/drag_curl_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/drag_curl_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/drag_curl_dumbbell.png'],
 			preparation_steps=[
 				'E_D_DRAG_CURL_DUMBBELL_PREP_ONE',
 				'E_D_DRAG_CURL_DUMBBELL_PREP_TWO'
@@ -2790,8 +2790,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-92',
 			title= "E_D_DUMBBELL_SWING_TITLE",
-			video_urls=['regular_directory/exercises/videos/dumbbell_swing.mp4'],
-			cover_image_url=['regular_directory/exercises/images/dumbbell_swing.png'],
+			video_urls=['app/regular_directory/exercises/videos/dumbbell_swing.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/dumbbell_swing.png'],
 			preparation_steps=[
 				'E_D_DUMBBELL_SWING_PREP_ONE',
 				'E_D_DUMBBELL_SWING_PREP_TWO'
@@ -2813,8 +2813,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-93',
 			title= "E_D_ELBOW_ARM_CIRCLES_TITLE",
-			video_urls=['regular_directory/exercises/videos/elbow_arm_circles.mp4'],
-			cover_image_url=['regular_directory/exercises/images/elbow_arm_circles.png'],
+			video_urls=['app/regular_directory/exercises/videos/elbow_arm_circles.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/elbow_arm_circles.png'],
 			preparation_steps=[
 				'E_D_ELBOW_ARM_CIRCLES_PREP_ONE'
 			],
@@ -2834,8 +2834,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-94',
 			title= "E_D_EXTERNAL_ROTATION_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/external_rotation_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/external_rotation_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/external_rotation_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/external_rotation_band.png'],
 			preparation_steps=[
 				'E_D_EXTERNAL_ROTATION_BAND_PREP_ONE',
 				'E_D_EXTERNAL_ROTATION_BAND_PREP_TWO'
@@ -2856,8 +2856,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-95',
 			title= "E_D_EXTERNAL_ROTATION_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/external_rotation_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/external_rotation_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/external_rotation_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/external_rotation_cable.png'],
 			preparation_steps=[
 				'E_D_EXTERNAL_ROTATION_CABLE_PREP_ONE',
 				'E_D_EXTERNAL_ROTATION_CABLE_PREP_TWO'
@@ -2878,8 +2878,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-96',
 			title= "E_D_EXTERNAL_ROTATION_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/external_rotation_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/external_rotation_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/external_rotation_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/external_rotation_dumbbell.png'],
 			preparation_steps=[
 				'E_D_EXTERNAL_ROTATION_DUMBBELL_PREP_ONE',
 				'E_D_EXTERNAL_ROTATION_DUMBBELL_PREP_TWO'
@@ -2900,8 +2900,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-97',
 			title= "E_D_FACE_PULL_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/face_pull_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/face_pull_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/face_pull_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/face_pull_band.png'],
 			preparation_steps=[
 				'E_D_FACE_PULL_BAND_PREP_ONE',
 				'E_D_FACE_PULL_BAND_PREP_TWO'
@@ -2921,8 +2921,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-98',
 			title= "E_D_FACE_PULL_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/face_pull_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/face_pull_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/face_pull_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/face_pull_cable.png'],
 			preparation_steps=[
 				'E_D_FACE_PULL_CABLE_PREP_ONE',
 				'E_D_FACE_PULL_CABLE_PREP_TWO'
@@ -2944,8 +2944,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-101',
 			title= "E_D_FIRE_HYDRANT_TITLE",
-			video_urls=['regular_directory/exercises/videos/fire_hydrant.mp4'],
-			cover_image_url=['regular_directory/exercises/images/fire_hydrant.png'],
+			video_urls=['app/regular_directory/exercises/videos/fire_hydrant.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/fire_hydrant.png'],
 			preparation_steps=[
 				'E_D_FIRE_HYDRANT_PREP_ONE'
 			],
@@ -2967,8 +2967,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-102',
 			title= "E_D_FLAT_AROUND_THE_WORLD_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/flat_around_the_world_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/flat_around_the_world_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/flat_around_the_world_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/flat_around_the_world_dumbbell.png'],
 			preparation_steps=[
 				'E_D_FLAT_AROUND_THE_WORLD_DUMBBELL_PREP_ONE',
 				'E_D_FLAT_AROUND_THE_WORLD_DUMBBELL_PREP_TWO'
@@ -2989,8 +2989,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-104',
 			title= "E_D_FLOOR_PRESS_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/floor_press_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/floor_press_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/floor_press_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/floor_press_barbell.png'],
 			preparation_steps=[
 				'E_D_FLOOR_PRESS_BARBELL_PREP_ONE',
 				'E_D_FLOOR_PRESS_BARBELL_PREP_TWO'
@@ -3010,8 +3010,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-105',
 			title= "E_D_FRONT_RAISE_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_raise_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_raise_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_raise_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_raise_band.png'],
 			preparation_steps=[
 				'E_D_FRONT_RAISE_BAND_PREP_ONE',
 				'E_D_FRONT_RAISE_BAND_PREP_TWO'
@@ -3031,8 +3031,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-106',
 			title= "E_D_FRONT_RAISE_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_raise_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_raise_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_raise_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_raise_barbell.png'],
 			preparation_steps=[
 				'E_D_FRONT_RAISE_BARBELL_PREP_ONE',
 				'E_D_FRONT_RAISE_BARBELL_PREP_TWO'
@@ -3052,8 +3052,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-107',
 			title= "E_D_FRONT_RAISE_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_raise_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_raise_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_raise_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_raise_cable.png'],
 			preparation_steps=[
 				'E_D_FRONT_RAISE_CABLE_PREP_ONE',
 				'E_D_FRONT_RAISE_CABLE_PREP_TWO'
@@ -3073,8 +3073,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-108',
 			title= "E_D_FRONT_RAISE_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_raise_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_raise_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_raise_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_raise_dumbbell.png'],
 			preparation_steps=[
 				'E_D_FRONT_RAISE_DUMBBELL_PREP_ONE',
 				'E_D_FRONT_RAISE_DUMBBELL_PREP_TWO'
@@ -3094,8 +3094,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-109',
 			title= "E_D_FRONT_RAISE_PLATE_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_raise_plate.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_raise_plate.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_raise_plate.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_raise_plate.png'],
 			preparation_steps=[
 				'E_D_FRONT_RAISE_PLATE_PREP_ONE',
 				'E_D_FRONT_RAISE_PLATE_PREP_TWO'
@@ -3115,8 +3115,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-110',
 			title= "E_D_FRONT_RAISE_BODYWEIGHT_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_raise.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_raise.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_raise.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_raise.png'],
 			preparation_steps=[
 				'E_D_FRONT_RAISE_BODYWEIGHT_PREP_ONE',
 				'E_D_FRONT_RAISE_BODYWEIGHT_PREP_TWO'
@@ -3136,8 +3136,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-111',
 			title= "E_D_FRONT_SQUAT_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_squat_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_squat_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_squat_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_squat_barbell.png'],
 			preparation_steps=[
 				'E_D_FRONT_SQUAT_BARBELL_PREP_ONE',
 				'E_D_FRONT_SQUAT_BARBELL_PREP_TWO'
@@ -3157,8 +3157,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-112',
 			title= "E_D_FRONT_SQUAT_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_squat_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_squat_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_squat_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_squat_cable.png'],
 			preparation_steps=[
 				'E_D_FRONT_SQUAT_CABLE_PREP_ONE',
 				'E_D_FRONT_SQUAT_CABLE_PREP_TWO'
@@ -3178,8 +3178,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-113',
 			title= "E_D_FRONT_SQUAT_KETTLEBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_squat_kettlebell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_squat_kettlebell.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_squat_kettlebell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_squat_kettlebell.png'],
 			preparation_steps=[
 				'E_D_FRONT_SQUAT_KETTLEBELL_PREP_ONE',
 				'E_D_FRONT_SQUAT_KETTLEBELL_PREP_TWO'
@@ -3199,8 +3199,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-114',
 			title= "E_D_FRONT_SQUAT_SMITH_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_squat_smith_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_squat_smith_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_squat_smith_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_squat_smith_machine.png'],
 			preparation_steps=[
 				'E_D_FRONT_SQUAT_SMITH_MACHINE_PREP_ONE',
 				'E_D_FRONT_SQUAT_SMITH_MACHINE_PREP_TWO'
@@ -3220,8 +3220,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-115',
 			title= "E_D_FRONT_SQUAT_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/front_squat_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/front_squat_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/front_squat_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/front_squat_dumbbell.png'],
 			preparation_steps=[
 				'E_D_FRONT_SQUAT_DUMBBELL_PREP_ONE',
 				'E_D_FRONT_SQUAT_DUMBBELL_PREP_TWO'
@@ -3241,8 +3241,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-116',
 			title= "E_D_GLUTE_BRIDGE_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_bridge_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_bridge_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_bridge_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_bridge_dumbbell.png'],
 			preparation_steps=[
 				'E_D_GLUTE_BRIDGE_DUMBBELL_PREP_ONE',
 				'E_D_GLUTE_BRIDGE_DUMBBELL_PREP_TWO'
@@ -3264,8 +3264,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-117',
 			title= "E_D_GLUTE_BRIDGE_ABDUCTION_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_bridge_abduction.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_bridge_abduction.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_bridge_abduction.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_bridge_abduction.png'],
 			preparation_steps=[
 				'E_D_GLUTE_BRIDGE_ABDUCTION_PREP_ONE',
 				'E_D_GLUTE_BRIDGE_ABDUCTION_PREP_TWO'
@@ -3286,8 +3286,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-118',
 			title= "E_D_GLUTE_BRIDGE_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_bridge_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_bridge_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_bridge_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_bridge_barbell.png'],
 			preparation_steps=[
 				'E_D_GLUTE_BRIDGE_BARBELL_PREP_ONE',
 				'E_D_GLUTE_BRIDGE_BARBELL_PREP_TWO'
@@ -3309,8 +3309,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-119',
 			title= "E_D_GLUTE_BRIDGE_FEET_ON_BENCH_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_bridge_feet_on_bench_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_bridge_feet_on_bench_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_bridge_feet_on_bench_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_bridge_feet_on_bench_barbell.png'],
 			preparation_steps=[
 				'E_D_GLUTE_BRIDGE_FEET_ON_BENCH_BARBELL_PREP_ONE',
 				'E_D_GLUTE_BRIDGE_FEET_ON_BENCH_BARBELL_PREP_TWO'
@@ -3332,8 +3332,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-120',
 			title= "E_D_GLUTE_BRIDGE_FEET_ON_BENCH_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_bridge_feet_on_bench.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_bridge_feet_on_bench.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_bridge_feet_on_bench.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_bridge_feet_on_bench.png'],
 			preparation_steps=[
 				'E_D_GLUTE_BRIDGE_FEET_ON_BENCH_PREP_ONE',
 				'E_D_GLUTE_BRIDGE_FEET_ON_BENCH_PREP_TWO'
@@ -3355,8 +3355,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-121',
 			title= "E_D_GLUTE_BRIDGE_BODYWEIGHT_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_bridge.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_bridge.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_bridge.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_bridge.png'],
 			preparation_steps=[
 				'E_D_GLUTE_BRIDGE_BODYWEIGHT_PREP_ONE'
 			],
@@ -3377,8 +3377,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-122',
 			title= "E_D_GLUTE_FROG_BRIDGE_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_frog_bridge.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_frog_bridge.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_frog_bridge.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_frog_bridge.png'],
 			preparation_steps=[
 				'E_D_GLUTE_FROG_BRIDGE_PREP_ONE'
 			],
@@ -3398,8 +3398,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-123',
 			title= "E_D_GLUTE_HAM_RAISE_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_ham_raise.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_ham_raise.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_ham_raise.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_ham_raise.png'],
 			preparation_steps=[
 				'E_D_GLUTE_HAM_RAISE_PREP_ONE',
 				'E_D_GLUTE_HAM_RAISE_PREP_TWO'
@@ -3419,8 +3419,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-124',
 			title= "E_D_GLUTE_KICKBACK_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_kickback_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_kickback_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_kickback_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_kickback_band.png'],
 			preparation_steps=[
 				'E_D_GLUTE_KICKBACK_BAND_PREP_ONE',
 				'E_D_GLUTE_KICKBACK_BAND_PREP_TWO'
@@ -3443,8 +3443,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-125',
 			title= "E_D_GLUTE_KICKBACK_TITLE",
-			video_urls=['regular_directory/exercises/videos/glute_kickback.mp4'],
-			cover_image_url=['regular_directory/exercises/images/glute_kickback.png'],
+			video_urls=['app/regular_directory/exercises/videos/glute_kickback.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/glute_kickback.png'],
 			preparation_steps=[
 				'E_D_GLUTE_KICKBACK_PREP_ONE'
 			],
@@ -3466,8 +3466,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-126',
 			title= "E_D_GOOD_MORNING_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/good_morning_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/good_morning_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/good_morning_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/good_morning_band.png'],
 			preparation_steps=[
 				'E_D_GOOD_MORNING_BAND_PREP_ONE',
 				'E_D_GOOD_MORNING_BAND_PREP_TWO'
@@ -3487,8 +3487,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-127',
 			title= "E_D_GOOD_MORNING_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/good_morning_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/good_morning_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/good_morning_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/good_morning_barbell.png'],
 			preparation_steps=[
 				'E_D_GOOD_MORNING_BARBELL_PREP_ONE',
 				'E_D_GOOD_MORNING_BARBELL_PREP_TWO'
@@ -3508,8 +3508,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-128',
 			title= "E_D_GOOD_MORNING_SMITH_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/good_morning_smith_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/good_morning_smith_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/good_morning_smith_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/good_morning_smith_machine.png'],
 			preparation_steps=[
 				'E_D_GOOD_MORNING_SMITH_MACHINE_PREP_ONE',
 				'E_D_GOOD_MORNING_SMITH_MACHINE_PREP_TWO'
@@ -3529,8 +3529,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-129',
 			title= "E_D_GORILLA_CHIN_CRUNCH_TITLE",
-			video_urls=['regular_directory/exercises/videos/gorilla_chin_crunch.mp4'],
-			cover_image_url=['regular_directory/exercises/images/gorilla_chin_crunch.png'],
+			video_urls=['app/regular_directory/exercises/videos/gorilla_chin_crunch.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/gorilla_chin_crunch.png'],
 			preparation_steps=[
 				'E_D_GORILLA_CHIN_CRUNCH_PREP_ONE',
 				'E_D_GORILLA_CHIN_CRUNCH_PREP_TWO'
@@ -3551,8 +3551,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-130',
 			title= "E_D_HACK_SQUAT_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/hack_squat_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hack_squat_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/hack_squat_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hack_squat_barbell.png'],
 			preparation_steps=[
 				'E_D_HACK_SQUAT_BARBELL_PREP_ONE',
 				'E_D_HACK_SQUAT_BARBELL_PREP_TWO'
@@ -3572,8 +3572,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-131',
 			title= "E_D_HACK_SQUAT_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hack_squat_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hack_squat_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/hack_squat_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hack_squat_machine.png'],
 			preparation_steps=[
 				'E_D_HACK_SQUAT_MACHINE_PREP_ONE',
 				'E_D_HACK_SQUAT_MACHINE_PREP_TWO'
@@ -3593,8 +3593,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-132',
 			title= "E_D_HAMMER_CURL_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/hammer_curl_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hammer_curl_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/hammer_curl_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hammer_curl_band.png'],
 			preparation_steps=[
 				'E_D_HAMMER_CURL_BAND_PREP_ONE',
 				'E_D_HAMMER_CURL_BAND_PREP_TWO'
@@ -3614,8 +3614,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-133',
 			title= "E_D_HAMMER_CURL_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hammer_curl_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hammer_curl_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/hammer_curl_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hammer_curl_cable.png'],
 			preparation_steps=[
 				'E_D_HAMMER_CURL_CABLE_PREP_ONE',
 				'E_D_HAMMER_CURL_CABLE_PREP_TWO'
@@ -3635,8 +3635,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-134',
 			title= "E_D_HAMMER_CURL_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/hammer_curl_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hammer_curl_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/hammer_curl_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hammer_curl_dumbbell.png'],
 			preparation_steps=[
 				'E_D_HAMMER_CURL_DUMBBELL_PREP_ONE',
 				'E_D_HAMMER_CURL_DUMBBELL_PREP_TWO'
@@ -3656,8 +3656,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-135',
 			title= "E_D_HANG_CLEAN_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/hang_clean_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hang_clean_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/hang_clean_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hang_clean_barbell.png'],
 			preparation_steps=[
 				'E_D_HANG_CLEAN_BARBELL_PREP_ONE',
 				'E_D_HANG_CLEAN_BARBELL_PREP_TWO'
@@ -3678,8 +3678,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-136',
 			title= "E_D_HANG_SNATCH_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/hang_snatch_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hang_snatch_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/hang_snatch_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hang_snatch_barbell.png'],
 			preparation_steps=[
 				'E_D_HANG_SNATCH_BARBELL_PREP_ONE',
 				'E_D_HANG_SNATCH_BARBELL_PREP_TWO'
@@ -3700,8 +3700,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-137',
 			title= "E_D_HANGING_KNEE_RAISE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hanging_knee_raise.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hanging_knee_raise.png'],
+			video_urls=['app/regular_directory/exercises/videos/hanging_knee_raise.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hanging_knee_raise.png'],
 			preparation_steps=[
 				'E_D_HANGING_KNEE_RAISE_PREP_ONE'
 			],
@@ -3720,8 +3720,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-138',
 			title= "E_D_HANGING_LEG_RAISE_TWIST_TITLE",
-			video_urls=['regular_directory/exercises/videos/hanging_leg_raise_twist.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hanging_leg_raise_twist.png'],
+			video_urls=['app/regular_directory/exercises/videos/hanging_leg_raise_twist.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hanging_leg_raise_twist.png'],
 			preparation_steps=[
 				'E_D_HANGING_LEG_RAISE_TWIST_PREP_ONE'
 			],
@@ -3740,8 +3740,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-139',
 			title= "E_D_HANGING_LEG_RAISE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hanging_leg_raise.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hanging_leg_raise.png'],
+			video_urls=['app/regular_directory/exercises/videos/hanging_leg_raise.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hanging_leg_raise.png'],
 			preparation_steps=[
 				'E_D_HANGING_LEG_RAISE_PREP_ONE'
 			],
@@ -3760,8 +3760,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-140',
 			title= "E_D_HEEL_TOUCH_TITLE",
-			video_urls=['regular_directory/exercises/videos/heel_touch.mp4'],
-			cover_image_url=['regular_directory/exercises/images/heel_touch.png'],
+			video_urls=['app/regular_directory/exercises/videos/heel_touch.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/heel_touch.png'],
 			preparation_steps=[
 				'E_D_HEEL_TOUCH_PREP_ONE',
 				'E_D_HEEL_TOUCH_PREP_TWO'
@@ -3782,8 +3782,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-141',
 			title= "E_D_HIGH_KNEE_SKIPS_TITLE",
-			video_urls=['regular_directory/exercises/videos/high_knee_skips.mp4'],
-			cover_image_url=['regular_directory/exercises/images/high_knee_skips.png'],
+			video_urls=['app/regular_directory/exercises/videos/high_knee_skips.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/high_knee_skips.png'],
 			preparation_steps=[
 				'E_D_HIGH_KNEE_SKIPS_PREP_ONE'
 			],
@@ -3802,8 +3802,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-142',
 			title= "E_D_HIP_ABDUCTOR_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_abductor_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_abductor_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_abductor_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_abductor_band.png'],
 			preparation_steps=[
 				'E_D_HIP_ABDUCTOR_BAND_PREP_ONE',
 				'E_D_HIP_ABDUCTOR_BAND_PREP_TWO'
@@ -3825,8 +3825,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-143',
 			title= "E_D_HIP_ABDUCTOR_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_abductor_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_abductor_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_abductor_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_abductor_cable.png'],
 			preparation_steps=[
 				'E_D_HIP_ABDUCTOR_CABLE_PREP_ONE',
 				'E_D_HIP_ABDUCTOR_CABLE_PREP_TWO'
@@ -3848,8 +3848,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-144',
 			title= "E_D_HIP_ADDUCTOR_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_adductor_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_adductor_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_adductor_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_adductor_machine.png'],
 			preparation_steps=[
 				'E_D_HIP_ADDUCTOR_MACHINE_PREP_ONE',
 				'E_D_HIP_ADDUCTOR_MACHINE_PREP_TWO'
@@ -3869,8 +3869,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-145',
 			title= "E_D_HIP_EXTENSION_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_extension_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_extension_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_extension_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_extension_machine.png'],
 			preparation_steps=[
 				'E_D_HIP_EXTENSION_MACHINE_PREP_ONE',
 				'E_D_HIP_EXTENSION_MACHINE_PREP_TWO'
@@ -3890,8 +3890,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-146',
 			title= "E_D_HIP_FLEXION_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_flexion_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_flexion_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_flexion_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_flexion_band.png'],
 			preparation_steps=[
 				'E_D_HIP_FLEXION_BAND_PREP_ONE',
 				'E_D_HIP_FLEXION_BAND_PREP_TWO'
@@ -3913,8 +3913,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-147',
 			title= "E_D_HIP_FLEXION_MACHINE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_flexion_machine.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_flexion_machine.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_flexion_machine.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_flexion_machine.png'],
 			preparation_steps=[
 				'E_D_HIP_FLEXION_MACHINE_PREP_ONE',
 				'E_D_HIP_FLEXION_MACHINE_PREP_TWO'
@@ -3935,8 +3935,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-149',
 			title= "E_D_HIP_FROG_EXTENSION_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_frog_extension.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_frog_extension.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_frog_extension.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_frog_extension.png'],
 			preparation_steps=[
 				'E_D_HIP_FROG_EXTENSION_PREP_ONE',
 				'E_D_HIP_FROG_EXTENSION_PREP_TWO'
@@ -3956,8 +3956,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-150',
 			title= "E_D_HIP_THRUST_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_thrust_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_thrust_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_thrust_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_thrust_barbell.png'],
 			preparation_steps=[
 				'E_D_HIP_THRUST_BARBELL_PREP_ONE',
 				'E_D_HIP_THRUST_BARBELL_PREP_TWO'
@@ -3978,8 +3978,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-151',
 			title= "E_D_HIP_THRUST_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_thrust_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_thrust_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_thrust_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_thrust_cable.png'],
 			preparation_steps=[
 				'E_D_HIP_THRUST_CABLE_PREP_ONE',
 				'E_D_HIP_THRUST_CABLE_PREP_TWO'
@@ -4001,8 +4001,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-153',
 			title= "E_D_HIP_THRUST_TITLE",
-			video_urls=['regular_directory/exercises/videos/hip_thrust.mp4'],
-			cover_image_url=['regular_directory/exercises/images/hip_thrust.png'],
+			video_urls=['app/regular_directory/exercises/videos/hip_thrust.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/hip_thrust.png'],
 			preparation_steps=[
 				'E_D_HIP_THRUST_PREP_ONE',
 				'E_D_HIP_THRUST_PREP_TWO'
@@ -4024,8 +4024,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-155',
 			title= "E_D_INCLINE_BENCH_FLY_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bench_fly_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bench_fly_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bench_fly_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bench_fly_cable.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BENCH_FLY_CABLE_PREP_ONE',
 				'E_D_INCLINE_BENCH_FLY_CABLE_PREP_TWO'
@@ -4045,8 +4045,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-156',
 			title= "E_D_INCLINE_BENCH_FLY_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bench_fly_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bench_fly_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bench_fly_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bench_fly_dumbbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BENCH_FLY_DUMBBELL_PREP_ONE',
 				'E_D_INCLINE_BENCH_FLY_DUMBBELL_PREP_TWO'
@@ -4066,8 +4066,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-157',
 			title= "E_D_INCLINE_BENCH_PRESS_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bench_press_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bench_press_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bench_press_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bench_press_barbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BENCH_PRESS_BARBELL_PREP_ONE',
 				'E_D_INCLINE_BENCH_PRESS_BARBELL_PREP_TWO'
@@ -4087,8 +4087,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-158',
 			title= "E_D_INCLINE_BENCH_PRESS_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bench_press_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bench_press_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bench_press_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bench_press_cable.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BENCH_PRESS_CABLE_PREP_ONE',
 				'E_D_INCLINE_BENCH_PRESS_CABLE_PREP_TWO'
@@ -4108,8 +4108,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-159',
 			title= "E_D_INCLINE_BENCH_PRESS_CLOSE_GRIP_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bench_press_close_grip_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bench_press_close_grip_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bench_press_close_grip_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bench_press_close_grip_barbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BENCH_PRESS_CLOSE_GRIP_BARBELL_PREP_ONE',
 				'E_D_INCLINE_BENCH_PRESS_CLOSE_GRIP_BARBELL_PREP_TWO'
@@ -4129,8 +4129,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-160',
 			title= "E_D_INCLINE_BENCH_PRESS_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bench_press_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bench_press_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bench_press_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bench_press_dumbbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BENCH_PRESS_DUMBBELL_PREP_ONE',
 				'E_D_INCLINE_BENCH_PRESS_DUMBBELL_PREP_TWO'
@@ -4150,8 +4150,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-162',
 			title= "E_D_INCLINE_BICEP_CURL_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_bicep_curl_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_bicep_curl_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_bicep_curl_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_bicep_curl_dumbbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_BICEP_CURL_DUMBBELL_PREP_ONE',
 				'E_D_INCLINE_BICEP_CURL_DUMBBELL_PREP_TWO'
@@ -4172,8 +4172,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-164',
 			title= "E_D_INCLINE_PUSH_UP_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_push_up.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_push_up.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_push_up.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_push_up.png'],
 			preparation_steps=[
 				'E_D_INCLINE_PUSH_UP_PREP_ONE',
 				'E_D_INCLINE_PUSH_UP_PREP_TWO'
@@ -4193,8 +4193,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-165',
 			title= "E_D_INCLINE_REVERSE_FLY_DUMBBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_reverse_fly_dumbbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_reverse_fly_dumbbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_reverse_fly_dumbbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_reverse_fly_dumbbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_REVERSE_FLY_DUMBBELL_PREP_ONE',
 				'E_D_INCLINE_REVERSE_FLY_DUMBBELL_PREP_TWO'
@@ -4214,8 +4214,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-166',
 			title= "E_D_INCLINE_ROW_BARBELL_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_row_barbell.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_row_barbell.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_row_barbell.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_row_barbell.png'],
 			preparation_steps=[
 				'E_D_INCLINE_ROW_BARBELL_PREP_ONE',
 				'E_D_INCLINE_ROW_BARBELL_PREP_TWO'
@@ -4235,8 +4235,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-167',
 			title= "E_D_INCLINE_ROW_CABLE_TITLE",
-			video_urls=['regular_directory/exercises/videos/incline_row_cable.mp4'],
-			cover_image_url=['regular_directory/exercises/images/incline_row_cable.png'],
+			video_urls=['app/regular_directory/exercises/videos/incline_row_cable.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/incline_row_cable.png'],
 			preparation_steps=[
 				'E_D_INCLINE_ROW_CABLE_PREP_ONE',
 				'E_D_INCLINE_ROW_CABLE_PREP_TWO'
@@ -4256,8 +4256,8 @@ ExerciseDefinition(
 		ExerciseDefinition(
 			id='exercise-168',
 			title= "E_D_INTERNAL_ROTATION_BAND_TITLE",
-			video_urls=['regular_directory/exercises/videos/internal_rotation_band.mp4'],
-			cover_image_url=['regular_directory/exercises/images/internal_rotation_band.png'],
+			video_urls=['app/regular_directory/exercises/videos/internal_rotation_band.mp4'],
+			cover_image_url=['app/regular_directory/exercises/images/internal_rotation_band.png'],
 			preparation_steps=[
 				'E_D_INTERNAL_ROTATION_BAND_PREP_ONE'
 			],
@@ -4278,8 +4278,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-169',
             title="E_D_INTERNAL_ROTATION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/internal_rotation_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Internal Rotation Band.png'],
+            video_urls=['app/regular_directory/exercises/videos/internal_rotation_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Internal Rotation Band.png'],
             preparation_steps=[
                 'E_D_INTERNAL_ROTATION_BAND_PREP_ONE',
                 'E_D_INTERNAL_ROTATION_BAND_PREP_TWO'
@@ -4299,8 +4299,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-170',
             title="E_D_INTERNAL_ROTATION_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/internal_rotation_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Internal Rotation Cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/internal_rotation_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Internal Rotation Cable.png'],
             preparation_steps=[
                 'E_D_INTERNAL_ROTATION_CABLE_PREP_ONE',
                 'E_D_INTERNAL_ROTATION_CABLE_PREP_TWO'
@@ -4320,8 +4320,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-171',
             title="E_D_INVERTED_ROW_TITLE",
-            video_urls=['regular_directory/exercises/videos/inverted_row.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Inverted Row.png'],
+            video_urls=['app/regular_directory/exercises/videos/inverted_row.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Inverted Row.png'],
             preparation_steps=[
                 'E_D_INVERTED_ROW_PREP_ONE',
                 'E_D_INVERTED_ROW_PREP_TWO'
@@ -4341,8 +4341,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-172',
             title="E_D_INVERTED_ROW_REVERSE_GRIP_TITLE",
-            video_urls=['regular_directory/exercises/videos/inverted_row_reverse_grip.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Inverted Row Reverse Grip.png'],
+            video_urls=['app/regular_directory/exercises/videos/inverted_row_reverse_grip.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Inverted Row Reverse Grip.png'],
             preparation_steps=[
                 'E_D_INVERTED_ROW_REVERSE_GRIP_PREP_ONE',
                 'E_D_INVERTED_ROW_REVERSE_GRIP_PREP_TWO'
@@ -4362,8 +4362,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-173',
             title="E_D_JUMP_SQUAT_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Jump Squat.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Jump Squat.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_PREP_ONE',
                 'E_D_JUMP_SQUAT_PREP_TWO',
@@ -4386,8 +4386,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-174',
             title="E_D_JUMP_SQUAT_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Jump Squat Barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Jump Squat Barbell.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_BARBELL_PREP_ONE',
                 'E_D_JUMP_SQUAT_BARBELL_PREP_TWO',
@@ -4411,8 +4411,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-175',
             title="E_D_JUMP_SQUAT_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Jump Squat- Dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Jump Squat- Dumbbell.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_DUMBBELL_PREP_ONE',
                 'E_D_JUMP_SQUAT_DUMBBELL_PREP_TWO',
@@ -4435,8 +4435,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-176',
             title="E_D_JUMPING_JACK_TITLE",
-            video_urls=['regular_directory/exercises/videos/jumping_jack.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Jumping Jack.png'],
+            video_urls=['app/regular_directory/exercises/videos/jumping_jack.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Jumping Jack.png'],
             preparation_steps=[
                 'E_D_JUMPING_JACK_PREP_ONE'
             ],
@@ -4457,8 +4457,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-177',
             title="E_D_KETTLEBELL_SWING_TITLE",
-            video_urls=['regular_directory/exercises/videos/kettlebell_swing.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Kettlebell Swing.png'],
+            video_urls=['app/regular_directory/exercises/videos/kettlebell_swing.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Kettlebell Swing.png'],
             preparation_steps=[
                 'E_D_KETTLEBELL_SWING_PREP_ONE',
                 'E_D_KETTLEBELL_SWING_PREP_TWO'
@@ -4480,8 +4480,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-178',
             title="E_D_KNEE_PUSH_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_push_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Knee Push-up.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_push_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Knee Push-up.png'],
             preparation_steps=[
                 'E_D_KNEE_PUSH_UP_PREP_ONE',
                 'E_D_KNEE_PUSH_UP_PREP_TWO'
@@ -4503,8 +4503,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-179',
             title="E_D_KNEE_RAISE_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_raise.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Knee Raise.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_raise.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Knee Raise.png'],
             preparation_steps=[
                 'E_D_KNEE_RAISE_PREP_ONE',
                 'E_D_KNEE_RAISE_PREP_TWO'
@@ -4525,8 +4525,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-180',
             title="E_D_KNEE_RAISE_TWIST_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_raise_twist.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Knee Raise Twist.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_raise_twist.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Knee Raise Twist.png'],
             preparation_steps=[
                 'E_D_KNEE_RAISE_TWIST_PREP_ONE',
                 'E_D_KNEE_RAISE_TWIST_PREP_TWO'
@@ -4548,8 +4548,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-181',
             title="E_D_KNEELING_CRUNCH_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_crunch_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Kneeling Crunch Band.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_crunch_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Kneeling Crunch Band.png'],
             preparation_steps=[
                 'E_D_KNEELING_CRUNCH_BAND_PREP_ONE',
                 'E_D_KNEELING_CRUNCH_BAND_PREP_TWO'
@@ -4570,8 +4570,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-182',
             title="E_D_KNEELING_CRUNCH_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_crunch_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Kneeling Crunch Cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_crunch_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Kneeling Crunch Cable.png'],
             preparation_steps=[
                 'E_D_KNEELING_CRUNCH_CABLE_PREP_ONE',
                 'E_D_KNEELING_CRUNCH_CABLE_PREP_TWO'
@@ -4593,8 +4593,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-183',
             title="E_D_KNEELING_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Kneeling Plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Kneeling Plank.png'],
             preparation_steps=[
                 'E_D_KNEELING_PLANK_PREP_ONE'
             ],
@@ -4616,8 +4616,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-184',
             title="E_D_KNEELING_PULL_DOWN_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_pull_down_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/Kneeling Pull-down Band.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_pull_down_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/Kneeling Pull-down Band.png'],
             preparation_steps=[
                 'E_D_KNEELING_PULL_DOWN_BAND_PREP_ONE',
                 'E_D_KNEELING_PULL_DOWN_BAND_PREP_TWO'
@@ -4638,8 +4638,8 @@ ExerciseDefinition(
 ExerciseDefinition(
             id='exercise-169',
             title= "E_D_INTERNAL_ROTATION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/internal_rotation_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/internal_rotation_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/internal_rotation_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/internal_rotation_band.png'],
             preparation_steps=[
                 'E_D_INTERNAL_ROTATION_BAND_PREP_ONE',
                 'E_D_INTERNAL_ROTATION_BAND_PREP_TWO'
@@ -4659,8 +4659,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-170',
             title= "E_D_INTERNAL_ROTATION_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/internal_rotation_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/internal_rotation_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/internal_rotation_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/internal_rotation_cable.png'],
             preparation_steps=[
                 'E_D_INTERNAL_ROTATION_CABLE_PREP_ONE',
                 'E_D_INTERNAL_ROTATION_CABLE_PREP_TWO'
@@ -4680,8 +4680,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-171',
             title= "E_D_INVERTED_ROW_TITLE",
-            video_urls=['regular_directory/exercises/videos/inverted_row.mp4'],
-            cover_image_url=['regular_directory/exercises/images/inverted_row.png'],
+            video_urls=['app/regular_directory/exercises/videos/inverted_row.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/inverted_row.png'],
             preparation_steps=[
                 'E_D_INVERTED_ROW_PREP_ONE',
                 'E_D_INVERTED_ROW_PREP_TWO'
@@ -4701,8 +4701,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-172',
             title= "E_D_INVERTED_ROW_REVERSE_GRIP_TITLE",
-            video_urls=['regular_directory/exercises/videos/inverted_row_reverse_grip.mp4'],
-            cover_image_url=['regular_directory/exercises/images/inverted_row_reverse_grip.png'],
+            video_urls=['app/regular_directory/exercises/videos/inverted_row_reverse_grip.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/inverted_row_reverse_grip.png'],
             preparation_steps=[
                 'E_D_INVERTED_ROW_REVERSE_GRIP_PREP_ONE',
                 'E_D_INVERTED_ROW_REVERSE_GRIP_PREP_TWO'
@@ -4722,8 +4722,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-173',
             title= "E_D_JUMP_SQUAT_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jump_squat.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jump_squat.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_PREP_ONE',
                 'E_D_JUMP_SQUAT_PREP_TWO',
@@ -4746,8 +4746,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-174',
             title= "E_D_JUMP_SQUAT_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jump_squat_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jump_squat_barbell.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_BARBELL_PREP_ONE',
                 'E_D_JUMP_SQUAT_BARBELL_PREP_TWO',
@@ -4771,8 +4771,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-175',
             title= "E_D_JUMP_SQUAT_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jump_squat_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jump_squat_dumbbell.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_DUMBBELL_PREP_ONE',
                 'E_D_JUMP_SQUAT_DUMBBELL_PREP_TWO',
@@ -4795,8 +4795,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-176',
             title= "E_D_JUMPING_JACK_TITLE",
-            video_urls=['regular_directory/exercises/videos/jumping_jack.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jumping_jack.png'],
+            video_urls=['app/regular_directory/exercises/videos/jumping_jack.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jumping_jack.png'],
             preparation_steps=[
                 'E_D_JUMPING_JACK_PREP_ONE'
             ],
@@ -4817,8 +4817,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-177',
             title= "E_D_KETTLEBELL_SWING_TITLE",
-            video_urls=['regular_directory/exercises/videos/kettlebell_swing.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kettlebell_swing.png'],
+            video_urls=['app/regular_directory/exercises/videos/kettlebell_swing.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kettlebell_swing.png'],
             preparation_steps=[
                 'E_D_KETTLEBELL_SWING_PREP_ONE',
                 'E_D_KETTLEBELL_SWING_PREP_TWO'
@@ -4840,8 +4840,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-178',
             title= "E_D_KNEE_PUSH_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_push_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/knee_push_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_push_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/knee_push_up.png'],
             preparation_steps=[
                 'E_D_KNEE_PUSH_UP_PREP_ONE',
                 'E_D_KNEE_PUSH_UP_PREP_TWO'
@@ -4863,8 +4863,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-179',
             title= "E_D_KNEE_RAISE_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_raise.mp4'],
-            cover_image_url=['regular_directory/exercises/images/knee_raise.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_raise.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/knee_raise.png'],
             preparation_steps=[
                 'E_D_KNEE_RAISE_PREP_ONE',
                 'E_D_KNEE_RAISE_PREP_TWO'
@@ -4885,8 +4885,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-180',
             title= "E_D_KNEE_RAISE_TWIST_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_raise_twist.mp4'],
-            cover_image_url=['regular_directory/exercises/images/knee_raise_twist.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_raise_twist.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/knee_raise_twist.png'],
             preparation_steps=[
                 'E_D_KNEE_RAISE_TWIST_PREP_ONE',
                 'E_D_KNEE_RAISE_TWIST_PREP_TWO'
@@ -4908,8 +4908,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-181',
             title= "E_D_KNEELING_CRUNCH_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_crunch_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_crunch_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_crunch_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_crunch_band.png'],
             preparation_steps=[
                 'E_D_KNEELING_CRUNCH_BAND_PREP_ONE',
                 'E_D_KNEELING_CRUNCH_BAND_PREP_TWO'
@@ -4930,8 +4930,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-182',
             title= "E_D_KNEELING_CRUNCH_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_crunch_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_crunch_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_crunch_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_crunch_cable.png'],
             preparation_steps=[
                 'E_D_KNEELING_CRUNCH_CABLE_PREP_ONE',
                 'E_D_KNEELING_CRUNCH_CABLE_PREP_TWO'
@@ -4953,8 +4953,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-183',
             title= "E_D_KNEELING_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_plank.png'],
             preparation_steps=[
                 'E_D_KNEELING_PLANK_PREP_ONE'
             ],
@@ -4976,8 +4976,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-169',
             title= "E_D_INTERNAL_ROTATION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/internal_rotation_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/internal_rotation_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/internal_rotation_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/internal_rotation_band.png'],
             preparation_steps=[
                 'E_D_INTERNAL_ROTATION_BAND_PREP_ONE',
                 'E_D_INTERNAL_ROTATION_BAND_PREP_TWO'
@@ -4997,8 +4997,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-170',
             title= "E_D_INTERNAL_ROTATION_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/internal_rotation_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/internal_rotation_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/internal_rotation_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/internal_rotation_cable.png'],
             preparation_steps=[
                 'E_D_INTERNAL_ROTATION_CABLE_PREP_ONE',
                 'E_D_INTERNAL_ROTATION_CABLE_PREP_TWO'
@@ -5018,8 +5018,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-171',
             title= "E_D_INVERTED_ROW_TITLE",
-            video_urls=['regular_directory/exercises/videos/inverted_row.mp4'],
-            cover_image_url=['regular_directory/exercises/images/inverted_row.png'],
+            video_urls=['app/regular_directory/exercises/videos/inverted_row.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/inverted_row.png'],
             preparation_steps=[
                 'E_D_INVERTED_ROW_PREP_ONE',
                 'E_D_INVERTED_ROW_PREP_TWO'
@@ -5039,8 +5039,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-172',
             title= "E_D_INVERTED_ROW_REVERSE_GRIP_TITLE",
-            video_urls=['regular_directory/exercises/videos/inverted_row_reverse_grip.mp4'],
-            cover_image_url=['regular_directory/exercises/images/inverted_row_reverse_grip.png'],
+            video_urls=['app/regular_directory/exercises/videos/inverted_row_reverse_grip.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/inverted_row_reverse_grip.png'],
             preparation_steps=[
                 'E_D_INVERTED_ROW_REVERSE_GRIP_PREP_ONE',
                 'E_D_INVERTED_ROW_REVERSE_GRIP_PREP_TWO'
@@ -5060,8 +5060,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-173',
             title= "E_D_JUMP_SQUAT_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jump_squat.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jump_squat.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_PREP_ONE',
                 'E_D_JUMP_SQUAT_PREP_TWO',
@@ -5084,8 +5084,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-174',
             title= "E_D_JUMP_SQUAT_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jump_squat_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jump_squat_barbell.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_BARBELL_PREP_ONE',
                 'E_D_JUMP_SQUAT_BARBELL_PREP_TWO',
@@ -5109,8 +5109,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-175',
             title= "E_D_JUMP_SQUAT_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/jump_squat_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jump_squat_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/jump_squat_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jump_squat_dumbbell.png'],
             preparation_steps=[
                 'E_D_JUMP_SQUAT_DUMBBELL_PREP_ONE',
                 'E_D_JUMP_SQUAT_DUMBBELL_PREP_TWO',
@@ -5133,8 +5133,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-176',
             title= "E_D_JUMPING_JACK_TITLE",
-            video_urls=['regular_directory/exercises/videos/jumping_jack.mp4'],
-            cover_image_url=['regular_directory/exercises/images/jumping_jack.png'],
+            video_urls=['app/regular_directory/exercises/videos/jumping_jack.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/jumping_jack.png'],
             preparation_steps=[
                 'E_D_JUMPING_JACK_PREP_ONE'
             ],
@@ -5155,8 +5155,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-177',
             title= "E_D_KETTLEBELL_SWING_TITLE",
-            video_urls=['regular_directory/exercises/videos/kettlebell_swing.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kettlebell_swing.png'],
+            video_urls=['app/regular_directory/exercises/videos/kettlebell_swing.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kettlebell_swing.png'],
             preparation_steps=[
                 'E_D_KETTLEBELL_SWING_PREP_ONE',
                 'E_D_KETTLEBELL_SWING_PREP_TWO'
@@ -5178,8 +5178,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-178',
             title= "E_D_KNEE_PUSH_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_push_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/knee_push_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_push_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/knee_push_up.png'],
             preparation_steps=[
                 'E_D_KNEE_PUSH_UP_PREP_ONE',
                 'E_D_KNEE_PUSH_UP_PREP_TWO'
@@ -5201,8 +5201,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-179',
             title= "E_D_KNEE_RAISE_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_raise.mp4'],
-            cover_image_url=['regular_directory/exercises/images/knee_raise.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_raise.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/knee_raise.png'],
             preparation_steps=[
                 'E_D_KNEE_RAISE_PREP_ONE',
                 'E_D_KNEE_RAISE_PREP_TWO'
@@ -5223,8 +5223,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-180',
             title= "E_D_KNEE_RAISE_TWIST_TITLE",
-            video_urls=['regular_directory/exercises/videos/knee_raise_twist.mp4'],
-            cover_image_url=['regular_directory/exercises/images/knee_raise_twist.png'],
+            video_urls=['app/regular_directory/exercises/videos/knee_raise_twist.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/knee_raise_twist.png'],
             preparation_steps=[
                 'E_D_KNEE_RAISE_TWIST_PREP_ONE',
                 'E_D_KNEE_RAISE_TWIST_PREP_TWO'
@@ -5246,8 +5246,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-181',
             title= "E_D_KNEELING_CRUNCH_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_crunch_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_crunch_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_crunch_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_crunch_band.png'],
             preparation_steps=[
                 'E_D_KNEELING_CRUNCH_BAND_PREP_ONE',
                 'E_D_KNEELING_CRUNCH_BAND_PREP_TWO'
@@ -5268,8 +5268,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-182',
             title= "E_D_KNEELING_CRUNCH_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_crunch_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_crunch_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_crunch_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_crunch_cable.png'],
             preparation_steps=[
                 'E_D_KNEELING_CRUNCH_CABLE_PREP_ONE',
                 'E_D_KNEELING_CRUNCH_CABLE_PREP_TWO'
@@ -5291,8 +5291,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-183',
             title= "E_D_KNEELING_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_plank.png'],
             preparation_steps=[
                 'E_D_KNEELING_PLANK_PREP_ONE'
             ],
@@ -5316,8 +5316,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-184',
             title= "E_D_KNEELING_PULL_DOWN_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_pull_down_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_pull_down_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_pull_down_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_pull_down_band.png'],
             preparation_steps=[
                 'E_D_KNEELING_PULL_DOWN_BAND_PREP_ONE',
                 'E_D_KNEELING_PULL_DOWN_BAND_PREP_TWO'
@@ -5337,8 +5337,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-185',
             title= "E_D_KNEELING_TORSO_ROTATION_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_torso_rotation_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_torso_rotation_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_torso_rotation_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_torso_rotation_machine.png'],
             preparation_steps=[
                 'E_D_KNEELING_TORSO_ROTATION_MACHINE_PREP_ONE',
                 'E_D_KNEELING_TORSO_ROTATION_MACHINE_PREP_TWO'
@@ -5359,8 +5359,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-186',
             title= "E_D_KNEELING_TRICEPS_EXTENSION_TITLE",
-            video_urls=['regular_directory/exercises/videos/kneeling_triceps_extension.mp4'],
-            cover_image_url=['regular_directory/exercises/images/kneeling_triceps_extension.png'],
+            video_urls=['app/regular_directory/exercises/videos/kneeling_triceps_extension.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/kneeling_triceps_extension.png'],
             preparation_steps=[
                 'E_D_KNEELING_TRICEPS_EXTENSION_PREP_ONE',
                 'E_D_KNEELING_TRICEPS_EXTENSION_PREP_TWO'
@@ -5381,8 +5381,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-187',
             title= "E_D_LAT_PULLDOWN_CLOSE_GRIP_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_close_grip_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_close_grip_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_close_grip_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_close_grip_band.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_CLOSE_GRIP_BAND_PREP_ONE',
                 'E_D_LAT_PULLDOWN_CLOSE_GRIP_BAND_PREP_TWO'
@@ -5403,8 +5403,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-188',
             title= "E_D_LAT_PULLDOWN_CLOSE_GRIP_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_close_grip_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_close_grip_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_close_grip_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_close_grip_cable.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_CLOSE_GRIP_CABLE_PREP_ONE',
                 'E_D_LAT_PULLDOWN_CLOSE_GRIP_CABLE_PREP_TWO'
@@ -5425,8 +5425,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-189',
             title= "E_D_LAT_PULLDOWN_REVERSE_GRIP_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_reverse_grip_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_reverse_grip_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_reverse_grip_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_reverse_grip_band.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_REVERSE_GRIP_BAND_PREP_ONE',
                 'E_D_LAT_PULLDOWN_REVERSE_GRIP_BAND_PREP_TWO'
@@ -5447,8 +5447,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-190',
             title= "E_D_LAT_PULLDOWN_REVERSE_GRIP_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_reverse_grip_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_reverse_grip_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_reverse_grip_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_reverse_grip_cable.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_REVERSE_GRIP_CABLE_PREP_ONE',
                 'E_D_LAT_PULLDOWN_REVERSE_GRIP_CABLE_PREP_TWO'
@@ -5469,8 +5469,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-191',
             title= "E_D_LAT_PULLDOWN_STRAIGHT_ARM_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_straight_arm_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_straight_arm_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_straight_arm_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_straight_arm_band.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_STRAIGHT_ARM_BAND_PREP_ONE',
                 'E_D_LAT_PULLDOWN_STRAIGHT_ARM_BAND_PREP_TWO'
@@ -5491,8 +5491,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-192',
             title= "E_D_LAT_PULLDOWN_STRAIGHT_ARM_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_straight_arm_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_straight_arm_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_straight_arm_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_straight_arm_cable.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_STRAIGHT_ARM_CABLE_PREP_ONE',
                 'E_D_LAT_PULLDOWN_STRAIGHT_ARM_CABLE_PREP_TWO'
@@ -5513,8 +5513,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-193',
             title= "E_D_LAT_PULLDOWN_WIDE_GRIP_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_wide_grip_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_wide_grip_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_wide_grip_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_wide_grip_cable.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_WIDE_GRIP_CABLE_PREP_ONE',
                 'E_D_LAT_PULLDOWN_WIDE_GRIP_CABLE_PREP_TWO'
@@ -5536,8 +5536,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-194',
             title= "E_D_LAT_PULLDOWN_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_cable.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_CABLE_PREP_ONE',
                 'E_D_LAT_PULLDOWN_CABLE_PREP_TWO'
@@ -5558,8 +5558,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-195',
             title= "E_D_LAT_PULLDOWN_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_machine.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_MACHINE_PREP_ONE',
                 'E_D_LAT_PULLDOWN_MACHINE_PREP_TWO'
@@ -5580,8 +5580,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-196',
             title= "E_D_LAT_PULLDOWN_WITH_TWIST_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/lat_pulldown_with_twist_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lat_pulldown_with_twist_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/lat_pulldown_with_twist_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lat_pulldown_with_twist_band.png'],
             preparation_steps=[
                 'E_D_LAT_PULLDOWN_WITH_TWIST_BAND_PREP_ONE',
                 'E_D_LAT_PULLDOWN_WITH_TWIST_BAND_PREP_TWO'
@@ -5601,8 +5601,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-197',
             title= "E_D_LATERAL_BENCH_JUMP_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_bench_jump.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_bench_jump.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_bench_jump.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_bench_jump.png'],
             preparation_steps=[
                 'E_D_LATERAL_BENCH_JUMP_PREP_ONE',
                 'E_D_LATERAL_BENCH_JUMP_PREP_TWO'
@@ -5623,8 +5623,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-198',
             title= "E_D_LATERAL_RAISE_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_raise_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_raise_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_raise_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_raise_machine.png'],
             preparation_steps=[
                 'E_D_LATERAL_RAISE_MACHINE_PREP_ONE',
                 'E_D_LATERAL_RAISE_MACHINE_PREP_TWO'
@@ -5645,8 +5645,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-199',
             title= "E_D_LATERAL_RAISE_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_raise_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_raise_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_raise_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_raise_band.png'],
             preparation_steps=[
                 'E_D_LATERAL_RAISE_BAND_PREP_ONE',
                 'E_D_LATERAL_RAISE_BAND_PREP_TWO'
@@ -5667,8 +5667,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-200',
             title= "E_D_LATERAL_RAISE_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_raise_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_raise_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_raise_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_raise_cable.png'],
             preparation_steps=[
                 'E_D_LATERAL_RAISE_CABLE_PREP_ONE',
                 'E_D_LATERAL_RAISE_CABLE_PREP_TWO'
@@ -5689,8 +5689,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-201',
             title= "E_D_LATERAL_RAISE_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_raise_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_raise_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_raise_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_raise_dumbbell.png'],
             preparation_steps=[
                 'E_D_LATERAL_RAISE_DUMBBELL_PREP_ONE',
                 'E_D_LATERAL_RAISE_DUMBBELL_PREP_TWO'
@@ -5711,8 +5711,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-202',
             title= "E_D_LATERAL_RAISE_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_raise_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_raise_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_raise_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_raise_kettlebell.png'],
             preparation_steps=[
                 'E_D_LATERAL_RAISE_KETTLEBELL_PREP_ONE',
                 'E_D_LATERAL_RAISE_KETTLEBELL_PREP_TWO'
@@ -5733,8 +5733,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-203',
             title= "E_D_LATERAL_RAISE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_raise.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_raise.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_raise.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_raise.png'],
             preparation_steps=[
                 'E_D_LATERAL_RAISE_PREP_ONE',
                 'E_D_LATERAL_RAISE_PREP_TWO'
@@ -5755,8 +5755,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-204',
             title= "E_D_LATERAL_STEP_UP_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lateral_step_up_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lateral_step_up_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/lateral_step_up_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lateral_step_up_smith_machine.png'],
             preparation_steps=[
                 'E_D_LATERAL_STEP_UP_SMITH_MACHINE_PREP_ONE',
                 'E_D_LATERAL_STEP_UP_SMITH_MACHINE_PREP_TWO'
@@ -5776,8 +5776,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-205',
             title= "E_D_LEG_BICEP_CURL_TITLE",
-            video_urls=['regular_directory/exercises/videos/leg_bicep_curl.mp4'],
-            cover_image_url=['regular_directory/exercises/images/leg_bicep_curl.png'],
+            video_urls=['app/regular_directory/exercises/videos/leg_bicep_curl.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/leg_bicep_curl.png'],
             preparation_steps=[
                 'E_D_LEG_BICEP_CURL_PREP_ONE',
                 'E_D_LEG_BICEP_CURL_PREP_TWO'
@@ -5798,8 +5798,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-206',
             title= "E_D_LEG_EXTENSION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/leg_extension_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/leg_extension_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/leg_extension_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/leg_extension_band.png'],
             preparation_steps=[
                 'E_D_LEG_EXTENSION_BAND_PREP_ONE',
                 'E_D_LEG_EXTENSION_BAND_PREP_TWO'
@@ -5822,8 +5822,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-208',
             title= "E_D_LEG_PRESS_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/leg_press_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/leg_press_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/leg_press_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/leg_press_machine.png'],
             preparation_steps=[
                 'E_D_LEG_PRESS_MACHINE_PREP_ONE',
                 'E_D_LEG_PRESS_MACHINE_PREP_TWO'
@@ -5847,8 +5847,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-210',
             title= "E_D_LONG_ARM_CRUNCH_TITLE",
-            video_urls=['regular_directory/exercises/videos/long_arm_crunch.mp4'],
-            cover_image_url=['regular_directory/exercises/images/long_arm_crunch.png'],
+            video_urls=['app/regular_directory/exercises/videos/long_arm_crunch.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/long_arm_crunch.png'],
             preparation_steps=[
                 'E_D_LONG_ARM_CRUNCH_PREP_ONE',
                 'E_D_LONG_ARM_CRUNCH_PREP_TWO'
@@ -5869,8 +5869,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-211',
             title= "E_D_LUNGE_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/lunge_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lunge_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/lunge_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lunge_barbell.png'],
             preparation_steps=[
                 'E_D_LUNGE_BARBELL_PREP_ONE',
                 'E_D_LUNGE_BARBELL_PREP_TWO'
@@ -5891,8 +5891,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-212',
             title= "E_D_LUNGE_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lunge_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lunge_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/lunge_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lunge_cable.png'],
             preparation_steps=[
                 'E_D_LUNGE_CABLE_PREP_ONE',
                 'E_D_LUNGE_CABLE_PREP_TWO'
@@ -5913,8 +5913,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-213',
             title= "E_D_LUNGE_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/lunge_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lunge_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/lunge_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lunge_dumbbell.png'],
             preparation_steps=[
                 'E_D_LUNGE_DUMBBELL_PREP_ONE',
                 'E_D_LUNGE_DUMBBELL_PREP_TWO'
@@ -5935,8 +5935,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-214',
             title= "E_D_LUNGE_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/lunge_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lunge_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/lunge_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lunge_kettlebell.png'],
             preparation_steps=[
                 'E_D_LUNGE_KETTLEBELL_PREP_ONE',
                 'E_D_LUNGE_KETTLEBELL_PREP_TWO'
@@ -5957,8 +5957,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-215',
             title= "E_D_LUNGE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lunge.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lunge.png'],
+            video_urls=['app/regular_directory/exercises/videos/lunge.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lunge.png'],
             preparation_steps=[
                 'E_D_LUNGE_PREP_ONE',
                 'E_D_LUNGE_PREP_TWO'
@@ -5979,8 +5979,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-216',
             title= "E_D_LYING_HIP_ADDUCTOR_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_hip_adductor.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_hip_adductor.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_hip_adductor.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_hip_adductor.png'],
             preparation_steps=[
                 'E_D_LYING_HIP_ADDUCTOR_PREP_ONE'
             ],
@@ -6002,8 +6002,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-218',
             title= "E_D_LYING_KNEE_RAISE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_knee_raise.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_knee_raise.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_knee_raise.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_knee_raise.png'],
             preparation_steps=[
                 'E_D_LYING_KNEE_RAISE_PREP_ONE'
             ],
@@ -6023,8 +6023,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-219',
             title= "E_D_LYING_LEG_CURL_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_leg_curl_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_leg_curl_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_leg_curl_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_leg_curl_band.png'],
             preparation_steps=[
                 'E_D_LYING_LEG_CURL_BAND_PREP_ONE',
                 'E_D_LYING_LEG_CURL_BAND_PREP_TWO'
@@ -6045,8 +6045,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-220',
             title= "E_D_LYING_LEG_CURL_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_leg_curl_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_leg_curl_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_leg_curl_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_leg_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_LYING_LEG_CURL_DUMBBELL_PREP_ONE',
                 'E_D_LYING_LEG_CURL_DUMBBELL_PREP_TWO'
@@ -6067,8 +6067,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-221',
             title= "E_D_LYING_LEG_CURL_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_leg_curl_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_leg_curl_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_leg_curl_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_leg_curl_machine.png'],
             preparation_steps=[
                 'E_D_LYING_LEG_CURL_MACHINE_PREP_ONE',
                 'E_D_LYING_LEG_CURL_MACHINE_PREP_TWO'
@@ -6089,8 +6089,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-222',
             title= "E_D_LYING_LEG_RAISE_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_leg_raise.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_leg_raise.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_leg_raise.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_leg_raise.png'],
             preparation_steps=[
                 'E_D_LYING_LEG_RAISE_PREP_ONE',
                 'E_D_LYING_LEG_RAISE_PREP_TWO'
@@ -6111,8 +6111,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-223',
             title= "E_D_LYING_REVERSE_FLY_TITLE",
-            video_urls=['regular_directory/exercises/videos/lying_reverse_fly.mp4'],
-            cover_image_url=['regular_directory/exercises/images/lying_reverse_fly.png'],
+            video_urls=['app/regular_directory/exercises/videos/lying_reverse_fly.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/lying_reverse_fly.png'],
             preparation_steps=[
                 'E_D_LYING_REVERSE_FLY_PREP_ONE',
                 'E_D_LYING_REVERSE_FLY_PREP_TWO'
@@ -6133,8 +6133,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-224',
             title= "E_D_MOUNTAIN_CLIMBER_TITLE",
-            video_urls=['regular_directory/exercises/videos/mountain_climber.mp4'],
-            cover_image_url=['regular_directory/exercises/images/mountain_climber.png'],
+            video_urls=['app/regular_directory/exercises/videos/mountain_climber.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/mountain_climber.png'],
             preparation_steps=[
                 'E_D_MOUNTAIN_CLIMBER_PREP_ONE'
             ],
@@ -6154,8 +6154,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-225',
             title= "E_D_MUSCLE_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/muscle_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/muscle_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/muscle_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/muscle_up.png'],
             preparation_steps=[
                 'E_D_MUSCLE_UP_PREP_ONE',
                 'E_D_MUSCLE_UP_PREP_TWO'
@@ -6177,8 +6177,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-226',
             title= "E_D_OBLIQUE_CRUNCH_TITLE",
-            video_urls=['regular_directory/exercises/videos/oblique_crunch.mp4'],
-            cover_image_url=['regular_directory/exercises/images/oblique_crunch.png'],
+            video_urls=['app/regular_directory/exercises/videos/oblique_crunch.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/oblique_crunch.png'],
             preparation_steps=[
                 'E_D_OBLIQUE_CRUNCH_PREP_ONE',
                 'E_D_OBLIQUE_CRUNCH_PREP_TWO'
@@ -6199,8 +6199,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-227',
             title= "E_D_OBLIQUE_V_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/oblique_v_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/oblique_v_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/oblique_v_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/oblique_v_up.png'],
             preparation_steps=[
                 'E_D_OBLIQUE_V_UP_PREP_ONE',
                 'E_D_OBLIQUE_V_UP_PREP_TWO'
@@ -6221,8 +6221,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-228',
             title= "E_D_OVERHEAD_PRESS_CLOSE_GRIP_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_close_grip_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_close_grip_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_close_grip_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_close_grip_barbell.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_CLOSE_GRIP_BARBELL_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_CLOSE_GRIP_BARBELL_PREP_TWO'
@@ -6243,8 +6243,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-229',
             title= "E_D_OVERHEAD_PRESS_WIDE_GRIP_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_wide_grip_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_wide_grip_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_wide_grip_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_wide_grip_barbell.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_WIDE_GRIP_BARBELL_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_WIDE_GRIP_BARBELL_PREP_TWO'
@@ -6265,8 +6265,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-230',
             title= "E_D_OVERHEAD_PRESS_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_band.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_BAND_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_BAND_PREP_TWO'
@@ -6287,8 +6287,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-231',
             title= "E_D_OVERHEAD_PRESS_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_barbell.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_BARBELL_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_BARBELL_PREP_TWO'
@@ -6309,8 +6309,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-232',
             title= "E_D_OVERHEAD_PRESS_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_cable.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_CABLE_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_CABLE_PREP_TWO'
@@ -6331,8 +6331,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-233',
             title= "E_D_OVERHEAD_PRESS_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_dumbbell.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_DUMBBELL_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_DUMBBELL_PREP_TWO'
@@ -6353,8 +6353,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-234',
             title= "E_D_OVERHEAD_PRESS_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_press_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_press_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_press_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_press_kettlebell.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_PRESS_KETTLEBELL_PREP_ONE',
                 'E_D_OVERHEAD_PRESS_KETTLEBELL_PREP_TWO'
@@ -6379,8 +6379,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-237',
             title= "E_D_OVERHEAD_SQUAT_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/overhead_squat_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/overhead_squat_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/overhead_squat_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/overhead_squat_barbell.png'],
             preparation_steps=[
                 'E_D_OVERHEAD_SQUAT_BARBELL_PREP_ONE',
                 'E_D_OVERHEAD_SQUAT_BARBELL_PREP_TWO'
@@ -6409,8 +6409,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-242',
             title= "E_D_PEC_DECK_FLY_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/pec_deck_fly_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pec_deck_fly_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/pec_deck_fly_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pec_deck_fly_machine.png'],
             preparation_steps=[
                 'E_D_PEC_DECK_FLY_MACHINE_PREP_ONE',
                 'E_D_PEC_DECK_FLY_MACHINE_PREP_TWO'
@@ -6431,8 +6431,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-243',
             title= "E_D_PENDLAY_ROW_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/pendlay_row_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pendlay_row_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/pendlay_row_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pendlay_row_barbell.png'],
             preparation_steps=[
                 'E_D_PENDLAY_ROW_BARBELL_PREP_ONE',
                 'E_D_PENDLAY_ROW_BARBELL_PREP_TWO'
@@ -6453,8 +6453,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-244',
             title= "E_D_PIKE_PUSH_UP_FEET_ON_BENCH_TITLE",
-            video_urls=['regular_directory/exercises/videos/pike_push_up_feet_on_bench.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pike_push_up_feet_on_bench.png'],
+            video_urls=['app/regular_directory/exercises/videos/pike_push_up_feet_on_bench.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pike_push_up_feet_on_bench.png'],
             preparation_steps=[
                 'E_D_PIKE_PUSH_UP_FEET_ON_BENCH_PREP_ONE',
                 'E_D_PIKE_PUSH_UP_FEET_ON_BENCH_PREP_TWO'
@@ -6475,8 +6475,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-245',
             title= "E_D_PIKE_PUSH_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/pike_push_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pike_push_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/pike_push_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pike_push_up.png'],
             preparation_steps=[
                 'E_D_PIKE_PUSH_UP_PREP_ONE',
                 'E_D_PIKE_PUSH_UP_PREP_TWO'
@@ -6497,8 +6497,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-246',
             title= "E_D_PISTOL_SQUAT_TITLE",
-            video_urls=['regular_directory/exercises/videos/pistol_squat.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pistol_squat.png'],
+            video_urls=['app/regular_directory/exercises/videos/pistol_squat.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pistol_squat.png'],
             preparation_steps=[
                 'E_D_PISTOL_SQUAT_PREP_ONE',
                 'E_D_PISTOL_SQUAT_PREP_TWO'
@@ -6519,8 +6519,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-247',
             title= "E_D_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/plank.png'],
             preparation_steps=[
                 'E_D_PLANK_PREP_ONE',
                 'E_D_PLANK_PREP_TWO'
@@ -6541,8 +6541,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-248',
             title= "E_D_POWER_CLEAN_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/power_clean_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/power_clean_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/power_clean_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/power_clean_barbell.png'],
             preparation_steps=[
                 'E_D_POWER_CLEAN_BARBELL_PREP_ONE',
                 'E_D_POWER_CLEAN_BARBELL_PREP_TWO'
@@ -6564,8 +6564,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-249',
             title= "E_D_POWER_PUSH_AWAY_TITLE",
-            video_urls=['regular_directory/exercises/videos/power_push_away.mp4'],
-            cover_image_url=['regular_directory/exercises/images/power_push_away.png'],
+            video_urls=['app/regular_directory/exercises/videos/power_push_away.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/power_push_away.png'],
             preparation_steps=[
                 'E_D_POWER_PUSH_AWAY_PREP_ONE',
                 'E_D_POWER_PUSH_AWAY_PREP_TWO'
@@ -6585,8 +6585,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-250',
             title= "E_D_POWER_SNATCH_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/power_snatch_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/power_snatch_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/power_snatch_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/power_snatch_barbell.png'],
             preparation_steps=[
                 'E_D_POWER_SNATCH_BARBELL_PREP_ONE',
                 'E_D_POWER_SNATCH_BARBELL_PREP_TWO'
@@ -6608,8 +6608,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-251',
             title= "E_D_PRAYER_PUSH_TITLE",
-            video_urls=['regular_directory/exercises/videos/prayer_push.mp4'],
-            cover_image_url=['regular_directory/exercises/images/prayer_push.png'],
+            video_urls=['app/regular_directory/exercises/videos/prayer_push.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/prayer_push.png'],
             preparation_steps=[
                 'E_D_PRAYER_PUSH_PREP_ONE'
             ],
@@ -6629,8 +6629,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-252',
             title= "E_D_PREACHER_CURL_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/preacher_curl_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/preacher_curl_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/preacher_curl_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/preacher_curl_barbell.png'],
             preparation_steps=[
                 'E_D_PREACHER_CURL_BARBELL_PREP_ONE',
                 'E_D_PREACHER_CURL_BARBELL_PREP_TWO'
@@ -6651,8 +6651,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-253',
             title= "E_D_PREACHER_CURL_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/preacher_curl_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/preacher_curl_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/preacher_curl_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/preacher_curl_cable.png'],
             preparation_steps=[
                 'E_D_PREACHER_CURL_CABLE_PREP_ONE',
                 'E_D_PREACHER_CURL_CABLE_PREP_TWO'
@@ -6673,8 +6673,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-254',
             title= "E_D_PREACHER_CURL_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/preacher_curl_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/preacher_curl_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/preacher_curl_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/preacher_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_PREACHER_CURL_DUMBBELL_PREP_ONE',
                 'E_D_PREACHER_CURL_DUMBBELL_PREP_TWO'
@@ -6695,8 +6695,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-255',
             title= "E_D_PREACHER_CURL_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/preacher_curl_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/preacher_curl_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/preacher_curl_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/preacher_curl_machine.png'],
             preparation_steps=[
                 'E_D_PREACHER_CURL_MACHINE_PREP_ONE',
                 'E_D_PREACHER_CURL_MACHINE_PREP_TWO'
@@ -6717,8 +6717,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-256',
             title= "E_D_PRONE_FLUTTER_KICKS_TITLE",
-            video_urls=['regular_directory/exercises/videos/prone_flutter_kicks.mp4'],
-            cover_image_url=['regular_directory/exercises/images/prone_flutter_kicks.png'],
+            video_urls=['app/regular_directory/exercises/videos/prone_flutter_kicks.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/prone_flutter_kicks.png'],
             preparation_steps=[
                 'E_D_PRONE_FLUTTER_KICKS_PREP_ONE'
             ],
@@ -6738,8 +6738,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-257',
             title= "E_D_PULL_APART_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_apart_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_apart_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_apart_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_apart_band.png'],
             preparation_steps=[
                 'E_D_PULL_APART_BAND_PREP_ONE',
                 'E_D_PULL_APART_BAND_PREP_TWO'
@@ -6760,8 +6760,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-258',
             title= "E_D_PULL_UP_ASSISTED_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up_assisted.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up_assisted.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up_assisted.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up_assisted.png'],
             preparation_steps=[
                 'E_D_PULL_UP_ASSISTED_PREP_ONE',
                 'E_D_PULL_UP_ASSISTED_PREP_TWO'
@@ -6782,8 +6782,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-259',
             title= "E_D_PULL_UP_CLOSE_GRIP_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up_close_grip.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up_close_grip.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up_close_grip.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up_close_grip.png'],
             preparation_steps=[
                 'E_D_PULL_UP_CLOSE_GRIP_PREP_ONE',
                 'E_D_PULL_UP_CLOSE_GRIP_PREP_TWO'
@@ -6804,8 +6804,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-260',
             title= "E_D_PULL_UP_REVERSE_GRIP_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up_reverse_grip.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up_reverse_grip.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up_reverse_grip.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up_reverse_grip.png'],
             preparation_steps=[
                 'E_D_PULL_UP_REVERSE_GRIP_PREP_ONE',
                 'E_D_PULL_UP_REVERSE_GRIP_PREP_TWO'
@@ -6826,8 +6826,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-261',
             title= "E_D_PULL_UP_WIDE_GRIP_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up_wide_grip.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up_wide_grip.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up_wide_grip.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up_wide_grip.png'],
             preparation_steps=[
                 'E_D_PULL_UP_WIDE_GRIP_PREP_ONE',
                 'E_D_PULL_UP_WIDE_GRIP_PREP_TWO'
@@ -6848,8 +6848,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-262',
             title= "E_D_PULL_UP_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up_band.png'],
             preparation_steps=[
                 'E_D_PULL_UP_BAND_PREP_ONE',
                 'E_D_PULL_UP_BAND_PREP_TWO'
@@ -6870,8 +6870,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-263',
             title= "E_D_PULL_UP_PLATE_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up_plate.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up_plate.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up_plate.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up_plate.png'],
             preparation_steps=[
                 'E_D_PULL_UP_PLATE_PREP_ONE',
                 'E_D_PULL_UP_PLATE_PREP_TWO'
@@ -6892,8 +6892,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-264',
             title= "E_D_PULL_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/pull_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pull_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/pull_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pull_up.png'],
             preparation_steps=[
                 'E_D_PULL_UP_PREP_ONE',
                 'E_D_PULL_UP_PREP_TWO'
@@ -6914,8 +6914,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-265',
             title= "E_D_PULLOVER_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/pullover_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pullover_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/pullover_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pullover_barbell.png'],
             preparation_steps=[
                 'E_D_PULLOVER_BARBELL_PREP_ONE',
                 'E_D_PULLOVER_BARBELL_PREP_TWO'
@@ -6936,8 +6936,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-266',
             title= "E_D_PULLOVER_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/pullover_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pullover_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/pullover_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pullover_dumbbell.png'],
             preparation_steps=[
                 'E_D_PULLOVER_DUMBBELL_PREP_ONE',
                 'E_D_PULLOVER_DUMBBELL_PREP_TWO'
@@ -6958,8 +6958,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-267',
             title= "E_D_PULLOVER_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/pullover_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pullover_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/pullover_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pullover_cable.png'],
             preparation_steps=[
                 'E_D_PULLOVER_CABLE_PREP_ONE',
                 'E_D_PULLOVER_CABLE_PREP_TWO'
@@ -6980,8 +6980,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-268',
             title= "E_D_PULLOVER_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/pullover_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/pullover_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/pullover_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/pullover_machine.png'],
             preparation_steps=[
                 'E_D_PULLOVER_MACHINE_PREP_ONE',
                 'E_D_PULLOVER_MACHINE_PREP_TWO'
@@ -7002,8 +7002,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-269',
             title= "E_D_PUSH_PRESS_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/push_press_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/push_press_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/push_press_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/push_press_barbell.png'],
             preparation_steps=[
                 'E_D_PUSH_PRESS_BARBELL_PREP_ONE',
                 'E_D_PUSH_PRESS_BARBELL_PREP_TWO'
@@ -7024,8 +7024,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-270',
             title= "E_D_PUSH_UP_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/push_up_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/push_up_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/push_up_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/push_up_band.png'],
             preparation_steps=[
                 'E_D_PUSH_UP_BAND_PREP_ONE',
                 'E_D_PUSH_UP_BAND_PREP_TWO'
@@ -7046,8 +7046,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-271',
             title= "E_D_PUSH_UP_ROW_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/push_up_row_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/push_up_row_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/push_up_row_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/push_up_row_dumbbell.png'],
             preparation_steps=[
                 'E_D_PUSH_UP_ROW_DUMBBELL_PREP_ONE',
                 'E_D_PUSH_UP_ROW_DUMBBELL_PREP_TWO'
@@ -7069,8 +7069,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-272',
             title= "E_D_PUSH_UP_TO_SIDE_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/push_up_to_side_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/push_up_to_side_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/push_up_to_side_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/push_up_to_side_plank.png'],
             preparation_steps=[
                 'E_D_PUSH_UP_TO_SIDE_PLANK_PREP_ONE'
             ],
@@ -7091,8 +7091,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-273',
             title= "E_D_PUSH_UP_TITLE",
-            video_urls=['regular_directory/exercises/videos/push_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/push_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/push_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/push_up.png'],
             preparation_steps=[
                 'E_D_PUSH_UP_PREP_ONE',
                 'E_D_PUSH_UP_PREP_TWO'
@@ -7113,8 +7113,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-274',
             title= "E_D_RACK_PULL_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/rack_pull_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/rack_pull_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/rack_pull_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/rack_pull_barbell.png'],
             preparation_steps=[
                 'E_D_RACK_PULL_BARBELL_PREP_ONE',
                 'E_D_RACK_PULL_BARBELL_PREP_TWO'
@@ -7135,8 +7135,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-275',
             title= "E_D_RENEGADE_ROW_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/renegade_row_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/renegade_row_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/renegade_row_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/renegade_row_kettlebell.png'],
             preparation_steps=[
                 'E_D_RENEGADE_ROW_KETTLEBELL_PREP_ONE',
                 'E_D_RENEGADE_ROW_KETTLEBELL_PREP_TWO'
@@ -7157,8 +7157,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-276',
             title= "E_D_RENEGADE_ROW_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/renegade_row_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/renegade_row_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/renegade_row_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/renegade_row_dumbbell.png'],
             preparation_steps=[
                 'E_D_RENEGADE_ROW_DUMBBELL_PREP_ONE',
                 'E_D_RENEGADE_ROW_DUMBBELL_PREP_TWO'
@@ -7179,8 +7179,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-277',
             title= "E_D_REVERSE_CONCENTRATION_CURL_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_concentration_curl_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_concentration_curl_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_concentration_curl_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_concentration_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_REVERSE_CONCENTRATION_CURL_DUMBBELL_PREP_ONE',
                 'E_D_REVERSE_CONCENTRATION_CURL_DUMBBELL_PREP_TWO'
@@ -7200,8 +7200,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-278',
             title= "E_D_REVERSE_CRUNCH_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_crunch_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_crunch_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_crunch_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_crunch_cable.png'],
             preparation_steps=[
                 'E_D_REVERSE_CRUNCH_CABLE_PREP_ONE',
                 'E_D_REVERSE_CRUNCH_CABLE_PREP_TWO'
@@ -7222,8 +7222,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-279',
             title= "E_D_REVERSE_CRUNCH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_crunch_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_crunch_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_crunch_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_crunch_machine.png'],
             preparation_steps=[
                 'E_D_REVERSE_CRUNCH_MACHINE_PREP_ONE',
                 'E_D_REVERSE_CRUNCH_MACHINE_PREP_TWO'
@@ -7244,8 +7244,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-280',
             title= "E_D_REVERSE_CRUNCH_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_crunch.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_crunch.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_crunch.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_crunch.png'],
             preparation_steps=[
                 'E_D_REVERSE_CRUNCH_PREP_ONE',
                 'E_D_REVERSE_CRUNCH_PREP_TWO'
@@ -7266,8 +7266,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-281',
             title= "E_D_REVERSE_CURL_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_curl_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_curl_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_curl_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_curl_band.png'],
             preparation_steps=[
                 'E_D_REVERSE_CURL_BAND_PREP_ONE',
                 'E_D_REVERSE_CURL_BAND_PREP_TWO'
@@ -7287,8 +7287,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-282',
             title= "E_D_REVERSE_CURL_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_curl_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_curl_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_curl_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_curl_barbell.png'],
             preparation_steps=[
                 'E_D_REVERSE_CURL_BARBELL_PREP_ONE',
                 'E_D_REVERSE_CURL_BARBELL_PREP_TWO'
@@ -7308,8 +7308,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-283',
             title= "E_D_REVERSE_CURL_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_curl_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_curl_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_curl_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_curl_cable.png'],
             preparation_steps=[
                 'E_D_REVERSE_CURL_CABLE_PREP_ONE',
                 'E_D_REVERSE_CURL_CABLE_PREP_TWO'
@@ -7329,8 +7329,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-284',
             title= "E_D_REVERSE_CURL_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_curl_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_curl_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_curl_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_REVERSE_CURL_DUMBBELL_PREP_ONE',
                 'E_D_REVERSE_CURL_DUMBBELL_PREP_TWO'
@@ -7350,8 +7350,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-285',
             title= "E_D_REVERSE_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_plank.png'],
             preparation_steps=[
                 'E_D_REVERSE_PLANK_PREP_ONE',
                 'E_D_REVERSE_PLANK_PREP_TWO'
@@ -7372,8 +7372,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-286',
             title= "E_D_REVERSE_WRIST_CURL_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_wrist_curl_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_wrist_curl_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_wrist_curl_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_wrist_curl_band.png'],
             preparation_steps=[
                 'E_D_REVERSE_WRIST_CURL_BAND_PREP_ONE',
                 'E_D_REVERSE_WRIST_CURL_BAND_PREP_TWO'
@@ -7393,8 +7393,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-287',
             title= "E_D_REVERSE_WRIST_CURL_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_wrist_curl_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_wrist_curl_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_wrist_curl_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_wrist_curl_barbell.png'],
             preparation_steps=[
                 'E_D_REVERSE_WRIST_CURL_BARBELL_PREP_ONE',
                 'E_D_REVERSE_WRIST_CURL_BARBELL_PREP_TWO'
@@ -7414,8 +7414,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-288',
             title= "E_D_REVERSE_WRIST_CURL_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_wrist_curl_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_wrist_curl_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_wrist_curl_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_wrist_curl_cable.png'],
             preparation_steps=[
                 'E_D_REVERSE_WRIST_CURL_CABLE_PREP_ONE',
                 'E_D_REVERSE_WRIST_CURL_CABLE_PREP_TWO'
@@ -7435,8 +7435,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-289',
             title= "E_D_REVERSE_WRIST_CURL_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/reverse_wrist_curl_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/reverse_wrist_curl_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/reverse_wrist_curl_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/reverse_wrist_curl_dumbbell.png'],
             preparation_steps=[
                 'E_D_REVERSE_WRIST_CURL_DUMBBELL_PREP_ONE',
                 'E_D_REVERSE_WRIST_CURL_DUMBBELL_PREP_TWO'
@@ -7456,8 +7456,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-290',
             title= "E_D_ROMANIAN_DEADLIFT_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/romanian_deadlift_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/romanian_deadlift_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/romanian_deadlift_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/romanian_deadlift_barbell.png'],
             preparation_steps=[
                 'E_D_ROMANIAN_DEADLIFT_BARBELL_PREP_ONE',
                 'E_D_ROMANIAN_DEADLIFT_BARBELL_PREP_TWO'
@@ -7478,8 +7478,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-291',
             title= "E_D_ROMANIAN_DEADLIFT_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/romanian_deadlift_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/romanian_deadlift_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/romanian_deadlift_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/romanian_deadlift_dumbbell.png'],
             preparation_steps=[
                 'E_D_ROMANIAN_DEADLIFT_DUMBBELL_PREP_ONE',
                 'E_D_ROMANIAN_DEADLIFT_DUMBBELL_PREP_TWO'
@@ -7500,8 +7500,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-292',
             title= "E_D_ROW_IN_DOORWAY_TITLE",
-            video_urls=['regular_directory/exercises/videos/row_in_doorway.mp4'],
-            cover_image_url=['regular_directory/exercises/images/row_in_doorway.png'],
+            video_urls=['app/regular_directory/exercises/videos/row_in_doorway.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/row_in_doorway.png'],
             preparation_steps=[
                 'E_D_ROW_IN_DOORWAY_PREP_ONE',
                 'E_D_ROW_IN_DOORWAY_PREP_TWO'
@@ -7522,8 +7522,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-293',
             title= "E_D_RUSSIAN_TWIST_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/russian_twist_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/russian_twist_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/russian_twist_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/russian_twist_dumbbell.png'],
             preparation_steps=[
                 'E_D_RUSSIAN_TWIST_DUMBBELL_PREP_ONE',
                 'E_D_RUSSIAN_TWIST_DUMBBELL_PREP_TWO'
@@ -7544,8 +7544,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-294',
             title= "E_D_RUSSIAN_TWIST_TITLE",
-            video_urls=['regular_directory/exercises/videos/russian_twist.mp4'],
-            cover_image_url=['regular_directory/exercises/images/russian_twist.png'],
+            video_urls=['app/regular_directory/exercises/videos/russian_twist.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/russian_twist.png'],
             preparation_steps=[
                 'E_D_RUSSIAN_TWIST_PREP_ONE',
                 'E_D_RUSSIAN_TWIST_PREP_TWO'
@@ -7566,8 +7566,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-295',
             title= "E_D_SEATED_CALF_PRESS_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_calf_press_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_calf_press_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_calf_press_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_calf_press_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_CALF_PRESS_MACHINE_PREP_ONE',
                 'E_D_SEATED_CALF_PRESS_MACHINE_PREP_TWO'
@@ -7588,8 +7588,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-296',
             title= "E_D_SEATED_CALF_RAISE_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_calf_raise_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_calf_raise_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_calf_raise_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_calf_raise_barbell.png'],
             preparation_steps=[
                 'E_D_SEATED_CALF_RAISE_BARBELL_PREP_ONE',
                 'E_D_SEATED_CALF_RAISE_BARBELL_PREP_TWO'
@@ -7610,8 +7610,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-297',
             title= "E_D_SEATED_CALF_RAISE_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_calf_raise_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_calf_raise_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_calf_raise_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_calf_raise_dumbbell.png'],
             preparation_steps=[
                 'E_D_SEATED_CALF_RAISE_DUMBBELL_PREP_ONE',
                 'E_D_SEATED_CALF_RAISE_DUMBBELL_PREP_TWO'
@@ -7632,8 +7632,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-298',
             title= "E_D_SEATED_CALF_RAISE_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_calf_raise_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_calf_raise_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_calf_raise_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_calf_raise_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_CALF_RAISE_MACHINE_PREP_ONE',
                 'E_D_SEATED_CALF_RAISE_MACHINE_PREP_TWO'
@@ -7654,8 +7654,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-299',
             title= "E_D_SEATED_CHEST_FLY_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_chest_fly_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_chest_fly_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_chest_fly_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_chest_fly_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_CHEST_FLY_MACHINE_PREP_ONE',
                 'E_D_SEATED_CHEST_FLY_MACHINE_PREP_TWO'
@@ -7676,8 +7676,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-300',
             title= "E_D_SEATED_CHEST_PRESS_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_chest_press_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_chest_press_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_chest_press_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_chest_press_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_CHEST_PRESS_MACHINE_PREP_ONE',
                 'E_D_SEATED_CHEST_PRESS_MACHINE_PREP_TWO'
@@ -7698,8 +7698,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-301',
             title= "E_D_SEATED_CRUNCH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_crunch_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_crunch_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_crunch_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_crunch_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_CRUNCH_MACHINE_PREP_ONE',
                 'E_D_SEATED_CRUNCH_MACHINE_PREP_TWO'
@@ -7720,8 +7720,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-302',
             title= "E_D_SEATED_HIP_ABDUCTOR_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_hip_abductor_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_hip_abductor_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_hip_abductor_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_hip_abductor_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_HIP_ABDUCTOR_MACHINE_PREP_ONE',
                 'E_D_SEATED_HIP_ABDUCTOR_MACHINE_PREP_TWO'
@@ -7742,8 +7742,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-303',
             title= "E_D_SEATED_HIP_ADDUCTOR_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_hip_adductor_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_hip_adductor_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_hip_adductor_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_hip_adductor_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_HIP_ADDUCTOR_MACHINE_PREP_ONE',
                 'E_D_SEATED_HIP_ADDUCTOR_MACHINE_PREP_TWO'
@@ -7764,8 +7764,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-304',
             title= "E_D_SEATED_HIP_EXTERNAL_ROTATION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_hip_external_rotation_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_hip_external_rotation_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_hip_external_rotation_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_hip_external_rotation_band.png'],
             preparation_steps=[
                 'E_D_SEATED_HIP_EXTERNAL_ROTATION_BAND_PREP_ONE',
                 'E_D_SEATED_HIP_EXTERNAL_ROTATION_BAND_PREP_TWO'
@@ -7786,8 +7786,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-305',
             title= "E_D_SEATED_HIP_INTERNAL_ROTATION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_hip_internal_rotation_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_hip_internal_rotation_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_hip_internal_rotation_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_hip_internal_rotation_band.png'],
             preparation_steps=[
                 'E_D_SEATED_HIP_INTERNAL_ROTATION_BAND_PREP_ONE',
                 'E_D_SEATED_HIP_INTERNAL_ROTATION_BAND_PREP_TWO'
@@ -7808,8 +7808,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-306',
             title= "E_D_SEATED_IN_AND_OUT_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_in_and_out_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_in_and_out_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_in_and_out_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_in_and_out_dumbbell.png'],
             preparation_steps=[
                 'E_D_SEATED_IN_AND_OUT_DUMBBELL_PREP_ONE',
                 'E_D_SEATED_IN_AND_OUT_DUMBBELL_PREP_TWO'
@@ -7830,8 +7830,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-307',
             title= "E_D_SEATED_IN_AND_OUT_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_in_and_out.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_in_and_out.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_in_and_out.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_in_and_out.png'],
             preparation_steps=[
                 'E_D_SEATED_IN_AND_OUT_PREP_ONE',
                 'E_D_SEATED_IN_AND_OUT_PREP_TWO'
@@ -7852,8 +7852,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-308',
             title= "E_D_SEATED_LEG_CURL_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_leg_curl_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_leg_curl_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_leg_curl_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_leg_curl_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_LEG_CURL_MACHINE_PREP_ONE',
                 'E_D_SEATED_LEG_CURL_MACHINE_PREP_TWO'
@@ -7874,8 +7874,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-309',
             title= "E_D_SEATED_LEG_PRESS_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_leg_press_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_leg_press_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_leg_press_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_leg_press_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_LEG_PRESS_MACHINE_PREP_ONE',
                 'E_D_SEATED_LEG_PRESS_MACHINE_PREP_TWO'
@@ -7896,8 +7896,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-310',
             title= "E_D_SEATED_OVERHEAD_PRESS_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_overhead_press_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_overhead_press_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_overhead_press_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_overhead_press_barbell.png'],
             preparation_steps=[
                 'E_D_SEATED_OVERHEAD_PRESS_BARBELL_PREP_ONE',
                 'E_D_SEATED_OVERHEAD_PRESS_BARBELL_PREP_TWO'
@@ -7918,8 +7918,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-311',
             title= "E_D_SEATED_OVERHEAD_PRESS_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_overhead_press_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_overhead_press_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_overhead_press_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_overhead_press_dumbbell.png'],
             preparation_steps=[
                 'E_D_SEATED_OVERHEAD_PRESS_DUMBBELL_PREP_ONE',
                 'E_D_SEATED_OVERHEAD_PRESS_DUMBBELL_PREP_TWO'
@@ -7940,8 +7940,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-312',
             title= "E_D_SEATED_OVERHEAD_PRESS_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_overhead_press_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_overhead_press_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_overhead_press_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_overhead_press_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_OVERHEAD_PRESS_MACHINE_PREP_ONE',
                 'E_D_SEATED_OVERHEAD_PRESS_MACHINE_PREP_TWO'
@@ -7962,8 +7962,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-313',
             title= "E_D_SEATED_OVERHEAD_PRESS_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_overhead_press_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_overhead_press_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_overhead_press_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_overhead_press_smith_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_OVERHEAD_PRESS_SMITH_MACHINE_PREP_ONE',
                 'E_D_SEATED_OVERHEAD_PRESS_SMITH_MACHINE_PREP_TWO'
@@ -7984,8 +7984,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-314',
             title= "E_D_SEATED_REAR_DELT_ROW_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_rear_delt_row_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_rear_delt_row_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_rear_delt_row_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_rear_delt_row_dumbbell.png'],
             preparation_steps=[
                 'E_D_SEATED_REAR_DELT_ROW_DUMBBELL_PREP_ONE',
                 'E_D_SEATED_REAR_DELT_ROW_DUMBBELL_PREP_TWO'
@@ -8006,8 +8006,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-315',
             title= "E_D_SEATED_REVERSE_FLY_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_reverse_fly_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_reverse_fly_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_reverse_fly_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_reverse_fly_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_REVERSE_FLY_MACHINE_PREP_ONE',
                 'E_D_SEATED_REVERSE_FLY_MACHINE_PREP_TWO'
@@ -8028,8 +8028,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-316',
             title= "E_D_SEATED_ROW_CLOSE_GRIP_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_row_close_grip_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_row_close_grip_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_row_close_grip_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_row_close_grip_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_ROW_CLOSE_GRIP_MACHINE_PREP_ONE',
                 'E_D_SEATED_ROW_CLOSE_GRIP_MACHINE_PREP_TWO'
@@ -8050,8 +8050,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-317',
             title= "E_D_SEATED_ROW_WIDE_GRIP_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_row_wide_grip_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_row_wide_grip_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_row_wide_grip_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_row_wide_grip_cable.png'],
             preparation_steps=[
                 'E_D_SEATED_ROW_WIDE_GRIP_CABLE_PREP_ONE',
                 'E_D_SEATED_ROW_WIDE_GRIP_CABLE_PREP_TWO'
@@ -8072,8 +8072,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-318',
             title= "E_D_SEATED_ROW_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_row_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_row_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_row_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_row_cable.png'],
             preparation_steps=[
                 'E_D_SEATED_ROW_CABLE_PREP_ONE',
                 'E_D_SEATED_ROW_CABLE_PREP_TWO'
@@ -8094,8 +8094,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-319',
             title= "E_D_SEATED_ROW_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_row_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_row_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_row_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_row_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_ROW_MACHINE_PREP_ONE',
                 'E_D_SEATED_ROW_MACHINE_PREP_TWO'
@@ -8117,8 +8117,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-320',
             title= "E_D_SEATED_ROW_WITH_TWIST_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_row_with_twist_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_row_with_twist_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_row_with_twist_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_row_with_twist_band.png'],
             preparation_steps=[
                 'E_D_SEATED_ROW_WITH_TWIST_BAND_PREP_ONE',
                 'E_D_SEATED_ROW_WITH_TWIST_BAND_PREP_TWO'
@@ -8139,8 +8139,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-321',
             title= "E_D_SEATED_TORSO_ROTATION_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/seated_torso_rotation_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/seated_torso_rotation_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/seated_torso_rotation_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/seated_torso_rotation_machine.png'],
             preparation_steps=[
                 'E_D_SEATED_TORSO_ROTATION_MACHINE_PREP_ONE',
                 'E_D_SEATED_TORSO_ROTATION_MACHINE_PREP_TWO'
@@ -8160,8 +8160,8 @@ ExerciseDefinition(
 ExerciseDefinition(
             id='exercise-322',
             title= "E_D_SHRUG_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug.png'],
             preparation_steps=[
                 'E_D_SHRUG_PREP_ONE',
             ],
@@ -8180,8 +8180,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-323',
             title= "E_D_SHRUG_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_barbell.png'],
             preparation_steps=[
                 'E_D_SHRUG_BARBELL_PREP_ONE',
                 'E_D_SHRUG_BARBELL_PREP_TWO',
@@ -8202,8 +8202,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-324',
             title= "E_D_SHRUG_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_cable.png'],
             preparation_steps=[
                 'E_D_SHRUG_CABLE_PREP_ONE',
                 'E_D_SHRUG_CABLE_PREP_TWO',
@@ -8224,8 +8224,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-325',
             title= "E_D_SHRUG_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_dumbbell.png'],
             preparation_steps=[
                 'E_D_SHRUG_DUMBBELL_PREP_ONE',
                 'E_D_SHRUG_DUMBBELL_PREP_TWO',
@@ -8245,8 +8245,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-326',
             title= "E_D_SHRUG_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_machine.png'],
             preparation_steps=[
                 'E_D_SHRUG_MACHINE_PREP_ONE',
                 'E_D_SHRUG_MACHINE_PREP_TWO',
@@ -8266,8 +8266,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-327',
             title= "E_D_SHRUG_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_smith_machine.png'],
             preparation_steps=[
                 'E_D_SHRUG_SMITH_MACHINE_PREP_ONE',
                 'E_D_SHRUG_SMITH_MACHINE_PREP_TWO',
@@ -8288,8 +8288,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-328',
             title= "E_D_SIDE_BRIDGE_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_bridge.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_bridge.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_bridge.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_bridge.png'],
             preparation_steps=[
                 'E_D_SIDE_BRIDGE_PREP_ONE',
                 'E_D_SIDE_BRIDGE_PREP_TWO',
@@ -8311,8 +8311,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-329',
             title= "E_D_SIDE_LUNGE_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_lunge.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_lunge.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_lunge.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_lunge.png'],
             preparation_steps=[
                 'E_D_SIDE_LUNGE_PREP_ONE',
                 'E_D_SIDE_LUNGE_PREP_TWO',
@@ -8335,8 +8335,8 @@ ExerciseDefinition(
 ExerciseDefinition(
             id='exercise-322',
             title= "E_D_SHRUG_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug.png'],
                 preparation_steps=['E_D_SHRUG_PREP_ONE'],
                 execution_steps=['E_D_SHRUG_EXEC_ONE', 'E_D_SHRUG_EXEC_TWO', 'E_D_SHRUG_EXEC_THREE'],
                 key_tips=['E_D_SHRUG_TIP_ONE'],
@@ -8347,8 +8347,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-323',
             title= "E_D_SHRUG_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_barbell.png'],
                 preparation_steps=['E_D_SHRUG_BARBELL_PREP_ONE', 'E_D_SHRUG_BARBELL_PREP_TWO'],
                 execution_steps=['E_D_SHRUG_BARBELL_EXEC_ONE', 'E_D_SHRUG_BARBELL_EXEC_TWO', 'E_D_SHRUG_BARBELL_EXEC_THREE'],
                 key_tips=['E_D_SHRUG_BARBELL_TIP_ONE', 'E_D_SHRUG_BARBELL_TIP_TWO'],
@@ -8359,8 +8359,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-324',
             title= "E_D_SHRUG_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_cable.png'],
                 preparation_steps=['E_D_SHRUG_CABLE_PREP_ONE', 'E_D_SHRUG_CABLE_PREP_TWO'],
                 execution_steps=['E_D_SHRUG_CABLE_EXEC_ONE', 'E_D_SHRUG_CABLE_EXEC_TWO', 'E_D_SHRUG_CABLE_EXEC_THREE'],
                 key_tips=['E_D_SHRUG_CABLE_TIP_ONE', 'E_D_SHRUG_CABLE_TIP_TWO'],
@@ -8371,8 +8371,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-325',
             title= "E_D_SHRUG_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_dumbbell.png'],
                 preparation_steps=['E_D_SHRUG_DUMBBELL_PREP_ONE', 'E_D_SHRUG_DUMBBELL_PREP_TWO'],
                 execution_steps=['E_D_SHRUG_DUMBBELL_EXEC_ONE', 'E_D_SHRUG_DUMBBELL_EXEC_TWO', 'E_D_SHRUG_DUMBBELL_EXEC_THREE'],
                 key_tips=['E_D_SHRUG_DUMBBELL_TIP_ONE'],
@@ -8383,8 +8383,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-326',
             title= "E_D_SHRUG_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_machine.png'],
                 preparation_steps=['E_D_SHRUG_MACHINE_PREP_ONE', 'E_D_SHRUG_MACHINE_PREP_TWO'],
                 execution_steps=['E_D_SHRUG_MACHINE_EXEC_ONE', 'E_D_SHRUG_MACHINE_EXEC_TWO', 'E_D_SHRUG_MACHINE_EXEC_THREE'],
                 key_tips=['E_D_SHRUG_MACHINE_TIP_ONE'],
@@ -8395,8 +8395,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-327',
             title= "E_D_SHRUG_SMITH_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/shrug_smith_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/shrug_smith_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/shrug_smith_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/shrug_smith_machine.png'],
                 preparation_steps=['E_D_SHRUG_SMITH_MACHINE_PREP_ONE', 'E_D_SHRUG_SMITH_MACHINE_PREP_TWO'],
                 execution_steps=['E_D_SHRUG_SMITH_MACHINE_EXEC_ONE', 'E_D_SHRUG_SMITH_MACHINE_EXEC_TWO', 'E_D_SHRUG_SMITH_MACHINE_EXEC_THREE'],
                 key_tips=['E_D_SHRUG_SMITH_MACHINE_TIP_ONE', 'E_D_SHRUG_SMITH_MACHINE_TIP_TWO'],
@@ -8407,8 +8407,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-328',
             title= "E_D_SIDE_BRIDGE_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_bridge.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_bridge.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_bridge.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_bridge.png'],
                 preparation_steps=['E_D_SIDE_BRIDGE_PREP_ONE', 'E_D_SIDE_BRIDGE_PREP_TWO'],
                 execution_steps=['E_D_SIDE_BRIDGE_EXEC_ONE', 'E_D_SIDE_BRIDGE_EXEC_TWO', 'E_D_SIDE_BRIDGE_EXEC_THREE'],
                 key_tips=['E_D_SIDE_BRIDGE_TIP_ONE', 'E_D_SIDE_BRIDGE_TIP_TWO', 'E_D_SIDE_BRIDGE_TIP_THREE'],
@@ -8419,8 +8419,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-329',
             title= "E_D_SIDE_LUNGE_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_lunge.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_lunge.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_lunge.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_lunge.png'],
                 preparation_steps=['E_D_SIDE_LUNGE_PREP_ONE', 'E_D_SIDE_LUNGE_PREP_TWO'],
                 execution_steps=['E_D_SIDE_LUNGE_EXEC_ONE', 'E_D_SIDE_LUNGE_EXEC_TWO', 'E_D_SIDE_LUNGE_EXEC_THREE', 'E_D_SIDE_LUNGE_EXEC_FOUR'],
                 key_tips=['E_D_SIDE_LUNGE_TIP_ONE', 'E_D_SIDE_LUNGE_TIP_TWO', 'E_D_SIDE_LUNGE_TIP_THREE'],
@@ -8433,8 +8433,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-330',
             title= "E_D_SIDE_LUNGE_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_lunge_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_lunge_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_lunge_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_lunge_barbell.png'],
                 preparation_steps=['E_D_SIDE_LUNGE_BARBELL_PREP_ONE', 'E_D_SIDE_LUNGE_BARBELL_PREP_TWO', 'E_D_SIDE_LUNGE_BARBELL_PREP_THREE'],
                 execution_steps=['E_D_SIDE_LUNGE_BARBELL_EXEC_ONE', 'E_D_SIDE_LUNGE_BARBELL_EXEC_TWO', 'E_D_SIDE_LUNGE_BARBELL_EXEC_THREE'],
                 key_tips=['E_D_SIDE_LUNGE_BARBELL_TIP_ONE', 'E_D_SIDE_LUNGE_BARBELL_TIP_TWO'],
@@ -8445,8 +8445,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-331',
             title= "E_D_SIDE_LUNGE_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_lunge_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_lunge_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_lunge_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_lunge_dumbbell.png'],
                 preparation_steps=['E_D_SIDE_LUNGE_DUMBBELL_PREP_ONE', 'E_D_SIDE_LUNGE_DUMBBELL_PREP_TWO', 'E_D_SIDE_LUNGE_DUMBBELL_PREP_THREE'],
                 execution_steps=['E_D_SIDE_LUNGE_DUMBBELL_EXEC_ONE', 'E_D_SIDE_LUNGE_DUMBBELL_EXEC_TWO', 'E_D_SIDE_LUNGE_DUMBBELL_EXEC_THREE'],
                 key_tips=['E_D_SIDE_LUNGE_DUMBBELL_TIP_ONE', 'E_D_SIDE_LUNGE_DUMBBELL_TIP_TWO'],
@@ -8457,8 +8457,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-332',
             title= "E_D_SIDE_LUNGE_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_lunge_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_lunge_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_lunge_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_lunge_kettlebell.png'],
                 preparation_steps=['E_D_SIDE_LUNGE_KETTLEBELL_PREP_ONE', 'E_D_SIDE_LUNGE_KETTLEBELL_PREP_TWO', 'E_D_SIDE_LUNGE_KETTLEBELL_PREP_THREE'],
                 execution_steps=['E_D_SIDE_LUNGE_KETTLEBELL_EXEC_ONE', 'E_D_SIDE_LUNGE_KETTLEBELL_EXEC_TWO', 'E_D_SIDE_LUNGE_KETTLEBELL_EXEC_THREE'],
                 key_tips=['E_D_SIDE_LUNGE_KETTLEBELL_TIP_ONE', 'E_D_SIDE_LUNGE_KETTLEBELL_TIP_TWO'],
@@ -8469,8 +8469,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-334',
             title= "E_D_SIDE_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/side_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/side_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/side_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/side_plank.png'],
                 preparation_steps=['E_D_SIDE_PLANK_PREP_ONE', 'E_D_SIDE_PLANK_PREP_TWO'],
                 execution_steps=['E_D_SIDE_PLANK_EXEC_ONE', 'E_D_SIDE_PLANK_EXEC_TWO', 'E_D_SIDE_PLANK_EXEC_THREE'],
                 key_tips=['E_D_SIDE_PLANK_TIP_ONE', 'E_D_SIDE_PLANK_TIP_TWO', 'E_D_SIDE_PLANK_TIP_THREE'],
@@ -8486,8 +8486,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-359',
             title= "E_D_SIT_UP_BODYWEIGHT_TITLE",
-            video_urls=['regular_directory/exercises/videos/sit_up.mp4'],
-            cover_image_url=['regular_directory/exercises/images/sit_up.png'],
+            video_urls=['app/regular_directory/exercises/videos/sit_up.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/sit_up.png'],
                 preparation_steps=['E_D_SIT_UP_BODYWEIGHT_PREP_ONE', 'E_D_SIT_UP_BODYWEIGHT_PREP_TWO', 'E_D_SIT_UP_BODYWEIGHT_PREP_THREE'],
                 execution_steps=['E_D_SIT_UP_BODYWEIGHT_EXEC_ONE', 'E_D_SIT_UP_BODYWEIGHT_EXEC_TWO', 'E_D_SIT_UP_BODYWEIGHT_EXEC_THREE'],
                 key_tips=['E_D_SIT_UP_BODYWEIGHT_TIP_ONE', 'E_D_SIT_UP_BODYWEIGHT_TIP_TWO'],
@@ -8499,8 +8499,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-361',
             title= "E_D_SIT_UP_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/sit_up_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/sit_up_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/sit_up_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/sit_up_dumbbell.png'],
                 preparation_steps=['E_D_SIT_UP_DUMBBELL_PREP_ONE', 'E_D_SIT_UP_DUMBBELL_PREP_TWO', 'E_D_SIT_UP_DUMBBELL_PREP_THREE'],
                 execution_steps=['E_D_SIT_UP_DUMBBELL_EXEC_ONE', 'E_D_SIT_UP_DUMBBELL_EXEC_TWO', 'E_D_SIT_UP_DUMBBELL_EXEC_THREE'],
                 key_tips=['E_D_SIT_UP_DUMBBELL_TIP_ONE', 'E_D_SIT_UP_DUMBBELL_TIP_TWO'],
@@ -8515,8 +8515,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-366',
             title= "E_D_SIT_UP_KETTLEBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/sit_up_kettlebell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/sit_up_kettlebell.png'],
+            video_urls=['app/regular_directory/exercises/videos/sit_up_kettlebell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/sit_up_kettlebell.png'],
                 preparation_steps=['E_D_SIT_UP_KETTLEBELL_PREP_ONE', 'E_D_SIT_UP_KETTLEBELL_PREP_TWO', 'E_D_SIT_UP_KETTLEBELL_PREP_THREE'],
                 execution_steps=['E_D_SIT_UP_KETTLEBELL_EXEC_ONE', 'E_D_SIT_UP_KETTLEBELL_EXEC_TWO', 'E_D_SIT_UP_KETTLEBELL_EXEC_THREE'],
                 key_tips=['E_D_SIT_UP_KETTLEBELL_TIP_ONE', 'E_D_SIT_UP_KETTLEBELL_TIP_TWO'],
@@ -8538,8 +8538,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-385',
             title= "E_D_SKULL_CRUSHER_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/skull_crusher_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/skull_crusher_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/skull_crusher_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/skull_crusher_dumbbell.png'],
                 preparation_steps=['E_D_SKULL_CRUSHER_DUMBBELL_PREP_ONE', 'E_D_SKULL_CRUSHER_DUMBBELL_PREP_TWO', 'E_D_SKULL_CRUSHER_DUMBBELL_PREP_THREE'],
                 execution_steps=['E_D_SKULL_CRUSHER_DUMBBELL_EXEC_ONE', 'E_D_SKULL_CRUSHER_DUMBBELL_EXEC_TWO', 'E_D_SKULL_CRUSHER_DUMBBELL_EXEC_THREE'],
                 key_tips=['E_D_SKULL_CRUSHER_DUMBBELL_TIP_ONE', 'E_D_SKULL_CRUSHER_DUMBBELL_TIP_TWO'],
@@ -8551,8 +8551,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-387',
             title= "E_D_SKULL_CRUSHER_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/skull_crusher_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/skull_crusher_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/skull_crusher_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/skull_crusher_barbell.png'],
                 preparation_steps=['E_D_SKULL_CRUSHER_BARBELL_PREP_ONE', 'E_D_SKULL_CRUSHER_BARBELL_PREP_TWO', 'E_D_SKULL_CRUSHER_BARBELL_PREP_THREE'],
                 execution_steps=['E_D_SKULL_CRUSHER_BARBELL_EXEC_ONE', 'E_D_SKULL_CRUSHER_BARBELL_EXEC_TWO', 'E_D_SKULL_CRUSHER_BARBELL_EXEC_THREE'],
                 key_tips=['E_D_SKULL_CRUSHER_BARBELL_TIP_ONE', 'E_D_SKULL_CRUSHER_BARBELL_TIP_TWO'],
@@ -8565,8 +8565,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-390',
             title= "E_D_STRAIGHT_ARM_PLANK_TITLE",
-            video_urls=['regular_directory/exercises/videos/straight_arm_plank.mp4'],
-            cover_image_url=['regular_directory/exercises/images/straight_arm_plank.png'],
+            video_urls=['app/regular_directory/exercises/videos/straight_arm_plank.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/straight_arm_plank.png'],
                 preparation_steps=['E_D_STRAIGHT_ARM_PLANK_PREP_ONE', 'E_D_STRAIGHT_ARM_PLANK_PREP_TWO'],
                 execution_steps=['E_D_STRAIGHT_ARM_PLANK_EXEC_ONE', 'E_D_STRAIGHT_ARM_PLANK_EXEC_TWO', 'E_D_STRAIGHT_ARM_PLANK_EXEC_THREE'],
                 key_tips=['E_D_STRAIGHT_ARM_PLANK_TIP_ONE', 'E_D_STRAIGHT_ARM_PLANK_TIP_TWO', 'E_D_STRAIGHT_ARM_PLANK_TIP_THREE'],
@@ -8577,8 +8577,8 @@ ExerciseDefinition(
         ExerciseDefinition(
             id='exercise-391',
             title= "E_D_STANDING_SIDE_CRUNCH_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_side_crunch_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_side_crunch_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_side_crunch_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_side_crunch_cable.png'],
                 preparation_steps=['E_D_STANDING_SIDE_CRUNCH_CABLE_PREP_ONE', 'E_D_STANDING_SIDE_CRUNCH_CABLE_PREP_TWO'],
                 execution_steps=['E_D_STANDING_SIDE_CRUNCH_CABLE_EXEC_ONE', 'E_D_STANDING_SIDE_CRUNCH_CABLE_EXEC_TWO', 'E_D_STANDING_SIDE_CRUNCH_CABLE_EXEC_THREE'],
                 key_tips=['E_D_STANDING_SIDE_CRUNCH_CABLE_TIP_ONE', 'E_D_STANDING_SIDE_CRUNCH_CABLE_TIP_TWO'],
@@ -8589,8 +8589,8 @@ ExerciseDefinition(
 ExerciseDefinition(
             id='exercise-392',
             title= "E_D_STANDING_GLUTE_KICKBACK_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_glute_kickback_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_glute_kickback_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_glute_kickback_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_glute_kickback_cable.png'],
                 preparation_steps=[],
                 execution_steps=['E_D_STANDING_GLUTE_KICKBACK_EXEC_ONE', 'E_D_STANDING_GLUTE_KICKBACK_EXEC_TWO', 'E_D_STANDING_GLUTE_KICKBACK_EXEC_THREE'],
                 key_tips=['E_D_STANDING_GLUTE_KICKBACK_TIP_ONE', 'E_D_STANDING_GLUTE_KICKBACK_TIP_TWO'],
@@ -8601,8 +8601,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-393',
             title= "E_D_STANDING_GLUTE_KICKBACK_MACHINE_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_glute_kickback_machine.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_glute_kickback_machine.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_glute_kickback_machine.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_glute_kickback_machine.png'],
                 preparation_steps=[],
                 execution_steps=[],
                 key_tips=[],
@@ -8613,8 +8613,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-394',
             title= "E_D_STANDING_INCLINE_FLY_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_incline_fly_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_incline_fly_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_incline_fly_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_incline_fly_band.png'],
                 preparation_steps=[],
                 execution_steps=[],
                 key_tips=[],
@@ -8626,8 +8626,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-396',
             title= "E_D_STANDING_INCLINE_FLY_DUMBBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_incline_fly_dumbbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_incline_fly_dumbbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_incline_fly_dumbbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_incline_fly_dumbbell.png'],
                 preparation_steps=[],
                 execution_steps=[],
                 key_tips=[],
@@ -8638,8 +8638,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-397',
             title= "E_D_STANDING_INCLINE_PRESS_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_incline_press_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_incline_press_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_incline_press_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_incline_press_band.png'],
                 preparation_steps=[],
                 execution_steps=[],
                 key_tips=[],
@@ -8650,8 +8650,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-398',
             title= "E_D_STANDING_LEG_EXTENSION_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_leg_extension_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_leg_extension_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_leg_extension_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_leg_extension_band.png'],
                 preparation_steps=['E_D_STANDING_LEG_EXTENSION_BAND_PREP_ONE', 'E_D_STANDING_LEG_EXTENSION_BAND_PREP_TWO'],
                 execution_steps=['E_D_STANDING_LEG_EXTENSION_BAND_EXEC_ONE', 'E_D_STANDING_LEG_EXTENSION_BAND_EXEC_TWO', 'E_D_STANDING_LEG_EXTENSION_BAND_EXEC_THREE'],
                 key_tips=['E_D_STANDING_LEG_EXTENSION_BAND_TIP_ONE'],
@@ -8662,8 +8662,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-399',
             title= "E_D_STANDING_REAR_DELT_ROW_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_rear_delt_row_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_rear_delt_row_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_rear_delt_row_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_rear_delt_row_band.png'],
                 preparation_steps=['E_D_STANDING_REAR_DELT_ROW_BAND_PREP_ONE', 'E_D_STANDING_REAR_DELT_ROW_BAND_PREP_TWO'],
                 execution_steps=['E_D_STANDING_REAR_DELT_ROW_BAND_EXEC_ONE', 'E_D_STANDING_REAR_DELT_ROW_BAND_EXEC_TWO', 'E_D_STANDING_REAR_DELT_ROW_BAND_EXEC_THREE'],
                 key_tips=['E_D_STANDING_REAR_DELT_ROW_BAND_TIP_ONE'],
@@ -8674,8 +8674,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-400',
             title= "E_D_STANDING_REAR_DELT_ROW_CABLE_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_rear_delt_row_cable.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_rear_delt_row_cable.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_rear_delt_row_cable.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_rear_delt_row_cable.png'],
                 preparation_steps=['E_D_STANDING_REAR_DELT_ROW_CABLE_PREP_ONE', 'E_D_STANDING_REAR_DELT_ROW_CABLE_PREP_TWO'],
                 execution_steps=['E_D_STANDING_REAR_DELT_ROW_CABLE_EXEC_ONE', 'E_D_STANDING_REAR_DELT_ROW_CABLE_EXEC_TWO', 'E_D_STANDING_REAR_DELT_ROW_CABLE_EXEC_THREE'],
                 key_tips=['E_D_STANDING_REAR_DELT_ROW_CABLE_TIP_ONE', 'E_D_STANDING_REAR_DELT_ROW_CABLE_TIP_TWO'],
@@ -8686,8 +8686,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-401',
             title= "E_D_STANDING_REVERSE_FLY_BAND_TITLE",
-            video_urls=['regular_directory/exercises/videos/standing_reverse_fly_band.mp4'],
-            cover_image_url=['regular_directory/exercises/images/standing_reverse_fly_band.png'],
+            video_urls=['app/regular_directory/exercises/videos/standing_reverse_fly_band.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/standing_reverse_fly_band.png'],
                 preparation_steps=['E_D_STANDING_REVERSE_FLY_BAND_PREP_ONE'],
                 execution_steps=['E_D_STANDING_REVERSE_FLY_BAND_EXEC_ONE', 'E_D_STANDING_REVERSE_FLY_BAND_EXEC_TWO', 'E_D_STANDING_REVERSE_FLY_BAND_EXEC_THREE'],
                 key_tips=['E_D_STANDING_REVERSE_FLY_BAND_TIP_ONE', 'E_D_STANDING_REVERSE_FLY_BAND_TIP_TWO'],
@@ -8698,8 +8698,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-402',
             title= "E_D_WRIST_ROLLER_PLATE_TITLE",
-            video_urls=['regular_directory/exercises/videos/wrist_roller_plate.mp4'],
-            cover_image_url=['regular_directory/exercises/images/wrist_roller_plate.png'],
+            video_urls=['app/regular_directory/exercises/videos/wrist_roller_plate.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/wrist_roller_plate.png'],
                 preparation_steps=['E_D_WRIST_ROLLER_PLATE_PREP_ONE', 'E_D_WRIST_ROLLER_PLATE_PREP_TWO'],
                 execution_steps=['E_D_WRIST_ROLLER_PLATE_EXEC_ONE', 'E_D_WRIST_ROLLER_PLATE_EXEC_TWO'],
                 key_tips=['E_D_WRIST_ROLLER_PLATE_TIP_ONE', 'E_D_WRIST_ROLLER_PLATE_TIP_TWO', 'E_D_WRIST_ROLLER_PLATE_TIP_THREE'],
@@ -8710,8 +8710,8 @@ ExerciseDefinition(
     ExerciseDefinition(
             id='exercise-403',
             title= "E_D_ZERCHER_CARRY_BARBELL_TITLE",
-            video_urls=['regular_directory/exercises/videos/zercher_carry_barbell.mp4'],
-            cover_image_url=['regular_directory/exercises/images/zercher_carry_barbell.png'],
+            video_urls=['app/regular_directory/exercises/videos/zercher_carry_barbell.mp4'],
+            cover_image_url=['app/regular_directory/exercises/images/zercher_carry_barbell.png'],
                 preparation_steps=['E_D_ZERCHER_CARRY_BARBELL_PREP_ONE'],
                 execution_steps=['E_D_ZERCHER_CARRY_BARBELL_EXEC_ONE'],
                 key_tips=['E_D_ZERCHER_CARRY_BARBELL_TIP_ONE'],
@@ -8726,7 +8726,7 @@ ExerciseDefinition(
 #             id='exercise-2',
 #             title= "E_D_ALTERNATING_PUNCH_TITLE",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/alternating_punch.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/alternating_punch.png'],
 #                 preparation_steps=[
 #                     'E_D_ALTERNATING_PUNCH_PREP_ONE',
 #                     'E_D_ALTERNATING_PUNCH_PREP_TWO',
@@ -8750,7 +8750,7 @@ ExerciseDefinition(
 #             id='exercise-3',
 #             title= "E_D_ALTERNATING_V_UP_BAND_TITLE",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/alternating_v_up_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/alternating_v_up_band.png'],
 #                 preparation_steps=[
 #                     'E_D_ALTERNATING_V_UP_BAND_PREP_ONE',
 #                     'E_D_ALTERNATING_V_UP_BAND_PREP_TWO'
@@ -8769,8 +8769,8 @@ ExerciseDefinition(
 #         ExerciseDefinition(
 #             id='exercise-4',
 #             title= "E_D_ARM_CIRCLES_TITLE",
-#             video_urls=['regular_directory/exercises/videos/arm_circles.mp4'],
-#             cover_image_url=['regular_directory/exercises/images/arm_circles.png'],
+#             video_urls=['app/regular_directory/exercises/videos/arm_circles.mp4'],
+#             cover_image_url=['app/regular_directory/exercises/images/arm_circles.png'],
 #                 preparation_steps=[
 #                     'E_D_ARM_CIRCLES_PREP_ONE',
 #                     'E_D_ARM_CIRCLES_PREP_TWO'
@@ -8791,8 +8791,8 @@ ExerciseDefinition(
 #         ExerciseDefinition(
 #             id='exercise-5',
 #             title= "E_D_ARNOLD_DUMBBELL_TITLE",
-#             video_urls=['regular_directory/exercises/videos/arnold_dumbbell.mp4'],
-#             cover_image_url=['regular_directory/exercises/images/arnold_dumbbell.png'],
+#             video_urls=['app/regular_directory/exercises/videos/arnold_dumbbell.mp4'],
+#             cover_image_url=['app/regular_directory/exercises/images/arnold_dumbbell.png'],
 #                 preparation_steps=[
 #                     'E_D_ARNOLD_DUMBBELL_PREP_ONE',
 #                     'E_D_ARNOLD_DUMBBELL_PREP_TWO'
@@ -8814,7 +8814,7 @@ ExerciseDefinition(
 #             id='exercise-6',
 #             title= "E_D_BACK_EXTENSION_TITLE",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/back_extension.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/back_extension.png'],
 #                 preparation_steps=[
 #                     'E_D_BACK_EXTENSION_PREP_ONE',
 #                     'E_D_BACK_EXTENSION_PREP_TWO'
@@ -8834,8 +8834,8 @@ ExerciseDefinition(
 #         ExerciseDefinition(
 #             id='exercise-7',
 #             title= "E_D_BACK_EXTENSION_ON_FLOOR_TITLE",
-#             video_urls=['regular_directory/exercises/videos/back_extension_on_floor.mp4'],
-#             cover_image_url=['regular_directory/exercises/images/back_extension_on_floor.png'],
+#             video_urls=['app/regular_directory/exercises/videos/back_extension_on_floor.mp4'],
+#             cover_image_url=['app/regular_directory/exercises/images/back_extension_on_floor.png'],
 #                 preparation_steps=[
 #                     'E_D_BACK_EXTENSION_ON_FLOOR_PREP_ONE'
 #                 ],
@@ -8855,7 +8855,7 @@ ExerciseDefinition(
 #             id='exercise-8',
 #             title= "E_D_BACK_EXTENSION_BAND_TITLE",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/back_extension_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/back_extension_band.png'],
 #                 preparation_steps=[
 #                     'E_D_BACK_EXTENSION_BAND_PREP_ONE',
 #                     'E_D_BACK_EXTENSION_BAND_PREP_TWO',
@@ -8876,8 +8876,8 @@ ExerciseDefinition(
 #         ExerciseDefinition(
 #             id='exercise-9',
 #             title= "E_D_BACK_EXTENSION_MACHINE_TITLE",
-#             video_urls=['regular_directory/exercises/videos/back_extension_machine.mp4'],
-#             cover_image_url=['regular_directory/exercises/images/back_extension_machine.png'],
+#             video_urls=['app/regular_directory/exercises/videos/back_extension_machine.mp4'],
+#             cover_image_url=['app/regular_directory/exercises/images/back_extension_machine.png'],
 #                 preparation_steps=[
 #                     'E_D_BACK_EXTENSION_MACHINE_PREP_ONE',
 #                     'E_D_BACK_EXTENSION_MACHINE_PREP_TWO'
@@ -8898,8 +8898,8 @@ ExerciseDefinition(
 #         ExerciseDefinition(
 #             id='exercise-1',
 #             title="e_d_ab_wheel_title",
-#             video_urls=['regular_directory/exercises/videos/ab_wheel.mp4'],
-#             cover_image_url=['regular_directory/exercises/images/ab_wheel.png'],
+#             video_urls=['app/regular_directory/exercises/videos/ab_wheel.mp4'],
+#             cover_image_url=['app/regular_directory/exercises/images/ab_wheel.png'],
 #             preparation_steps=[
 #                 'e_d_ab_wheel_prep_one',
 #                 'e_d_ab_wheel_prep_two'
@@ -8923,7 +8923,7 @@ ExerciseDefinition(
 #             id='exercise-10',
 #             title="e_d_backward_lunge_with_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/backward_lunge_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/backward_lunge_barbell.png'],
 #             preparation_steps=[
 #                 'e_d_backward_lunge_with_barbell_prep_one',
 #                 'e_d_backward_lunge_with_barbell_prep_two'
@@ -8944,7 +8944,7 @@ ExerciseDefinition(
 #             id='exercise-11',
 #             title="e_d_backward_lunge_with_cable",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/backward_lunge_cable.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/backward_lunge_cable.png'],
 #             preparation_steps=[
 #                 'e_d_backward_lunge_with_cable_prep_one',
 #                 'e_d_backward_lunge_with_cable_prep_two'
@@ -8965,7 +8965,7 @@ ExerciseDefinition(
 #             id='exercise-12',
 #             title="e_d_backward_lunge_with_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/backward_lunge_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/backward_lunge_dumbbell.png'],
 #             preparation_steps=[
 #                 'e_d_backward_lunge_with_dumbbell_prep_one'
 #             ],
@@ -8985,7 +8985,7 @@ ExerciseDefinition(
 #             id='exercise-13',
 #             title="e_d_backward_lunge_with_kettlebell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/backward_lunge_kettlebell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/backward_lunge_kettlebell.png'],
 #             preparation_steps=[
 #                 'e_d_backward_lunge_with_kettlebell_prep_one'
 #             ],
@@ -9005,7 +9005,7 @@ ExerciseDefinition(
 #             id='exercise-14',
 #             title="e_d_backward_lunge_with_smith_machine",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/backward_lunge_smith.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/backward_lunge_smith.png'],
 #             preparation_steps=[
 #                 'e_d_backward_lunge_with_smith_machine_prep_one'
 #             ],
@@ -9025,7 +9025,7 @@ ExerciseDefinition(
 #             id='exercise-15',
 #             title="e_d_ball_slams",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/ball_slams.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/ball_slams.png'],
 #             preparation_steps=[
 #                 'e_d_ball_slams_prep_one'
 #             ],
@@ -9046,7 +9046,7 @@ ExerciseDefinition(
 #             id='exercise-16',
 #             title="e_d_band_pull_through",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/band_pull_through.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/band_pull_through.png'],
 #             preparation_steps=[
 #                 'e_d_band_pull_through_prep_one'
 #             ],
@@ -9068,7 +9068,7 @@ ExerciseDefinition(
 #             id='exercise-17',
 #             title="e_d_bench_fly_with_cable",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_fly_cable.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_fly_cable.png'],
 #             preparation_steps=[
 #                 'e_d_bench_fly_with_cable_prep_one'
 #             ],
@@ -9090,7 +9090,7 @@ ExerciseDefinition(
 #             id='exercise-18',
 #             title="e_d_bench_fly_with_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_fly_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_fly_dumbbell.png'],
 #             preparation_steps=[
 #                 'e_d_bench_fly_with_dumbbell_prep_one'
 #             ],
@@ -9112,7 +9112,7 @@ ExerciseDefinition(
 #             id='exercise-19',
 #             title="e_d_bench_jump",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_jump.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_jump.png'],
 #             preparation_steps=[
 #                 'e_d_bench_jump_prep_one'
 #             ],
@@ -9134,7 +9134,7 @@ ExerciseDefinition(
 #             id='exercise-20',
 #             title="e_d_bench_pistol_squat",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_pistol_squat.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_pistol_squat.png'],
 #             preparation_steps=[
 #                 'e_d_bench_pistol_squat_prep_one'
 #             ],
@@ -9155,7 +9155,7 @@ ExerciseDefinition(
 #             id='exercise-21',
 #             title="e_d_bench_press_close_grip_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_close_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_close_barbell.png'],
 #             preparation_steps=[
 #                 'e_d_bench_press_close_grip_barbell_prep_one'
 #             ],
@@ -9175,7 +9175,7 @@ ExerciseDefinition(
 #             id='exercise-22',
 #             title="e_d_bench_press_close_grip_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_close_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_close_dumbbell.png'],
 #             preparation_steps=[
 #                 'e_d_bench_press_close_grip_dumbbell_prep_one'
 #             ],
@@ -9195,7 +9195,7 @@ ExerciseDefinition(
 #             id='exercise-23',
 #             title="e_d_bench_press_wide_grip_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_wide_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_wide_barbell.png'],
 #             preparation_steps=[
 #                 'e_d_bench_press_wide_grip_barbell_prep_one'
 #             ],
@@ -9215,7 +9215,7 @@ ExerciseDefinition(
 #             id='exercise-24',
 #             title="e_d_bench_press_with_band",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_band.png'],
 #             preparation_steps=[
 #                 'e_d_bench_press_with_band_prep_one'
 #             ],
@@ -9236,7 +9236,7 @@ ExerciseDefinition(
 #             id='exercise-25',
 #             title="e_d_bench_squat",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_squat.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_squat.png'],
 #             preparation_steps=[
 #                 'e_d_bench_squat_prep_one'
 #             ],
@@ -9257,7 +9257,7 @@ ExerciseDefinition(
 #             id='exercise-20',
 #             title="e_d_bench_pistol_squat",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_pistol_squat.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_pistol_squat.png'],
 #             preparation_steps=['e_d_bench_pistol_squat_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_pistol_squat_exec_one',
@@ -9276,7 +9276,7 @@ ExerciseDefinition(
 #             id='exercise-21',
 #             title="e_d_bench_press_close_grip_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_close_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_close_barbell.png'],
 #             preparation_steps=['e_d_bench_press_close_grip_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_press_close_grip_barbell_exec_one',
@@ -9294,7 +9294,7 @@ ExerciseDefinition(
 #             id='exercise-22',
 #             title="e_d_bench_press_close_grip_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_close_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_close_dumbbell.png'],
 #             preparation_steps=['e_d_bench_press_close_grip_dumbbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_press_close_grip_dumbbell_exec_one',
@@ -9312,7 +9312,7 @@ ExerciseDefinition(
 #             id='exercise-23',
 #             title="e_d_bench_press_wide_grip_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_wide_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_wide_barbell.png'],
 #             preparation_steps=['e_d_bench_press_wide_grip_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_press_wide_grip_barbell_exec_one',
@@ -9330,7 +9330,7 @@ ExerciseDefinition(
 #             id='exercise-24',
 #             title="e_d_bench_press_with_band",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_press_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_press_band.png'],
 #             preparation_steps=['e_d_bench_press_with_band_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_press_with_band_exec_one',
@@ -9349,7 +9349,7 @@ ExerciseDefinition(
 #             id='exercise-25',
 #             title="e_d_bench_squat",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_squat.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_squat.png'],
 #             preparation_steps=['e_d_bench_squat_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_squat_exec_one',
@@ -9368,7 +9368,7 @@ ExerciseDefinition(
 #             id='exercise-26',
 #             title="e_d_bench_squat_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_squat_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_squat_barbell.png'],
 #             preparation_steps=['e_d_bench_squat_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_squat_barbell_exec_one'
@@ -9386,7 +9386,7 @@ ExerciseDefinition(
 #             id='exercise-27',
 #             title="e_d_bench_squat_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bench_squat_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bench_squat_dumbbell.png'],
 #             preparation_steps=['e_d_bench_squat_dumbbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bench_squat_dumbbell_exec_one'
@@ -9404,7 +9404,7 @@ ExerciseDefinition(
 #             id='exercise-28',
 #             title="e_d_bent_arm_pullover_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_arm_pullover_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_arm_pullover_barbell.png'],
 #             preparation_steps=['e_d_bent_arm_pullover_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_arm_pullover_barbell_exec_one',
@@ -9423,7 +9423,7 @@ ExerciseDefinition(
 #             id='exercise-29',
 #             title="e_d_bent_knee_bicycle_crunch",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_knee_bicycle_crunch.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_knee_bicycle_crunch.png'],
 #             preparation_steps=['e_d_bent_knee_bicycle_crunch_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_knee_bicycle_crunch_exec_one',
@@ -9442,7 +9442,7 @@ ExerciseDefinition(
 #             id='exercise-30',
 #             title="e_d_bent_knee_side_plank",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_knee_side_plank.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_knee_side_plank.png'],
 #             preparation_steps=['e_d_bent_knee_side_plank_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_knee_side_plank_exec_one'
@@ -9460,7 +9460,7 @@ ExerciseDefinition(
 #             id='exercise-31',
 #             title="e_d_bent_knee_wipers",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_knee_wipers.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_knee_wipers.png'],
 #             preparation_steps=['e_d_bent_knee_wipers_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_knee_wipers_exec_one',
@@ -9480,7 +9480,7 @@ ExerciseDefinition(
 #             id='exercise-32',
 #             title="e_d_bent_over_rear_delt_row_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_barbell.png'],
 #             preparation_steps=['e_d_bent_over_rear_delt_row_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_rear_delt_row_barbell_exec_one',
@@ -9498,7 +9498,7 @@ ExerciseDefinition(
 #             id='exercise-33',
 #             title="e_d_bent_over_rear_delt_row_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_dumbbell.png'],
 #             preparation_steps=['e_d_bent_over_rear_delt_row_dumbbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_rear_delt_row_dumbbell_exec_one',
@@ -9516,7 +9516,7 @@ ExerciseDefinition(
 #             id='exercise-34',
 #             title="e_d_bent_over_rear_delt_row_kettlebell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_kettlebell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_kettlebell.png'],
 #             preparation_steps=['e_d_bent_over_rear_delt_row_kettlebell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_rear_delt_row_kettlebell_exec_one',
@@ -9534,7 +9534,7 @@ ExerciseDefinition(
 #             id='exercise-35',
 #             title="e_d_bent_over_rear_delt_row_smith_machine",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_rear_delt_row_smith.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_rear_delt_row_smith.png'],
 #             preparation_steps=['e_d_bent_over_rear_delt_row_smith_machine_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_rear_delt_row_smith_machine_exec_one',
@@ -9552,7 +9552,7 @@ ExerciseDefinition(
 #             id='exercise-36',
 #             title="e_d_bent_over_reverse_fly_band",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_reverse_fly_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_reverse_fly_band.png'],
 #             preparation_steps=['e_d_bent_over_reverse_fly_band_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_reverse_fly_band_exec_one',
@@ -9570,7 +9570,7 @@ ExerciseDefinition(
 #             id='exercise-37',
 #             title="e_d_bent_over_reverse_fly_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_reverse_fly_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_reverse_fly_dumbbell.png'],
 #             preparation_steps=['e_d_bent_over_reverse_fly_dumbbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_reverse_fly_dumbbell_exec_one',
@@ -9588,7 +9588,7 @@ ExerciseDefinition(
 #             id='exercise-38',
 #             title="e_d_bent_over_row_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_row_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_row_barbell.png'],
 #             preparation_steps=['e_d_bent_over_row_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_row_barbell_exec_one',
@@ -9606,7 +9606,7 @@ ExerciseDefinition(
 #             id='exercise-39',
 #             title="e_d_bent_over_row_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_row_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_row_dumbbell.png'],
 #             preparation_steps=['e_d_bent_over_row_dumbbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_row_dumbbell_exec_one',
@@ -9624,7 +9624,7 @@ ExerciseDefinition(
 #             id='exercise-40',
 #             title="e_d_bent_over_row_kettlebell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_row_kettlebell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_row_kettlebell.png'],
 #             preparation_steps=['e_d_bent_over_row_kettlebell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_row_kettlebell_exec_one',
@@ -9642,7 +9642,7 @@ ExerciseDefinition(
 #             id='exercise-41',
 #             title="e_d_bent_over_row_smith_machine",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bent_over_row_smith_machine.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bent_over_row_smith_machine.png'],
 #             preparation_steps=['e_d_bent_over_row_smith_machine_prep_one'],
 #             execution_steps=[
 #                 'e_d_bent_over_row_smith_machine_exec_one',
@@ -9660,7 +9660,7 @@ ExerciseDefinition(
 #             id='exercise-42',
 #             title="e_d_bicep_curl_bodyweight",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_bodyweight.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_bodyweight.png'],
 #             preparation_steps=['e_d_bicep_curl_bodyweight_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_bodyweight_exec_one',
@@ -9678,7 +9678,7 @@ ExerciseDefinition(
 #             id='exercise-43',
 #             title="e_d_bicep_curl_band",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_band.png'],
 #             preparation_steps=['e_d_bicep_curl_band_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_band_exec_one'
@@ -9695,7 +9695,7 @@ ExerciseDefinition(
 #             id='exercise-44',
 #             title="e_d_bicep_curl_barbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_barbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_barbell.png'],
 #             preparation_steps=['e_d_bicep_curl_barbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_barbell_exec_one'
@@ -9712,7 +9712,7 @@ ExerciseDefinition(
 #             id='exercise-45',
 #             title="e_d_bicep_curl_cable",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_cable.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_cable.png'],
 #             preparation_steps=['e_d_bicep_curl_cable_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_cable_exec_one'
@@ -9730,7 +9730,7 @@ ExerciseDefinition(
 #             id='exercise-46',
 #             title="e_d_bicep_curl_dumbbell",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_dumbbell.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_dumbbell.png'],
 #             preparation_steps=['e_d_bicep_curl_dumbbell_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_dumbbell_exec_one'
@@ -9747,7 +9747,7 @@ ExerciseDefinition(
 #             id='exercise-47',
 #             title="e_d_bicep_curl_machine",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_machine.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_machine.png'],
 #             preparation_steps=['e_d_bicep_curl_machine_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_machine_exec_one'
@@ -9764,7 +9764,7 @@ ExerciseDefinition(
 #             id='exercise-48',
 #             title="e_d_bicep_curl_smith_machine",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicep_curl_smith_machine.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicep_curl_smith_machine.png'],
 #             preparation_steps=['e_d_bicep_curl_smith_machine_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicep_curl_smith_machine_exec_one'
@@ -9781,7 +9781,7 @@ ExerciseDefinition(
 #             id='exercise-49',
 #             title="e_d_bicycle_crunch",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicycle_crunch.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicycle_crunch.png'],
 #             preparation_steps=['e_d_bicycle_crunch_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicycle_crunch_exec_one',
@@ -9799,7 +9799,7 @@ ExerciseDefinition(
 #             id='exercise-50',
 #             title="e_d_bicycle_crunch_band",
 #             video_urls=None,
-#             cover_image_url=['regular_directory/exercises/images/bicycle_crunch_band.png'],
+#             cover_image_url=['app/regular_directory/exercises/images/bicycle_crunch_band.png'],
 #             preparation_steps=['e_d_bicycle_crunch_band_prep_one'],
 #             execution_steps=[
 #                 'e_d_bicycle_crunch_band_exec_one',
