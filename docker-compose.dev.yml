@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: tandorost_platform
     env_file:
-      - .env.development
+      - .env.dev
 
     volumes:
       - .:/tandorost-platform # This syncs your local code into the container
