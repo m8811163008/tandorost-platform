@@ -73,12 +73,12 @@ async def read_root():
     return welcome_message
 
 # UNCOMMENT WITH CAUTION
-@app.get("/clear")
-async def clear():
-    # DEBUG CLEAR DATABASE
-    from dependeny_manager import dm
-    await dm.local_database.clear()
+# @app.get("/clear")
+# async def clear():
+#     # DEBUG CLEAR DATABASE
+#     from dependeny_manager import dm
+#     await dm.local_database.clear()
     
-    return "DATABASE CLEARED"
+#     return "DATABASE CLEARED"
 
 
