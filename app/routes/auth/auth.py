@@ -1,4 +1,4 @@
-import logging
+
 from fastapi import APIRouter, Body, Form, Query, Security, UploadFile
 from fastapi.responses import JSONResponse
 from data.common_data_model.language import Language
@@ -141,11 +141,11 @@ async def register(
 ):    
 
     try:
-        logging.info(f"1 register method")
+        
         await dm.auth_repo.verify_code(username=identifier,verification_code = verification_code)
 
     except UsernameNotRegisteredYet :
-        logging.info(f"2 register method")
+        
         message = translation_manager.gettext(TranslationKeys.USERNAME_NOT_REGISTERED_YET)
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -163,19 +163,19 @@ async def register(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail = ErrorResponse(error_detail='TranslationKeys.INVALID_VERIFICATION_CODE', message=message).model_dump()
         )
-    logging.info(f"3 register method")    
+    
     upserted_user = await dm.auth_repo.update_user_account(password=password,username=identifier)
-    logging.info(f"4 register method")
+    
     assert(upserted_user.id != None)
-    logging.info(f"5 register method")
+    
     await createFreeSubscription(user_id=upserted_user.id)
-    logging.info(f"9 register method")
+    
     await dm.user_repo.update_referral_when_register(invite_contact=identifier, invited_user_id=upserted_user.id)
-    logging.info(f"10 register method")
+    
     return JSONResponse(content=translation_manager.gettext(TranslationKeys.USER_REGISTERED))
 
 async def createFreeSubscription(user_id : str, ):
-    logging.info(f"6 register method")
+    
     subscription_data = UserInDbSubscriptionPayment(
         subscriber_user_id = user_id,
         paid_amount = 0,
@@ -185,9 +185,9 @@ async def createFreeSubscription(user_id : str, ):
         purchase_date = datetime.now(timezone.utc),
         subscription_type= SubscriptionType.FREETIER
     )
-    logging.info(f"7 register method")
+    
     await dm.payment_repo.create_payment_subscription(subscription_data=subscription_data)
-    logging.info(f"8 register method")
+    
     
 
 @router.post("/forgot_password/", responses={
@@ -273,7 +273,7 @@ async def verify_google(
 ):
     try:
         # 1. Verify Google ID Token
-        logging.info(f"1 verify method")
+        
         idinfo = id_token.verify_oauth2_token(google_token, requests.Request(), GOOGLE_CLIENT_ID)
         user_google_id = idinfo['sub']
         user_email = idinfo.get('email')
@@ -281,27 +281,27 @@ async def verify_google(
         user_picture = idinfo.get('picture')
         
         # 2. Check if user exists in your database (by email)
-        logging.info(f"2 verify method")
+        
         user_in_db = await dm.auth_repo.read_user_by_identifier(identifier=user_email)
-        logging.info(f"3 verify method")
+        
         if user_in_db is None:
             # Registration flow: create user with email verified
             # You may want to store Google ID, name, and picture if your model supports it
-            logging.info(f"4 verify method")
+            
             assert default_google_user_password is not None, "Google default password must be provided for new user registration."
             upserted_user = await dm.auth_repo.update_user_account(
                 password=default_google_user_password, 
                 username=user_email,
                 is_verified=True
             )
-            logging.info(f"5 verify method")
+            
             assert upserted_user.id is not None
             # Optionally, create free subscription for new users
-            logging.info(f"6 verify method")
+            
             await createFreeSubscription(user_id=upserted_user.id)
-            logging.info(f"7 verify method")
+            
             await dm.user_repo.update_referral_when_register(invite_contact=user_email, invited_user_id=upserted_user.id)
-            logging.info(f"8 verify method")
+            
         else:
             # Login flow: ensure email is marked as verified
             if not user_in_db.is_email_verified:
@@ -310,7 +310,7 @@ async def verify_google(
                     username=user_email,
                     is_verified=True
                 )
-        logging.info(f"9 verify method")
+        
         # 3. Issue JWT token for the user
         token = await dm.auth_repo.issue_access_token(
             username=user_email,
