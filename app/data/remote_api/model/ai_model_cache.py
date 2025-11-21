@@ -13,30 +13,38 @@ class CacheModel():
     @classmethod
     def system_instruction(cls):
         return f"""
-                    If the input is audio, generate the transcription first.If the audio is empty or does not contain food and drink related subject then return empty list.
+                    If the input is audio, generate the user script. If the audio is empty or does not contain food and drink-related subjects, then return an empty list.
+
                     Analyze the provided food input and identify its basic ingredients along with their approximate quantities.
+
                     Search for a food recipe in the provided language and find the best-matched recipe.
+
                     Return each ingredient as a separate Food object within the 'foods' list of the UserRequestedFood JSON object.
-                    For composite dishes like stews or salads, list the primary ingredients.
+
+                    For composite dishes, such as stews or salads, list the primary ingredients.
+
                     For the calculated_calorie property in the Ingredient model, use the calorie of each unit_of_measurement_native_language multiplied by quantity_of_unit_of_measurement. As a helper reference, you can use unit_of_measurement_weight for calculating calories in each Ingredient.
+
                     For the total_fat_in_grams and total_carbohydrate_in_grams and total_protein_in_grams in the Ingredient model calculate based on total ingredient size for example in 2 spoons of olive oil we have 15 grams of oil in each spoon or unit_of_measurement_native_language and we have 2 or quantity_of_unit_of_measurement spoon and we have 15 grams of fat in each spoon so the total_fat_in_grams is 30 grams which is calculated by multiplying of quantity_of_unit_of_measurement by quantity of fat in each spoon based on your search result.
+
                     For onother example of the total_fat_in_grams and total_carbohydrate_in_grams and total_protein_in_grams in the Ingredient model calculate based on total ingredient size for example in 3 piece of apple we have 180 grams of apple in each piece or unit_of_measurement_native_language and we have 3 or quantity_of_unit_of_measurement piece and we have 1 grams of protien in each piece so the total_protein_in_grams is 3 grams which is calculated by multiplying of quantity_of_unit_of_measurement by quantity of protein in each piece based on your search result.
+
                     
 
-                    Example Input: '100 گرم املت'
-                    The answer is: {CacheModel._food_example_1().model_dump_json(indent=2)}
-                    Example Input: 'a simple salad with lettuce, cucumber, and olive oil'
-                    The answer is: {CacheModel._food_example_2().model_dump_json(indent=2)}
-                    Example Input: '200 grams of chicken breast and a cup of brown rice'
-                    The answer is: {CacheModel._food_example_3().model_dump_json(indent=2)}
-                    Example Input: 'یک عدد سیب و یک تکه نان بربری'
-                    The answer is: {CacheModel._food_example_4().model_dump_json(indent=2)}
-                    Example Input: 'یک بشقاب برنج و یک کاسه متوسط قرمه سبزی'
-                    The answer is: {CacheModel._food_example_5().model_dump_json(indent=2)}
-                    Example Input: 'a bowl of spaghetti with tomato sauce and meatballs'
-                    The answer is: {CacheModel._food_example_6().model_dump_json(indent=2)}
-                    Example Input: 'یک لیوان شیر و دو عدد خرما'
-                    The answer is: {CacheModel._food_example_7().model_dump_json(indent=2)}
+                    After you generate the user script, return the {UserRequestedFood} model.
+                    
+                    
+                    Here are 7 foods user script examples and their {UserRequestedFood} answers for it.
+
+                    List of 7 examples are: {[
+                        {CacheModel._food_example_1().model_dump_json(indent=2)},
+                        {CacheModel._food_example_2().model_dump_json(indent=2)},
+                        {CacheModel._food_example_3().model_dump_json(indent=2)},
+                        {CacheModel._food_example_4().model_dump_json(indent=2)},
+                        {CacheModel._food_example_5().model_dump_json(indent=2)},
+                        {CacheModel._food_example_6().model_dump_json(indent=2)},
+                        {CacheModel._food_example_7().model_dump_json(indent=2)}
+                    ]}
                     """
 
     @classmethod
@@ -85,7 +93,7 @@ class CacheModel():
                     total_protein_in_grams=0.0,
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 )
-            ]
+            ],
         )
 
 
@@ -135,7 +143,8 @@ class CacheModel():
                     total_protein_in_grams=0.0,
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 )
-            ]
+            ],
+            
         )
 
     @classmethod
@@ -170,7 +179,8 @@ class CacheModel():
                     total_protein_in_grams=5.0,
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 )
-            ]
+            ],
+            
         )
     
     @classmethod
@@ -205,7 +215,8 @@ class CacheModel():
                     total_protein_in_grams=7.0,
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 )
-            ]
+            ],
+            
         )
 
     @classmethod
@@ -281,8 +292,9 @@ class CacheModel():
                     total_carbohydrate_in_grams=7.0,
                     total_protein_in_grams=1.0,
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
-                )
-            ]
+                ),
+            ],
+            
         )
     
     @classmethod
@@ -331,7 +343,9 @@ class CacheModel():
                     total_protein_in_grams=5.0,
                     carbohydrate_source=CarbohydrateSource.OTHERS
                 )
-            ]
+            ],
+            
+            
         )
 
     @classmethod
@@ -366,5 +380,6 @@ class CacheModel():
                     total_protein_in_grams=1.0,
                     carbohydrate_source=CarbohydrateSource.FRUITS_OR_NON_STARCHY_VEGETABLES
                 )
-            ]
+            ],
+            
         )

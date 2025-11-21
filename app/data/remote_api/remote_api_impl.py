@@ -82,7 +82,7 @@ class RemoteApiImpl(RemoteApiInterface):
                     )
                 ],)
 
-    async def verifyByAi(self, fileBytes : bytes,meme_type: str, language : Language) -> True:
+    async def verifyByAi(self, fileBytes : bytes,meme_type: str, language : Language) -> bool:
         return await self._verify_by_ai(contents=[
                     f'Input is verification video and the user spoken language is : {language}',
                     types.Part.from_bytes(
@@ -94,7 +94,7 @@ class RemoteApiImpl(RemoteApiInterface):
     async def _read_foods_nutritions(self, contents: list[Any], current_model_index:int =0) -> UserRequestedFood:
         # Todo recursively use models
         try: 
-            response = self.ai_client.models.generate_content(  # type: ignore
+            response = self.ai_client.models.generate_content(
                 model=self.ai_config.models[current_model_index],
                 contents=contents,
                 config = types.GenerateContentConfig(
@@ -129,7 +129,7 @@ class RemoteApiImpl(RemoteApiInterface):
         except json.JSONDecodeError:
             raise ParameterError()
         
-    async def _verify_by_ai(self, contents: list[Any], current_model_index:int =0):
+    async def _verify_by_ai(self, contents: list[Any], current_model_index:int =0) -> bool:
         # Todo recursively use models
         try: 
             response = self.ai_client.models.generate_content(  # type: ignore
@@ -144,6 +144,7 @@ class RemoteApiImpl(RemoteApiInterface):
                     response_schema =  VerificationResponse,
                 )
             )
+            
             
         except (InvalidArgumentError,FailedPreconditionError,PermissionDeniedError, NotFoundError,InternalError, ServiceUnavailableError, DeadlineExceededError) as e :
             raise e
@@ -167,6 +168,7 @@ class RemoteApiImpl(RemoteApiInterface):
             result = VerificationResponse(**res_dict)
             if(result.is_verified == False):
                 raise VerifyRejection()
+            return True
         
         except json.JSONDecodeError:
             raise ParameterError()

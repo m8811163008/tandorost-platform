@@ -39,6 +39,29 @@ async def read_foods_nutritions_by_text(
         foods=prompt
     )
         
+async def save_files_on_disk_debug(image_gallary_files: list[UploadFile], upload_directory:str,) :
+
+
+    for image_gallary_file in image_gallary_files:
+        assert(image_gallary_file.filename is not None)
+        assert(image_gallary_file.size is not None)
+        assert(image_gallary_file.content_type is not None)
+        # Define the file upload path
+        file_upload_path = f"{upload_directory}{'DEBUGGGGGG'}F{image_gallary_file.filename}"
+
+        # Ensure the upload directory exists
+        import os
+        os.makedirs(upload_directory, exist_ok=True)
+
+        # Save the file to the system
+        try:
+            with open(file_upload_path, "wb") as file:
+                content = await image_gallary_file.read()
+                file.write(content)
+        except Exception as e:
+            raise e
+
+
 
 
 @router.post("/read_foods_nutritions_by_voice/", responses={
