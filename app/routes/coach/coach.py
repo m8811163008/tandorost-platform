@@ -7,6 +7,8 @@ from data.local_database.model.coach_program import CoachProgram
 from data.local_database.model.trainee_history import TraineeHistory
 from data.local_database.model.user_physical_data import UserPhysicalData
 from data.local_database.model.user_files import FileData
+from data.local_database.model.verify_coach_questions import VerifyCoachQuestions
+from data.local_database.model.verify_coach_question import VerifyCoachQuestion
 from data.remote_api.model.exceptions import NotFoundError
 from dependeny_manager import dm
 from domain_models import  UserUpdateRequest, UserPhysicalDataUpsert,UserInDB,GallaryTag, ArchiveUserImagesResponse,UserPhysicalDataValidationError
@@ -359,4 +361,17 @@ async def read_coach_profiles(
     
     return JSONResponse(
         content=[coach_profile.model_dump(exclude={"verification_code", "hashed_password", "is_phone_number_verified", "is_email_verified"}) for coach_profile in coach_profiles]
+    )
+
+@router.get("/verify_coach_questions/", responses={
+    200: {"model": list[VerifyCoachQuestion], "description": "HTTP_200_OK"},
+    404: {"description": "HTTP_404_NOT_FOUND"},
+})
+async def read_verify_coach_questions(
+    user_id: Annotated[str, Depends(read_user_or_raise)],
+):
+    questions = VerifyCoachQuestions.questions
+    
+    return JSONResponse(
+        content=[question.model_dump() for question in questions]
     )

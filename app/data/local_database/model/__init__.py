@@ -15,3 +15,5 @@ from .user_physical_data import Gender, ActivityLevel, DataPoint, UserPhysicalDa
 from .user_subscription_payment_data import PaymentMethod, SubscriptionType,UserInDbSubscriptionPayment
 from .user import UserInDB
 from .referral import Referral, ReferralStatus
+from .verify_coach_question import VerifyCoachQuestion
+from .verify_coach_questions import VerifyCoachQuestions

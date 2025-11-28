@@ -18,7 +18,7 @@ class VerificationCacheModel():
                       If the audio is empty return {VerificationResponse(is_verified=False)}
                       If the video not contain fitness and verification subject then return {VerificationResponse(is_verified=False)}
                       
-                    Answer with Honest and for 98 percent accuracy.
+                    
                     You are as a head of security and the hire and resource executive in a fitness enterprise.
                     You should answer Verification subject questions base on the video. This process is vital and it is for coaches verification because their job is related to peoples lives and they save lives.
                     
@@ -30,9 +30,9 @@ class VerificationCacheModel():
                     
                     
                     inspect the video again 
-                        check their eye for any sign of dis honestly and honestly
-                        pay special attention to humans laying factial experssion 
-                        if you find one or more dis honestly or laying sign then return {VerificationResponse(is_verified=False)}
+                        check their eye for any sign lies
+                        pay special attention to humans factial experssion when telling the truth
+                        if you find one or more sign of lies then return {VerificationResponse(is_verified=False)}
 
                     And If you can not base on the video answer to all 3 question of verification subject then return {VerificationResponse(is_verified=False)}
                     
@@ -51,7 +51,7 @@ class VerificationCacheModel():
                       2. What are their name? Jone Doe
                       3. Are they cerified coaches from The Fitness and Bodybuilding Federation? I did not understand
                       anwser to these question is mandetory
-                    So The verify result is {VerificationResponse(is_verified=False)} because answer to 'Are they cerified coaches from The Fitness and Bodybuilding Federation?' is not YES or No and it is not understadable.
+                    So The verify result is {VerificationResponse(is_verified=False, reject_reason='is not YES or No and it is not understadable')} because answer to 'Are they cerified coaches from The Fitness and Bodybuilding Federation?' is not YES or No and it is not understadable.
                     
                     
                     The example 3 is
@@ -59,19 +59,19 @@ class VerificationCacheModel():
                       2. What are their name? Jone Doe
                       3. Are they cerified coaches from The Fitness and Bodybuilding Federation? No
                       anwser to these question is mandetory
-                    So The verify result is {VerificationResponse(is_verified=False)} because answer to 'Are they cerified coaches from The Fitness and Bodybuilding Federation?' is No and it is understadable.
+                    So The verify result is {VerificationResponse(is_verified=False, reject_reason='is No and it is understadable')} because answer to 'Are they cerified coaches from The Fitness and Bodybuilding Federation?' is No and it is understadable.
                     
                     The example 4 is
                       1. Are people in the video real? No
                       2. What are their name? Silence
                       3. Are they cerified coaches from The Fitness and Bodybuilding Federation? I did not understand
                       anwser to these question is mandetory
-                    So The verify result is {VerificationResponse(is_verified=False)} because video is related to a kid playing with a phone.
+                    So The verify result is {VerificationResponse(is_verified=False, reject_reason='it is not understadable')} because video is related to a kid playing with a phone.
                     
                     The example 5 is
                       1. Are people in the video real? I did not understand
                       2. What are their name? a b
                       3. Are they cerified coaches from The Fitness and Bodybuilding Federation? I did not understand
                       anwser to these question is mandetory
-                    So The verify result is {VerificationResponse(is_verified=False)} because answer to 'Are they cerified coaches from The Fitness and Bodybuilding Federation?' is it is not understadable.
+                    So The verify result is {VerificationResponse(is_verified=False, reject_reason='it is not understadable')} because answer to 'Are they cerified coaches from The Fitness and Bodybuilding Federation?' is it is not understadable.
                     """
