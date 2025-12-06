@@ -57,449 +57,449 @@ class ExercisesDefinition:
             equipment=ExerciseEquipment.BODY_WEIGHT,
             metric_type=ExerciseMetricType.REPS_ONLY
         ),
-        ExerciseDefinition(
-            id='exercise-3',
-            title="E_D_ALTERNATING_V_UP_BAND_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/alternating_v_up_band.png'],
-            preparation_steps=[
-                'E_D_ALTERNATING_V_UP_BAND_PREP_ONE',
-                'E_D_ALTERNATING_V_UP_BAND_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_ALTERNATING_V_UP_BAND_EXEC_ONE',
-                'E_D_ALTERNATING_V_UP_BAND_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_ALTERNATING_V_UP_BAND_TIP_ONE'
-            ],
-            focus_areas=[FocusArea.ABDOMEN, FocusArea.LEG],
-            equipment=ExerciseEquipment.BAND,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-4',
-            title="E_D_ARM_CIRCLES_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/arm_circles.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/arm_circles.png'],
-            preparation_steps=[
-                'E_D_ARM_CIRCLES_PREP_ONE',
-                'E_D_ARM_CIRCLES_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_ARM_CIRCLES_EXEC_ONE',
-                'E_D_ARM_CIRCLES_EXEC_TWO',
-                'E_D_ARM_CIRCLES_EXEC_THREE'
-            ],
-            key_tips=[
-                'E_D_ARM_CIRCLES_TIP_ONE',
-                'E_D_ARM_CIRCLES_TIP_TWO'
-            ],
-            focus_areas=[FocusArea.SHOULDER],
-            equipment=ExerciseEquipment.BODY_WEIGHT,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-5',
-            title="E_D_ARNOLD_PRESS_DUMBBELL_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/arnold_dumbbell.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/arnold_dumbbell.png'],
-            preparation_steps=[
-                'E_D_ARNOLD_PRESS_DUMBBELL_PREP_ONE',
-                'E_D_ARNOLD_PRESS_DUMBBELL_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_ARNOLD_PRESS_DUMBBELL_EXEC_ONE',
-                'E_D_ARNOLD_PRESS_DUMBBELL_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_ARNOLD_PRESS_DUMBBELL_TIP_ONE',
-                'E_D_ARNOLD_PRESS_DUMBBELL_TIP_TWO',
-                'E_D_ARNOLD_PRESS_DUMBBELL_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.SHOULDER, FocusArea.ARM],
-            equipment=ExerciseEquipment.DUMBBELL,
-            metric_type=ExerciseMetricType.PERCENT_1RM_AND_REPS
-        ),
-        ExerciseDefinition(
-            id='exercise-6',
-            title="E_D_BACK_EXTENSION_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/back_extension.png'],
-            preparation_steps=[
-                'E_D_BACK_EXTENSION_PREP_ONE',
-                'E_D_BACK_EXTENSION_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACK_EXTENSION_EXEC_ONE',
-                'E_D_BACK_EXTENSION_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACK_EXTENSION_TIP_ONE',
-                'E_D_BACK_EXTENSION_TIP_TWO'
-            ],
-            focus_areas=[FocusArea.BACK, FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.WEIGHT_MACHINE,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-7',
-            title="E_D_BACK_EXTENSION_ON_FLOOR_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/back_extension_on_floor.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/back_extension_on_floor.png'],
-            preparation_steps=[
-                'E_D_BACK_EXTENSION_ON_FLOOR_PREP_ONE'
-            ],
-            execution_steps=[
-                'E_D_BACK_EXTENSION_ON_FLOOR_EXEC_ONE',
-                'E_D_BACK_EXTENSION_ON_FLOOR_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACK_EXTENSION_ON_FLOOR_TIP_ONE',
-                'E_D_BACK_EXTENSION_ON_FLOOR_TIP_TWO'
-            ],
-            focus_areas=[FocusArea.BACK],
-            equipment=ExerciseEquipment.BODY_WEIGHT,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-8',
-            title="E_D_BACK_EXTENSION_BAND_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/back_extension_band.png'],
-            preparation_steps=[
-                'E_D_BACK_EXTENSION_BAND_PREP_ONE',
-                'E_D_BACK_EXTENSION_BAND_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACK_EXTENSION_BAND_EXEC_ONE',
-                'E_D_BACK_EXTENSION_BAND_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACK_EXTENSION_BAND_TIP_ONE',
-                'E_D_BACK_EXTENSION_BAND_TIP_TWO'
-            ],
-            focus_areas=[FocusArea.BACK],
-            equipment=ExerciseEquipment.BAND,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-9',
-            title="E_D_BACK_EXTENSION_MACHINE_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/back_extension_machine.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/back_extension_machine.png'],
-            preparation_steps=[
-                'E_D_BACK_EXTENSION_MACHINE_PREP_ONE',
-                'E_D_BACK_EXTENSION_MACHINE_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACK_EXTENSION_MACHINE_EXEC_ONE',
-                'E_D_BACK_EXTENSION_MACHINE_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACK_EXTENSION_MACHINE_TIP_ONE',
-                'E_D_BACK_EXTENSION_MACHINE_TIP_TWO',
-                'E_D_BACK_EXTENSION_MACHINE_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BACK],
-            equipment=ExerciseEquipment.WEIGHT_MACHINE,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-10',
-            title="E_D_BACKWARD_LUNGE_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/backward_lunge.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_PREP_ONE',
-                'E_D_BACKWARD_LUNGE_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.BODY_WEIGHT,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-11',
-            title="E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/backward_lunge_with_leg.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_with_leg.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_PREP_ONE'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.LEG, FocusArea.BUTTOCKS],
-            equipment=ExerciseEquipment.BODY_WEIGHT,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-12',
-            title="E_D_BACKWARD_LUNGE_BARBELL_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_barbell.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_BARBELL_PREP_ONE',
-                'E_D_BACKWARD_LUNGE_BARBELL_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_BARBELL_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_BARBELL_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_BARBELL_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_BARBELL_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_BARBELL_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.BARBELL,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-13',
-            title="E_D_BACKWARD_LUNGE_CABLE_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_cable.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_CABLE_PREP_ONE',
-                'E_D_BACKWARD_LUNGE_CABLE_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_CABLE_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_CABLE_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_CABLE_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_CABLE_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_CABLE_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.CABLE_MACHINE,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-14',
-            title="E_D_BACKWARD_LUNGE_DUMBBELL_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/backward_lunge_dumbbell.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_dumbbell.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_DUMBBELL_PREP_ONE'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_DUMBBELL_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_DUMBBELL_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_DUMBBELL_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_DUMBBELL_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_DUMBBELL_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.DUMBBELL,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-15',
-            title="E_D_BACKWARD_LUNGE_KETTLEBELL_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge kettlebell.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_PREP_ONE',
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_KETTLEBELL_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.KETTLEBELL,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-16',
-            title="E_D_BACKWARD_LUNGE_SMITH_MACHINE_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/backward_lunge_smith_machine.png'],
-            preparation_steps=[
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_PREP_ONE',
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_EXEC_ONE',
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_TIP_ONE',
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_TIP_TWO',
-                'E_D_BACKWARD_LUNGE_SMITH_MACHINE_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.SMITH_MACHINE,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-17',
-            title="E_D_BALL_SLAMS_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/ball_slams.png'],
-            preparation_steps=[
-                'E_D_BALL_SLAMS_PREP_ONE',
-                'E_D_BALL_SLAMS_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BALL_SLAMS_EXEC_ONE',
-                'E_D_BALL_SLAMS_EXEC_TWO',
-                'E_D_BALL_SLAMS_EXEC_THREE'
-            ],
-            key_tips=[
-                'E_D_BALL_SLAMS_TIP_ONE',
-                'E_D_BALL_SLAMS_TIP_TWO'
-            ],
-            focus_areas=[FocusArea.FULL_BODY],
-            equipment=ExerciseEquipment.WEIGHT_MACHINE,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-18',
-            title="E_D_BAND_PULL_THROUGH_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/band_pull_through.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/band_pull_through.png'],
-            preparation_steps=[
-                'E_D_BAND_PULL_THROUGH_PREP_ONE',
-                'E_D_BAND_PULL_THROUGH_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BAND_PULL_THROUGH_EXEC_ONE',
-                'E_D_BAND_PULL_THROUGH_EXEC_TWO',
-                'E_D_BAND_PULL_THROUGH_EXEC_THREE'
-            ],
-            key_tips=[
-                'E_D_BAND_PULL_THROUGH_TIP_ONE',
-                'E_D_BAND_PULL_THROUGH_TIP_TWO',
-                'E_D_BAND_PULL_THROUGH_TIP_THREE',
-                'E_D_BAND_PULL_THROUGH_TIP_FOUR'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.BACK, FocusArea.LEG],
-            equipment=ExerciseEquipment.BAND,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-19',
-            title="E_D_BENCH_FLY_CABLE_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/bench_fly_cable.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/bench_fly_cable.png'],
-            preparation_steps=[
-                'E_D_BENCH_FLY_CABLE_PREP_ONE',
-                'E_D_BENCH_FLY_CABLE_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BENCH_FLY_CABLE_EXEC_ONE',
-                'E_D_BENCH_FLY_CABLE_EXEC_TWO',
-                'E_D_BENCH_FLY_CABLE_EXEC_THREE'
-            ],
-            key_tips=[
-                'E_D_BENCH_FLY_CABLE_TIP_ONE',
-                'E_D_BENCH_FLY_CABLE_TIP_TWO',
-                'E_D_BENCH_FLY_CABLE_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.CHEST, FocusArea.SHOULDER, FocusArea.ARM],
-            equipment=ExerciseEquipment.CABLE_MACHINE,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-20',
-            title="E_D_BENCH_FLY_DUMBBELL_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/bench_fly_dumbbell.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/bench_fly_dumbbell.png'],
-            preparation_steps=[
-                'E_D_BENCH_FLY_DUMBBELL_PREP_ONE',
-                'E_D_BENCH_FLY_DUMBBELL_PREP_TWO'
-            ],
-            execution_steps=[
-                'E_D_BENCH_FLY_DUMBBELL_EXEC_ONE',
-                'E_D_BENCH_FLY_DUMBBELL_EXEC_TWO',
-                'E_D_BENCH_FLY_DUMBBELL_EXEC_THREE'
-            ],
-            key_tips=[
-                'E_D_BENCH_FLY_DUMBBELL_TIP_ONE',
-                'E_D_BENCH_FLY_DUMBBELL_TIP_TWO',
-                'E_D_BENCH_FLY_DUMBBELL_TIP_THREE'
-            ],
-            focus_areas=[FocusArea.CHEST, FocusArea.SHOULDER, FocusArea.ARM],
-            equipment=ExerciseEquipment.DUMBBELL,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-21',
-            title="E_D_BENCH_JUMP_TITLE",
-            video_urls=['app/regular_directory/exercises/videos/bench_jump.mp4'],
-            cover_image_url=['app/regular_directory/exercises/images/bench_jump.png'],
-            preparation_steps=[
-                'E_D_BENCH_JUMP_PREP_ONE',
-                'E_D_BENCH_JUMP_PREP_TWO',
-                'E_D_BENCH_JUMP_PREP_THREE'
-            ],
-            execution_steps=[
-                'E_D_BENCH_JUMP_EXEC_ONE',
-                'E_D_BENCH_JUMP_EXEC_TWO',
-                'E_D_BENCH_JUMP_EXEC_THREE',
-                'E_D_BENCH_JUMP_EXEC_FOUR'
-            ],
-            key_tips=[
-                'E_D_BENCH_JUMP_TIP_ONE',
-                'E_D_BENCH_JUMP_TIP_TWO',
-                'E_D_BENCH_JUMP_TIP_THREE',
-                'E_D_BENCH_JUMP_TIP_FOUR'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.BODY_WEIGHT,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
-        ExerciseDefinition(
-            id='exercise-22',
-            title="E_D_BENCH_PISTOL_SQUAT_TITLE",
-            video_urls=[],
-            cover_image_url=['app/regular_directory/exercises/images/bench_pistol_squat.png'],
-            preparation_steps=[
-                'E_D_BENCH_PISTOL_SQUAT_PREP_ONE',
-                'E_D_BENCH_PISTOL_SQUAT_PREP_TWO',
-                'E_D_BENCH_PISTOL_SQUAT_PREP_THREE'
-            ],
-            execution_steps=[
-                'E_D_BENCH_PISTOL_SQUAT_EXEC_ONE',
-                'E_D_BENCH_PISTOL_SQUAT_EXEC_TWO'
-            ],
-            key_tips=[
-                'E_D_BENCH_PISTOL_SQUAT_TIP_ONE',
-                'E_D_BENCH_PISTOL_SQUAT_TIP_TWO',
-                'E_D_BENCH_PISTOL_SQUAT_TIP_THREE',
-                'E_D_BENCH_PISTOL_SQUAT_TIP_FOUR',
-                'E_D_BENCH_PISTOL_SQUAT_TIP_FIVE'
-            ],
-            focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
-            equipment=ExerciseEquipment.BODY_WEIGHT,
-            metric_type=ExerciseMetricType.REPS_ONLY
-        ),
+        # ExerciseDefinition(
+        #     id='exercise-3',
+        #     title="E_D_ALTERNATING_V_UP_BAND_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/alternating_v_up_band.png'],
+        #     preparation_steps=[
+        #         'E_D_ALTERNATING_V_UP_BAND_PREP_ONE',
+        #         'E_D_ALTERNATING_V_UP_BAND_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_ALTERNATING_V_UP_BAND_EXEC_ONE',
+        #         'E_D_ALTERNATING_V_UP_BAND_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_ALTERNATING_V_UP_BAND_TIP_ONE'
+        #     ],
+        #     focus_areas=[FocusArea.ABDOMEN, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.BAND,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-4',
+        #     title="E_D_ARM_CIRCLES_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/arm_circles.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/arm_circles.png'],
+        #     preparation_steps=[
+        #         'E_D_ARM_CIRCLES_PREP_ONE',
+        #         'E_D_ARM_CIRCLES_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_ARM_CIRCLES_EXEC_ONE',
+        #         'E_D_ARM_CIRCLES_EXEC_TWO',
+        #         'E_D_ARM_CIRCLES_EXEC_THREE'
+        #     ],
+        #     key_tips=[
+        #         'E_D_ARM_CIRCLES_TIP_ONE',
+        #         'E_D_ARM_CIRCLES_TIP_TWO'
+        #     ],
+        #     focus_areas=[FocusArea.SHOULDER],
+        #     equipment=ExerciseEquipment.BODY_WEIGHT,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-5',
+        #     title="E_D_ARNOLD_PRESS_DUMBBELL_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/arnold_dumbbell.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/arnold_dumbbell.png'],
+        #     preparation_steps=[
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_PREP_ONE',
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_EXEC_ONE',
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_TIP_ONE',
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_TIP_TWO',
+        #         'E_D_ARNOLD_PRESS_DUMBBELL_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.SHOULDER, FocusArea.ARM],
+        #     equipment=ExerciseEquipment.DUMBBELL,
+        #     metric_type=ExerciseMetricType.PERCENT_1RM_AND_REPS
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-6',
+        #     title="E_D_BACK_EXTENSION_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/back_extension.png'],
+        #     preparation_steps=[
+        #         'E_D_BACK_EXTENSION_PREP_ONE',
+        #         'E_D_BACK_EXTENSION_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACK_EXTENSION_EXEC_ONE',
+        #         'E_D_BACK_EXTENSION_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACK_EXTENSION_TIP_ONE',
+        #         'E_D_BACK_EXTENSION_TIP_TWO'
+        #     ],
+        #     focus_areas=[FocusArea.BACK, FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.WEIGHT_MACHINE,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-7',
+        #     title="E_D_BACK_EXTENSION_ON_FLOOR_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/back_extension_on_floor.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/back_extension_on_floor.png'],
+        #     preparation_steps=[
+        #         'E_D_BACK_EXTENSION_ON_FLOOR_PREP_ONE'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACK_EXTENSION_ON_FLOOR_EXEC_ONE',
+        #         'E_D_BACK_EXTENSION_ON_FLOOR_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACK_EXTENSION_ON_FLOOR_TIP_ONE',
+        #         'E_D_BACK_EXTENSION_ON_FLOOR_TIP_TWO'
+        #     ],
+        #     focus_areas=[FocusArea.BACK],
+        #     equipment=ExerciseEquipment.BODY_WEIGHT,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-8',
+        #     title="E_D_BACK_EXTENSION_BAND_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/back_extension_band.png'],
+        #     preparation_steps=[
+        #         'E_D_BACK_EXTENSION_BAND_PREP_ONE',
+        #         'E_D_BACK_EXTENSION_BAND_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACK_EXTENSION_BAND_EXEC_ONE',
+        #         'E_D_BACK_EXTENSION_BAND_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACK_EXTENSION_BAND_TIP_ONE',
+        #         'E_D_BACK_EXTENSION_BAND_TIP_TWO'
+        #     ],
+        #     focus_areas=[FocusArea.BACK],
+        #     equipment=ExerciseEquipment.BAND,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-9',
+        #     title="E_D_BACK_EXTENSION_MACHINE_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/back_extension_machine.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/back_extension_machine.png'],
+        #     preparation_steps=[
+        #         'E_D_BACK_EXTENSION_MACHINE_PREP_ONE',
+        #         'E_D_BACK_EXTENSION_MACHINE_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACK_EXTENSION_MACHINE_EXEC_ONE',
+        #         'E_D_BACK_EXTENSION_MACHINE_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACK_EXTENSION_MACHINE_TIP_ONE',
+        #         'E_D_BACK_EXTENSION_MACHINE_TIP_TWO',
+        #         'E_D_BACK_EXTENSION_MACHINE_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BACK],
+        #     equipment=ExerciseEquipment.WEIGHT_MACHINE,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-10',
+        #     title="E_D_BACKWARD_LUNGE_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/backward_lunge.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_PREP_ONE',
+        #         'E_D_BACKWARD_LUNGE_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.BODY_WEIGHT,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-11',
+        #     title="E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/backward_lunge_with_leg.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge_with_leg.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_PREP_ONE'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_WITH_LEG_LIFT_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.LEG, FocusArea.BUTTOCKS],
+        #     equipment=ExerciseEquipment.BODY_WEIGHT,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-12',
+        #     title="E_D_BACKWARD_LUNGE_BARBELL_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge_barbell.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_BARBELL_PREP_ONE',
+        #         'E_D_BACKWARD_LUNGE_BARBELL_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_BARBELL_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_BARBELL_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_BARBELL_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_BARBELL_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_BARBELL_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.BARBELL,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-13',
+        #     title="E_D_BACKWARD_LUNGE_CABLE_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge_cable.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_CABLE_PREP_ONE',
+        #         'E_D_BACKWARD_LUNGE_CABLE_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_CABLE_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_CABLE_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_CABLE_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_CABLE_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_CABLE_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.CABLE_MACHINE,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-14',
+        #     title="E_D_BACKWARD_LUNGE_DUMBBELL_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/backward_lunge_dumbbell.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge_dumbbell.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_DUMBBELL_PREP_ONE'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_DUMBBELL_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_DUMBBELL_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_DUMBBELL_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_DUMBBELL_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_DUMBBELL_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.DUMBBELL,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-15',
+        #     title="E_D_BACKWARD_LUNGE_KETTLEBELL_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge kettlebell.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_PREP_ONE',
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_KETTLEBELL_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.KETTLEBELL,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-16',
+        #     title="E_D_BACKWARD_LUNGE_SMITH_MACHINE_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/backward_lunge_smith_machine.png'],
+        #     preparation_steps=[
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_PREP_ONE',
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_EXEC_ONE',
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_TIP_ONE',
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_TIP_TWO',
+        #         'E_D_BACKWARD_LUNGE_SMITH_MACHINE_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.SMITH_MACHINE,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-17',
+        #     title="E_D_BALL_SLAMS_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/ball_slams.png'],
+        #     preparation_steps=[
+        #         'E_D_BALL_SLAMS_PREP_ONE',
+        #         'E_D_BALL_SLAMS_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BALL_SLAMS_EXEC_ONE',
+        #         'E_D_BALL_SLAMS_EXEC_TWO',
+        #         'E_D_BALL_SLAMS_EXEC_THREE'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BALL_SLAMS_TIP_ONE',
+        #         'E_D_BALL_SLAMS_TIP_TWO'
+        #     ],
+        #     focus_areas=[FocusArea.FULL_BODY],
+        #     equipment=ExerciseEquipment.WEIGHT_MACHINE,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-18',
+        #     title="E_D_BAND_PULL_THROUGH_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/band_pull_through.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/band_pull_through.png'],
+        #     preparation_steps=[
+        #         'E_D_BAND_PULL_THROUGH_PREP_ONE',
+        #         'E_D_BAND_PULL_THROUGH_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BAND_PULL_THROUGH_EXEC_ONE',
+        #         'E_D_BAND_PULL_THROUGH_EXEC_TWO',
+        #         'E_D_BAND_PULL_THROUGH_EXEC_THREE'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BAND_PULL_THROUGH_TIP_ONE',
+        #         'E_D_BAND_PULL_THROUGH_TIP_TWO',
+        #         'E_D_BAND_PULL_THROUGH_TIP_THREE',
+        #         'E_D_BAND_PULL_THROUGH_TIP_FOUR'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.BACK, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.BAND,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-19',
+        #     title="E_D_BENCH_FLY_CABLE_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/bench_fly_cable.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/bench_fly_cable.png'],
+        #     preparation_steps=[
+        #         'E_D_BENCH_FLY_CABLE_PREP_ONE',
+        #         'E_D_BENCH_FLY_CABLE_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BENCH_FLY_CABLE_EXEC_ONE',
+        #         'E_D_BENCH_FLY_CABLE_EXEC_TWO',
+        #         'E_D_BENCH_FLY_CABLE_EXEC_THREE'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BENCH_FLY_CABLE_TIP_ONE',
+        #         'E_D_BENCH_FLY_CABLE_TIP_TWO',
+        #         'E_D_BENCH_FLY_CABLE_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.CHEST, FocusArea.SHOULDER, FocusArea.ARM],
+        #     equipment=ExerciseEquipment.CABLE_MACHINE,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-20',
+        #     title="E_D_BENCH_FLY_DUMBBELL_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/bench_fly_dumbbell.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/bench_fly_dumbbell.png'],
+        #     preparation_steps=[
+        #         'E_D_BENCH_FLY_DUMBBELL_PREP_ONE',
+        #         'E_D_BENCH_FLY_DUMBBELL_PREP_TWO'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BENCH_FLY_DUMBBELL_EXEC_ONE',
+        #         'E_D_BENCH_FLY_DUMBBELL_EXEC_TWO',
+        #         'E_D_BENCH_FLY_DUMBBELL_EXEC_THREE'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BENCH_FLY_DUMBBELL_TIP_ONE',
+        #         'E_D_BENCH_FLY_DUMBBELL_TIP_TWO',
+        #         'E_D_BENCH_FLY_DUMBBELL_TIP_THREE'
+        #     ],
+        #     focus_areas=[FocusArea.CHEST, FocusArea.SHOULDER, FocusArea.ARM],
+        #     equipment=ExerciseEquipment.DUMBBELL,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-21',
+        #     title="E_D_BENCH_JUMP_TITLE",
+        #     video_urls=['app/regular_directory/exercises/videos/bench_jump.mp4'],
+        #     cover_image_url=['app/regular_directory/exercises/images/bench_jump.png'],
+        #     preparation_steps=[
+        #         'E_D_BENCH_JUMP_PREP_ONE',
+        #         'E_D_BENCH_JUMP_PREP_TWO',
+        #         'E_D_BENCH_JUMP_PREP_THREE'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BENCH_JUMP_EXEC_ONE',
+        #         'E_D_BENCH_JUMP_EXEC_TWO',
+        #         'E_D_BENCH_JUMP_EXEC_THREE',
+        #         'E_D_BENCH_JUMP_EXEC_FOUR'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BENCH_JUMP_TIP_ONE',
+        #         'E_D_BENCH_JUMP_TIP_TWO',
+        #         'E_D_BENCH_JUMP_TIP_THREE',
+        #         'E_D_BENCH_JUMP_TIP_FOUR'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.BODY_WEIGHT,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
+        # ExerciseDefinition(
+        #     id='exercise-22',
+        #     title="E_D_BENCH_PISTOL_SQUAT_TITLE",
+        #     video_urls=[],
+        #     cover_image_url=['app/regular_directory/exercises/images/bench_pistol_squat.png'],
+        #     preparation_steps=[
+        #         'E_D_BENCH_PISTOL_SQUAT_PREP_ONE',
+        #         'E_D_BENCH_PISTOL_SQUAT_PREP_TWO',
+        #         'E_D_BENCH_PISTOL_SQUAT_PREP_THREE'
+        #     ],
+        #     execution_steps=[
+        #         'E_D_BENCH_PISTOL_SQUAT_EXEC_ONE',
+        #         'E_D_BENCH_PISTOL_SQUAT_EXEC_TWO'
+        #     ],
+        #     key_tips=[
+        #         'E_D_BENCH_PISTOL_SQUAT_TIP_ONE',
+        #         'E_D_BENCH_PISTOL_SQUAT_TIP_TWO',
+        #         'E_D_BENCH_PISTOL_SQUAT_TIP_THREE',
+        #         'E_D_BENCH_PISTOL_SQUAT_TIP_FOUR',
+        #         'E_D_BENCH_PISTOL_SQUAT_TIP_FIVE'
+        #     ],
+        #     focus_areas=[FocusArea.BUTTOCKS, FocusArea.LEG],
+        #     equipment=ExerciseEquipment.BODY_WEIGHT,
+        #     metric_type=ExerciseMetricType.REPS_ONLY
+        # ),
         ExerciseDefinition(
             id='exercise-24',
             title= "E_D_BENCH_PRESS_BAND_TITLE",
