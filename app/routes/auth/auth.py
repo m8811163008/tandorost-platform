@@ -25,7 +25,7 @@ from utility.constants import rate_limit_second
 from utility.decode_jwt_user_id import read_user_or_raise
 from google.oauth2 import id_token
 from google.auth.transport import requests
-from domain_models import UsernameType, username_type, Referral
+from domain_models import UsernameType, username_type, Referral, Role
 
 
 router = APIRouter(
@@ -259,6 +259,34 @@ async def logout(
     user_id: Annotated[str , Depends(read_user_or_raise)],
 ):
     await dm.auth_repo.logout(user_id=user_id)
+
+
+@router.post("/toggle_as_administrator/", status_code=status.HTTP_204_NO_CONTENT, responses={
+    204 : {"description": "HTTP_204_NO_CONTENT",},
+    })
+async def toggle_as_administrator(
+    user_id: Annotated[str , Depends(read_user_or_raise)],
+    user_identifier : str,
+):
+    # find user
+    user = await dm.auth_repo.read_user_by_identifier(identifier=user_identifier)
+        # Determine scopes based on user roles
+    assert(user is not None)
+    msg = ''
+    if hasattr(user, "role"):
+        if "admin" not in user.role:
+            user.role.append(Role.ADMIN)
+            msg = 'Administrator added to user role(s)'
+        elif "admin" in user.role:
+            user.role.remove(Role.ADMIN)
+            msg = 'Administrator removed from user role(s)'
+    
+    await dm.user_repo.update_user(user=user) 
+
+    return JSONResponse(
+        content=msg
+    )
+
 
 
 @router.post("/verify_google/", responses={

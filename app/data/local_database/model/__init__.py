@@ -12,7 +12,7 @@ from .user_files import GallaryTag, ProcessingStatus, ImageRejectionReason, File
 from .user_food_count import UserFoodCount
 from .user_food import TotalMacroNutritionPerFood, CarbohydrateSourceLD, Food
 from .user_physical_data import Gender, ActivityLevel, DataPoint, UserPhysicalData, UserPhysicalDataUpsert
-from .user_subscription_payment_data import PaymentMethod, SubscriptionType,UserInDbSubscriptionPayment
+from .user_subscription_payment_data import PaymentMethod, SubscriptionType,UserInDbSubscriptionPayment, PaymentStatus
 from .user import UserInDB
 from .referral import Referral, ReferralStatus
 from .verify_coach_question import VerifyCoachQuestion

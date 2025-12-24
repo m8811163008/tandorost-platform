@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 
 from httpx import HTTPStatusError
 from data.local_database import DatabaseInterface
-from domain_models import  UserInDB, UserPhysicalDataUpsert, Referral,ReferralStatus, UsernameType,username_type, VerifyPhoneNumberDetail, RemoteApiInterface,NetworkConnectionError, EmailDetail,UserPhysicalData,SenderEmails
+from domain_models import  UserInDB, UserPhysicalDataUpsert, Referral,ReferralStatus, UsernameType,username_type, VerifyPhoneNumberDetail, RemoteApiInterface,NetworkConnectionError, EmailDetail,UserPhysicalData,SenderEmails, Role
 
 class UserRepository:
     def __init__(self, database: DatabaseInterface, remote_api:RemoteApiInterface, sms_body_id:str):
@@ -17,6 +17,10 @@ class UserRepository:
         return await self.database.read_user_by_id(
             user_id = user_id
         )
+        
+    async def read_user_count(self, roles : list[Role]) -> int | None:
+        """Retrieve a user from the database."""
+        return await self.database.read_user_count(role = roles)
     
     async def update_user(self, user : UserInDB)-> UserInDB | None:
         """Retrieve a user from the database."""

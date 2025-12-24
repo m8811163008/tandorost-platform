@@ -3,6 +3,7 @@
 from data.local_database import DatabaseInterface
 from data.local_database.model.user_food_count import UserFoodCount
 from data.local_database.model.user_subscription_payment_data import UserInDbSubscriptionPayment
+from domain_models import PaymentStatus
 
 
 
@@ -27,3 +28,7 @@ class PaymentRepository:
     
     async def read_user_food_count(self, user_id :str )-> UserFoodCount:
         return await self.database.read_user_food_counts(user_id=user_id)
+
+    async def coaches_purchased_programs_count(self, status: list[PaymentStatus])-> int:
+        return await self.database.coaches_purchased_programs_count(status=status)
+            

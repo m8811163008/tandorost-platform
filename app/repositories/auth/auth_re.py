@@ -172,6 +172,8 @@ class AuthRepository:
                 scopes.append("trainer")
             if "bodybuilding_coach" in user.role:
                 scopes.append("coach")
+            if "admin" in user.role:
+                scopes.append("admin")
 
 
         access_token = create_access_token(

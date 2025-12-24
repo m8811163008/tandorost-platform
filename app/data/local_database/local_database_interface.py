@@ -16,7 +16,8 @@ from .model import( Token, Coach, CoachProgram,DocumentNotFound, UserPhysicalDat
                     UserInDbSubscriptionPayment,
                     ProgramEnrollment,
                     WorkoutProgram,
-                    Referral
+                    Referral,
+                    PaymentStatus
                    )
 
 
@@ -232,4 +233,20 @@ class DatabaseInterface(ABC):
         pass
     @abstractmethod     
     async def read_coach_profiles(self,) -> list[UserInDB]:
+        pass
+    
+    @abstractmethod     
+    async def read_user_count(self, role : list[Role]) -> int | None:
+        pass
+    
+    @abstractmethod     
+    async def read_coaches_programs_count(self) -> int:
+        pass
+
+    @abstractmethod 
+    async def coaches_purchased_programs_count(self, status: list[PaymentStatus])-> int:
+        pass
+    
+    @abstractmethod 
+    async def completed_exercise_count(self) -> int:
         pass

@@ -9,6 +9,7 @@ from routes.foods_nutrition import router as food_nutrition_router
 from routes.fitness import router as fitness_router
 from routes.payment import router as payment_router
 from routes.coach import router as coach_router
+from routes.administer import router as administor_router
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -40,6 +41,7 @@ app.include_router(food_nutrition_router)
 app.include_router(fitness_router)
 app.include_router(payment_router)
 app.include_router(coach_router)
+app.include_router(administor_router)
 # Initialize middlewares
 
 # Add CORS middleware

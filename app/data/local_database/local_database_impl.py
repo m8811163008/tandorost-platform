@@ -26,7 +26,8 @@ from .model import( Token, Coach, CoachProgram,DocumentNotFound, UserPhysicalDat
                     UserInDbSubscriptionPayment,
                     WorkoutProgram,
                     ProgramEnrollment,
-                    Referral
+                    Referral,
+                    PaymentStatus
                    )
 from .local_database_interface import DatabaseInterface
 
@@ -601,3 +602,78 @@ class LocalDataBaseImpl(DatabaseInterface):
         users = await self.user_collection.find({}).to_list()
         return [UserInDB(**user) for user in users]
             
+    
+    async def read_user_count(self, role : list[Role]) -> int | None:
+        """
+        Counts the number of users that have any of the roles specified in the list.
+        """
+        # We use the $in operator to match any role present in the input list
+        query = {"role": {"$in": role}}
+        
+        count = await self.user_collection.count_documents(query)
+        
+        return count
+
+   
+    async def read_coaches_programs_count(self) -> int:
+            """
+            Returns the total number of coach programs available in the database.
+            """
+            # Passing an empty dictionary {} counts all documents in the collection
+            count = await self.coache_program_collection.count_documents({})
+            
+            return count
+
+    async def coaches_purchased_programs_count(self, status: list[PaymentStatus]) -> int:
+            """
+            Counts the total number of purchased programs across all coaches 
+            filtered by the provided payment statuses.
+            """
+            # Create a query to find documents where the status is in the provided list
+            query = {"status": {"$in": status}}
+            
+            # Count documents in the subscription payment collection matching the query
+            count = await self.user_subscription_payment_collection.count_documents(query)
+            
+            return count
+        
+        
+    async def completed_exercise_count(self) -> int:
+            """
+            Calculates the total number of exercises (activities) within 
+            workout days that have been marked as 'is_done'.
+            """
+            pipeline = [
+                # 1. Deconstruct the 'days' array
+                {"$unwind": "$days"},
+                
+                # 2. Filter only for days that are marked as done and are not rest days
+                {
+                    "$match": {
+                        "days.is_done": True,
+                        "days.is_rest_day": False
+                    }
+                },
+                
+                # 3. Project the size of the activities array for each completed day
+                {
+                    "$project": {
+                        "exercise_count": {
+                            "$size": { "$ifNull": ["$days.activities", []] }
+                        }
+                    }
+                },
+                
+                # 4. Sum up all the counts
+                {
+                    "$group": {
+                        "_id": None,
+                        "total": {"$sum": "$exercise_count"}
+                    }
+                }
+            ]
+
+            cursor = self.workout_program_collection.aggregate(pipeline)
+            result = await cursor.to_list(length=1)
+            
+            return result[0]["total"] if result else 0
