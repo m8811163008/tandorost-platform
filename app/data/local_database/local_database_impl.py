@@ -630,7 +630,7 @@ class LocalDataBaseImpl(DatabaseInterface):
             filtered by the provided payment statuses.
             """
             # Create a query to find documents where the status is in the provided list
-            query = {"status": {"$in": status}}
+            query = {"payment_status": {"$in": status}}
             
             # Count documents in the subscription payment collection matching the query
             count = await self.user_subscription_payment_collection.count_documents(query)
